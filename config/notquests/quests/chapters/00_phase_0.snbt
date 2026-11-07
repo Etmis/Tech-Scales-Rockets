@@ -1,0 +1,1083 @@
+{
+	id: "B712700DE4F86CCE",
+	title: "&aP0: Survival & Polymers",
+	icon: "industrialforegoing:plastic",
+	group: "group_main",
+	order_index: 0,
+	quests: [
+		{
+			id: "004097486F2BA7FA",
+			title: "&6&lWelcome to Tech, Scales & Rockets!",
+			description: [
+				"&7Your journey begins with empty hands in a harsh, uncompromising world.",
+				"",
+				"&fIn &6Tech, Scales & Rockets&f, technology, bio-alchemy, astral magic, and intergalactic travel are tightly interwoven. You cannot skip any boss or phase—every machine requires slaying ancient evil, and every titan requires stronger technology.",
+				"",
+				"&c&lKey Rules of Phase 0:",
+				"&8• &7Mekanism is strictly limited to &e1-slot basic machines&7 and early generators (&6Heat & Bio-Generator&7). Tier Installers, Wind/Solar, and Gas-Burning Generators are locked behind future phases!",
+				"&8• &7AE2 &eME Controllers&7 are locked behind Phase 1B. You may only build &b8-channel Ad-Hoc networks&7.",
+				"&8• &7Sidegrade OP weapons & armors (&cMekaSuit, Meka-Tool, Alloy Paxel, IF Infinity, IAF & Cataclysm weapons&7) are completely removed! Armors from &6Ice and Fire&7 and &cCataclysm&7 can be crafted, but have &e0 stats&7—serving purely as visual trophies for &dCosmetic Armor Reworked&7!",
+				"",
+				"&aClick the checkmark to begin your industrial awakening!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			tasks: [ { id: "7A950CEEACCA6863", type: "checkmark" } ],
+			rewards: [
+				{ id: "EF9A522A99FD0B64", type: "item", item: "minecraft:cooked_beef", count: 8 },
+				{ id: "5FBA00CF5DB75E05", type: "xp", xp: 25 }
+			]
+		},
+		{
+			id: "P0Q0000000000001",
+			title: "&eGuideME, Relics & Cosmetic Slots",
+			description: [
+				"&7In this modpack, progression is documented and guided through &6Quests&7.",
+				"",
+				"&eEssential Early Rules:",
+				"&8• &bCosmetic Armor Reworked: &7Open your inventory and click the small armor icon to access your 4 visual armor slots! Any 0-stat trophy armor from &6Ice and Fire&7 or &cCataclysm&7 goes here while you wear your Sacred Armor Line underneath.",
+				"&8• &dRelics: &7Bosses in Twilight Forest and Cataclysm drop leveling RPG artifacts that go into your &eCurios&7 slots!",
+				"&8• &aAesthetic Mods: &7Exposure and Immersive Melodies are unlocked right from minute one."
+			],
+			x: 0.0, y: -2.0,
+			dependencies: ["004097486F2BA7FA"],
+			tasks: [ { id: "P0T0000000000001", type: "checkmark" } ],
+			rewards: [
+				{ id: "P0R0000000000001", type: "item", item: "minecraft:apple", count: 4 },
+				{ id: "P0R0000000000002", type: "xp", xp: 25 }
+			]
+		},
+		{
+			id: "7FECFBFD96A32D24",
+			title: "&aTimber & Foundations",
+			description: [
+				"&7Before conquering the stars or slaying dragons, you need basic timber.",
+				"",
+				"&eTip: &7Save extra &6Acacia&7, &eOak&7, or &8Spruce&7 logs! You will soon need placed logs in the world to extract liquid &fLatex&7 for industrial polymer production."
+			],
+			x: 2.5, y: 0.0,
+			dependencies: ["004097486F2BA7FA"],
+			tasks: [ { id: "89710465D95D9E4F", type: "item", item_tag: "minecraft:logs", count: 16 } ],
+			rewards: [
+				{ id: "889905E9337B05DA", type: "item", item: "minecraft:torch", count: 16 },
+				{ id: "6B9D6A9F9BC9BE94", type: "xp", xp: 25 }
+			]
+		},
+		{
+			id: "P0Q0000000000003",
+			title: "&6The First Workbench",
+			description: [
+				"&7Set up your first workbench and craft basic wooden or stone tools to get started.",
+				"",
+				"&7Don't bother over-investing in wood—your real goal is deep underground."
+			],
+			x: 2.5, y: 2.0,
+			dependencies: ["7FECFBFD96A32D24"],
+			tasks: [ { id: "P0T0000000000003", type: "item", item: "minecraft:crafting_table", count: 1 } ],
+			rewards: [
+				{ id: "P0R0000000000005", type: "item", item: "minecraft:stick", count: 8 },
+				{ id: "P0R0000000000006", type: "xp", xp: 25 }
+			]
+		},
+		{
+			id: "0C0E2077129DCD15",
+			title: "&7The Stone Age",
+			description: [
+				"&7Mine Cobblestone and set up your first Furnaces.",
+				"",
+				"&7Keep an eye out for underground structures from &eYUNG's&7, &eMoog's&7, and &eFormations&7—early Lootr chests can significantly speed up your resource gathering."
+			],
+			x: 5.0, y: 0.0,
+			dependencies: ["7FECFBFD96A32D24"],
+			tasks: [
+				{ id: "7A353B8FA6874A25", type: "item", item: "minecraft:cobblestone", count: 32 },
+				{ id: "C3AD5A14A01BD9FB", type: "item", item: "minecraft:furnace", count: 1 }
+			],
+			rewards: [
+				{ id: "D2C441157930133F", type: "item", item: "minecraft:coal", count: 12 },
+				{ id: "8FA2B78AED66A47C", type: "xp", xp: 35 }
+			]
+		},
+		{
+			id: "P0Q0000000000004",
+			title: "&fSurviving the First Night",
+			description: [
+				"&7Craft a &fShield&7 and a &cBed&7 before night falls!",
+				"",
+				"&eWhy a Shield is Essential:",
+				"&7Not only will it save your life in caves, but in Phase 1A, blocking the &aNaga's&7 charge with a Shield stuns the boss!"
+			],
+			x: 5.0, y: 2.0,
+			dependencies: ["0C0E2077129DCD15"],
+			tasks: [
+				{ id: "P0T0000000000004", type: "item", item: "minecraft:shield", count: 1 },
+				{ id: "ABA4344DF86EDEA7", type: "item", item_tag: "minecraft:beds", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000007", type: "item", item: "minecraft:bread", count: 8 },
+				{ id: "P0R0000000000008", type: "xp", xp: 35 }
+			]
+		},
+		{
+			id: "P0Q0000000000005",
+			title: "&8Carbon Reserves: Coal & Charcoal",
+			description: [
+				"&7Gather plenty of &8Coal&7 or burn wood logs into &8Charcoal&7.",
+				"",
+				"&7Besides fueling furnaces, Carbon (Coal/Charcoal) is the primary infusion reagent required to turn Iron into &7Enriched Iron&7 and &7Steel&7 inside the Metallurgic Infuser!"
+			],
+			x: 6.25, y: 1.5,
+			dependencies: ["0C0E2077129DCD15"],
+			tasks: [ { id: "P0T0000000000005", type: "item", item: "minecraft:coal", count: 32 } ],
+			rewards: [
+				{ id: "P0R0000000000009", type: "item", item: "minecraft:coal", count: 16 },
+				{ id: "P0R0000000000010", type: "xp", xp: 40 }
+			]
+		},
+		{
+			id: "p0_iron_age",
+			title: "&fIron & Redstone Mining",
+			description: [
+				"&7Descend into the caves and gather &fIron&7, &cRedstone&7, and &6Copper&7.",
+				"",
+				"&7You will need massive quantities of Iron and Redstone to build your first Mekanism machines and Industrial Foregoing frames."
+			],
+			x: 7.5, y: 0.0,
+			dependencies: ["0C0E2077129DCD15"],
+			tasks: [
+				{ id: "AA15A3D6AC3188B5", type: "item", item: "minecraft:iron_ingot", count: 16 },
+				{ id: "2B030444EBAA1FE8", type: "item", item: "minecraft:redstone", count: 16 },
+				{ id: "32B49571F32E9B9B", type: "item", item: "minecraft:copper_ingot", count: 16 }
+			],
+			rewards: [
+				{ id: "F3AAA608F71C61EA", type: "random", table_id: "tier_0_starter" },
+				{ id: "BFE6AD0D134661A5", type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "C994C11CC324F7FD",
+			title: "&6Taming the Clutter: Storage Drawers",
+			description: [
+				"&7Before hundreds of modded items flood your chests, set up a wall of &eStorage Drawers&7 and link them to a &6Drawer Controller&7.",
+				"",
+				"&7Later in Phase 0, you can slap a single &dAE2 Storage Bus&7 onto the Drawer Controller to connect all your bulk items to your digital network using only &a1 channel&7!"
+			],
+			x: 5.0, y: -2.5,
+			dependencies: ["7FECFBFD96A32D24", "p0_iron_age"],
+			tasks: [
+				{ id: "B39DBF333F8AD7ED", type: "item", item: "storagedrawers:oak_full_drawers_1", count: 4 },
+				{ id: "EC5518BA802CE7BA", type: "item", item: "storagedrawers:controller", count: 1 }
+			],
+			rewards: [
+				{ id: "C5CE29FAB8D6F186", type: "item", item: "storagedrawers:obsidian_storage_upgrade", count: 2 },
+				{ id: "FBA4A6227390F785", type: "item", item: "storagedrawers:quantify_key" },
+				{ id: "2292549ACB4BCD5D", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P0Q0000000000006",
+			title: "&eDrawer Keys & Void Protection",
+			description: [
+				"&7Upgrade your Storage Drawers with &6Storage Upgrades&7, &cVoid Upgrades&7 (to prevent overflow clogs in automated farms), and a &eDrawer Key&7 to lock drawers to specific items even when empty!"
+			],
+			x: 5.0, y: -4.5,
+			dependencies: ["C994C11CC324F7FD"],
+			tasks: [
+				{ id: "P0T0000000000006", type: "item", item: "storagedrawers:drawer_key", count: 1 },
+				{ id: "P0T0000000000007", type: "item", item: "storagedrawers:void_upgrade", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000011", type: "item", item: "storagedrawers:iron_storage_upgrade", count: 2 },
+				{ id: "P0R0000000000012", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "65EC9D0B0763CADC",
+			title: "&6Your Lifelong Companion: Backpack",
+			description: [
+				"&7Craft your first &eSophisticated Backpack&7!",
+				"",
+				"&6&lThe Sacred Backpack Rule:",
+				"&7Industrial Foregoing's Infinity Backpack is removed. You will upgrade, dye, and cherish this single backpack all the way from Leather to &8Netherite&7 and eventually install the &dCreative Infinity Upgrade&7 in Phase 7!"
+			],
+			x: 7.5, y: -2.5,
+			shape: "rsquare",
+			dependencies: ["p0_iron_age"],
+			tasks: [ { id: "FE8F88E85EE3C9EE", type: "item", item: "sophisticatedbackpacks:backpack", count: 1 } ],
+			rewards: [
+				{ id: "26EE9B4A9D1EAAA1", type: "item", item: "minecraft:leather", count: 8 },
+				{ id: "BF5FD39939540E5B", type: "item", item: "sophisticatedbackpacks:upgrade_base", count: 2 },
+				{ id: "B705BCA0053E5A26", type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "P0Q0000000000007",
+			title: "&6Iron & Gold Backpack Tiers",
+			description: [
+				"&7Surround your Leather Backpack with Iron Ingots, then Gold Ingots in a Crafting Table to expand its storage capacity and upgrade slots!"
+			],
+			x: 7.5, y: -4.25,
+			dependencies: ["65EC9D0B0763CADC"],
+			tasks: [
+				{ id: "P0T0000000000008", type: "item", item: "sophisticatedbackpacks:iron_backpack", count: 1 },
+				{ id: "P0T0000000000009", type: "item", item: "sophisticatedbackpacks:gold_backpack", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000013", type: "item", item: "minecraft:gold_ingot", count: 8 },
+				{ id: "P0R0000000000014", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "CD1DDDF7F3A33844",
+			title: "&bDiamond Backpack & Modules",
+			description: [
+				"&7Upgrade your Gold Backpack to &bDiamond&7! Install utility upgrades like the &aPickup Upgrade&7, &eMagnet Upgrade&7, or &6Feeding Upgrade&7.",
+				"",
+				"&cNote: &7Remember that Raw Unobtainium in Phase 4+ is blacklisted from the Backpack Smelting Upgrade!"
+			],
+			x: 7.5, y: -6.0,
+			dependencies: ["P0Q0000000000007"],
+			tasks: [ { id: "62D20280A0AC2A8D", type: "item", item: "sophisticatedbackpacks:diamond_backpack", count: 1 } ],
+			rewards: [
+				{ id: "AE460023DE8292B6", type: "item", item: "sophisticatedbackpacks:pickup_upgrade" },
+				{ id: "4A0E58335A2FB692", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_1" },
+				{ id: "0A8A515F1AB11213", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "A95AA9D35CEC7316",
+			title: "&6Culinary Alchemy: The Cooking Pot",
+			description: [
+				"&7In &eTech, Scales & Rockets&7, cooking across all &612 Delight mods&7 is not just for hunger!",
+				"",
+				"&7Gourmet meals act as biological catalysts for crafting &cHeart Canisters&7, performing dark rituals for Wither Skulls, baiting bosses, cooking &6The Allthemodium Carrot&7 (Phase 3), and eventually &6The Allthemodium Apple&7 (Phase 7).",
+				"",
+				"&7Start by crafting a &eCooking Pot&7, a &fCutting Board&7, and a &fKnife&7."
+			],
+			x: 7.5, y: 3.0,
+			shape: "rsquare",
+			dependencies: ["p0_iron_age"],
+			tasks: [
+				{ id: "5417F017959AE6EF", type: "item", item: "farmersdelight:cooking_pot", count: 1 },
+				{ id: "503FEBE2E2CFC0F4", type: "item", item: "farmersdelight:cutting_board", count: 1 },
+				{ id: "34F8D9C2A5B16BD2", type: "item", item: "farmersdelight:iron_knife", count: 1 }
+			],
+			rewards: [
+				{ id: "5ADB2487D87F82A6", type: "item", item: "farmersdelight:stove" },
+				{ id: "E5407A3EFBFEC898", type: "random", table_id: "delight_feast" },
+				{ id: "F85D6DDC5FBC51F9", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P0Q0000000000008",
+			title: "&6Skillet & Rich Soil Farming",
+			description: [
+				"&7Place a &6Stove&7 under your Cooking Pot and craft a &cSkillet&7 for fast campfire/stove searing!",
+				"",
+				"&7Craft &aOrganic Compost&7 from straw, bone meal, and rotten flesh—once it decomposes into &6Rich Soil&7, crops planted on it grow significantly faster and cannot be trampled!"
+			],
+			x: 5.5, y: 4.5,
+			dependencies: ["A95AA9D35CEC7316"],
+			tasks: [
+				{ id: "P0T0000000000010", type: "item", item: "farmersdelight:skillet", count: 1 },
+				{ id: "P0T0000000000011", type: "item", item: "farmersdelight:organic_compost", count: 4 }
+			],
+			rewards: [
+				{ id: "P0R0000000000015", type: "item", item: "farmersdelight:rich_soil", count: 8 },
+				{ id: "P0R0000000000016", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "54A0C537FD3A6380",
+			title: "&eCoffee, Corn & Sunflowers",
+			description: [
+				"&7Explore the world to gather crops from &eRustic Delight&7, &6Corn Delight&7, and &eSunflower Delight&7!",
+				"",
+				"&8• &6Rustic Delight Coffee: &7Gives a great speed boost for early mining.",
+				"&8• &eSunflower Seeds & Oil: &7Pressed Sunflower Oil crushes into high-yield &2Mekanism Bio-Fuel&7 for your Bio-Generators!"
+			],
+			x: 7.5, y: 5.0,
+			dependencies: ["A95AA9D35CEC7316"],
+			tasks: [
+				{ id: "F0445618AC491F36", type: "item", item: "minecraft:sunflower", count: 4 },
+				{ id: "59F0BF98680FFA7F", type: "item", item: "corn_delight:corn", count: 4 }
+			],
+			rewards: [
+				{ id: "DDBB328E54C7CB9D", type: "random", table_id: "delight_feast" },
+				{ id: "2A3D0CECDCEBF5A3", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P0Q0000000000009",
+			title: "&6Miner's Fuel: Rustic Coffee",
+			description: [
+				"&7Harvest wild coffee shrubs from &6Rustic Delight&7 and roast &6Coffee Beans&7! Brewing a hot cup of Dark Coffee grants Haste/Speed to make early mining in Phase 0 a breeze."
+			],
+			x: 7.5, y: 7.0,
+			dependencies: ["54A0C537FD3A6380"],
+			optional: true,
+			tasks: [ { id: "P0T0000000000012", type: "item", item: "rusticdelight:coffee_beans", count: 4 } ],
+			rewards: [
+				{ id: "P0R0000000000017", type: "random", table_id: "delight_feast" },
+				{ id: "P0R0000000000018", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "62282D72C9ED7BB6",
+			title: "&6Brewin' And Chewin': The Keg",
+			description: [
+				"&7Craft a &6Keg&7 from &eBrewin' And Chewin'&7.",
+				"",
+				"&7Fermenting &eMead&7 now will prepare you for Phase 1B, where Mead is required alongside Meef Stroganoff and Carminite to forge your &cRed Heart Canisters&7!"
+			],
+			x: 10.0, y: 5.0,
+			dependencies: ["54A0C537FD3A6380"],
+			tasks: [
+				{ id: "4E58A499EDBFC46D", type: "item", item: "brewinandchewin:keg", count: 1 },
+				{ id: "D1A99E70FC045220", type: "item", item: "brewinandchewin:tankard", count: 4 }
+			],
+			rewards: [
+				{ id: "4EE4A4D3848A87DE", type: "item", item: "minecraft:honey_bottle", count: 4 },
+				{ id: "6D610AE04E266193", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P0Q0000000000010",
+			title: "&eFermenting Golden Mead",
+			description: [
+				"&7Pour Honey, Wheat, Water, and a Tankard into your &6Keg&7 at normal temperature to ferment sweet &eMead&7!",
+				"",
+				"&7Store a few tankards of Mead for your Phase 1B Heart Canisters."
+			],
+			x: 10.0, y: 7.0,
+			dependencies: ["62282D72C9ED7BB6"],
+			tasks: [ { id: "P0T0000000000013", type: "item", item: "brewinandchewin:mead", count: 1 } ],
+			rewards: [
+				{ id: "P0R0000000000019", type: "item", item: "brewinandchewin:mead", count: 2 },
+				{ id: "P0R0000000000020", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "p0_osmium",
+			title: "&bThe Backbone of Industry: Osmium",
+			description: [
+				"&7If Iron is the skeleton of your factory, &bOsmium&7 is its nervous system.",
+				"",
+				"&7Smelt Raw Osmium into ingots. It is required for almost every Mekanism machine, early QoL gadgets (&bSimple Magnets & Moving Elevators&7), and your very first &aPity Machine Frame&7."
+			],
+			x: 10.0, y: 0.0,
+			size: 1.25,
+			shape: "hexagon",
+			dependencies: ["p0_iron_age"],
+			tasks: [ { id: "CDA9FC23CF070625", type: "item", item: "mekanism:ingot_osmium", count: 16 } ],
+			rewards: [
+				{ id: "818703658469F373", type: "item", item: "mekanism:ingot_osmium", count: 8 },
+				{ id: "FFC21CD667120272", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "404870D9A94D43FA",
+			title: "&bThe Sacred Armor Line: Step 1",
+			description: [
+				"&b&lRead Carefully – The Sacred Armor & Tool Pillar:",
+				"&7In &6Tech, Scales & Rockets&7, sidegrade OP gear (&cMekaSuit, Meka-Tool, Alloy Paxel, IF Infinity, IAF & Cataclysm weapons&7) is &c&ldeleted&7.",
+				"&7Armors from &6Ice and Fire&7 and &cCataclysm&7 remain craftable, but have &e0 Armor/Toughness stats&7—serving purely as visual trophies for your &dCosmetic Armor Reworked&7 slots! (&2Twilight Forest&7 armors remain untouched in Phase 1 as an optional stepping stone).",
+				"",
+				"&7Instead, you will forge one continuous line of gear:",
+				"&8• &bArmor: &bDiamond &7-> &8Netherite &7-> &6Allthemodium &7-> &aVibranium &7-> &dUnobtainium&7.",
+				"&8• &eWeapons & Tools: &bDiamond &7-> &8Netherite &7-> &6Allthemodium &7-> &aVibranium &7-> &dUnobtainium &7-> &6ATM Alloy (Sword, Pickaxe, Axe, Shovel)&7!",
+				"",
+				"&aEvery single upgrade in the Smithing Table preserves 100% of your Enchantments, Apotheosis Gems, and Affixes!"
+			],
+			x: 10.0, y: -2.5,
+			size: 1.25,
+			shape: "pentagon",
+			dependencies: ["p0_iron_age"],
+			tasks: [
+				{ id: "B920C8AF2CBF00F8", type: "item", item: "minecraft:diamond_helmet", count: 1 },
+				{ id: "06764E1D5F31AD96", type: "item", item: "minecraft:diamond_chestplate", count: 1 },
+				{ id: "79DF0F830EF2E42F", type: "item", item: "minecraft:diamond_leggings", count: 1 },
+				{ id: "8B1D7C5DF0033EA2", type: "item", item: "minecraft:diamond_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "44BAB4CC63CDD543", type: "item", item: "minecraft:diamond", count: 4 },
+				{ id: "8BF29655AA8554C8", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "P0Q0000000000011",
+			title: "&bThe Sacred Weapons & Tools: Step 1",
+			description: [
+				"&7Just like your armor, forge your four lifelong &bDiamond Tools & Sword&7 (&bSword, Pickaxe, Axe, Shovel&7).",
+				"",
+				"&cWhy No Alloy Paxel?",
+				"&7The Alloy Paxel is removed due to technical enchantment limits, so you will carry and upgrade these four dedicated tools all the way to &6ATM Alloy&7 in Phase 7!"
+			],
+			x: 10.0, y: -4.25,
+			dependencies: ["404870D9A94D43FA"],
+			tasks: [
+				{ id: "P0T0000000000014", type: "item", item: "minecraft:diamond_sword", count: 1 },
+				{ id: "P0T0000000000015", type: "item", item: "minecraft:diamond_pickaxe", count: 1 },
+				{ id: "P0T0000000000016", type: "item", item: "minecraft:diamond_axe", count: 1 },
+				{ id: "P0T0000000000017", type: "item", item: "minecraft:diamond_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000021", type: "item", item: "minecraft:diamond", count: 2 },
+				{ id: "P0R0000000000022", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "0C7C80BC93C9A6BE",
+			title: "&cInto the Nether",
+			description: [
+				"&7Build an Obsidian portal and step into &cThe Nether&7.",
+				"",
+				"&7You will need &eQuartz&7 for AE2, &6Blaze Rods&7, &8Ancient Debris&7 to upgrade your Sacred Armor, and ingredients from &cMy Nether's Delight&7!"
+			],
+			x: 10.0, y: -6.0,
+			dependencies: ["P0Q0000000000011"],
+			tasks: [ { id: "334F8510CD981091", type: "dimension", dimension: "minecraft:the_nether" } ],
+			rewards: [
+				{ id: "6176D8ABBA932B2D", type: "item", item: "minecraft:fire_resistance" },
+				{ id: "30FF00CE6A228707", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P0Q0000000000012",
+			title: "&eNether Quartz & Glowstone",
+			description: [
+				"&7Mine &fNether Quartz&7 and &eGlowstone&7 in the Nether.",
+				"",
+				"&7Nether Quartz is essential for synthesizing &dFluix Crystals&7 and &bSilicon&7 in AE2, while Glowstone powers Mekanism's &6Refined Glowstone&7 and Twilight Magic Maps!"
+			],
+			x: 10.0, y: -7.75,
+			dependencies: ["0C7C80BC93C9A6BE"],
+			tasks: [
+				{ id: "P0T0000000000018", type: "item", item: "minecraft:quartz", count: 32 },
+				{ id: "P0T0000000000019", type: "item", item: "minecraft:glowstone_dust", count: 16 }
+			],
+			rewards: [
+				{ id: "P0R0000000000023", type: "item", item: "minecraft:quartz", count: 16 },
+				{ id: "P0R0000000000024", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "3008EABF6C02A649",
+			title: "&8Sacred Armor Step 2: Netherite",
+			description: [
+				"&7Mine Ancient Debris in the Nether and upgrade your Diamond Armor to &8Netherite&7.",
+				"",
+				"&7Also upgrade your Diamond Backpack to a &8Netherite Backpack&7! This armor will protect you through the entire Twilight Forest until you unlock Allthemodium in Phase 2."
+			],
+			x: 12.5, y: -6.0,
+			shape: "pentagon",
+			dependencies: ["0C7C80BC93C9A6BE"],
+			tasks: [ { id: "B5DFB98184EC8ABD", type: "item", item: "minecraft:netherite_ingot", count: 1 } ],
+			rewards: [
+				{ id: "29534C4E92145457", type: "item", item: "minecraft:netherite_scrap", count: 2 },
+				{ id: "F9B0FED32F7FA1DB", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P0Q0000000000013",
+			title: "&8Forged in Hellfire: Netherite Gear",
+			description: [
+				"&7Use a &fSmithing Table&7 to upgrade your Diamond Helmet, Chestplate, Leggings, Boots, and Pickaxe to &8Netherite&7.",
+				"",
+				"&eTip: &7Save extra Netherite Upgrade Smithing Templates by duplicating them with Diamonds and Netherrack!"
+			],
+			x: 12.5, y: -7.75,
+			dependencies: ["3008EABF6C02A649"],
+			optional: true,
+			tasks: [
+				{ id: "P0T0000000000020", type: "item", item: "minecraft:netherite_pickaxe", count: 1 },
+				{ id: "P0T0000000000021", type: "item", item: "minecraft:netherite_chestplate", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000025", type: "item", item: "minecraft:netherite_upgrade_smithing_template" },
+				{ id: "P0R0000000000026", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "CAFA03A79BC18555",
+			title: "&bMagnetic Attraction",
+			description: [
+				"&7Tired of chasing dropped blocks while mining? Craft a &bBasic Magnet&7 from &eSimple Magnets&7!",
+				"",
+				"&7Its recipe utilizes Mekanism Osmium/Steel so you can enjoy item magnetization right from Phase 0."
+			],
+			x: 12.5, y: -2.5,
+			dependencies: ["p0_osmium"],
+			tasks: [ { id: "13F8019C168F045A", type: "item", item: "simplemagnets:basicmagnet", count: 1 } ],
+			rewards: [
+				{ id: "FF0B00DE1F9E8278", type: "item", item: "mekanism:ingot_osmium", count: 4 },
+				{ id: "5DAEFE073BE5F618", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P0Q0000000000014",
+			title: "&6Advanced Magnet & Filtering",
+			description: [
+				"&7Upgrade your Basic Magnet into an &6Advanced Magnet&7 and craft a &eMagnet Demagnetization Coil&7!",
+				"",
+				"&7The Advanced Magnet lets you filter items and increases pickup range, while the Demagnetization Coil prevents your magnet from pulling items off conveyor belts or InWorld crafting setups!"
+			],
+			x: 12.5, y: -4.25,
+			dependencies: ["CAFA03A79BC18555"],
+			optional: true,
+			tasks: [ { id: "P0T0000000000022", type: "item", item: "simplemagnets:advancedmagnet", count: 1 } ],
+			rewards: [
+				{ id: "P0R0000000000027", type: "item", item: "minecraft:ender_pearl", count: 4 },
+				{ id: "P0R0000000000028", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "BA4E421FE941C6F2",
+			title: "&eMetallurgic Infuser",
+			description: [
+				"&7Welcome to &bMekanism&7! Your very first machine doesn't even require a Steel Casing.",
+				"",
+				"&7The &eMetallurgic Infuser&7 combines base metals with infusion materials (&cRedstone&7, &8Coal/Charcoal&7, &bDiamond&7) to produce alloys and circuits.",
+				"",
+				"&cNote: &7Basic Tier Installers and Factory blocks are locked behind Phase 1A! For now, your machines only operate with a &e1-slot capacity&7. Build multiple machines in parallel if you need more speed!"
+			],
+			x: 12.5, y: 0.0,
+			size: 1.25,
+			shape: "rsquare",
+			dependencies: ["p0_osmium"],
+			tasks: [ { id: "66FA28E70D4B19E0", type: "item", item: "mekanism:metallurgic_infuser", count: 1 } ],
+			rewards: [
+				{ id: "1D32BB55E412980B", type: "item", item: "minecraft:redstone", count: 16 },
+				{ id: "B4F1DB0BB59B3E5F", type: "item", item: "minecraft:charcoal", count: 16 },
+				{ id: "980C6DC76B18CDAE", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "1B7AB2731B0D0254",
+			title: "&6First Sparks: Heat Generator",
+			description: [
+				"&7Your Metallurgic Infuser needs power! Craft a &6Heat Generator&7.",
+				"",
+				"&ePro Tip: &7Heat Generators produce passive FE when surrounded by Lava (even flowing lava!). Place Lava on top of it and around its sides for maintenance-free early power, or feed it Coal/Charcoal."
+			],
+			x: 12.5, y: 2.5,
+			dependencies: ["p0_osmium"],
+			tasks: [ { id: "1EB5A93B65DFA4FA", type: "item", item: "mekanismgenerators:heat_generator", count: 1 } ],
+			rewards: [
+				{ id: "3AECD678A3D05054", type: "item", item: "minecraft:lava_bucket" },
+				{ id: "E70A618C17C5FAA0", type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "870B5098AB5D9998",
+			title: "&7Steel & Basic Circuits",
+			description: [
+				"&7Use your Metallurgic Infuser to create the two most important early-game materials:",
+				"",
+				"&81. &fInfuse &7Iron&f with &8Coal/Charcoal&f twice to make &7Enriched Iron&f -> &7Steel Dust&f, then smelt it into &fSteel Ingots&7.",
+				"&82. &fInfuse &bOsmium&f with &cRedstone&f to create &aBasic Control Circuits&7 and &cInfused Alloys&7."
+			],
+			x: 15.0, y: 0.0,
+			dependencies: ["BA4E421FE941C6F2"],
+			tasks: [
+				{ id: "09271CCB2068D9A3", type: "item", item: "mekanism:ingot_steel", count: 8 },
+				{ id: "E43603913256EDD6", type: "item", item: "mekanism:alloy_infused", count: 8 },
+				{ id: "E55CED9BDFFFD961", type: "item", item: "mekanism:basic_control_circuit", count: 4 }
+			],
+			rewards: [
+				{ id: "CACBE6B41FB158B6", type: "random", table_id: "tier_0_starter" },
+				{ id: "8B76AE01A2B23C74", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "7F94AF3F420CA60E",
+			title: "&fVertical Base Transport: Elevators",
+			description: [
+				"&7Since the Mekanism Jetpack is locked behind the Twilight Lich in Phase 1A, vertical movement in your base needs a smart solution.",
+				"",
+				"&7Craft &fElevator Blocks&7 and a &fRemote Elevator Panel&7 from &eMoving Elevators&7 (using Mekanism Osmium/Steel) for smooth multi-floor travel!"
+			],
+			x: 14.0, y: -2.5,
+			dependencies: ["870B5098AB5D9998"],
+			tasks: [ { id: "615CCBBBA34BD02E", type: "item", item: "movingelevators:elevator_block", count: 2 } ],
+			rewards: [
+				{ id: "89C9BC16E29B6CF6", type: "item", item: "movingelevators:display_block", count: 2 },
+				{ id: "E029A041F26B7094", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P0Q0000000000015",
+			title: "&bThe Engineer's Wrench: Configurator",
+			description: [
+				"&7Craft an &cEnergy Tablet&7 and a &bConfigurator&7!",
+				"",
+				"&7The Configurator is every Mekanism engineer's wrench—Shift+Scroll to change modes and Shift+Right-Click pipes or cables to set them to &aPull&7, &cPush&7, or &8Disconnect&7!"
+			],
+			x: 16.0, y: -2.5,
+			dependencies: ["870B5098AB5D9998"],
+			tasks: [
+				{ id: "P0T0000000000023", type: "item", item: "mekanism:energy_tablet", count: 1 },
+				{ id: "P0T0000000000024", type: "item", item: "mekanism:configurator", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000029", type: "item", item: "mekanism:energy_tablet" },
+				{ id: "P0R0000000000030", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "3870A3E75D3D387B",
+			title: "&aBasic Universal Cables & Pipes",
+			description: [
+				"&7Connect your generators and machines using &aBasic Universal Cables&7 for power and &9Basic Mechanical Pipes&7 for fluids like Water and Latex."
+			],
+			x: 15.0, y: 2.5,
+			dependencies: ["1B7AB2731B0D0254", "870B5098AB5D9998"],
+			tasks: [
+				{ id: "E381C828443FFF24", type: "item", item: "mekanism:basic_universal_cable", count: 8 },
+				{ id: "6653B1FDB93C6D18", type: "item", item: "mekanism:basic_mechanical_pipe", count: 8 }
+			],
+			rewards: [
+				{ id: "E2C42990B9096D57", type: "item", item: "mekanism:basic_universal_cable", count: 8 },
+				{ id: "CC04EB121E6F2752", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P0Q0000000000016",
+			title: "&aItem Transporters & Gas Tubes",
+			description: [
+				"&7Complete your Mekanism logistics toolkit by crafting &aBasic Logistical Transporters&7 (for items) and &bBasic Pressurized Tubes&7 (for gases like Oxygen and Hydrogen)."
+			],
+			x: 15.0, y: 4.5,
+			dependencies: ["3870A3E75D3D387B"],
+			tasks: [
+				{ id: "P0T0000000000025", type: "item", item: "mekanism:basic_logistical_transporter", count: 8 },
+				{ id: "P0T0000000000026", type: "item", item: "mekanism:basic_pressurized_tube", count: 8 }
+			],
+			rewards: [
+				{ id: "P0R0000000000031", type: "item", item: "mekanism:basic_logistical_transporter", count: 8 },
+				{ id: "P0R0000000000032", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "p0_steel_casing",
+			title: "&8Steel Casing",
+			description: [
+				"&7The foundation for all Mekanism machinery. Combine &fSteel&7, &bOsmium&7, and &fGlass&7 to construct your first &eSteel Casings&7."
+			],
+			x: 17.5, y: 0.0,
+			dependencies: ["870B5098AB5D9998"],
+			tasks: [ { id: "DFF0C62A60CD035E", type: "item", item: "mekanism:steel_casing", count: 2 } ],
+			rewards: [
+				{ id: "3F6737716D39C379", type: "item", item: "mekanism:ingot_steel", count: 4 },
+				{ id: "D40D438517299DD3", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P0Q0000000000017",
+			title: "&aBasic Energy Cube & Fluid Tank",
+			description: [
+				"&7Remember: all &cFlux Storage&7 blocks from Flux Networks are removed in this modpack!",
+				"",
+				"&7Until you unlock the multiblock &aMekanism Induction Matrix&7 in Phase 2, store your surplus power in &aBasic Energy Cubes&7 and store fluids (like Water and Latex) in &bBasic Fluid Tanks&7."
+			],
+			x: 17.5, y: -2.5,
+			dependencies: ["p0_steel_casing"],
+			tasks: [
+				{ id: "P0T0000000000027", type: "item", item: "mekanism:basic_energy_cube", count: 1 },
+				{ id: "P0T0000000000028", type: "item", item: "mekanism:basic_fluid_tank", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000033", type: "item", item: "mekanism:basic_fluid_tank" },
+				{ id: "P0R0000000000034", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "7A6D2A48168D070B",
+			title: "&b1-Slot Ore Doubling: Enrichment",
+			description: [
+				"&7Stop smelting Raw Ores directly in a furnace! The &bEnrichment Chamber&7 turns 3 Raw Ores into 4 Dusts (or 1 Ore Block into 2 Dusts).",
+				"",
+				"&eTip: &7Enriching Coal/Charcoal into &8Enriched Carbon&7 and Redstone into &cEnriched Redstone&7 makes them &68x more efficient&7 inside the Metallurgic Infuser!"
+			],
+			x: 17.5, y: 2.5,
+			dependencies: ["p0_steel_casing"],
+			tasks: [ { id: "13F448761AAE68D7", type: "item", item: "mekanism:enrichment_chamber", count: 1 } ],
+			rewards: [
+				{ id: "9FA7AA461092F186", type: "item", item: "mekanism:enriched_redstone", count: 8 },
+				{ id: "4C488C52478624EA", type: "item", item: "mekanism:enriched_carbon", count: 8 },
+				{ id: "D7C4AEDF34A5EA07", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P0Q0000000000018",
+			title: "&c8x Infusion Efficiency!",
+			description: [
+				"&7Run Coal and Redstone through your &bEnrichment Chamber&7 to produce &8Enriched Carbon&7 and &cEnriched Redstone&7!",
+				"",
+				"&7Each enriched item provides &e80 mB&7 of infusion material instead of 10 mB—saving 87.5% of your Redstone and Coal!"
+			],
+			x: 17.5, y: 4.5,
+			dependencies: ["7A6D2A48168D070B"],
+			tasks: [
+				{ id: "P0T0000000000029", type: "item", item: "mekanism:enriched_carbon", count: 8 },
+				{ id: "P0T0000000000030", type: "item", item: "mekanism:enriched_redstone", count: 8 }
+			],
+			rewards: [
+				{ id: "P0R0000000000035", type: "item", item: "mekanism:enriched_redstone", count: 8 },
+				{ id: "P0R0000000000036", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "1B5C724E4DCE6A36",
+			title: "&eCrusher & Energized Smelter",
+			description: [
+				"&7Complete your basic 1-slot Mekanism processing line:",
+				"",
+				"&8• &eEnergized Smelter: &7Smelts dusts and items using FE instead of coal.",
+				"&8• &eCrusher: &7Crushes ingots into dusts and turns organic crops and &eSunflower Oil&7 into &2Bio-Fuel&7!"
+			],
+			x: 20.0, y: 2.5,
+			dependencies: ["7A6D2A48168D070B"],
+			tasks: [
+				{ id: "ADE6D3ED39388674", type: "item", item: "mekanism:energized_smelter", count: 1 },
+				{ id: "1EBBCDFBE3EC53AA", type: "item", item: "mekanism:crusher", count: 1 }
+			],
+			rewards: [
+				{ id: "6410A6E85D133ACA", type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "38BE6B45118D904A", type: "item", item: "mekanism:upgrade_energy", count: 4 },
+				{ id: "8C24DAD47F754D8C", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "P0Q0000000000019",
+			title: "&bSpeed & Energy Upgrades",
+			description: [
+				"&7Your 1-slot Mekanism machines feel slow at base speed! Craft &bSpeed Upgrades&7 (Osmium + Redstone Glass) and &eEnergy Upgrades&7 (Gold + Redstone Glass).",
+				"",
+				"&eImportant: &7Always install &eEnergy Upgrades&7 alongside Speed Upgrades—8 Energy Upgrades reduce power consumption per operation by 10x and expand internal energy buffers!"
+			],
+			x: 20.0, y: 4.5,
+			dependencies: ["1B5C724E4DCE6A36"],
+			tasks: [
+				{ id: "P0T0000000000031", type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "P0T0000000000032", type: "item", item: "mekanism:upgrade_energy", count: 4 }
+			],
+			rewards: [
+				{ id: "P0R0000000000037", type: "item", item: "mekanism:upgrade_energy", count: 4 },
+				{ id: "P0R0000000000038", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "20E9A28F7E7F3DA7",
+			title: "&2Sunflower Oil & The Bio-Generator",
+			description: [
+				"&7Feed crops, saplings, or pressed &eSunflower Oil&7 (&6Sunflower Delight&7) into your Crusher to produce &2Bio-Fuel&7.",
+				"",
+				"&7Burn Bio-Fuel in a &aBio-Generator&7 for strong Phase 0 power! (&cNote: &7Wind/Solar Generators are locked behind Phase 1A, and the Gas-Burning Generator is locked behind Allthemodium & Fiery Blood in Phase 2!&7)"
+			],
+			x: 22.5, y: 2.5,
+			dependencies: ["1B5C724E4DCE6A36"],
+			tasks: [
+				{ id: "42DCD42ED1B95188", type: "item", item: "mekanismgenerators:bio_generator", count: 1 },
+				{ id: "2CBF0B00296B4148", type: "item", item: "mekanism:bio_fuel", count: 16 }
+			],
+			rewards: [
+				{ id: "44359BDCAB6AE3D7", type: "random", table_id: "tier_0_starter" },
+				{ id: "77A30B9C18EE436F", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P0Q0000000000020",
+			title: "&eOsmium Compressor & Sawmill",
+			description: [
+				"&7Build an &bOsmium Compressor&7 (to compress Refined Obsidian and Glowstone Ingots using liquid Osmium) and a &ePrecision Sawmill&7 (to get 6 Planks per Log plus Sawdust for cardboard boxes/paper)!"
+			],
+			x: 22.5, y: 4.5,
+			dependencies: ["20E9A28F7E7F3DA7"],
+			optional: true,
+			tasks: [
+				{ id: "P0T0000000000033", type: "item", item: "mekanism:osmium_compressor", count: 1 },
+				{ id: "P0T0000000000034", type: "item", item: "mekanism:precision_sawmill", count: 1 }
+			],
+			rewards: [
+				{ id: "P0R0000000000039", type: "item", item: "mekanism:ingot_osmium", count: 8 },
+				{ id: "P0R0000000000040", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "2A3E7A5D819BD35B",
+			title: "&aPity Machine Frame",
+			description: [
+				"&7To advance in technology, you need &fPolymers (Plastic)&7.",
+				"",
+				"&7In this pack, the &aPity Machine Frame&7 from Industrial Foregoing requires &bOsmium Ingots&7 alongside Iron, Wood Logs, and Redstone.",
+				"",
+				"&7This represents Tier 1 of the 4 Bio-Tech Machine Frames (&aPity &7-> &bSimple &7-> &dAdvanced &7-> &6Supreme&7)."
+			],
+			x: 20.0, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["p0_steel_casing"],
+			tasks: [ { id: "15695D5CC2987E53", type: "item", item: "industrialforegoing:machine_frame_pity", count: 2 } ],
+			rewards: [
+				{ id: "41964FC91CB4D325", type: "random", table_id: "tier_0_starter" },
+				{ id: "CA10D30A55FD481F", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "11A5AAC96B6AB41E",
+			title: "&2Tapping the Trees: Fluid Extractor",
+			description: [
+				"&7Place a &aFluid Extractor&7 facing any Wood Log (Acacia or Oak logs work great!).",
+				"",
+				"&7It will slowly break down the log and extract liquid &fLatex&7. While it runs without power, supplying it with RF/FE makes it work significantly faster!"
+			],
+			x: 22.5, y: 0.0,
+			dependencies: ["2A3E7A5D819BD35B"],
+			tasks: [ { id: "88DB8B799B854314", type: "item", item: "industrialforegoing:fluid_extractor", count: 1 } ],
+			rewards: [
+				{ id: "4250C31F4CCA8C25", type: "item", item: "minecraft:acacia_log", count: 32 },
+				{ id: "A36299DF8E4C665E", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P0Q0000000000021",
+			title: "&9Automated Water: Electric Pump",
+			description: [
+				"&7Your Latex Processing Unit needs a continuous supply of &9Water&7 alongside Latex!",
+				"",
+				"&7Place a &9Mekanism Electric Pump&7 over an infinite water source (2x2 water pool) and connect it with Basic Mechanical Pipes so you never have to carry water buckets by hand."
+			],
+			x: 25.0, y: 2.5,
+			dependencies: ["11A5AAC96B6AB41E"],
+			tasks: [ { id: "P0T0000000000035", type: "item", item: "mekanism:electric_pump", count: 1 } ],
+			rewards: [
+				{ id: "P0R0000000000041", type: "item", item: "mekanism:basic_mechanical_pipe", count: 8 },
+				{ id: "P0R0000000000042", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "1096299898A3CADF",
+			title: "&eLatex Processing Unit",
+			description: [
+				"&7Pipe or bucket the liquid &fLatex&7 from your Fluid Extractor into the &eLatex Processing Unit&7, along with &9Water&7 and &cPower (FE)&7.",
+				"",
+				"&7It will coagulate the Latex into &fTiny Dry Rubber&7, which you combine into &fDry Rubber&7."
+			],
+			x: 25.0, y: 0.0,
+			dependencies: ["11A5AAC96B6AB41E"],
+			tasks: [
+				{ id: "182483E36E1198C6", type: "item", item: "industrialforegoing:latex_processing_unit", count: 1 },
+				{ id: "6BD43E7689A6B526", type: "item", item: "industrialforegoing:dryrubber", count: 4 }
+			],
+			rewards: [
+				{ id: "25280F868440BB80", type: "item", item: "industrialforegoing:dryrubber", count: 4 },
+				{ id: "FF5C6D70EEC83B53", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "p0_plastic",
+			title: "&f&lThe Polymer Revolution: Plastic!",
+			description: [
+				"&7Smelt your &fDry Rubber&7 in a Furnace to obtain &bPlastic&7!",
+				"",
+				"&6&lWhy Plastic is Crucial:",
+				"&8• &7Required as insulation for &bAE2 Fluix Glass Cables&7.",
+				"&8• &7Required to upgrade Mekanism cables to &cAdvanced Universal Cables&7.",
+				"&8• &7Required for &aBasic Tier Installers&7 and &bSimple Machine Frames&7 in Phase 1!",
+				"",
+				"&eTip: &7Automate log placement with a Block Placer or keep several Fluid Extractors running non-stop. You will need hundreds of Plastic sheets!"
+			],
+			x: 27.5, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["1096299898A3CADF"],
+			tasks: [ { id: "445B39DFEE1E00BB", type: "item", item: "industrialforegoing:plastic", count: 16 } ],
+			rewards: [
+				{ id: "058C6A1092AEC934", type: "item", item: "industrialforegoing:plastic", count: 16 },
+				{ id: "1B421687F5595B1E", type: "random", table_id: "tier_0_starter" },
+				{ id: "14416BFD8AAD594B", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P0Q0000000000022",
+			title: "&bReinforced Alloys & Advanced Circuits",
+			description: [
+				"&7Enriching Diamonds in your Enrichment Chamber yields &bCompressed Diamond&7.",
+				"",
+				"&7Infuse &cInfused Alloys&7 with Compressed Diamond inside your Metallurgic Infuser to create &bReinforced Alloys&7, and combine them with Basic Circuits to craft &cAdvanced Control Circuits&7!"
+			],
+			x: 27.5, y: 2.5,
+			dependencies: ["p0_plastic"],
+			tasks: [
+				{ id: "P0T0000000000036", type: "item", item: "mekanism:alloy_reinforced", count: 4 },
+				{ id: "P0T0000000000037", type: "item", item: "mekanism:advanced_control_circuit", count: 2 }
+			],
+			rewards: [
+				{ id: "P0R0000000000043", type: "item", item: "mekanism:alloy_reinforced", count: 4 },
+				{ id: "P0R0000000000044", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "8947B1A8307C977D",
+			title: "&bSky Stone & Inscriber Presses",
+			description: [
+				"&7Locate a crashed &8AE2 Meteorite&7 in the Overworld and crack open the Mysterious Cube inside to obtain all &b4 Inscriber Presses&7.",
+				"",
+				"&7Gather &bCertus Quartz&7 while you are there!"
+			],
+			x: 22.5, y: -2.5,
+			dependencies: ["2A3E7A5D819BD35B"],
+			tasks: [
+				{ id: "38D05EAA47BC6ED2", type: "item", item: "ae2:calculation_processor_press", count: 1 },
+				{ id: "8892E12F1BBEC534", type: "item", item: "ae2:engineering_processor_press", count: 1 },
+				{ id: "16C88B52E180AAD9", type: "item", item: "ae2:logic_processor_press", count: 1 },
+				{ id: "2A62F5DEFEEA993F", type: "item", item: "ae2:silicon_press", count: 1 }
+			],
+			rewards: [
+				{ id: "A22A4F3EC53E1CCD", type: "item", item: "ae2:certus_quartz_crystal", count: 16 },
+				{ id: "0942ECDCE391A17A", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P0Q0000000000023",
+			title: "&dThe Charger & Fluix Synthesis",
+			description: [
+				"&7Build an &bAE2 Charger&7 and power it with FE to turn Certus Quartz Crystals into &bCharged Certus Quartz Crystals&7!",
+				"",
+				"&7Then toss &bCharged Certus Quartz&7, &cRedstone&7, and &fNether Quartz&7 into water to form &dFluix Crystals&7!"
+			],
+			x: 22.5, y: -4.5,
+			dependencies: ["8947B1A8307C977D"],
+			tasks: [
+				{ id: "P0T0000000000038", type: "item", item: "ae2:charger", count: 1 },
+				{ id: "P0T0000000000039", type: "item", item: "ae2:fluix_crystal", count: 8 }
+			],
+			rewards: [
+				{ id: "P0R0000000000045", type: "item", item: "ae2:fluix_crystal", count: 8 },
+				{ id: "P0R0000000000046", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "CC3303D499223F4D",
+			title: "&dInscribers & AE2 Processors",
+			description: ["&7Build an &bInscriber&7 and press your first Logic, Calculation, and Engineering Processors!"],
+			x: 25.0, y: -2.5,
+			dependencies: ["8947B1A8307C977D", "P0Q0000000000023"],
+			tasks: [
+				{ id: "D67A9FDBD0ACF447", type: "item", item: "ae2:inscriber", count: 1 },
+				{ id: "877094F0064FC146", type: "item", item: "ae2:logic_processor", count: 4 },
+				{ id: "9805B27043026FC8", type: "item", item: "ae2:calculation_processor", count: 4 },
+				{ id: "443C4F573D6C2409", type: "item", item: "ae2:engineering_processor", count: 4 }
+			],
+			rewards: [
+				{ id: "5388C909E4B049EB", type: "item", item: "ae2:silicon", count: 16 },
+				{ id: "4D4C6484DA61820B", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "9EC251E529E2C854",
+			title: "&cInsulated Power & Data Lines",
+			description: [
+				"&7With &fPlastic&7 unlocked, you can now insulate high-voltage and data cables!",
+				"",
+				"&7Craft your first &cAdvanced Universal Cables&7 for better power transfer and &dME Fluix Glass Cables&7 to begin your digital storage journey."
+			],
+			x: 30.0, y: 0.0,
+			dependencies: ["p0_plastic"],
+			tasks: [
+				{ id: "0BF328AD18D95B4E", type: "item", item: "mekanism:advanced_universal_cable", count: 8 },
+				{ id: "ED6EA406318BB668", type: "item", item: "ae2:fluix_glass_cable", count: 8 }
+			],
+			rewards: [
+				{ id: "14F9147E18E5699B", type: "random", table_id: "tier_0_starter" },
+				{ id: "2AF8ECD87A2E812F", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P0Q0000000000024",
+			title: "&bDigital Disks: 1k Storage Cells",
+			description: [
+				"&7Craft &b1k&7 or &b4k ME Item Storage Cells&7 to insert into your ME Drive!",
+				"",
+				"&eTip: &7Each Storage Cell holds up to 63 item types. Keep stackable bulk resources in your Storage Drawers (connected via Storage Bus) and use ME Cells for tools, components, and general items!"
+			],
+			x: 27.5, y: -4.5,
+			dependencies: ["CC3303D499223F4D"],
+			tasks: [ { id: "P0T0000000000040", type: "item", item: "ae2:item_storage_cell_1k", count: 2 } ],
+			rewards: [
+				{ id: "P0R0000000000047", type: "item", item: "ae2:item_cell_housing" },
+				{ id: "P0R0000000000048", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "81020FF904877332",
+			title: "&bAd-Hoc AE2 Network (8 Channels Max!)",
+			description: [
+				"&c&lPhase 0 Limitation: &7The &dME Controller&7 is locked behind the Snow Queen and Hydra in &ePhase 1B&7!",
+				"",
+				"&7However, now that you have &fPlastic&7 to craft &dFluix Glass Cables&7, you can build a controller-less &bAd-Hoc Network&7!",
+				"",
+				"&eHow to build an optimal 8-Channel Ad-Hoc Network:",
+				"&81. &7Connect an &bEnergy Acceptor&7 to your Mekanism power grid (uses 0 channels).",
+				"&82. &7Attach a &bME Crafting Terminal&7 (1 channel).",
+				"&83. &7Attach a &bME Drive&7 with 1k/4k Storage Cells (1 channel).",
+				"&84. &7Attach an &bME Storage Bus&7 onto your &6Storage Drawers Controller&7 (1 channel).",
+				"",
+				"&aYou still have 5 channels left to spare!"
+			],
+			x: 27.5, y: -2.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["CC3303D499223F4D", "9EC251E529E2C854", "P0Q0000000000024"],
+			tasks: [
+				{ id: "10BBFD344E1DBA91", type: "item", item: "ae2:energy_acceptor", count: 1 },
+				{ id: "E7E3F830659605AF", type: "item", item: "ae2:crafting_terminal", count: 1 },
+				{ id: "386A5D3840A763C7", type: "item", item: "ae2:drive", count: 1 },
+				{ id: "B4EB5CCA4CCA43F3", type: "item", item: "ae2:storage_bus", count: 1 }
+			],
+			rewards: [
+				{ id: "A7563F03D2D346F5", type: "item", item: "ae2:item_storage_cell_4k", count: 2 },
+				{ id: "33FBA94E913EA6D5", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p0_twilight_prep",
+			title: "&2&lThe Limits of Pure Technology",
+			description: [
+				"&7Your 1-slot Mekanism machines are running, your Latex line is producing Plastic, and your 8-channel Ad-Hoc AE2 network is online.",
+				"",
+				"&7Yet your factory has hit a brick wall. To unlock &a3-Slot Basic Factories&7, &bWind & Solar Generators&7, the &bMekanism Jetpack&7, the &eDigital Miner&7, and the &dME Controller&7, you must bend the laws of physics using ancient forest magic and starlight.",
+				"",
+				"&2&lHow to Enter Phase 1:",
+				"&7Dig a 2x2 pool of water, surround it entirely with flowers/plants, and throw a &bDiamond&7 into the water. Step through the portal into &2The Twilight Forest&7!"
+			],
+			icon: "twilightforest:hollow_oak_sapling",
+			x: 33.0, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["9EC251E529E2C854"],
+			tasks: [
+				{ id: "29A6A8361D539B90", type: "item", item: "minecraft:diamond", count: 1 },
+				{ id: "F87E4134490A77F3", type: "item", item_tag: "minecraft:flowers", count: 8 },
+				{
+					id: "D3CE232FBA59A0E8",
+					type: "dimension",
+					icon: "twilightforest:hollow_oak_sapling",
+					dimension: "twilightforest:twilight_forest"
+				}
+			],
+			rewards: [
+				{
+					id: "EAE72BA179CE281D",
+					type: "toast",
+					title: "Phase 0 Complete!",
+					description: "Welcome to The Twilight Forest (Phase 1A)."
+				},
+				{ id: "F3E11820AE488266", type: "random", table_id: "tier_0_starter" },
+				{ id: "F9629EE798E00B15", type: "xp_levels", xp_levels: 5 }
+			]
+		}
+	]
+}

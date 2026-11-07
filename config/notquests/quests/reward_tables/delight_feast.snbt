@@ -1,0 +1,13 @@
+{
+	id: "delight_feast",
+	title: "&eChef's Tasting Basket",
+	icon: "farmersdelight:cooking_pot",
+	rewards: [
+		{ item: "farmersdelight:hamburger", count: 4, weight: 10 },
+		{ item: "farmersdelight:steak_and_potatoes", count: 4, weight: 10 },
+		{ item: "farmersdelight:sweet_berry_cheesecake", count: 2, weight: 8 },
+		{ item: "farmersdelight:glow_berry_custard", count: 4, weight: 8 },
+		{ item: "minecraft:golden_carrot", count: 8, weight: 8 },
+		{ item: "brewinandchewin:mead", count: 2, weight: 5 }
+	]
+}

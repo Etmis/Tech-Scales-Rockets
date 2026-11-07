@@ -1,0 +1,639 @@
+{
+	id: "DD9DE76523E9E693",
+	title: "&6P3: The Other & Dragonforges",
+	icon: "iceandfire:dragonsteel_fire_ingot",
+	group: "group_main",
+	order_index: 4,
+	quests: [
+		{
+			id: "p3_enter_the_other",
+			title: "&6Entering The Other",
+			description: [
+				"&7Place a &6Teleport Pad&7 inside &cThe Nether&7 and Sneak + Right-Click with empty hands to step into &6The Other&7! (&eAlways bring a second Teleport Pad to get back home!&7)",
+				"",
+				"&c&lExtreme Danger Warning:",
+				"&7This dimension is crawling with ancient structures, &6Pigliches (9,999 HP)&7, and Tier 4–5 &cFire&7 and &9Lightning Dragons&7 whose &cHealth and Attack Damage have been DOUBLED (2x)&7 in the pack configuration!",
+				"",
+				"&7Do not engage a dragon without enchanted &6Allthemodium&7 or &aVibranium&7 armor and plenty of healing!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p2_phase_2_complete", "p2_allthemodium_armor"],
+			tasks: [ { id: "A0A1B2C3D4E5F603", type: "dimension", dimension: "allthemodium:the_other" } ],
+			rewards: [
+				{ id: "A0A1B2C3D4E5F601", type: "item", item: "minecraft:enchanted_golden_apple" },
+				{ id: "A0A1B2C3D4E5F602", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P3Q0000000000001",
+			title: "&eSecuring Your Outpost in The Other",
+			description: [
+				"&7Before wandering far from your arrival point in &6The Other&7, place down your return Teleport Pad, create a waypoint, and mine some &8Ancient Stone&7 (&fallthemodium:ancient_stone&7)!",
+				"",
+				"&7You will need &8Ancient Stone&7 from The Other alongside &6Allthemodium Ingots&7 and &fDragon Bones&7 to duplicate your &aVibranium Upgrade Smithing Template&7!"
+			],
+			x: 0.0, y: -2.25,
+			dependencies: ["p3_enter_the_other"],
+			tasks: [ { id: "P3T0000000000001", type: "item", item: "allthemodium:ancient_stone", count: 16 } ],
+			rewards: [
+				{ id: "P3R0000000000001", type: "item", item: "minecraft:glass_bottle", count: 16 },
+				{ id: "P3R0000000000002", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P3Q0000000000002",
+			title: "&aBrushing Suspicious Soul Sand: Vibranium Template",
+			description: [
+				"&7How do you obtain the &aVibranium Upgrade Smithing Template&7?",
+				"",
+				"&6&lWhere to Find Suspicious Soul Sand:",
+				"&81. &7In &cThe Nether&7, locate a large two-sided &8Bastion Remnant&7 separated by Lava Lakes in the center with a bridge connecting the two halves (your Allthemodium Armor makes Piglins neutral!).",
+				"&82. &7Look for a block of &8Suspicious Soul Sand&7 sticking out among the Blackstone on bridges, walls, or near small chests.",
+				"&83. &cIMPORTANT: &7Place a solid block &aunderneath&7 the Suspicious Soul Sand before brushing it so the template cannot fall into the lava below!",
+				"&84. &eCustom KubeJS Duplication: &7To duplicate the template in a Crafting Table, combine &a1x Vibranium Template + 5x Allthemodium Ingots + 2x Dragon Bones + 1x Ancient Stone (from The Other)&7!"
+			],
+			x: 2.0, y: -2.0,
+			dependencies: ["p3_enter_the_other", "P3Q0000000000001"],
+			tasks: [ { id: "P3T0000000000002", type: "item", item: "allthemodium:vibranium_upgrade_smithing_template", count: 1 } ],
+			rewards: [
+				{ id: "P3R0000000000003", type: "item", item: "allthemodium:vibranium_upgrade_smithing_template" },
+				{ id: "P3R0000000000004", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p3_mine_vibranium",
+			title: "&a&lEmerald Resonance: Vibranium!",
+			description: [
+				"&7Using your &6Allthemodium Pickaxe&7, mine glowing blue-green &aVibranium Ore&7 in two locations:",
+				"&8• &6The Other Dimension (Y 0 to 40): &7Spawns underground across all biomes in The Other.",
+				"&8• &cThe Nether (Y 64+): &7Spawns along high cave walls and ceilings (use your Mekanism Jetpack and build platforms beneath ceiling veins so your ore doesn't fall into lava!).",
+				"",
+				"&eTip: &7Use an &6Ore Hammer&7 or your &bMekanism 3x–5x chemical line&7 to multiply every Raw Vibranium ore!"
+			],
+			x: 3.5, y: 0.0,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["p3_enter_the_other"],
+			tasks: [ { id: "58ABDD5FCFD1D82A", type: "item", item: "allthemodium:vibranium_ingot", count: 8 } ],
+			rewards: [
+				{ id: "ED4473A1A3675365", type: "item", item: "allthemodium:vibranium_ingot", count: 4 },
+				{ id: "D001CBBA138A5D3F", type: "random", table_id: "tier_3_draconic" },
+				{ id: "6321531B444F1C9D", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "A73C98E8914F3FC9",
+			title: "&aSacred Pickaxe Step 4: Vibranium!",
+			description: [
+				"&7Using your &aVibranium Upgrade Smithing Template&7 (duplicated with Dragon Bones and Ancient Stone), upgrade your &6Allthemodium Pickaxe&7 to &aVibranium&7 in a Smithing Table!",
+				"",
+				"&aAll of your enchantments and Apotheosis sockets are preserved! &7Your &aVibranium Pickaxe&7 has a 2x stone mining speed bonus and will soon allow you to mine raw &dUnobtainium&7 in the End Highlands."
+			],
+			x: 3.5, y: -3.5,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["p3_mine_vibranium", "P3Q0000000000002"],
+			tasks: [ { id: "29CC6CD48F3994C2", type: "item", item: "allthemodium:vibranium_pickaxe", count: 1 } ],
+			rewards: [
+				{ id: "81400589C7C87B0B", type: "item", item: "allthemodium:vibranium_ingot", count: 2 },
+				{ id: "0729D3B51824E031", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P3Q0000000000003",
+			title: "&aFull Vibranium Armor Set",
+			description: [
+				"&7Complete your full &aVibranium Armor&7 set (&aHelmet, Chestplate, Leggings, Boots&7—32 Defense, 9 Toughness/piece, 0.8 Knockback Resistance/piece, 105 Enchantability)!",
+				"",
+				"&7In Phase 4, you will hermetically seal this exact Vibranium Armor set with Space Enchantments to fight Ice Dragons on Glacio!"
+			],
+			x: 1.5, y: -4.5,
+			dependencies: ["A73C98E8914F3FC9"],
+			tasks: [
+				{ id: "P3T0000000000003", type: "item", item: "allthemodium:vibranium_helmet", count: 1 },
+				{ id: "P3T0000000000004", type: "item", item: "allthemodium:vibranium_chestplate", count: 1 },
+				{ id: "P3T0000000000005", type: "item", item: "allthemodium:vibranium_leggings", count: 1 },
+				{ id: "P3T0000000000006", type: "item", item: "allthemodium:vibranium_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "P3R0000000000007", type: "item", item: "allthemodium:vibranium_ingot", count: 2 },
+				{ id: "P3R0000000000008", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P3Q0000000000004",
+			title: "&aSacred Tools Step 4: Vibranium Arsenal",
+			description: ["&7Upgrade your Allthemodium Sword, Axe, and Shovel into &aVibranium&7 inside your Smithing Table!"],
+			x: 1.5, y: -6.25,
+			dependencies: ["A73C98E8914F3FC9"],
+			optional: true,
+			tasks: [
+				{ id: "BD66E568DE9055E1", type: "item", item: "allthemodium:vibranium_sword", count: 1 },
+				{ id: "P3T0000000000007", type: "item", item: "allthemodium:vibranium_axe", count: 1 },
+				{ id: "P3T0000000000008", type: "item", item: "allthemodium:vibranium_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "D5E019A182BDA5F8", type: "item", item: "allthemodium:vibranium_ingot" },
+				{ id: "B601510D3E9230E5", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P3Q0000000000015",
+			title: "&6The Allthemodium Piglich & ATM Dungeons",
+			description: [
+				"&7Use your &2Explorer's Compass&7 in The Other to find &6Ancient Pyramids&7 and multi-floor &6ATM Dungeons&7!",
+				"",
+				"&6&lThe Allthemodium Piglich (9,999 HP!):",
+				"&8• &7Inside The Other's structures lurks the &6Piglich&7 (&fallthemodium:piglich&7), clad in full Allthemodium Armor with 9,999 Health! Every time you strike it, it summons waves of reinforcements.",
+				"&8• &7Slay the Piglich to claim &6Piglich Hearts&7 (&fallthemodium:piglich_heart&7)—required in Phase 6 alongside Cataclysm boss trophies on the Astral Altar to forge your &dUnobtainium Upgrade Smithing Templates&7!",
+				"&8• &eATM Dungeon Library Note: &7If you also conquer the diamond-shaped Library Trial Spawner (waves of Evokers & Vexes) inside an ATM Dungeon, remember that Raw Unobtainium cannot be smelted until you defeat all 6 Cataclysm Titans in Phase 6!"
+			],
+			x: 5.5, y: -5.5,
+			size: 1.35,
+			shape: "octagon",
+			dependencies: ["A73C98E8914F3FC9"],
+			tasks: [
+				{ id: "P3T0000000000025", type: "item", item: "allthemodium:piglich_heart", count: 2 }
+			],
+			rewards: [
+				{ id: "P3R0000000000029", type: "item", item: "allthemodium:piglich_heart", count: 2 },
+				{ id: "P3R0000000000030", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "C46719815C2DEF77",
+			title: "&8Max Backpack Upgrades: Tier 4 Stack!",
+			description: [
+				"&7With Vibranium and draconic power at your command, craft &8Netherite Backpacks&7, max out your &4Apothic Spawners&7 (remember: bosses and Pigliches are blacklisted!), and install &dStack Upgrade Tier 4&7!",
+				"",
+				"&7Each slot in your backpack can now hold up to &e1,024 items&7!"
+			],
+			x: 3.5, y: -5.5,
+			dependencies: ["A73C98E8914F3FC9"],
+			tasks: [
+				{ id: "333F8B4F36F72B00", type: "item", item: "sophisticatedbackpacks:netherite_backpack", count: 1 },
+				{ id: "6BAB060375D22A57", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_4", count: 1 }
+			],
+			rewards: [
+				{ id: "BAC734347DF9F38C", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_4" },
+				{ id: "3F9B5EC6C39721A0", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P3Q0000000000005",
+			title: "&4Mastering Apothic Spawners",
+			description: [
+				"&7Note that Industrial Foregoing's Mob Duplicator is &cremoved&7 in this modpack to protect &4Apothic Spawners&7!",
+				"",
+				"&7Mine a monster spawner using a &bSilk Touch&7 Pickaxe, swab a normal mob for its Spawn Egg, and upgrade the Spawner with sugar, clocks, fermented spider eyes, and Vibranium/draconic modifiers! (&cReminder: All bosses, minibosses, and Pigliches are blacklisted from Spawners!&7)"
+			],
+			x: 3.5, y: -7.25,
+			dependencies: ["C46719815C2DEF77"],
+			optional: true,
+			tasks: [ { id: "P3T0000000000009", type: "item", item: "minecraft:spawner", count: 1 } ],
+			rewards: [
+				{ id: "P3R0000000000009", type: "item", item: "minecraft:fermented_spider_eye", count: 4 },
+				{ id: "P3R0000000000010", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p3_allthemodium_carrot",
+			title: "&6&lEnd of Hunger: The Allthemodium Carrot!",
+			description: [
+				"&7In your Cooking Pot (or Dissolution Chamber), combine &6Allthemodium Ingots&7, a &6Golden Carrot&7, and pinnacle agricultural dishes from the early and mid-game Delight mods (&eFarmer's, Corn, Sunflower, Rustic & My Nether's Delight&7) to create &6The Allthemodium Carrot&7!",
+				"",
+				"&6&lWhy The Allthemodium Carrot is Legendary:",
+				"&8• &aUltimate Boss-Fight Food: &7Eating it grants pure &eSaturation for 5 full minutes (6,000 ticks)&7—keeping your hunger and natural regeneration maxed out during brutal dragon and titan fights!",
+				"&8• &dPhase 7 Masterchef Container: &7Make at least two! You will need an unconsumed &6Allthemodium Carrot&7 as the base container slot when cooking &6The Allthemodium Apple&7 in Phase 7 (and another for the &dTri-Realm Alloy Singularity&7)!"
+			],
+			x: 3.5, y: 2.25,
+			size: 1.45,
+			shape: "heart",
+			dependencies: ["p3_mine_vibranium"],
+			tasks: [ { id: "A0A1B2C3D4E5F613", type: "item", item: "allthemodium:allthemodium_carrot", count: 1 } ],
+			rewards: [
+				{ id: "A0A1B2C3D4E5F610", type: "item", item: "allthemodium:allthemodium_carrot" },
+				{ id: "A0A1B2C3D4E5F611", type: "random", table_id: "delight_feast" },
+				{ id: "A0A1B2C3D4E5F612", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P3Q0000000000006",
+			title: "&cBloody Mary & Fiery Fondue Pot",
+			description: [
+				"&7While your Keg is running, ferment a tankard of &cBloody Mary&7 (&fbrewinandchewin:bloody_mary&7) or mix drinks from &dCocktails Delight&7, and melt cheese into a &eFiery Fondue Pot&7 (&fbrewinandchewin:fiery_fondue_pot&7)!",
+				"",
+				"&7Bloody Mary is required right now for your &6Orange/Yellow Heart Canisters&7, and the Fiery Fondue Pot is one of the 4 dimensional feasts required for &6The Allthemodium Apple&7 in Phase 7!"
+			],
+			x: 1.5, y: 3.5,
+			dependencies: ["p3_allthemodium_carrot"],
+			tasks: [
+				{ id: "P3T0000000000010", type: "item", item: "brewinandchewin:bloody_mary", count: 1 },
+				{ id: "P3T0000000000011", type: "item", item: "brewinandchewin:fiery_fondue_pot", count: 1 }
+			],
+			rewards: [
+				{ id: "P3R0000000000011", type: "item", item: "brewinandchewin:bloody_mary", count: 2 },
+				{ id: "P3R0000000000012", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p3_slay_fire_dragon",
+			title: "&c&lSlaying a Fire Dragon",
+			description: [
+				"&7Use your &2Explorer's Compass&7 in The Other to locate a &cFire Dragon Roost&7 or underground lair.",
+				"",
+				"&7Slay the Fire Dragon! Before harvesting its scales and bones normally, right-click the corpse with &fEmpty Bottles&7 to drain &cFire Dragon Blood&7 (taking too much blood reduces scale drops, so kill a second dragon for its &cFire Dragon Heart&7 and scales!)."
+			],
+			x: 7.0, y: -1.75,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["p3_mine_vibranium"],
+			tasks: [
+				{ id: "8956A65E6B9B82D0", type: "item", item: "iceandfire:fire_dragon_heart", count: 1 },
+				{ id: "0EF205D70922FB71", type: "item", item: "iceandfire:fire_dragon_blood", count: 4 },
+				{ id: "7E4836201A05C111", type: "item", item: "iceandfire:dragonbone", count: 16 }
+			],
+			rewards: [
+				{ id: "2FCC8C7789FF5091", type: "item", item: "iceandfire:fire_dragon_blood", count: 4 },
+				{ id: "A4437D7A92C675FA", type: "item", item: "iceandfire:dragonbone", count: 16 },
+				{ id: "7BF0738CFE7230B9", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P3Q0000000000007",
+			title: "&dCosmetic Trophy: Dragon Scale Armor",
+			description: [
+				"&7Remember: all &6Ice and Fire&7 armors (Dragon Scale & Dragonsteel) have &e0 Armor/Toughness stats&7 in this modpack!",
+				"",
+				"&7However, their crafting recipes remain unlocked so you can craft them as badass visual trophies and equip them in your &dCosmetic Armor Reworked&7 slots over your Vibranium Armor!"
+			],
+			x: 5.5, y: -3.25,
+			dependencies: ["p3_slay_fire_dragon"],
+			optional: true,
+			tasks: [ { id: "P3T0000000000012", type: "item", item: "iceandfire:dragonscales_red", count: 8 } ],
+			rewards: [
+				{ id: "P3R0000000000013", type: "item", item: "iceandfire:dragonbone", count: 8 },
+				{ id: "P3R0000000000014", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "6F7125D3D4C9725E",
+			title: "&6&l3rd Row of Health: Orange / Yellow Heart Canisters",
+			description: [
+				"&7Upgrade your vitality to 30 Hearts! Brew a fermented elixir / cocktail (&cBloody Mary&7 from &6Brewin' And Chewin'&7 & &dCocktails Delight&7) and combine it with:",
+				"&8• &fDragon Bones &7(from Fire/Lightning Dragons)",
+				"&8• &6Allthemodium Ingot",
+				"&8• &eYellow/Orange Heart &7(dropped by bosses) & Red Heart Canister!",
+				"",
+				"&7Equip up to 10 &eYellow/Orange Heart Canisters&7 for your 3rd full row of health!"
+			],
+			x: 3.5, y: 4.5,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["p3_slay_fire_dragon", "P3Q0000000000006"],
+			tasks: [ { id: "18D08FDEC8568825", type: "item", item: "bhc:yellow_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "9DD458F54A0A2E89", type: "item", item: "bhc:yellow_heart", count: 4 },
+				{ id: "1C468495F9557E52", type: "item", item: "brewinandchewin:bloody_mary", count: 2 },
+				{ id: "20C10006F208C598", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P3Q0000000000008",
+			title: "&6Full 30 Hearts: 10x Yellow Canisters",
+			description: ["&7Craft a full stack of &610x Yellow/Orange Heart Canisters&7 to reach &e30 Full Hearts (60 HP)&7!"],
+			x: 3.5, y: 6.5,
+			dependencies: ["6F7125D3D4C9725E"],
+			optional: true,
+			tasks: [ { id: "P3T0000000000013", type: "item", item: "bhc:yellow_heart_canister", count: 10 } ],
+			rewards: [
+				{ id: "P3R0000000000015", type: "item", item: "bhc:yellow_heart_canister", count: 2 },
+				{ id: "P3R0000000000016", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p3_slay_lightning_dragon",
+			title: "&9&lSlaying a Lightning Dragon",
+			description: [
+				"&7Locate a &9Lightning Dragon&7 in The Other and slay the storm beast!",
+				"",
+				"&7Harvest its &9Lightning Dragon Heart&7, &9Lightning Dragon Blood&7 (with glass bottles), and &7Dragon Bones&7.",
+				"",
+				"&eTip: &7If you find a female Tier 4–5 underground dragon, she may drop a &6Dragon Egg&7! You will need a &etamed Dragon&7 (hatched from an egg) to breathe into your Dragonforge!"
+			],
+			x: 7.0, y: 1.75,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["p3_mine_vibranium"],
+			tasks: [
+				{ id: "CB73E57FDB743B5B", type: "item", item: "iceandfire:lightning_dragon_heart", count: 1 },
+				{ id: "72FF65077EB4DDEB", type: "item", item: "iceandfire:lightning_dragon_blood", count: 4 }
+			],
+			rewards: [
+				{ id: "378D73704966D25D", type: "item", item: "iceandfire:lightning_dragon_blood", count: 4 },
+				{ id: "65C5E9EDAD80C5BD", type: "random", table_id: "tier_3_draconic" },
+				{ id: "D9C75872F2FA1DCB", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P3Q0000000000009",
+			title: "&6Taming Dragons: Dragon Meal & Staff",
+			description: [
+				"&7To operate a &cFire&7 or &9Lightning Dragonforge&7, you need a tamed Dragon to breathe directly into the Dragonforge Aperture!",
+				"",
+				"&6&lHow to Hatch & Raise a Dragon:",
+				"&8• &cFire Dragon Egg: &7Place on burning Netherrack and light it on fire until it hatches!",
+				"&8• &9Lightning Dragon Egg: &7Leave out in the rain/thunderstorm until lightning strikes it and it hatches!",
+				"&8• &7Craft &6Dragon Meal&7 (from bones and meat) to grow your baby dragon to Stage 3+, and use a &fDragon Staff&7 to command it to stay in front of your Dragonforge!"
+			],
+			x: 9.0, y: 0.0,
+			dependencies: ["p3_slay_fire_dragon", "p3_slay_lightning_dragon"],
+			tasks: [
+				{ id: "P3T0000000000014", type: "item", item: "iceandfire:dragon_meal", count: 8 },
+				{ id: "P3T0000000000015", type: "item", item: "iceandfire:dragon_stick", count: 1 }
+			],
+			rewards: [
+				{ id: "P3R0000000000017", type: "item", item: "iceandfire:dragon_meal", count: 16 },
+				{ id: "P3R0000000000018", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P3Q0000000000010",
+			title: "&cBuilding the Fire Dragonforge",
+			description: [
+				"&7Craft the multiblock components for the 3x3x3 &cFire Dragonforge&7: &fDragon Bone Blocks&7, &cFire Dragonforge Bricks&7, a &cFire Dragonforge Aperture&7, and a &cFire Dragonforge Core&7."
+			],
+			x: 9.0, y: -2.5,
+			dependencies: ["p3_slay_fire_dragon"],
+			tasks: [
+				{ id: "P3T0000000000016", type: "item", item: "iceandfire:dragonforge_fire_core_disabled", count: 1 },
+				{ id: "P3T0000000000017", type: "item", item: "iceandfire:dragonforge_fire_input", count: 1 }
+			],
+			rewards: [
+				{ id: "P3R0000000000019", type: "item", item: "iceandfire:dragon_bone_block", count: 4 },
+				{ id: "P3R0000000000020", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p3_fire_dragonforge",
+			title: "&c&lThe Fire Dragonforge & Fire Dragonsteel",
+			description: [
+				"&7Construct a 3x3x3 &cFire Dragonforge&7 multiblock using Dragon Bone Blocks, Fire Dragonforge Bricks, a Fire Dragonforge Aperture, and a &cFire Dragonforge Core&7.",
+				"",
+				"&6&lImportant Pack Rule – Aerospace Dragonsteel:",
+				"&7Dragonsteel Weapons & Tools are &c&lcompletely removed&7, and Dragonsteel Armors have &e0 stats&7 (serving purely as visual trophies for &dCosmetic Armor Reworked&7)!",
+				"&7Instead, &cFire Dragonsteel Ingots&7 (smelted from Iron + Fire Dragon Blood using a tamed Fire Dragon's breath) serve as the &6extreme thermal shield for Tier 3 & 4 Rockets&7, &cBurning Ashes&7 for Ignis, and the Phase 7 &6Cosmic Alloy Smithing Template&7!"
+			],
+			x: 11.5, y: -1.75,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p3_slay_fire_dragon", "P3Q0000000000010"],
+			tasks: [ { id: "23C6AE5A730D017A", type: "item", item: "iceandfire:dragonsteel_fire_ingot", count: 4 } ],
+			rewards: [
+				{ id: "470DDFB53FFEE977", type: "item", item: "iceandfire:dragonsteel_fire_ingot", count: 4 },
+				{ id: "3D00FF9FEA9C0055", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P3Q0000000000011",
+			title: "&9Building the Lightning Dragonforge",
+			description: [
+				"&7Craft the multiblock components for the 3x3x3 &9Lightning Dragonforge&7: &fDragon Bone Blocks&7, &9Lightning Dragonforge Bricks&7, a &9Lightning Dragonforge Aperture&7, and a &9Lightning Dragonforge Core&7."
+			],
+			x: 9.0, y: 2.5,
+			dependencies: ["p3_slay_lightning_dragon"],
+			tasks: [
+				{ id: "P3T0000000000018", type: "item", item: "iceandfire:dragonforge_lightning_core_disabled", count: 1 },
+				{ id: "P3T0000000000019", type: "item", item: "iceandfire:dragonforge_lightning_input", count: 1 }
+			],
+			rewards: [
+				{ id: "P3R0000000000021", type: "item", item: "iceandfire:dragon_bone_block", count: 4 },
+				{ id: "P3R0000000000022", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p3_lightning_dragonforge",
+			title: "&9&lThe Lightning Dragonforge & Lightning Dragonsteel",
+			description: [
+				"&7Construct a 3x3x3 &9Lightning Dragonforge&7 and have a tamed Lightning Dragon breathe into its Aperture to smelt Iron and Lightning Dragon Blood into &9Lightning Dragonsteel Ingots&7!",
+				"",
+				"&9Lightning Dragonsteel&7 acts as the high-voltage electromagnetic shield required to build your &6Tier 2 Mars & Tier 4 Glacio Rockets&7 in Phase 4, and the &6Cosmic Alloy Smithing Template&7 in Phase 7!"
+			],
+			x: 11.5, y: 1.75,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p3_slay_lightning_dragon", "P3Q0000000000011"],
+			tasks: [ { id: "D282DE6CC6E65A49", type: "item", item: "iceandfire:dragonsteel_lightning_ingot", count: 4 } ],
+			rewards: [
+				{ id: "E0CDE1F72C049ABF", type: "item", item: "iceandfire:dragonsteel_lightning_ingot", count: 4 },
+				{ id: "6053889B7167EEB9", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "463145D09E4580BA",
+			title: "&dOmnipresent Storage: Wireless Terminal & Quantum Card",
+			description: [
+				"&7Combine &aVibranium&7, &cFire/Lightning Dragon Scales&7, &cDragon Blood&7, and an &dAE2 Quantum Ring&7 to craft the &bWireless Crafting / Universal Terminal&7 and the &dQuantum Bridge Card&7 (&fae2wtlib:quantum_bridge_card&7)!",
+				"",
+				"&7Insert the Quantum Bridge Card into your Wireless Terminal and link it to your main network—you now have &ainfinite range wireless access&7 to your AE2 items and autocrafting across every dimension and planet!"
+			],
+			x: 7.0, y: -4.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["A73C98E8914F3FC9", "p3_slay_fire_dragon"],
+			tasks: [
+				{ id: "AEFC3C65CD366053", type: "item", item: "ae2:wireless_crafting_terminal", count: 1 },
+				{ id: "3FB23FBEBB49FBF8", type: "item", item: "ae2wtlib:quantum_bridge_card", count: 1 }
+			],
+			rewards: [
+				{ id: "53C4A69C0A03936E", type: "random", table_id: "tier_3_draconic" },
+				{ id: "9A472DB873206A15", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P3Q0000000000012",
+			title: "&dWireless Universal Terminal",
+			description: [
+				"&7Combine your Wireless Crafting Terminal with a Wireless Pattern Encoding Terminal and Wireless Pattern Access Terminal to create the &dWireless Universal Terminal&7 (&fae2wtlib:wireless_universal_terminal&7)!"
+			],
+			x: 7.0, y: -6.5,
+			dependencies: ["463145D09E4580BA"],
+			optional: true,
+			tasks: [ { id: "P3T0000000000020", type: "item", item: "ae2wtlib:wireless_universal_terminal", count: 1 } ],
+			rewards: [
+				{ id: "P3R0000000000023", type: "item", item: "ae2:wireless_booster", count: 2 },
+				{ id: "P3R0000000000024", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "9D0E2631C838D313",
+			title: "&dApothic Enchanting: Endshelves",
+			description: [
+				"&7Combine &aVibranium Ingots&7 with &fDragon Bones&7 to construct &dEndshelves&7!",
+				"",
+				"&7Endshelves unlock extreme Eterna and Quanta capacities, preparing your gear for cosmic hazards."
+			],
+			x: 11.5, y: -4.5,
+			dependencies: ["A73C98E8914F3FC9", "p3_slay_fire_dragon"],
+			tasks: [ { id: "03044938A674660D", type: "item", item: "apothic_enchanting:endshelf", count: 2 } ],
+			rewards: [
+				{ id: "19F4649EFD31FDB1", type: "item", item: "apothic_enchanting:endshelf" },
+				{ id: "ABE1D9D9A4274064", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "CE3A14226101969A",
+			title: "&dIndustrial Foregoing Tier 3: Advanced Frame",
+			description: [
+				"&7Pump liquid &dPink Slime&7 (from your Mob Slaughter Factory) into the &bDissolution Chamber&7 along with:",
+				"&8• &bSimple Machine Frame &7& &fPlastic",
+				"&8• &6Allthemodium Ingots",
+				"&8• &cFire Dragon Blood &7& &9Lightning Dragon Blood",
+				"",
+				"&7This creates the &dAdvanced Machine Frame&7 (Tier 3 of 4)!"
+			],
+			x: 11.5, y: 4.0,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["p3_slay_fire_dragon", "p3_slay_lightning_dragon"],
+			tasks: [ { id: "0F469861B3E54EB0", type: "item", item: "industrialforegoing:machine_frame_advanced", count: 2 } ],
+			rewards: [
+				{ id: "262B4F1226D66045", type: "item", item: "industrialforegoing:machine_frame_advanced" },
+				{ id: "027ACD918E581A3E", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p3_stasis_chamber",
+			title: "&bFreezing Titans: The Stasis Chamber!",
+			description: [
+				"&7Using your new &dAdvanced Machine Frame&7, craft the &bStasis Chamber&7!",
+				"",
+				"&6&lWhy You Need This Immediately:",
+				"&7When powered with FE, the Stasis Chamber completely freezes any entity—including &8The Wither&7—in a 3x3x3 area above it while healing it!",
+				"",
+				"&7In Phase 4, you will trap a live Wither above a Stasis Chamber to drill it for &3Ether Gas&7!"
+			],
+			x: 14.5, y: 4.0,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["CE3A14226101969A"],
+			tasks: [ { id: "4AB8C84C2ECC54B3", type: "item", item: "industrialforegoing:stasis_chamber", count: 1 } ],
+			rewards: [
+				{ id: "3A8C3B17D26123FE", type: "random", table_id: "tier_3_draconic" },
+				{ id: "7141E8481567B434", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "3EA26FBD1D7F0CAD",
+			title: "&aHyper-Speed Crops: Hydroponic Bed",
+			description: [
+				"&7The &dAdvanced Machine Frame&7 also unlocks the &aHydroponic Bed&7!",
+				"",
+				"&7Supply it with Water, Power, and a tiny drop of &3Ether Gas&7 (in Phase 4) to grow and harvest any crop at blinding speeds for your 12 Delight kitchens!"
+			],
+			x: 11.5, y: 6.0,
+			dependencies: ["CE3A14226101969A"],
+			optional: true,
+			tasks: [ { id: "688ED1DC89C5FD6B", type: "item", item: "industrialforegoing:hydroponic_bed", count: 2 } ],
+			rewards: [
+				{ id: "D4E09EC9AB44EE8F", type: "item", item: "industrialforegoing:fertilizer", count: 32 },
+				{ id: "6AE27F7A56B63229", type: "xp", xp: 200 }
+			]
+		},
+		{
+			id: "P3Q0000000000013",
+			title: "&cAutomated Loot: The Mob Crusher",
+			description: [
+				"&7Want to turn your excess Liquid Pink Slime into solid &dPink Slimeballs&7 or craft a &cMob Crusher&7 for automated mob loot and Liquid Essence? The Advanced Machine Frame unlocks both!"
+			],
+			x: 14.5, y: 6.0,
+			dependencies: ["CE3A14226101969A"],
+			optional: true,
+			tasks: [ { id: "P3T0000000000021", type: "item", item: "industrialforegoing:mob_crusher", count: 1 } ],
+			rewards: [
+				{ id: "P3R0000000000025", type: "item", item: "industrialforegoing:pink_slime", count: 4 },
+				{ id: "P3R0000000000026", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "B84F199E49AEE32D",
+			title: "&9Astral Tier 3: Celestial Altar & Attunement",
+			description: [
+				"&7Expand your Astral Sorcery sanctuary with the Tier 3 structures:",
+				"",
+				"&81. &bCelestial / Luminous Crafting Altar (Tier 3): &7Upgrade your Tier 2 Altar using Allthemodium, draconic materials, Resonating Gems, Stardust, and Liquid Starlight (plus the second raised ring of Focus Relays). It adds a slot for &bAttuned Crystals&7!",
+				"&82. &9Attunement Altar: &7Build a wide &8Sooty Marble&7 floor under open sky. Hold a &fConstellation Paper&7 at night near the altar to see ghost positions for &bFocus Relays&7! Once the pattern lights up, stand on the altar to &eattune yourself&7 and unlock the &630-Level Perk Tree&7!"
+			],
+			x: 7.0, y: 4.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["p3_mine_vibranium"],
+			tasks: [
+				{ id: "4602FD2E3043674F", type: "item", item: "astralsorcery:altar_luminance", count: 1 },
+				{ id: "4602FD2E30436750", type: "item", item: "astralsorcery:attunement_altar", count: 1 }
+			],
+			rewards: [
+				{ id: "DE7F5C29005702E0", type: "item", item: "astralsorcery:starmetal_ingot", count: 6 },
+				{ id: "01D8C616B8FF5837", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p3_celestial_crystal_lumen",
+			title: "&bCelestial Crystals & Glass Lenses",
+			description: [
+				"&7Prepare the optical components required for &bPhase 4 Wither Lasers, Rockets, and Solar Activators&7:",
+				"",
+				"&8• &bCelestial Crystals: &7Throw &bStardust&7 + a &fRock Crystal&7 into a pool of &bLiquid Starlight&7 (ideally placed atop Starmetal Ore under open sky) to grow a &bCelestial Crystal Cluster&7! Only mine it once it is fully grown and shimmering!",
+				"&8• &fGlass Lenses: &7Craft &fGlass Lenses&7 (&fastralsorcery:glass_lens&7)—mandatory for the &bFluid Laser Base&7, &6Tier 1 Rocket&7, and &eSolar Neutron Activators&7!"
+			],
+			x: 7.0, y: 6.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["B84F199E49AEE32D"],
+			tasks: [
+				{ id: "0E3C5D19CCC7320C", type: "item", item: "astralsorcery:glass_lens", count: 4 },
+				{ id: "4795EF4403C11DFC", type: "item", item: "astralsorcery:celestial_crystal", count: 1 }
+			],
+			rewards: [
+				{ id: "94BF761289781F9D", type: "item", item: "astralsorcery:glass_lens", count: 4 },
+				{ id: "D07A0F5942C5F5E4", type: "item", item: "astralsorcery:celestial_crystal" },
+				{ id: "1D606257E07D3F99", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p3_phase_3_complete",
+			title: "&6&lPhase 3 Complete: Eyes on the Stars!",
+			description: [
+				"&7You have conquered &6The Other&7, forged &cFire&7 and &9Lightning Dragonsteel&7 in the breath of dragons, cooked &6The Allthemodium Carrot&7, clad yourself in &aVibranium&7, and built the &bStasis Chamber&7.",
+				"",
+				"&b&lNext Up in Phase 4 (Space Odyssey & Glacio):",
+				"&8• &7Enter &5The End&7, slay the &dEnder Dragon&7, and harvest &dDragon's Breath&7 & &5End's Delight&7 ingredients.",
+				"&8• &7Trap a Wither on your &bStasis Chamber&7 and milk it for &3Ether Gas&7 using a &bFluid Laser Base&7.",
+				"&8• &7Synthesize 100% bucket-free Rocket Fuel & Cryo Fuel inside your &bIF Dissolution Chamber&7, build a &2Mekanism Fission Reactor&7, and launch across all 4 tiers of space (&fMoon -> Mars -> Venus -> Glacio&7)!"
+			],
+			x: 16.0, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: [
+				"p3_fire_dragonforge",
+				"p3_lightning_dragonforge",
+				"p3_stasis_chamber",
+				"p3_celestial_crystal_lumen",
+				"p3_allthemodium_carrot"
+			],
+			tasks: [ { id: "2144AF648904AED9", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "E0C33EE008C8737A",
+					type: "toast",
+					title: "Phase 3 Complete!",
+					description: "Proceed to Phase 4: Space Odyssey & Glacio!"
+				},
+				{ id: "919E61D6023F61F0", type: "random", table_id: "tier_3_draconic" },
+				{ id: "C94018C527785347", type: "xp_levels", xp_levels: 5 }
+			]
+		}
+	]
+}

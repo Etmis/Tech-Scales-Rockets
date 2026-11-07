@@ -1,0 +1,2025 @@
+{
+	id: "mekanism_masterclass",
+	title: "&9Mekanism & Extras",
+	icon: "mekanism_extras:infinite_tier_installer",
+	group: "group_systems",
+	order_index: 11,
+	quests: [
+		{
+			id: "mek_001_welcome",
+			title: "&9&l1. Welcome to Mekanism & Mekanism: Extras!",
+			description: [
+				"&7Welcome to the complete, 105-quest industrial engineering masterclass for &bMekanism&7, &aMekanism: Generators&7, &6Mekanism: Ad Astra Ores&7, and &dMekanism: Extras&7!",
+				"",
+				"&6&lCore Mekanism Rules in Tech, Scales & Rockets:",
+				"&8• &eFactory Growth (1 -> 17 Slots!): &7You start with 1-slot machines in Phase 0 and unlock all &a8 Tier Installers&7 across Phases 1A to 7—culminating in &d17-Slot Infinite Factories&7!",
+				"&8• &cSacred Armor & Battery Rule: &7The MekaSuit, Meka-Tool, and Alloy Paxel are &c&lremoved&7 to protect the Sacred Armor/Tool Line. Flux Networks batteries are also removed—your sole bulk energy storage is the &aMekanism Induction Matrix&7!",
+				"&8• &b5x Planetary Ores: &7Desh, Ostrum, and Calorite work in the full 2x–5x chemical line! (&cRaw Unobtainium is blocked from 2x–5x and requires Cataclysmic Flux in the Combiner!&7)",
+				"",
+				"&eTip: &7With &bJust Enough Mekanism Multiblocks&7 installed, you can look up exact block counts and sizes for every Mekanism multiblock right inside JEI!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.75,
+			shape: "gear",
+			dependencies: ["p0_osmium"],
+			tasks: [ { type: "item", item: "mekanism:ingot_osmium", count: 8 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:ingot_osmium", count: 16 },
+				{ type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "mek_002_configurator_dictionary",
+			title: "&b2. Essential Tools: Configurator & Dictionary",
+			description: [
+				"&7Every Mekanism engineer needs two handheld tools:",
+				"&8• &bConfigurator (&fmekanism:configurator&7): &7Hold &eShift + Scroll Wheel&7 to switch modes (&aConfigurate Items/Fluids/Gases/Energy&7, &eRotate&7, &cEmpty&7, or &bWrench&7). Shift + Right-Click any pipe connection with it to toggle between Normal, &aPULL&7, &cPUSH&7, and &8NONE&7!",
+				"&8• &eDictionary (&fmekanism:dictionary&7): &7Right-click any item or block to inspect all of its Item/Block Tags (essential for configuring Digital Miner & Tag Export Bus filters!)."
+			],
+			x: 2.5, y: 0.0,
+			dependencies: ["mek_001_welcome"],
+			tasks: [
+				{ type: "item", item: "mekanism:configurator", count: 1 },
+				{ type: "item", item: "mekanism:dictionary", count: 1 }
+			],
+			rewards: [
+				{ id: "96F5806C65690B64", type: "item", item: "mekanism:energy_tablet" },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "mek_003_metallurgic_infuser",
+			title: "&e3. The Metallurgic Infuser & Side Config",
+			description: [
+				"&7Craft your first &eMetallurgic Infuser&7! It combines a base material with an &eInfusion Type&7 (&8Carbon&7, &cRedstone&7, &bDiamond&7, &5Refined Obsidian&7, &6Gold&7, &2Fungi&7, or &aBio&7).",
+				"",
+				"&6&lUnderstanding Mekanism's GUI Side Config:",
+				"&7Click the top-left &eSide Config&7 tab inside any Mekanism machine:",
+				"&8• &eYellow (Extra): &7Infusion fuel slot (Carbon, Redstone, Diamond, Obsidian).",
+				"&8• &cRed (Input): &7Main item input slot.",
+				"&8• &9Blue (Output): &7Finished product output (click &aAuto-Eject ON&7 to automatically push items into an adjacent chest or AE2 Pattern Provider!).",
+				"&8• &dPurple (Input/Output): &7Allows a single face to both receive inputs and eject outputs!"
+			],
+			x: 5.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["mek_002_configurator_dictionary"],
+			tasks: [ { type: "item", item: "mekanism:metallurgic_infuser", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "minecraft:redstone", count: 32 },
+				{ type: "item", item: "minecraft:coal", count: 32 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "mek_004_steel_and_casing",
+			title: "&74. Enriched Iron, Steel & Steel Casings",
+			description: [
+				"&7Infuse &fIron Ingots&7 with &8Carbon&7 (Coal/Charcoal) inside the Metallurgic Infuser to make &7Enriched Iron&7, infuse it a second time with Carbon for &7Steel Dust&7, and smelt it into &fSteel Ingots&7!",
+				"",
+				"&7Combine 4x Steel Ingots, 4x Glass, and 1x Osmium Ingot to craft &8Steel Casings&7—the chassis for almost every Mekanism machine."
+			],
+			x: 7.5, y: 0.0,
+			dependencies: ["mek_003_metallurgic_infuser"],
+			tasks: [
+				{ type: "item", item: "mekanism:enriched_iron", count: 8 },
+				{ type: "item", item: "mekanism:ingot_steel", count: 16 },
+				{ type: "item", item: "mekanism:steel_casing", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:steel_casing", count: 4 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "mek_005_enrichment_chamber_8x_fuel",
+			title: "&a5. The 8x Secret: Enriched Infusion Materials!",
+			description: [
+				"&7As soon as you build an &bEnrichment Chamber&7, NEVER feed raw Coal, Redstone, or Diamonds into your Metallurgic Infuser again!",
+				"",
+				"&a&lWhy Enriching First Saves 87.5% of Your Resources:",
+				"&8• &71x Raw Coal / Redstone / Diamond gives only &c10 mB&7 of infusion.",
+				"&8• &71x &aEnriched Carbon / Enriched Redstone / Enriched Diamond / Enriched Refined Obsidian / Enriched Gold&7 gives &a80 mB&7 of infusion (&68x more!&7).",
+				"&8• &eBonus: &7Enriched items can be piped or exported into the &eYellow (Extra)&7 slot via AE2!"
+			],
+			x: 7.5, y: -2.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["mek_004_steel_and_casing"],
+			tasks: [
+				{ type: "item", item: "mekanism:enrichment_chamber", count: 1 },
+				{ type: "item", item: "mekanism:enriched_carbon", count: 8 },
+				{ type: "item", item: "mekanism:enriched_redstone", count: 8 },
+				{ type: "item", item: "mekanism:enriched_diamond", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:enriched_redstone", count: 16 },
+				{ type: "item", item: "mekanism:enriched_diamond", count: 8 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "mek_006_tier1_infused_basic",
+			title: "&a6. Tier 1: Infused Alloy & Basic Control Circuit",
+			description: [
+				"&8• &cInfused Alloy: &7Infuse &f1x Iron Ingot&7 with &c10 mB Redstone&7.",
+				"&8• &aBasic Control Circuit: &7Infuse &b1x Osmium Ingot&7 with &c20 mB Redstone&7.",
+				"",
+				"&eTip: &7Set up a dedicated Metallurgic Infuser filled with Enriched Redstone just for Infused Alloys and Basic Circuits!"
+			],
+			x: 10.0, y: 0.0,
+			dependencies: ["mek_004_steel_and_casing"],
+			tasks: [
+				{ type: "item", item: "mekanism:alloy_infused", count: 16 },
+				{ type: "item", item: "mekanism:basic_control_circuit", count: 16 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:alloy_infused", count: 8 },
+				{ type: "item", item: "mekanism:basic_control_circuit", count: 8 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "mek_007_tier2_reinforced_advanced",
+			title: "&c7. Tier 2: Reinforced Alloy & Advanced Control Circuit",
+			description: [
+				"&8• &bReinforced Alloy: &7Infuse &c1x Infused Alloy&7 with &b20 mB Diamond&7 (use Enriched Diamond!).",
+				"&8• &cAdvanced Control Circuit: &7Combine &a1x Basic Control Circuit&7 + &c2x Infused Alloys&7."
+			],
+			x: 12.5, y: 0.0,
+			dependencies: ["mek_006_tier1_infused_basic"],
+			tasks: [
+				{ type: "item", item: "mekanism:alloy_reinforced", count: 16 },
+				{ type: "item", item: "mekanism:advanced_control_circuit", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:alloy_reinforced", count: 8 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "mek_008_osmium_compressor_obsidian",
+			title: "&58. The Osmium Compressor: Refined Obsidian & Glowstone",
+			description: [
+				"&7To reach Tier 3 & 4 alloys, build a &6Crusher&7 and an &5Osmium Compressor&7:",
+				"&81. &7Crush &5Obsidian&7 in a Crusher to get &5Obsidian Dust&7.",
+				"&82. &7Infuse &5Obsidian Dust&7 with &bDiamond&7 in a Metallurgic Infuser to get &dRefined Obsidian Dust&7 (enrich some into &dEnriched Refined Obsidian&7 for Atomic Alloys!).",
+				"&83. &7Compress &dRefined Obsidian Dust&7 or &eGlowstone Dust&7 with &bOsmium Ingots&7 inside the &5Osmium Compressor&7 to forge &5Refined Obsidian Ingots&7 and &6Refined Glowstone Ingots&7!"
+			],
+			x: 15.0, y: -2.5,
+			dependencies: ["mek_007_tier2_reinforced_advanced"],
+			tasks: [
+				{ type: "item", item: "mekanism:osmium_compressor", count: 1 },
+				{ type: "item", item: "mekanism:enriched_refined_obsidian", count: 8 },
+				{ type: "item", item: "mekanism:ingot_refined_obsidian", count: 8 },
+				{ type: "item", item: "mekanism:ingot_refined_glowstone", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:ingot_refined_obsidian", count: 8 },
+				{ type: "item", item: "mekanism:ingot_refined_glowstone", count: 8 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "mek_009_tier3_elite_circuit",
+			title: "&b9. Tier 3: Elite Control Circuit",
+			description: [
+				"&7Combine &c1x Advanced Control Circuit&7 with &b2x Reinforced Alloys&7 to craft &bElite Control Circuits&7."
+			],
+			x: 15.0, y: 0.0,
+			dependencies: ["mek_007_tier2_reinforced_advanced"],
+			tasks: [ { type: "item", item: "mekanism:elite_control_circuit", count: 8 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:elite_control_circuit", count: 4 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "mek_010_tier4_atomic_ultimate",
+			title: "&d10. Tier 4: Atomic Alloy & Ultimate Control Circuit",
+			description: [
+				"&8• &dAtomic Alloy: &7Infuse &b1x Reinforced Alloy&7 with &540 mB Refined Obsidian&7 (use Enriched Refined Obsidian!).",
+				"&8• &dUltimate Control Circuit: &7Combine &b1x Elite Control Circuit&7 with &d2x Atomic Alloys&7!"
+			],
+			x: 17.5, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["mek_009_tier3_elite_circuit", "mek_008_osmium_compressor_obsidian"],
+			tasks: [
+				{ type: "item", item: "mekanism:alloy_atomic", count: 16 },
+				{ type: "item", item: "mekanism:ultimate_control_circuit", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:alloy_atomic", count: 8 },
+				{ type: "item", item: "mekanism:ultimate_control_circuit", count: 4 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_011_extras_tier5_radiance_absolute",
+			title: "&211. Tier 5 (Extras): Radiance Alloy & Absolute Circuit",
+			description: [
+				"&7Welcome to &6Mekanism: Extras&7! To push beyond Ultimate tier in Phase 5A, enrich &eYellow Cake Uranium&7 into &aEnriched Radiance&7 and infuse &dAtomic Alloys&7 to create:",
+				"&8• &2Radiance Alloy (&fmekanism_extras:alloy_radiance&7)",
+				"&8• &2Absolute Control Circuit (&fmekanism_extras:absolute_control_circuit&7)!"
+			],
+			x: 20.0, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["mek_010_tier4_atomic_ultimate"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:enriched_radiance", count: 4 },
+				{ type: "item", item: "mekanism_extras:alloy_radiance", count: 8 },
+				{ type: "item", item: "mekanism_extras:absolute_control_circuit", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:alloy_radiance", count: 4 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_012_extras_tier6_thermonuclear_supreme",
+			title: "&412. Tier 6 (Extras): Thermonuclear Alloy & Supreme Circuit",
+			description: [
+				"&7Infuse &2Radiance Alloys&7 with &4Enriched Thermonuclear&7 in your Metallurgic Infuser to forge:",
+				"&8• &4Thermonuclear Alloy (&fmekanism_extras:alloy_thermonuclear&7)",
+				"&8• &4Supreme Control Circuit (&fmekanism_extras:supreme_control_circuit&7)!"
+			],
+			x: 22.5, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["mek_011_extras_tier5_radiance_absolute"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:alloy_thermonuclear", count: 8 },
+				{ type: "item", item: "mekanism_extras:supreme_control_circuit", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:alloy_thermonuclear", count: 4 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_013_extras_tier7_shining_cosmic",
+			title: "&513. Tier 7 (Extras): Shining Alloy & Cosmic Circuit",
+			description: [
+				"&7Infuse &4Thermonuclear Alloys&7 with &dEnriched Shining&7 (Polonium/Plutonium-infused) to create:",
+				"&8• &5Shining Alloy (&fmekanism_extras:alloy_shining&7)",
+				"&8• &5Cosmic Control Circuit (&fmekanism_extras:cosmic_control_circuit&7)!"
+			],
+			x: 25.0, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["mek_012_extras_tier6_thermonuclear_supreme"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:alloy_shining", count: 8 },
+				{ type: "item", item: "mekanism_extras:cosmic_control_circuit", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:alloy_shining", count: 4 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_014_extras_tier8_spectrum_infinite",
+			title: "&6&l14. Tier 8 (Extras): Spectrum Alloy & Infinite Circuit!",
+			description: [
+				"&7The final tier of metallurgy! Infuse &5Shining Alloys&7 with &6Enriched Spectrum&7 to forge:",
+				"&8• &6Spectrum Alloy (&fmekanism_extras:alloy_spectrum&7)",
+				"&8• &6Infinite Control Circuit (&fmekanism_extras:infinite_control_circuit&7)!"
+			],
+			x: 27.5, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["mek_013_extras_tier7_shining_cosmic"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:alloy_spectrum", count: 4 },
+				{ type: "item", item: "mekanism_extras:infinite_control_circuit", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:alloy_spectrum", count: 4 },
+				{ type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "mek_015_all_machine_upgrades",
+			title: "&a15. Mastering All 6 Machine Upgrades",
+			description: [
+				"&7Every Mekanism machine has an &aUpgrades&7 tab in the top-right corner of its GUI:",
+				"&8• &bSpeed Upgrade (Max 8, or 64 in Extras!): &7Exponentially increases processing speed.",
+				"&8• &aEnergy Upgrade (Max 8): &7Increases power buffer and cuts FE/t consumption per Speed Upgrade!",
+				"&8• &eGas Upgrade (Max 8): &7Cuts gas consumption by up to 90% in Purification, Injection, and Dissolution Chambers!",
+				"&8• &7Muffling Upgrade (Max 4): &7Silences loud machine noise.",
+				"&8• &9Filter Upgrade: &7Installed inside an &bElectric Pump&7 over water to extract &cHeavy Water&7 (for Deuterium)!",
+				"&8• &3Anchor Upgrade: &7Chunkloads the Digital Miner!"
+			],
+			x: 10.0, y: -2.5,
+			dependencies: ["mek_006_tier1_infused_basic"],
+			tasks: [
+				{ type: "item", item: "mekanism:upgrade_speed", count: 8 },
+				{ type: "item", item: "mekanism:upgrade_energy", count: 8 },
+				{ id: "328236B87FCA97A9", type: "item", item: "mekanism:upgrade_chemical", count: 8 },
+				{ type: "item", item: "mekanism:upgrade_filter", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:upgrade_speed", count: 8 },
+				{ type: "item", item: "mekanism:upgrade_energy", count: 8 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_016_factory_basics_guide",
+			title: "&e&l16. Factories & Tier Installers (Two Ways to Upgrade!)",
+			description: [
+				"&7In &6Tech, Scales & Rockets&7, all Factory blocks and Tier Installers have custom KubeJS recipes tied to your current Phase!",
+				"",
+				"&a&lTwo Ways to Upgrade Your Machines:",
+				"&81. &eDirect Crafting: &7You can craft any Factory block directly in a Crafting Table (or via AE2 autocrafting) using its custom Phase-gated recipe!",
+				"&82. &bIn-World Tier Installers: &7Craft a &eTier Installer&7 and &aShift + Right-Click&7 it onto a placed machine in the world to upgrade it in-place while keeping all internal items, upgrades, and side configs intact!",
+				"",
+				"&6&lCrucial Factory Tips:",
+				"&8• &aAlways Click 'Auto-Sort' ON: &7Inside every Factory GUI, click the &aAuto-Sort&7 button on the left! It automatically divides incoming items evenly across all 3, 5, 7, 9, 11, 13, 15, or 17 parallel slots!",
+				"&8• &bSupported Machines: &7Smelting, Enriching, Crushing, Infusing, Purifying, Injecting, Sawing, and Combining Factories!"
+			],
+			x: 5.0, y: -5.5,
+			size: 1.45,
+			shape: "gear",
+			dependencies: ["mek_003_metallurgic_infuser"],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [ { type: "xp", xp: 100 } ]
+		},
+		{
+			id: "mek_017_installer_1_basic",
+			title: "&a17. Tier 1: Basic Tier Installer (3 Slots – Phase 1A)",
+			description: [
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &aNaga Scales &7(&ftwilightforest:naga_scale&7)",
+				"&8• &fIndustrial Foregoing Plastic &7(&findustrialforegoing:plastic&7)",
+				"&8• &aBasic Control Circuits &7& &cInfused Alloys",
+				"",
+				"&7Upgrades any 1-slot base machine into a &a3-Slot Basic Factory&7!"
+			],
+			x: 8.0, y: -5.5,
+			size: 1.35,
+			shape: "gear",
+			dependencies: ["mek_016_factory_basics_guide", "p1a_slay_naga"],
+			tasks: [ { type: "item", item: "mekanism:basic_tier_installer", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:basic_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_018_installer_2_advanced",
+			title: "&c18. Tier 2: Advanced Tier Installer (5 Slots – Phase 2)",
+			description: [
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &6Allthemodium Ingots &7(&fallthemodium:allthemodium_ingot&7)",
+				"&8• &bOsmium Ingots",
+				"&8• &cAdvanced Control Circuits &7& &bReinforced Alloys",
+				"",
+				"&7Upgrades a 3-slot Basic Factory into a &c5-Slot Advanced Factory&7!"
+			],
+			x: 11.0, y: -5.5,
+			size: 1.35,
+			shape: "gear",
+			dependencies: ["mek_017_installer_1_basic", "p2_mine_allthemodium"],
+			tasks: [ { type: "item", item: "mekanism:advanced_tier_installer", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:advanced_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_019_installer_3_elite",
+			title: "&b19. Tier 3: Elite Tier Installer (7 Slots – Phase 4A)",
+			description: [
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &aVibranium Ingots &7(&fallthemodium:vibranium_ingot&7)",
+				"&8• &6Desh Ingots &7(&fad_astra:desh_ingot&7 from the Moon)",
+				"&8• &3Ether Gas &7(milked from the Wither)",
+				"&8• &bElite Control Circuits &7& &dAtomic Alloys",
+				"",
+				"&7Upgrades a 5-slot Advanced Factory into a &b7-Slot Elite Factory&7!"
+			],
+			x: 14.0, y: -5.5,
+			size: 1.35,
+			shape: "gear",
+			dependencies: ["mek_018_installer_2_advanced", "p4_moon_desh"],
+			tasks: [ { type: "item", item: "mekanism:elite_tier_installer", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:elite_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_020_installer_4_ultimate",
+			title: "&d20. Tier 4: Ultimate Tier Installer (9 Slots – End of Phase 4)",
+			description: [
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &bIce Dragonsteel Ingots &7(&ficeandfire:dragonsteel_ice_ingot&7 from Glacio)",
+				"&8• &4Calorite Ingots &7(&fad_astra:calorite_ingot&7 from Glacio)",
+				"&8• &dUltimate Control Circuits &7& &dAtomic Alloys",
+				"",
+				"&7Upgrades a 7-slot Elite Factory into a &d9-Slot Ultimate Factory&7!"
+			],
+			x: 17.0, y: -5.5,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["mek_019_installer_3_elite", "p4_ice_dragonforge"],
+			tasks: [ { type: "item", item: "mekanism:ultimate_tier_installer", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:ultimate_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_021_installer_5_absolute",
+			title: "&221. Tier 5: Absolute Tier Installer (11 Slots – Mid-Phase 5A!)",
+			description: [
+				"&6&lCustom KubeJS Recipe (Unlocked Immediately in Wave 5A!):",
+				"&8• &eAncient Metal Ingot &7(&fcataclysm:ancient_metal_ingot&7 – Ancient Remnant)",
+				"&8• &8Monstrous Horn &7(&fcataclysm:monstrous_horn&7 – Netherite Monstrosity)",
+				"&8• &4Calorite Ingot &7(&fad_astra:calorite_ingot&7)",
+				"",
+				"&7Upgrades a 9-slot Ultimate Factory into an &211-Slot Absolute Factory&7 right in the middle of Phase 5!"
+			],
+			x: 20.0, y: -5.5,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["mek_020_installer_4_ultimate", "p5_absolute_tier_installer"],
+			tasks: [ { type: "item", item: "mekanism_extras:absolute_tier_installer", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:absolute_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_022_installer_6_supreme",
+			title: "&422. Tier 6: Supreme Tier Installer (13 Slots – Phase 6)",
+			description: [
+				"&6&lCustom KubeJS Recipe (Mekanism: Extras):",
+				"&8• &dUnobtainium Ingot &7(&fallthemodium:unobtainium_ingot&7)",
+				"&8• &6Ignitium Ingot &7(&fcataclysm:ignitium_ingot&7 – Ignis)",
+				"&8• &3Abyssal Sacrifice / Leviathan Core &7(&fcataclysm:abyssal_sacrifice&7 – The Leviathan)",
+				"",
+				"&7Upgrades an 11-slot Absolute Factory into a &413-Slot Supreme Factory&7!"
+			],
+			x: 23.0, y: -5.5,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["mek_021_installer_5_absolute", "p6_unobtainium_fusion"],
+			tasks: [ { type: "item", item: "mekanism_extras:supreme_tier_installer", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:supreme_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 7 }
+			]
+		},
+		{
+			id: "mek_023_installer_7_cosmic",
+			title: "&523. Tier 7: Cosmic Tier Installer (15 Slots – Phase 6)",
+			description: [
+				"&6&lCustom KubeJS Recipe (Mekanism: Extras):",
+				"&8• &dUnobtainium Ingot &7(&fallthemodium:unobtainium_ingot&7)",
+				"&8• &bCursium Ingot &7(&fcataclysm:cursium_ingot&7 – Maledictus)",
+				"&8• &5Void Core &7(&fcataclysm:void_core&7 – Ender Guardian)",
+				"&8• &bIridescent Starlight Essence / Celestial Crystal &7(Astral Sorcery)",
+				"",
+				"&7Upgrades a 13-slot Supreme Factory into a &515-Slot Cosmic Factory&7!"
+			],
+			x: 26.0, y: -5.5,
+			size: 1.45,
+			shape: "gear",
+			dependencies: ["mek_022_installer_6_supreme", "P6Q0000000000010"],
+			tasks: [ { type: "item", item: "mekanism_extras:cosmic_tier_installer", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:cosmic_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "mek_024_installer_8_infinite",
+			title: "&6&l24. Tier 8: Infinite Tier Installer (17 Slots – Phase 7!)",
+			description: [
+				"&6&lCustom KubeJS Recipe (Mekanism: Extras Finale):",
+				"&8• &5Cosmic Tier Installer",
+				"&8• &dPellet of Antimatter &7(&fmekanism:pellet_antimatter&7)",
+				"&8• &4Witherite Ingot &7(&fcataclysm:witherite_ingot&7 – The Harbinger)",
+				"&8• &6The Allthemodium Apple &7(&fallthemodium:allthemodium_apple&7)",
+				"",
+				"&7Upgrades a 15-slot Cosmic Factory into the godlike &617-Slot Infinite Factory&7!"
+			],
+			x: 29.0, y: -5.5,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["mek_023_installer_7_cosmic", "p7_allthemodium_apple"],
+			tasks: [ { type: "item", item: "mekanism_extras:infinite_tier_installer", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:infinite_tier_installer", count: 3 },
+				{ type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "mek_025_universal_cables_plastic",
+			title: "&a25. Power Transfer: Universal Cables (Basic -> Ultimate)",
+			description: [
+				"&7Mekanism &aUniversal Cables&7 transfer FE/RF/Joules seamlessly! Every connected cable segment adds to the line's internal buffer and transfer rate.",
+				"",
+				"&cCustom KubeJS Lock: &7Upgrading from &aBasic Universal Cables&7 to &cAdvanced Universal Cables&7 requires &fIndustrial Foregoing Plastic&7 as high-voltage insulation! From there, upgrade them with Alloys into &bElite&7 and &dUltimate Universal Cables&7!",
+				"",
+				"&eIn-World Upgrade Trick: &7Hold an Alloy (Infused, Reinforced, Atomic) and &aRight-Click a placed pipe/cable&7 to upgrade up to 8 connected segments in-world at once!"
+			],
+			x: 0.0, y: 3.0,
+			dependencies: ["mek_004_steel_and_casing", "p0_plastic"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_universal_cable", count: 8 },
+				{ type: "item", item: "mekanism:advanced_universal_cable", count: 8 },
+				{ type: "item", item: "mekanism:elite_universal_cable", count: 8 },
+				{ type: "item", item: "mekanism:ultimate_universal_cable", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:ultimate_universal_cable", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_026_extras_universal_cables",
+			title: "&626. Mekanism: Extras – Absolute to Infinite Universal Cables!",
+			description: [
+				"&7Upgrade your Ultimate Universal Cables with Radiance, Thermonuclear, Shining, and Spectrum Alloys into &2Absolute&7, &4Supreme&7, &5Cosmic&7, and &6Infinite Universal Cables&7—capable of transferring billions of FE/t!"
+			],
+			x: 0.0, y: 5.5,
+			dependencies: ["mek_025_universal_cables_plastic", "mek_011_extras_tier5_radiance_absolute"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:absolute_universal_cable", count: 8 },
+				{ type: "item", item: "mekanism_extras:supreme_universal_cable", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism_extras:cosmic_universal_cable", count: 8 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_027_mechanical_pipes",
+			title: "&927. Liquid Transfer: Mechanical Pipes (Basic -> Ultimate)",
+			description: [
+				"&9Mechanical Pipes&7 transport liquids (Water, Brine, Liquid Ethylene, Heavy Water, Latex, Pink Slime, Ether Gas, Rocket Fuel, Cryo Fuel).",
+				"",
+				"&eImportant: &7To pull liquid out of a tank or block that doesn't auto-eject, &aShift + Right-Click the pipe connection with your Configurator&7 until the collar widens into &aPULL&7 mode! Upgrade them all the way to &dUltimate&7 (and &6Mekanism: Extras Infinite&7) for massive mB/t throughput when cooling Fission Reactors!"
+			],
+			x: 3.0, y: 3.0,
+			dependencies: ["mek_004_steel_and_casing"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_mechanical_pipe", count: 8 },
+				{ type: "item", item: "mekanism:advanced_mechanical_pipe", count: 8 },
+				{ type: "item", item: "mekanism:elite_mechanical_pipe", count: 8 },
+				{ type: "item", item: "mekanism:ultimate_mechanical_pipe", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:ultimate_mechanical_pipe", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_028_pressurized_tubes",
+			title: "&e28. Gas & Chemical Transfer: Pressurized Tubes (Basic -> Ultimate)",
+			description: [
+				"&ePressurized Tubes&7 transport Mekanism Gases, Infuse Types, Pigments, and Ore Slurries (Oxygen, Hydrogen, Ethylene, Chlorine, HCl, Sulfuric Acid, Fissile Fuel, Steam, Nuclear Waste, Polonium, Antimatter)!",
+				"",
+				"&7Upgrade them from Basic through &dUltimate&7 (and &6Mekanism: Extras&7 tiers) so your 5x ore line and Turbine Steam loop never bottleneck!"
+			],
+			x: 6.0, y: 3.0,
+			dependencies: ["mek_004_steel_and_casing"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_pressurized_tube", count: 8 },
+				{ type: "item", item: "mekanism:advanced_pressurized_tube", count: 8 },
+				{ type: "item", item: "mekanism:elite_pressurized_tube", count: 8 },
+				{ type: "item", item: "mekanism:ultimate_pressurized_tube", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:ultimate_pressurized_tube", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_029_logistical_transporters_sorters",
+			title: "&229. Item Transfer: Logistical Transporters & Logistical Sorter",
+			description: [
+				"&8• &2Logistical Transporters: &7Transport items visually through pipes from Basic up to &dUltimate&7 (and &6Extras&7 tiers).",
+				"&8• &bLogistical Sorter: &7Attach to any chest or machine to filter items by Item ID, Tag, or Mod ID, enable Round-Robin distribution, and paint items with color tags!"
+			],
+			x: 9.0, y: 3.0,
+			dependencies: ["mek_006_tier1_infused_basic"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_logistical_transporter", count: 8 },
+				{ type: "item", item: "mekanism:ultimate_logistical_transporter", count: 8 },
+				{ type: "item", item: "mekanism:logistical_sorter", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:ultimate_logistical_transporter", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_030_thermodynamic_conductors",
+			title: "&630. Heat Transfer: Thermodynamic Conductors & Resistive Heater",
+			description: [
+				"&8• &6Thermodynamic Conductors: &7Transfer thermal energy (Heat) between blocks.",
+				"&8• &cResistive Heater: &7Converts FE power directly into controllable Heat (you can type the exact FE/t usage in its GUI!). Connect a Resistive Heater to a &eThermal Evaporation Plant&7 Valve via Thermodynamic Conductors to boil Water into Brine 24/7 even underground or at night!"
+			],
+			x: 9.0, y: 5.5,
+			dependencies: ["mek_029_logistical_transporters_sorters"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_thermodynamic_conductor", count: 8 },
+				{ type: "item", item: "mekanism:resistive_heater", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:ultimate_thermodynamic_conductor", count: 8 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_031_energy_cubes",
+			title: "&a31. Energy Cubes (Basic -> Ultimate & Extras)",
+			description: [
+				"&7Craft &aEnergy Cubes&7 from Basic up to &dUltimate&7 (and &6Mekanism: Extras&7 tiers)!",
+				"",
+				"&7Energy Cubes store FE, charge items placed inside their GUI, and serve as core crafting ingredients for Induction Matrix Cells, Digital Miners, and Laser Amplifiers."
+			],
+			x: 12.0, y: 3.0,
+			dependencies: ["mek_006_tier1_infused_basic"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_energy_cube", count: 1 },
+				{ type: "item", item: "mekanism:advanced_energy_cube", count: 1 },
+				{ type: "item", item: "mekanism:elite_energy_cube", count: 1 },
+				{ type: "item", item: "mekanism:ultimate_energy_cube", count: 1 }
+			],
+			rewards: [
+				{ id: "495F3AB5A7F80A8B", type: "item", item: "mekanism:ultimate_energy_cube" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_032_fluid_tanks",
+			title: "&932. Fluid Tanks (Basic -> Ultimate & Bucket Mode)",
+			description: [
+				"&7Craft portable &9Fluid Tanks&7 from Basic up to &dUltimate&7 (and &6Mekanism: Extras&7 tiers)!",
+				"",
+				"&ePro Tip: &7Fluid Tanks retain their liquid when broken, can be stacked in crafting recipes, and have a &bBucket Mode&7 toggle (allowing you to scoop up or place source blocks in the world directly with the tank!)."
+			],
+			x: 15.0, y: 3.0,
+			dependencies: ["mek_006_tier1_infused_basic"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_fluid_tank", count: 1 },
+				{ type: "item", item: "mekanism:advanced_fluid_tank", count: 1 },
+				{ type: "item", item: "mekanism:elite_fluid_tank", count: 1 },
+				{ type: "item", item: "mekanism:ultimate_fluid_tank", count: 1 }
+			],
+			rewards: [
+				{ id: "2878FB0E30B1CEA0", type: "item", item: "mekanism:ultimate_fluid_tank" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_033_chemical_tanks",
+			title: "&e33. Chemical Tanks & Dumping Excess Gas",
+			description: [
+				"&7Craft &eChemical Tanks&7 from Basic up to &dUltimate&7 (and &6Mekanism: Extras&7 tiers) to store Gases, Infuse Types, Pigments, and Slurries!",
+				"",
+				"&a&lHow to Prevent Gas Backups (Dump Excess):",
+				"&7If an Electrolytic Separator fills up on Oxygen while you only need Hydrogen, it stops running! Open the Chemical Tank GUI and click the bottom-left mode button to set it to &eDump Excess&7 (keeps the tank 99% full and safely vents any overflow)!"
+			],
+			x: 18.0, y: 3.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["mek_006_tier1_infused_basic"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_chemical_tank", count: 1 },
+				{ type: "item", item: "mekanism:advanced_chemical_tank", count: 1 },
+				{ type: "item", item: "mekanism:elite_chemical_tank", count: 1 },
+				{ type: "item", item: "mekanism:ultimate_chemical_tank", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:ultimate_chemical_tank", count: 2 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_034_bins",
+			title: "&234. Bulk Item Storage: Bins (Basic -> Ultimate)",
+			description: [
+				"&7Mekanism &2Bins&7 hold massive quantities of a single item type and are required to craft &6Mekanism: Extras&7 QIO and storage components."
+			],
+			x: 15.0, y: 5.5,
+			dependencies: ["mek_032_fluid_tanks"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:basic_bin", count: 1 },
+				{ type: "item", item: "mekanism:ultimate_bin", count: 1 }
+			],
+			rewards: [
+				{ id: "408B57238642B63F", type: "item", item: "mekanism:ultimate_bin" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_035_multiblock_1_dynamic_tank",
+			title: "&935. Multiblock #1: The Dynamic Tank (Fluid OR Chemical!)",
+			description: [
+				"&6&lMultiblock #1 of 7 – The Dynamic Tank:",
+				"&7Need to buffer millions of mB of Brine, Sulfuric Acid, Water, or Steam before you have 256k AE2 cells? Build a hollow rectangular &9Dynamic Tank&7 multiblock (any size from &e3x3x3 up to 18x18x18&7)!",
+				"",
+				"&eHow to Build It:",
+				"&8• &7All outer edges and corners must be &9Dynamic Tank&7 blocks.",
+				"&8• &7Inner faces can be &9Dynamic Tank&7 or &bStructural Glass&7.",
+				"&8• &7Place at least 2x &9Dynamic Valves&7 to pipe Fluids OR Mekanism Chemicals in and out!"
+			],
+			x: 18.0, y: 5.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["mek_032_fluid_tanks", "mek_033_chemical_tanks"],
+			tasks: [
+				{ type: "item", item: "mekanism:dynamic_tank", count: 24 },
+				{ type: "item", item: "mekanism:dynamic_valve", count: 2 },
+				{ type: "item", item: "mekanism:structural_glass", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:dynamic_tank", count: 16 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_036_quantum_entangloporter",
+			title: "&336. Wireless Everything: The Quantum Entangloporter! (Phase 2)",
+			description: [
+				"&7Using &bTeleportation Cores&7, &6Allthemodium&7, &9Starmetal&7, and a &fNether Star&7 in Phase 2, craft a pair of &3Quantum Entangloporters&7!",
+				"",
+				"&a&lWhat It Transports Wirelessly Across Dimensions:",
+				"&7Set both Entangloporters to the same frequency channel—they wirelessly transmit &aItems, Fluids, Gases/Chemicals, Power (FE), AND Heat&7 simultaneously across all dimensions and planets (including sending Nuclear Waste to Earth Orbit in Phase 4)!"
+			],
+			x: 21.0, y: 3.0,
+			size: 1.45,
+			shape: "hexagon",
+			dependencies: ["mek_033_chemical_tanks", "p1b_teleportation_core"],
+			tasks: [ { type: "item", item: "mekanism:quantum_entangloporter", count: 2 } ],
+			rewards: [
+				{ id: "39AD5B52FCE2F0BC", type: "item", item: "mekanism:quantum_entangloporter" },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_037_teleporter_portal",
+			title: "&b37. Mekanism Teleporters & Portable Teleporter",
+			description: [
+				"&7Craft a &bTeleporter&7 block (surrounded by a 4x3 frame of &bTeleporter Frames&7) and a handheld &bPortable Teleporter&7 to teleport yourself to any frequency!"
+			],
+			x: 21.0, y: 5.5,
+			dependencies: ["mek_036_quantum_entangloporter"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:teleporter", count: 1 },
+				{ type: "item", item: "mekanism:portable_teleporter", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:teleporter_frame", count: 9 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_038_ore_2x_line",
+			title: "&b38. Ore Processing Tier 1 (2x Doubling): Enrichment + Smelter",
+			description: [
+				"&6&lStep-by-Step 2x Ore Line (2 Machines):",
+				"&81. &bEnrichment Chamber: &7Turns &f3x Raw Ores&7 into &f4x Dusts&7 (or &f1x Silk-Touched Ore Block&7 into &f2x Dusts&7).",
+				"&82. &aEnergized Smelter: &7Smelts &f1x Dust&7 into &f1x Ingot&7.",
+				"",
+				"&ePro Tip: &7Place the Enrichment Chamber directly to the left of the Energized Smelter, set the Enrichment Chamber's right side to &9Output (Blue)&7 with &aAuto-Eject ON&7, and set the Smelter's left side to &cInput (Red)&7—zero pipes required!"
+			],
+			x: 0.0, y: 9.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["mek_004_steel_and_casing"],
+			tasks: [
+				{ type: "item", item: "mekanism:enrichment_chamber", count: 1 },
+				{ type: "item", item: "mekanism:energized_smelter", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "mek_039_electric_pump_water",
+			title: "&939. Infinite Water Feed: The Electric Pump",
+			description: [
+				"&7Your 3x, 4x, and 5x Ore Processing lines require a steady stream of &9Water&7. Place an &bElectric Pump&7 (&fmekanism:electric_pump&7) one block above an infinite 2x2 water pool (or use an ExtendedAE Infinity Water Cell!)."
+			],
+			x: 3.0, y: 12.0,
+			dependencies: ["mek_038_ore_2x_line"],
+			tasks: [ { type: "item", item: "mekanism:electric_pump", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "mek_040_electrolytic_separator_oxygen",
+			title: "&b40. Splitting Water: Electrolytic Separator (Oxygen & Hydrogen)",
+			description: [
+				"&7Pipe Water into an &bElectrolytic Separator&7 (&fmekanism:electrolytic_separator&7)! It uses electrolysis to split Water into:",
+				"&8• &9Oxygen Gas (Right Tank): &7Required for &a3x Ore Tripling&7 (Purification Chamber) and &2Sulfuric Acid&7.",
+				"&8• &bHydrogen Gas (Left Tank): &7Required for fueling your &bMekanism Jetpack&7, making &bEthylene&7, and synthesizing &eHydrogen Chloride (HCl)&7 for 4x Ore Quadrupling!",
+				"",
+				"&eTip: &7Set both internal tanks to &eDump Excess&7 so the Separator never stalls if one gas backs up!"
+			],
+			x: 3.0, y: 9.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["mek_038_ore_2x_line", "mek_039_electric_pump_water"],
+			tasks: [ { type: "item", item: "mekanism:electrolytic_separator", count: 1 } ],
+			rewards: [
+				{ id: "1F494457DC6A5949", type: "item", item: "mekanism:upgrade_chemical", count: 8 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_041_purification_crusher_3x",
+			title: "&a41. Ore Processing Tier 2 (3x Tripling): Purification + Crusher!",
+			description: [
+				"&6&lStep-by-Step 3x Ore Line (4 Main Machines):",
+				"&81. &ePurification Chamber &7(fed with &9Oxygen&7; install 8x &eGas Upgrades&7!): Turns &f1x Raw Ore&7 into &f2x Clumps&7 (or &f1x Ore Block&7 into &f3x Clumps&7).",
+				"&82. &6Crusher: &7Crushes &f1x Clump&7 into &71x Dirty Dust&7.",
+				"&83. &bEnrichment Chamber: &7Cleans &71x Dirty Dust&7 into &f1x Clean Dust&7.",
+				"&84. &aEnergized Smelter: &7Smelts &f1x Clean Dust&7 into &f1x Ingot&7!",
+				"",
+				"&aLine all 4 machines up in a row from left to right with Auto-Eject enabled!"
+			],
+			x: 6.0, y: 9.5,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["mek_040_electrolytic_separator_oxygen"],
+			tasks: [
+				{ type: "item", item: "mekanism:purification_chamber", count: 1 },
+				{ type: "item", item: "mekanism:crusher", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:basic_tier_installer", count: 2 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_042_multiblock_2_thermal_evaporation",
+			title: "&e42. Multiblock #2: Thermal Evaporation Plant (Brine Tower!)",
+			description: [
+				"&6&lMultiblock #2 of 7 – The Thermal Evaporation Plant:",
+				"&7To unlock &64x Ore Quadrupling&7 (and Lithium for Fusion Reactors), you must evaporate &9Water&7 into &eBrine&7!",
+				"",
+				"&eHow to Build the 4x4 Tower (Height: 3 to 18 Blocks):",
+				"&8• &7Base: A solid 4x4 floor of &eThermal Evaporation Blocks&7.",
+				"&8• &7Walls: Hollow 4x4 rings of Thermal Evaporation Blocks (or Structural Glass) up to 18 blocks tall.",
+				"&8• &7Place &e1x Thermal Evaporation Controller&7 and &e2–3x Thermal Evaporation Valves&7 in the walls.",
+				"&8• &7Heat It: Place 4x &9Advanced Solar Generators&7 on the 4 top corners, OR connect a &cResistive Heater&7 to a Valve using &6Thermodynamic Conductors&7!"
+			],
+			x: 9.0, y: 12.0,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["mek_041_purification_crusher_3x"],
+			tasks: [
+				{ type: "item", item: "mekanism:thermal_evaporation_controller", count: 1 },
+				{ type: "item", item: "mekanism:thermal_evaporation_valve", count: 3 },
+				{ type: "item", item: "mekanism:thermal_evaporation_block", count: 36 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:thermal_evaporation_block", count: 32 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_043_brine_to_chlorine",
+			title: "&a43. Splitting Brine: Sodium & Chlorine Gas",
+			description: [
+				"&7Pipe liquid &eBrine&7 out of your Thermal Evaporation Plant into a second &bElectrolytic Separator&7!",
+				"",
+				"&7It splits Brine into &7Sodium&7 (set to Dump Excess or save for Boiler cooling) and &aChlorine Gas&7!"
+			],
+			x: 12.0, y: 12.0,
+			dependencies: ["mek_042_multiblock_2_thermal_evaporation"],
+			tasks: [ { type: "item", item: "mekanism:electrolytic_separator", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "mek_044_chemical_infuser_hcl",
+			title: "&e44. Chemical Infuser: Synthesizing Hydrogen Chloride (HCl)",
+			description: [
+				"&7Build a &dChemical Infuser&7 (&fmekanism:chemical_infuser&7) and pipe in:",
+				"&8• &aChlorine Gas &7(from your Brine Electrolytic Separator)",
+				"&8• &bHydrogen Gas &7(from your Water Electrolytic Separator)",
+				"",
+				"&7They react to produce &eHydrogen Chloride (HCl)&7 gas!"
+			],
+			x: 12.0, y: 9.5,
+			dependencies: ["mek_043_brine_to_chlorine", "mek_040_electrolytic_separator_oxygen"],
+			tasks: [ { type: "item", item: "mekanism:chemical_infuser", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_045_chemical_injection_4x",
+			title: "&645. Ore Processing Tier 3 (4x Quadrupling): Chemical Injection!",
+			description: [
+				"&6&lStep-by-Step 4x Ore Line (5 Main Machines):",
+				"&7Place a &cChemical Injection Chamber&7 (fed with &eHydrogen Chloride&7 + 8x Gas Upgrades!) right in front of your 3x line:",
+				"&81. &cChemical Injection Chamber: &7Turns &f3x Raw Ores&7 into &f8x Shards&7 (or &f1x Ore Block&7 into &f4x Shards&7)!",
+				"&82. &ePurification Chamber: &71x Shard -> 1x Clump.",
+				"&83. &6Crusher: &71x Clump -> 1x Dirty Dust.",
+				"&84. &bEnrichment Chamber: &71x Dirty Dust -> 1x Clean Dust.",
+				"&85. &aEnergized Smelter: &71x Clean Dust -> 1x Ingot!"
+			],
+			x: 15.0, y: 9.5,
+			size: 1.5,
+			shape: "rsquare",
+			dependencies: ["mek_041_purification_crusher_3x", "mek_044_chemical_infuser_hcl"],
+			tasks: [ { type: "item", item: "mekanism:chemical_injection_chamber", count: 1 } ],
+			rewards: [
+				{ id: "D4C75C327FB71C82", type: "item", item: "mekanism:advanced_tier_installer" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_046_infinite_sulfur_gunpowder",
+			title: "&e46. Renewable Sulfur Dust (Gunpowder + HCl Loop!)",
+			description: [
+				"&7To run a &d5x Ore Line&7 and produce &2Fissile Fuel&7, you need lots of &eSulfur Dust&7!",
+				"",
+				"&6&lThree Ways to Get Sulfur Dust:",
+				"&81. &7Pressing Coal/Charcoal with Oxygen and Water in a PRC produces Sulfur Dust as a byproduct.",
+				"&82. &7Crushing &fCobblestone -> Gravel -> Flint&7 + &eHydrogen Chloride&7 in a Chemical Injection Chamber makes &7Gunpowder&7.",
+				"&83. &7Injecting &7Gunpowder&7 with &eHydrogen Chloride&7 in a Chemical Injection Chamber turns 1x Gunpowder into &e1x Sulfur Dust&7!"
+			],
+			x: 18.0, y: 14.0,
+			dependencies: ["mek_045_chemical_injection_4x"],
+			tasks: [ { type: "item", item: "mekanism:dust_sulfur", count: 32 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:dust_sulfur", count: 64 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_047_chemical_oxidizer_so2",
+			title: "&e47. Acid Step 1: Chemical Oxidizer (Sulfur Dioxide)",
+			description: [
+				"&6&lSynthesizing Sulfuric Acid (Step 1 of 4):",
+				"&7Feed &eSulfur Dust&7 into a &eChemical Oxidizer&7 (&fmekanism:chemical_oxidizer&7) to oxidize it into &eSulfur Dioxide (SO2)&7 gas!"
+			],
+			x: 18.0, y: 12.0,
+			dependencies: ["mek_046_infinite_sulfur_gunpowder"],
+			tasks: [ { type: "item", item: "mekanism:chemical_oxidizer", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "mek_048_sulfur_trioxide_so3",
+			title: "&648. Acid Step 2: Chemical Infuser (Sulfur Trioxide)",
+			description: [
+				"&6&lSynthesizing Sulfuric Acid (Step 2 of 4):",
+				"&7Combine &eSulfur Dioxide&7 + &9Oxygen&7 inside a &dChemical Infuser&7 to create &6Sulfur Trioxide (SO3)&7 gas!"
+			],
+			x: 21.0, y: 12.0,
+			dependencies: ["mek_047_chemical_oxidizer_so2"],
+			tasks: [ { type: "item", item: "mekanism:chemical_infuser", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "mek_049_rotary_condensentrator_vapor",
+			title: "&b49. Acid Step 3: Rotary Condensentrator (Water Vapor)",
+			description: [
+				"&6&lSynthesizing Sulfuric Acid (Step 3 of 4):",
+				"&7Pipe &9Water&7 into a &bRotary Condensentrator&7 (&fmekanism:rotary_condensentrator&7) and click the top-left button to set it to &eDecondensentrating&7 mode (Liquid -> Gas) to turn Water into gaseous &fWater Vapor&7!"
+			],
+			x: 21.0, y: 14.0,
+			dependencies: ["mek_048_sulfur_trioxide_so3"],
+			tasks: [ { type: "item", item: "mekanism:rotary_condensentrator", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "mek_050_sulfuric_acid_complete",
+			title: "&250. Acid Step 4: Sulfuric Acid Production!",
+			description: [
+				"&6&lSynthesizing Sulfuric Acid (Step 4 of 4):",
+				"&7Combine &6Sulfur Trioxide&7 + &fWater Vapor&7 inside a second &dChemical Infuser&7 to produce &2Sulfuric Acid&7!",
+				"",
+				"&7Store your Sulfuric Acid in an Ultimate Chemical Tank or an Applied Mekanistics Chemical Storage Cell—it fuels both &d5x Ore Quintupling&7 and &bHydrofluoric Acid&7 (for Fission Reactors)!"
+			],
+			x: 24.0, y: 12.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["mek_048_sulfur_trioxide_so3", "mek_049_rotary_condensentrator_vapor"],
+			tasks: [ { type: "item", item: "mekanism:chemical_infuser", count: 1 } ],
+			rewards: [
+				{ id: "6EEF395AC6C19A74", type: "item", item: "mekanism:ultimate_chemical_tank" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_051_chemical_dissolution_chamber",
+			title: "&d51. 5x Step 1: Chemical Dissolution Chamber (Dirty Slurry)",
+			description: [
+				"&6&lBuilding the 5x Ore Line (Machine 1 of 3):",
+				"&7Craft a &dChemical Dissolution Chamber&7 (&fmekanism:chemical_dissolution_chamber&7), install 8x &eGas Upgrades&7, and feed it &2Sulfuric Acid&7!",
+				"",
+				"&7It dissolves &f3x Raw Ores&7 into &a2,000 mB of Dirty Ore Slurry&7 (or &f1x Ore Block&7 into &a1,000 mB of Dirty Slurry&7)!"
+			],
+			x: 24.0, y: 9.5,
+			dependencies: ["mek_045_chemical_injection_4x", "mek_050_sulfuric_acid_complete"],
+			tasks: [ { type: "item", item: "mekanism:chemical_dissolution_chamber", count: 1 } ],
+			rewards: [
+				{ id: "7DE6E4F479058B44", type: "item", item: "mekanism:upgrade_chemical", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_052_chemical_washer",
+			title: "&b52. 5x Step 2: Chemical Washer (Clean Slurry)",
+			description: [
+				"&6&lBuilding the 5x Ore Line (Machine 2 of 3):",
+				"&7Pipe the Dirty Ore Slurry into a &bChemical Washer&7 (&fmekanism:chemical_washer&7) supplied with &9Water&7!",
+				"",
+				"&7It washes 1 mB of Dirty Slurry into &f1 mB of Clean Ore Slurry&7."
+			],
+			x: 27.0, y: 9.5,
+			dependencies: ["mek_051_chemical_dissolution_chamber"],
+			tasks: [ { type: "item", item: "mekanism:chemical_washer", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "mek_053_chemical_crystallizer_5x_complete",
+			title: "&d&l53. 5x Step 3: Chemical Crystallizer (5x Ore Quintupling!)",
+			description: [
+				"&6&lBuilding the 5x Ore Line (Machine 3 of 3):",
+				"&7Pipe Clean Ore Slurry into a &eChemical Crystallizer&7 (&fmekanism:chemical_crystallizer&7)!",
+				"",
+				"&7Every 200 mB of Clean Slurry crystallizes into &d1x Ore Crystal&7 (so 1x Ore Block = 5x Crystals; 3x Raw Ores = 10x Crystals)!",
+				"&7Auto-eject those Crystals directly into your &cChemical Injection Chamber -> Purification -> Crusher -> Enrichment -> Smelter&7 for full &d5x Ore Multiplication&7!"
+			],
+			x: 30.0, y: 9.5,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["mek_052_chemical_washer"],
+			tasks: [ { type: "item", item: "mekanism:chemical_crystallizer", count: 1 } ],
+			rewards: [
+				{ type: "toast", title: "5x Ore Line Complete!", description: "You have mastered 5x chemical ore processing!" },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_054_ad_astra_planetary_ores_5x",
+			title: "&654. Mekanism: Ad Astra Ores (5x Desh, Ostrum & Calorite!)",
+			description: [
+				"&7Thanks to &6Mekanism: Ad Astra Ores&7, every planetary ore you mine in Phase 4 has full Slurry, Crystal, Shard, Clump, and Dirty Dust support!",
+				"",
+				"&7Send your &6Raw Desh&7 (Moon), &5Raw Ostrum&7 (Mars), and &4Raw Calorite&7 (Glacio) straight through your 5x line!"
+			],
+			x: 30.0, y: 12.0,
+			dependencies: ["mek_053_chemical_crystallizer_5x_complete"],
+			tasks: [
+				{ type: "item", item: "ad_astra:raw_desh", count: 3 },
+				{ type: "item", item: "ad_astra:raw_ostrum", count: 3 },
+				{ type: "item", item: "ad_astra:raw_calorite", count: 3 }
+			],
+			rewards: [
+				{ type: "item", item: "ad_astra:calorite_ingot", count: 8 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_055_unobtainium_combiner_rule",
+			title: "&d55. The Unobtainium Exception: Combiner Fusion Only!",
+			description: [
+				"&c&lCritical Reminder:",
+				"&7While Allthemodium, Vibranium, Desh, Ostrum, and Calorite work in your 5x line, &dRaw Unobtainium&7 is &c&l100% blocked&7 from Chemical Dissolution, Injection, Purification, Crushing, Enriching, and Smelting!",
+				"",
+				"&aHow to Process Unobtainium (Phase 6):",
+				"&7Fuse &d3x Raw Unobtainium + 1x Cataclysmic Flux&7 inside a &eMekanism Combiner&7 to obtain &d3x Unobtainium Ingots&7!"
+			],
+			x: 30.0, y: 14.5,
+			shape: "rsquare",
+			dependencies: ["mek_053_chemical_crystallizer_5x_complete"],
+			tasks: [ { type: "item", item: "mekanism:combiner", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "mek_056_precision_sawmill_boxes",
+			title: "&656. Precision Sawmill & Cardboard Boxes",
+			description: [
+				"&7Craft a &6Precision Sawmill&7 (&fmekanism:precision_sawmill&7)! It cuts 1 Log into 6 Planks + &eSawdust&7.",
+				"",
+				"&7Combine 4x Sawdust to craft a &6Cardboard Box&7! Right-click any chest, spawner, or Budding Certus/Entro block with a Cardboard Box to pack it up and move it without losing its contents or budding tier!"
+			],
+			x: 24.0, y: 17.0,
+			dependencies: ["mek_006_tier1_infused_basic"],
+			tasks: [
+				{ type: "item", item: "mekanism:precision_sawmill", count: 1 },
+				{ type: "item", item: "mekanism:cardboard_box", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:cardboard_box", count: 4 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "mek_057_combiner_unobtainium_and_alloys",
+			title: "&e57. The Combiner: Unobtainium Fusion & Dual ATM Alloys!",
+			description: [
+				"&7In &6Tech, Scales & Rockets&7, the &eMekanism Combiner&7 is the alchemical forge of the endgame!",
+				"",
+				"&6&lCustom KubeJS Combiner Recipes:",
+				"&8• &dUnobtainium Fusion (Phase 6): &d3x Raw Unobtainium &7+ &d1x Cataclysmic Flux &7= &d3x Unobtainium Ingots&7!",
+				"&8• &6Dual ATM Alloys (Phase 7): &7Fuse &6Allthemodium-Vibranium Ingot&7, &aVibranium-Unobtainium Ingot&7, and &dUnobtainium-Allthemodium Ingot&7 inside the Combiner to prepare for the &dTri-Realm Alloy Singularity&7!"
+			],
+			x: 21.0, y: 17.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["mek_056_precision_sawmill_boxes"],
+			tasks: [ { type: "item", item: "mekanism:combiner", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:bio_fuel", count: 32 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_058_prc_ethylene_substrate",
+			title: "&358. Pressurized Reaction Chamber (PRC): Ethylene & Substrate",
+			description: [
+				"&7Craft a &ePressurized Reaction Chamber (PRC)&7 (&fmekanism:pressurized_reaction_chamber&7)!",
+				"",
+				"&7Pipe in &9Water&7 (Fluid), &bHydrogen&7 (Gas), and &2Bio-Fuel&7 (Item) to produce:",
+				"&8• &bGaseous Ethylene: &7Burned in Gas-Burning Generators (Phase 2) for massive midgame power.",
+				"&8• &fSubstrate: &7The solid base required to make HDPE Pellets!"
+			],
+			x: 18.0, y: 17.0,
+			dependencies: ["mek_057_combiner_unobtainium_and_alloys"],
+			tasks: [
+				{ type: "item", item: "mekanism:pressurized_reaction_chamber", count: 1 },
+				{ type: "item", item: "mekanism:substrate", count: 16 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:substrate", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_059_hdpe_pellets_sheets",
+			title: "&f59. Liquid Ethylene (Rocket Fuel!) & HDPE Sheets",
+			description: [
+				"&6&lHow to Make Liquid Ethylene & HDPE Sheets:",
+				"&81. &7Send gaseous &bEthylene&7 into a &bRotary Condensentrator&7 (in Condensentrating mode) to turn it into &9Liquid Ethylene&7.",
+				"&82. &6Phase 4 Rocket Fuel Role: &7Pipe &9Liquid Ethylene&7 directly into your &bIF Dissolution Chamber&7 with Dragon's Breath and Dragon Blood to synthesize 100% bucket-free &6Ad Astra Rocket Fuel&7!",
+				"&83. &fHDPE Sheets: &7Pipe &9Liquid Ethylene&7 + &9Oxygen Gas&7 + &fSubstrate&7 into a second &ePRC&7 to produce &fHDPE Pellets&7, then enrich them into &fHDPE Sheets&7!"
+			],
+			x: 15.0, y: 17.0,
+			dependencies: ["mek_058_prc_ethylene_substrate"],
+			tasks: [
+				{ type: "item", item: "mekanism:hdpe_pellet", count: 16 },
+				{ type: "item", item: "mekanism:hdpe_rod", count: 8 },
+				{ type: "item", item: "mekanism:hdpe_sheet", count: 16 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:hdpe_sheet", count: 16 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_060_fluidic_plenisher_pump",
+			title: "&960. Fluidic Plenisher & Personal Chest/Barrel",
+			description: [
+				"&8• &9Fluidic Plenisher: &7The opposite of an Electric Pump—fills entire lakes or holes with liquid from a pipe!",
+				"&8• &aPersonal Chest / Personal Barrel: &7Secure portable storage used in Robit and machine recipes."
+			],
+			x: 15.0, y: 19.5,
+			dependencies: ["mek_059_hdpe_pellets_sheets"],
+			tasks: [
+				{ type: "item", item: "mekanism:fluidic_plenisher", count: 1 },
+				{ type: "item", item: "mekanism:personal_chest", count: 1 }
+			],
+			rewards: [ { type: "xp", xp: 150 } ]
+		},
+		{
+			id: "mek_061_robit_chargepad",
+			title: "&e61. The Robit & Chargepad",
+			description: [
+				"&7Place a &8Chargepad&7 on your floor and craft a &eRobit&7! Not only is the Robit a cute robotic companion that follows you, picks up drops, and acts as a mobile anvil/furnace/chest, it is also the brain required to craft the &eDigital Miner&7!"
+			],
+			x: 12.0, y: 17.0,
+			dependencies: ["mek_060_fluidic_plenisher_pump"],
+			tasks: [
+				{ type: "item", item: "mekanism:chargepad", count: 1 },
+				{ type: "item", item: "mekanism:robit", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:energy_tablet", count: 2 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_062_digital_miner_mastery",
+			title: "&e&l62. Mastering the Digital Miner (Phase 1B Unlock!)",
+			description: [
+				"&6&lCustom KubeJS Recipe (Phase 1B):",
+				"&7Requires &7Knightmetal Ingots&7, &cCarminite&7, &6Fiery Tears&7, &bTeleportation Cores&7 (Meef Stroganoff), a &eRobit&7, and an &bIndustrial Foregoing Simple Machine Frame&7!",
+				"",
+				"&a&lHow to Configure Digital Miner Filters Like a Pro:",
+				"&81. &7Click &eConfig&7 -> &aNew Filter&7 -> &bTag&7.",
+				"&82. &7Type `c:ores/*` to mine all standard ores, or `c:ores/diamond`, `c:ores/osmium`, etc.",
+				"&83. &7Set &eRadius&7 up to `32`, &eMin Y&7 to `-64`, and &eMax Y&7 to `320`.",
+				"&84. &7Toggle &bSilk Touch Mode&7 if you need Silk-Touched Iron Ore for Astral Sorcery Starmetal Focal Points!"
+			],
+			x: 9.0, y: 17.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["mek_061_robit_chargepad", "p1b_slay_ur_ghast"],
+			tasks: [ { type: "item", item: "mekanism:digital_miner", count: 1 } ],
+			rewards: [
+				{ id: "1C20B171055B9414", type: "item", item: "mekanism:upgrade_anchor" },
+				{ type: "item", item: "mekanism:upgrade_speed", count: 8 },
+				{ type: "item", item: "mekanism:upgrade_energy", count: 8 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_063_formulaic_assemblicator",
+			title: "&263. Compact Autocrafter: Formulaic Assemblicator",
+			description: [
+				"&7Need a simple, standalone 1-block crafter for a single recipe (like compressing Nuggets into Ingots or combining Tiny Dry Rubber into Dry Rubber) without using AE2 channels?",
+				"",
+				"&7Encode a &2Crafting Formula&7 inside a &2Formulaic Assemblicator&7 and turn on &aStock Control&7 + &aAuto-Mode&7!"
+			],
+			x: 12.0, y: 19.5,
+			dependencies: ["mek_061_robit_chargepad"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:formulaic_assemblicator", count: 1 },
+				{ type: "item", item: "mekanism:crafting_formula", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "mek_064_pigment_painting_line",
+			title: "&d64. Pigment Extractor, Mixer & Painting Machine",
+			description: [
+				"&7Want to re-color blocks, wool, glass, or Mekanism cables/leds?",
+				"&8• &dPigment Extractor: &7Extracts liquid Pigment from dyes or flowers.",
+				"&8• &dPigment Mixer: &7Blends primary pigments into any of the 16 colors.",
+				"&8• &dPainting Machine: &7Uses pigment to dye blocks in bulk!"
+			],
+			x: 6.0, y: 17.0,
+			dependencies: ["mek_062_digital_miner_mastery"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:pigment_extractor", count: 1 },
+				{ type: "item", item: "mekanism:painting_machine", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "mek_065_atomic_disassembler_free_runners",
+			title: "&b65. Atomic Disassembler, Free Runners & Scuba Gear",
+			description: [
+				"&7While the Meka-Tool and Alloy Paxel are removed to protect the Sacred Weapon/Tool Line, Mekanism's classic utility gear is ready to assist you:",
+				"&8• &dAtomic Disassembler: &7Fast utility tool for wrenching and clearing machine rooms.",
+				"&8• &eArmored Free Runners: &7Step-assist and fall damage protection in boots/curios.",
+				"&8• &bScuba Tank & Mask: &7Underwater breathing when raiding Ocean Monuments for Guardian Soup!"
+			],
+			x: 3.0, y: 17.0,
+			dependencies: ["mek_062_digital_miner_mastery"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:atomic_disassembler", count: 1 },
+				{ type: "item", item: "mekanism:free_runners", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "mek_066_lithium_production",
+			title: "&e66. Double Evaporation: Liquid Lithium & Lithium Dust",
+			description: [
+				"&7Before you can build an &aInduction Matrix&7 in Phase 2 (or produce &aTritium&7 for your Phase 6 Fusion Reactor), you need &eLithium&7!",
+				"",
+				"&6&lHow to Make Lithium:",
+				"&81. &7Pipe &eBrine&7 from your first Thermal Evaporation Plant into a &asecond Thermal Evaporation Plant&7 to evaporate Brine into &6Liquid Lithium&7.",
+				"&82. &7Send &6Liquid Lithium&7 into a &bRotary Condensentrator&7 (Decondensentrating mode) to turn it into gaseous &6Lithium&7.",
+				"&83. &7Crystallize gaseous Lithium inside a &eChemical Crystallizer&7 to obtain &eLithium Dust&7!"
+			],
+			x: 0.0, y: 22.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["mek_042_multiblock_2_thermal_evaporation"],
+			tasks: [ { type: "item", item: "mekanism:dust_lithium", count: 16 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:dust_lithium", count: 32 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_067_multiblock_3_induction_casing_ports",
+			title: "&a67. Multiblock #3: The Induction Matrix (Sole Bulk Battery!)",
+			description: [
+				"&6&lMultiblock #3 of 7 – The Energized Induction Matrix (Phase 2 Unlock):",
+				"&7Because all Flux Storage blocks from Flux Networks are &cdeleted&7 in this pack, the customizable &aInduction Matrix&7 multiblock (any rectangular size from &e3x3x3 up to 18x18x18&7) is your sole high-capacity energy storage bank!",
+				"",
+				"&eHow to Build It:",
+				"&8• &7Outer edges must be &aInduction Casings&7; inner faces can be Induction Casings or &bStructural Glass&7.",
+				"&8• &7Place at least 2x &aInduction Ports&7: Shift+Right-Click one Port with your Configurator to set it to &aInput&7 (Green) and the other to &cOutput&7 (Red/Orange)!",
+				"&8• &7Place &aInduction Cells&7 (storage capacity) and &bInduction Providers&7 (FE/t transfer rate) anywhere inside the hollow interior!"
+			],
+			x: 3.0, y: 22.5,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["mek_066_lithium_production"],
+			tasks: [
+				{ type: "item", item: "mekanism:induction_casing", count: 26 },
+				{ type: "item", item: "mekanism:induction_port", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:induction_casing", count: 16 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_068_induction_basic_advanced",
+			title: "&a68. Basic & Advanced Induction Cells & Providers",
+			description: [
+				"&7Craft &aBasic&7 and &cAdvanced Induction Cells&7 (using Lithium Dust + Energy Cubes) and &bInduction Providers&7 to populate the interior of your Induction Matrix."
+			],
+			x: 6.0, y: 22.5,
+			dependencies: ["mek_067_multiblock_3_induction_casing_ports"],
+			tasks: [
+				{ type: "item", item: "mekanism:basic_induction_cell", count: 1 },
+				{ type: "item", item: "mekanism:advanced_induction_cell", count: 1 },
+				{ type: "item", item: "mekanism:basic_induction_provider", count: 1 },
+				{ type: "item", item: "mekanism:advanced_induction_provider", count: 1 }
+			],
+			rewards: [
+				{ id: "D70361603FBA0FF9", type: "item", item: "mekanism:advanced_induction_cell" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_069_induction_elite_ultimate",
+			title: "&d69. Elite & Ultimate Induction Cells & Providers",
+			description: [
+				"&7Upgrade your Cells and Providers to &bElite&7 and &dUltimate&7! A single Ultimate Induction Cell stores &a1.6 Tera-FE (1.6 Trillion FE)&7!"
+			],
+			x: 9.0, y: 22.5,
+			dependencies: ["mek_068_induction_basic_advanced"],
+			tasks: [
+				{ type: "item", item: "mekanism:elite_induction_cell", count: 1 },
+				{ type: "item", item: "mekanism:ultimate_induction_cell", count: 1 },
+				{ type: "item", item: "mekanism:elite_induction_provider", count: 1 },
+				{ type: "item", item: "mekanism:ultimate_induction_provider", count: 1 }
+			],
+			rewards: [
+				{ id: "762CA4289C626F48", type: "item", item: "mekanism:ultimate_induction_provider" },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_070_extras_induction_absolute_supreme",
+			title: "&470. Mekanism: Extras – Absolute (Phase 5A) & Supreme Cells",
+			description: [
+				"&7In Wave 5A (after defeating Ancient Remnant & Netherite Monstrosity) and Phase 6, upgrade your Ultimate Induction Cells and Providers using &6Mekanism: Extras&7 alloys into &2Absolute&7 and &4Supreme Induction Cells & Providers&7!"
+			],
+			x: 12.0, y: 22.5,
+			dependencies: ["mek_069_induction_elite_ultimate", "mek_012_extras_tier6_thermonuclear_supreme"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:absolute_induction_cell", count: 1 },
+				{ type: "item", item: "mekanism_extras:supreme_induction_cell", count: 1 },
+				{ type: "item", item: "mekanism_extras:absolute_induction_provider", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 6 } ]
+		},
+		{
+			id: "mek_071_extras_induction_cosmic_infinite",
+			title: "&6&l71. Mekanism: Extras – Cosmic & Infinite Induction Matrix!",
+			description: [
+				"&7Push energy storage to the mathematical limit of 64-bit integers with &5Cosmic&7 (Phase 6) and &6Infinite Induction Cells & Providers&7 (Phase 7)!"
+			],
+			x: 15.0, y: 22.5,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["mek_070_extras_induction_absolute_supreme", "mek_014_extras_tier8_spectrum_infinite"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:cosmic_induction_cell", count: 1 },
+				{ type: "item", item: "mekanism_extras:infinite_induction_cell", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 10 } ]
+		},
+		{
+			id: "mek_072_early_generators_trio",
+			title: "&a72. Early Power: Heat, Bio (Phase 0) & Wind/Solar (Phase 1A)",
+			description: [
+				"&7Craft Mekanism's early power generators:",
+				"&8• &6Phase 0: &6Heat Generator&7 & &aBio-Generator&7 (fed with Bio-Fuel from pressed &eSunflower Oil&7!).",
+				"&8• &bPhase 1A: &bWind Generator&7, &9Solar Generator&7 & &9Advanced Solar Generator&7 (unlocked via Naga Scales, Aquamarine & Astral Glass Lenses!)."
+			],
+			x: 0.0, y: 26.0,
+			dependencies: ["mek_004_steel_and_casing"],
+			tasks: [
+				{ type: "item", item: "mekanismgenerators:heat_generator", count: 1 },
+				{ type: "item", item: "mekanismgenerators:bio_generator", count: 1 },
+				{ type: "item", item: "mekanismgenerators:wind_generator", count: 1 },
+				{ type: "item", item: "mekanismgenerators:advanced_solar_generator", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanismgenerators:wind_generator", count: 2 },
+				{ type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "mek_073_bio_and_gas_burning_gen",
+			title: "&373. Phase 2 Power Leap: The Gas-Burning Generator (Ethylene!)",
+			description: [
+				"&7Unlocked in Phase 2 using &6Allthemodium&7 and &cFiery Blood&7 (from the Twilight Hydra): burn gaseous &bEthylene&7 (from your PRC) inside a &3Gas-Burning Generator&7 for thousands of FE/t!"
+			],
+			x: 3.0, y: 26.0,
+			dependencies: ["mek_072_early_generators_trio", "mek_058_prc_ethylene_substrate"],
+			tasks: [ { type: "item", item: "mekanismgenerators:gas_burning_generator", count: 1 } ],
+			rewards: [
+				{ id: "C19AF307ADFDF8BF", type: "item", item: "mekanismgenerators:gas_burning_generator" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_074_fissile_step1_hydrofluoric_acid",
+			title: "&b74. Fissile Fuel Step 1: Fluorite & Hydrofluoric Acid",
+			description: [
+				"&6&lStep-by-Step Fissile Fuel Line (Step 1 of 4):",
+				"&7Mine &fFluorite&7 underground and feed it along with &2Sulfuric Acid&7 into a &dChemical Dissolution Chamber&7 to produce corrosive &bHydrofluoric Acid&7!"
+			],
+			x: 6.0, y: 26.0,
+			dependencies: ["mek_073_bio_and_gas_burning_gen", "mek_050_sulfuric_acid_complete"],
+			tasks: [ { type: "item", item: "mekanism:fluorite_gem", count: 32 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:fluorite_gem", count: 32 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_075_fissile_step2_yellow_cake_uranium_oxide",
+			title: "&e75. Fissile Fuel Step 2: Yellow Cake & Uranium Oxide",
+			description: [
+				"&6&lStep-by-Step Fissile Fuel Line (Step 2 of 4):",
+				"&81. &7Pass &2Uranium Ingots&7 through an &bEnrichment Chamber&7 to get &e2x Yellow Cake Uranium&7 per ingot.",
+				"&82. &7Feed &eYellow Cake Uranium&7 into a &eChemical Oxidizer&7 to convert it into gaseous &eUranium Oxide&7!"
+			],
+			x: 9.0, y: 26.0,
+			dependencies: ["mek_074_fissile_step1_hydrofluoric_acid"],
+			tasks: [
+				{ type: "item", item: "mekanism:ingot_uranium", count: 16 },
+				{ type: "item", item: "mekanism:yellow_cake_uranium", count: 32 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:yellow_cake_uranium", count: 32 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_076_fissile_step3_uranium_hexafluoride",
+			title: "&a76. Fissile Fuel Step 3: Uranium Hexafluoride",
+			description: [
+				"&6&lStep-by-Step Fissile Fuel Line (Step 3 of 4):",
+				"&7Pipe &bHydrofluoric Acid&7 + &eUranium Oxide&7 into a &dChemical Infuser&7 to synthesize &aUranium Hexafluoride&7 gas!"
+			],
+			x: 12.0, y: 26.0,
+			dependencies: ["mek_075_fissile_step2_yellow_cake_uranium_oxide"],
+			tasks: [ { type: "item", item: "mekanism:chemical_infuser", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "mek_077_fissile_step4_isotopic_centrifuge",
+			title: "&277. Fissile Fuel Step 4: Isotopic Centrifuge (Fissile Fuel!)",
+			description: [
+				"&6&lStep-by-Step Fissile Fuel Line (Step 4 of 4):",
+				"&7Pipe &aUranium Hexafluoride&7 into an &bIsotopic Centrifuge&7 (&fmekanism:isotopic_centrifuge&7) to spin it into enriched &2Fissile Fuel&7!",
+				"",
+				"&7Your nuclear fuel supply is ready!"
+			],
+			x: 15.0, y: 26.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["mek_076_fissile_step3_uranium_hexafluoride"],
+			tasks: [ { type: "item", item: "mekanism:isotopic_centrifuge", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:upgrade_speed", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_078_hazmat_suit_dosimeter",
+			title: "&678. Radiation Safety: Hazmat Suit & Geiger Counter",
+			description: [
+				"&7Working with Nuclear Waste, Polonium, and Plutonium can irradiate chunks if you break a pipe or barrel containing radioactive gas!",
+				"",
+				"&7Craft a &6Hazmat Suit&7 (protects you from radiation exposure) and a &eGeiger Counter&7 + &eDosimeter&7!"
+			],
+			x: 15.0, y: 29.0,
+			dependencies: ["mek_077_fissile_step4_isotopic_centrifuge"],
+			tasks: [
+				{ type: "item", item: "mekanism:hazmat_mask", count: 1 },
+				{ type: "item", item: "mekanism:hazmat_gown", count: 1 },
+				{ type: "item", item: "mekanism:hazmat_pants", count: 1 },
+				{ type: "item", item: "mekanism:hazmat_boots", count: 1 },
+				{ type: "item", item: "mekanism:geiger_counter", count: 1 }
+			],
+			rewards: [
+				{ id: "47B1ED59472EEF18", type: "item", item: "mekanism:dosimeter" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "mek_079_multiblock_4_fission_reactor",
+			title: "&2&l79. Multiblock #4: The Fission Reactor (Phase 4)!",
+			description: [
+				"&6&lMultiblock #4 of 7 – The Fission Reactor (3x4x3 up to 18x18x18):",
+				"&7Unlocked in Phase 4 after bringing back &6Desh&7 and &5Ostrum&7! Build your Fission Reactor far from your main storage room (or in a dedicated dimension)!",
+				"",
+				"&eHow to Assemble the Multiblock:",
+				"&8• &7Outer frame: &2Fission Reactor Casings&7; faces: &bReactor Glass&7.",
+				"&8• &7Interior: Columns of &2Fission Fuel Assemblies&7 topped with a &2Control Rod Assembly&7 directly beneath the roof!",
+				"&8• &7Place &24x Fission Reactor Ports&7 (configured with your Configurator):",
+				"   &a1. Input Only (Green): &7For &2Fissile Fuel&7.",
+				"   &a2. Input Only (Green): &7For &9Water&7 (or Sodium coolant—use an ExtendedAE Infinity Water Cell!).",
+				"   &63. Output Coolant (Orange): &7Outputs &fSteam&7 to your Industrial Turbine.",
+				"   &d4. Output Waste (Purple): &7Outputs &2Nuclear Waste&7 to your Orbital Solar Neutron Activators!"
+			],
+			x: 18.0, y: 26.0,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["mek_077_fissile_step4_isotopic_centrifuge"],
+			tasks: [
+				{ type: "item", item: "mekanismgenerators:fission_reactor_casing", count: 36 },
+				{ type: "item", item: "mekanismgenerators:reactor_glass", count: 16 },
+				{ type: "item", item: "mekanismgenerators:fission_reactor_port", count: 4 },
+				{ type: "item", item: "mekanismgenerators:fission_fuel_assembly", count: 4 },
+				{ type: "item", item: "mekanismgenerators:control_rod_assembly", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:radioactive_waste_barrel", count: 16 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_080_fission_logic_circuit_breaker",
+			title: "&c80. Meltdown Prevention: Fission Reactor Logic Adapter",
+			description: [
+				"&c&lNever Run a Fission Reactor Without a Safety Shutoff!",
+				"&7Place &c2x Fission Reactor Logic Adapters&7 on your reactor wall:",
+				"&8• &7Set Adapter 1 to &cHigh Temperature&7 (or &cExcess Waste&7 / &cDamage Critical&7).",
+				"&8• &7Set Adapter 2 to &aActivation&7.",
+				"&8• &7Connect them with a simple Redstone inverter/latch so that if coolant ever drops or waste backs up, the reactor &aautomatically SCRAMs (shuts off) before melting down&7!"
+			],
+			x: 18.0, y: 29.0,
+			dependencies: ["mek_079_multiblock_4_fission_reactor"],
+			tasks: [ { type: "item", item: "mekanismgenerators:fission_reactor_logic_adapter", count: 2 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "mek_081_multiblock_5_thermoelectric_boiler",
+			title: "&681. Multiblock #5: The Thermoelectric Boiler (Sodium Loop)",
+			description: [
+				"&6&lMultiblock #5 of 7 – The Thermoelectric Boiler:",
+				"&7Running a huge Fission Reactor at high burn rates (>100 mB/t)? Instead of cooling it with Water, cool it with &7Sodium&7! Pipe Superheated Sodium from the reactor into a &6Thermoelectric Boiler&7 (built from Boiler Casings, Boiler Valves, Superheating Elements, and Pressure Dispersers) to boil Water into massive amounts of Steam!"
+			],
+			x: 21.0, y: 29.0,
+			dependencies: ["mek_079_multiblock_4_fission_reactor"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:boiler_casing", count: 24 },
+				{ type: "item", item: "mekanism:boiler_valve", count: 2 },
+				{ type: "item", item: "mekanism:superheating_element", count: 1 },
+				{ type: "item", item: "mekanism:pressure_disperser", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "mek_082_multiblock_6_industrial_turbine",
+			title: "&b&l82. Multiblock #6: The Industrial Turbine!",
+			description: [
+				"&6&lMultiblock #6 of 7 – The Industrial Turbine (5x5x5 up to 17x17x18):",
+				"&7Pipe the &fSteam&7 from your Fission Reactor into an &bIndustrial Turbine&7 to generate millions of FE/t and recycle the Steam back into cooling Water!",
+				"",
+				"&eHow to Build the Turbine Interior (Bottom to Top):",
+				"&81. &7Center Column: Stack &bTurbine Rotors&7 vertically and attach &b2x Turbine Blades&7 per Rotor.",
+				"&82. &7Place &b1x Rotational Complex&7 directly on top of the highest Turbine Rotor.",
+				"&83. &7Fill the horizontal ring around the Rotational Complex completely with &7Pressure Dispersers&7!",
+				"&84. &7Upper Chamber (above the Complex): Place &eElectromagnetic Coils&7 touching the Rotational Complex (converts rotation into FE) and &9Saturating Condensers&7 (condenses Steam back into Water!).",
+				"&85. &7Upper Walls/Roof: Use &bTurbine Vents&7 (they also export the condensed Water directly back into pipes going to your Fission Reactor!)."
+			],
+			x: 21.0, y: 26.0,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["mek_079_multiblock_4_fission_reactor"],
+			tasks: [
+				{ type: "item", item: "mekanismgenerators:turbine_casing", count: 36 },
+				{ type: "item", item: "mekanismgenerators:turbine_valve", count: 2 },
+				{ type: "item", item: "mekanismgenerators:turbine_vent", count: 8 },
+				{ type: "item", item: "mekanismgenerators:turbine_rotor", count: 3 },
+				{ type: "item", item: "mekanismgenerators:turbine_blade", count: 6 },
+				{ type: "item", item: "mekanismgenerators:rotational_complex", count: 1 },
+				{ type: "item", item: "mekanism:pressure_disperser", count: 8 },
+				{ type: "item", item: "mekanismgenerators:electromagnetic_coil", count: 2 },
+				{ type: "item", item: "mekanismgenerators:saturating_condenser", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanismgenerators:saturating_condenser", count: 8 },
+				{ type: "item", item: "mekanismgenerators:turbine_vent", count: 16 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_083_polonium_plutonium_processing",
+			title: "&b83. Nuclear Waste -> Polonium & Plutonium Pellets!",
+			description: [
+				"&7Pipe the &2Nuclear Waste&7 from your Fission Reactor (via Quantum Entangloporter or AE2 Quantum Ring) into:",
+				"&8• &eSolar Neutron Activators &7(crafted with &fAstral Glass Lenses&7 + &6Desh Plates&7; place them on your &bOrbital Space Station&7 for 24/7 sunlight!) -> outputs &bPolonium Gas&7.",
+				"&8• &bIsotopic Centrifuges &7-> outputs &3Plutonium Gas&7.",
+				"",
+				"&7React Polonium or Plutonium Gas with &fFluorite Dust&7 + &9Water&7 inside a &ePRC&7 to produce &bPolonium Pellets&7 and &3Plutonium Pellets&7 (and safely store the leftover Spent Nuclear Waste in Radioactive Waste Barrels to decay)!"
+			],
+			x: 24.0, y: 26.0,
+			size: 1.5,
+			shape: "hexagon",
+			dependencies: ["mek_079_multiblock_4_fission_reactor"],
+			tasks: [
+				{ type: "item", item: "mekanism:solar_neutron_activator", count: 2 },
+				{ type: "item", item: "mekanism:pellet_polonium", count: 16 },
+				{ type: "item", item: "mekanism:pellet_plutonium", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:pellet_polonium", count: 16 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_084_reprocessed_fissile_fragments",
+			title: "&384. Recycling Plutonium: Reprocessed Fissile Fragments",
+			description: [
+				"&7Don't need extra Plutonium Pellets? Combine &3Plutonium Pellets&7 with Hydrogen Chloride in a Chemical Injection Chamber to make &3Reprocessed Fissile Fragments&7, and oxidize them back into &2Fissile Fuel&7 (recycling 80% of your nuclear waste)!"
+			],
+			x: 24.0, y: 29.0,
+			dependencies: ["mek_083_polonium_plutonium_processing"],
+			optional: true,
+			tasks: [ { type: "item", item: "mekanism:reprocessed_fissile_fragment", count: 4 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "mek_085_fusion_step1_deuterium",
+			title: "&c85. Fusion Fuel Step 1: Heavy Water & Deuterium",
+			description: [
+				"&6&lPreparing Fusion Reactor Fuel (Step 1 of 4):",
+				"&81. &7Install a &9Filter Upgrade&7 (&fmekanism:upgrade_filter&7) + 8x Speed Upgrades inside an &bElectric Pump&7 placed over water—it extracts purple &cHeavy Water&7 instead of normal water!",
+				"&82. &7Pipe Heavy Water into an &bElectrolytic Separator&7 to split it into Oxygen and &cDeuterium Gas&7!"
+			],
+			x: 27.0, y: 26.0,
+			dependencies: ["mek_083_polonium_plutonium_processing"],
+			tasks: [
+				{ type: "item", item: "mekanism:electric_pump", count: 1 },
+				{ type: "item", item: "mekanism:upgrade_filter", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:upgrade_filter", count: 3 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_086_fusion_step2_tritium",
+			title: "&a86. Fusion Fuel Step 2: Solar Neutron Activator -> Tritium",
+			description: [
+				"&6&lPreparing Fusion Reactor Fuel (Step 2 of 4):",
+				"&7Pipe gaseous &6Lithium&7 (from your double Thermal Evaporation Tower + Rotary Condensentrator) into a &eSolar Neutron Activator&7 (on your Orbital Space Station for 24/7 operation!) to convert it into &aTritium Gas&7!"
+			],
+			x: 27.0, y: 29.0,
+			dependencies: ["mek_085_fusion_step1_deuterium", "mek_066_lithium_production"],
+			tasks: [ { type: "item", item: "mekanism:solar_neutron_activator", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "mek_087_fusion_step3_dt_fuel_hohlraum",
+			title: "&d87. Fusion Fuel Step 3: D-T Fuel & The Hohlraum",
+			description: [
+				"&6&lPreparing Fusion Reactor Fuel (Step 3 of 4):",
+				"&81. &7Combine &cDeuterium&7 + &aTritium&7 inside a &dChemical Infuser&7 to create &dD-T Fuel&7.",
+				"&82. &7Craft a &6Hohlraum&7 (&fmekanismgenerators:hohlraum&7) and place it inside the Chemical Infuser's gas-item slot (or a Rotary Condensentrator) to fill it into a &dD-T Fuel-Filled Hohlraum&7!"
+			],
+			x: 27.0, y: 32.0,
+			dependencies: ["mek_086_fusion_step2_tritium"],
+			tasks: [ { type: "item", item: "mekanismgenerators:hohlraum", count: 1 } ],
+			rewards: [
+				{ id: "83E6F11E312D0FDB", type: "item", item: "mekanismgenerators:hohlraum" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "mek_088_fusion_step4_lasers_amplifier",
+			title: "&c88. Fusion Ignition: Lasers & Laser Amplifier (400M FE Pulse!)",
+			description: [
+				"&6&lPreparing Fusion Reactor Ignition (Step 4 of 4):",
+				"&7A Fusion Reactor cannot start without a massive &c400 Million FE laser pulse&7!",
+				"&81. &7Place a &cLaser Amplifier&7 (&fmekanism:laser_amplifier&7) with its red dot pointing directly at your Fusion Reactor's &bLaser Focus Matrix&7.",
+				"&82. &7Aim several powered &cLasers&7 (&fmekanism:laser&7) into the other faces of the Laser Amplifier.",
+				"&83. &7In the Laser Amplifier GUI, set &eRedstone Mode: Normal&7 (so it holds the charge until you press a Button) and type `400000000` (400M FE) into &eMin Threshold&7!"
+			],
+			x: 24.0, y: 32.0,
+			dependencies: ["mek_087_fusion_step3_dt_fuel_hohlraum"],
+			tasks: [
+				{ type: "item", item: "mekanism:laser", count: 4 },
+				{ type: "item", item: "mekanism:laser_amplifier", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:laser", count: 4 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "mek_089_multiblock_7_fusion_reactor",
+			title: "&6&l89. Multiblock #7: The Mekanism Fusion Reactor (Phase 6)!",
+			description: [
+				"&6&lMultiblock #7 – The Fusion Reactor (5x5x5 Rounded Sphere):",
+				"&7Unlocked in Phase 6 using &dUnobtainium&7, &6Ignitium&7 (from Ignis), and &4Calorite&7! Assemble the 5x5x5 Fusion Reactor using:",
+				"&8• &61x Fusion Reactor Controller &7(exact center of the top 5x5 face).",
+				"&8• &b1x Laser Focus Matrix &7(center of one side face, facing your Laser Amplifier).",
+				"&8• &63–4x Fusion Reactor Ports &7(1 Input for &cDeuterium&7, 1 Input for &aTritium&7, and 1 Output set with Configurator to export tens of millions of FE/t into your Supreme/Cosmic Induction Matrix!).",
+				"&8• &7Remaining frame/faces: &6Fusion Reactor Frames&7 & &bReactor Glass&7.",
+				"",
+				"&eHow to Ignite: &7Insert your D-T Filled Hohlraum into the Controller, ensure Deuterium & Tritium are flowing in, and press the Button on your 400M FE Laser Amplifier!"
+			],
+			x: 21.0, y: 32.0,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["mek_088_fusion_step4_lasers_amplifier", "p6_unobtainium_fusion"],
+			tasks: [
+				{ type: "item", item: "mekanismgenerators:fusion_reactor_controller", count: 1 },
+				{ type: "item", item: "mekanismgenerators:fusion_reactor_frame", count: 36 },
+				{ type: "item", item: "mekanismgenerators:fusion_reactor_port", count: 3 },
+				{ type: "item", item: "mekanismgenerators:laser_focus_matrix", count: 1 }
+			],
+			rewards: [
+				{ type: "toast", title: "Fusion Reactor Ignited!", description: "You have harnessed the power of a star!" },
+				{ type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "mek_090_extras_naquadah_reactor",
+			title: "&590. Mekanism: Extras – The Naquadah Reactor!",
+			description: [
+				"&7Want even more endgame power than standard Fusion? &6Mekanism: Extras&7 adds &5Naquadah Ore&7 processing and the colossal &5Naquadah Reactor&7—capable of generating gigawatts of FE to feed multiple SPS Reactors!"
+			],
+			x: 18.0, y: 32.0,
+			dependencies: ["mek_089_multiblock_7_fusion_reactor"],
+			optional: true,
+			tasks: [ { type: "item", item: "mekanism_extras:naquadah_reactor_controller", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 8 } ]
+		},
+		{
+			id: "mek_091_qio_drive_array",
+			title: "&d91. Quantum Item Orchestration: QIO Drive Array",
+			description: [
+				"&7Unlocked Polonium and Antimatter? Explore Mekanism's wireless storage system: the &dQIO Drive Array&7, &dQIO Dashboard&7, and &dPortable QIO Dashboard&7!"
+			],
+			x: 15.0, y: 32.0,
+			dependencies: ["mek_083_polonium_plutonium_processing"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:qio_drive_array", count: 1 },
+				{ type: "item", item: "mekanism:qio_dashboard", count: 1 },
+				{ type: "item", item: "mekanism:qio_drive_base", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "mek_092_extras_qio_drives",
+			title: "&692. Mekanism: Extras – Collapse to Infinite QIO Drives",
+			description: [
+				"&7In &6Mekanism: Extras&7, QIO Drives scale past Supermassive into &2Collapse&7, &4Gamma&7, &5Black Hole&7, and &6Singularity QIO Drives&7!"
+			],
+			x: 12.0, y: 32.0,
+			dependencies: ["mek_091_qio_drive_array"],
+			optional: true,
+			tasks: [ { type: "checkmark" } ],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "mek_093_sps_casings_custom_recipe",
+			title: "&393. SPS Step 1: Cryogenic SPS Casings (60x Required!)",
+			description: [
+				"&6&lBuilding the SPS Antimatter Reactor (Step 1 of 4):",
+				"&7In &eTech, Scales & Rockets&7, &3SPS Casings&7 (&fmekanism:sps_casing&7) require Glacio's cryogenic metals and Leviathan pressure cores to contain antimatter!",
+				"",
+				"&6&lCustom KubeJS Recipe – SPS Casing:",
+				"&8• &4Calorite Plate &7(&fad_astra:calorite_plate&7)",
+				"&8• &bIce Shard &7(&fad_astra:ice_shard&7)",
+				"&8• &bIce Dragonsteel Ingot &7(&ficeandfire:dragonsteel_ice_ingot&7)",
+				"&8• &bPolonium Pellet &7(&fmekanism:pellet_polonium&7)",
+				"",
+				"&7Fabricate 60x SPS Casings (plus 3x SPS Ports) to build the 7x7x7 rounded cube!"
+			],
+			x: 9.0, y: 32.0,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["mek_083_polonium_plutonium_processing", "p4_ice_dragonforge"],
+			tasks: [
+				{ type: "item", item: "mekanism:sps_casing", count: 60 },
+				{ type: "item", item: "mekanism:sps_port", count: 3 }
+			],
+			rewards: [
+				{ id: "B92B8B1685AF64E4", type: "item", item: "mekanism:sps_port" },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_094_sps_supercharged_coils",
+			title: "&b94. SPS Step 2: Supercharged Coils",
+			description: [
+				"&6&lBuilding the SPS Antimatter Reactor (Step 2 of 4):",
+				"&7Craft &bSupercharged Coils&7 (&fmekanism:supercharged_coil&7) and place them inside the SPS interior, attached directly to the inner face of an &3SPS Port&7 that receives massive FE power from your Fusion Reactor!"
+			],
+			x: 6.0, y: 32.0,
+			dependencies: ["mek_093_sps_casings_custom_recipe"],
+			tasks: [ { type: "item", item: "mekanism:supercharged_coil", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:supercharged_coil", count: 2 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_095_sps_antimatter_gas",
+			title: "&d95. SPS Step 3: Synthesizing Gaseous Antimatter",
+			description: [
+				"&6&lBuilding the SPS Antimatter Reactor (Step 3 of 4):",
+				"&7Pipe &b1,000 mB of Polonium Gas&7 + &c400 Million FE&7 into your SPS Reactor to produce &d1 mB of Antimatter Gas&7!"
+			],
+			x: 3.0, y: 32.0,
+			dependencies: ["mek_094_sps_supercharged_coils"],
+			tasks: [ { type: "item", item: "mekanism:chemical_crystallizer", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 6 } ]
+		},
+		{
+			id: "mek_096_sps_pellet_antimatter",
+			title: "&d&l96. SPS Step 4: Crystallizing Pellets of Antimatter!",
+			description: [
+				"&6&lBuilding the SPS Antimatter Reactor (Step 4 of 4):",
+				"&7Pipe &d1,000 mB of Antimatter Gas&7 from your SPS Output Port into a &eChemical Crystallizer&7 to solidify it into &d1x Pellet of Antimatter&7 (&fmekanism:pellet_antimatter&7)!",
+				"",
+				"&4&lWhat Antimatter Unlocks in Phase 7:",
+				"&8• &7Right-click &4The Harbinger&7 in the Ancient Factory with a Pellet of Antimatter to awaken him for &4Witherite Ingots&7!",
+				"&8• &7Synthesize the &dTri-Realm Alloy Singularity&7 for your &6ATM Alloy Weapons & Tools&7!",
+				"&8• &7Craft the &617-Slot Infinite Tier Installer&7, &6Ore Laser Base&7, &eAngel Ring&7, and &dBackpack Infinity Upgrade&7!"
+			],
+			x: 0.0, y: 32.0,
+			size: 1.65,
+			shape: "hexagon",
+			dependencies: ["mek_095_sps_antimatter_gas"],
+			tasks: [ { type: "item", item: "mekanism:pellet_antimatter", count: 2 } ],
+			rewards: [
+				{ id: "8E6EDD2CDF8034CB", type: "item", item: "mekanism:pellet_antimatter" },
+				{ type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "mek_097_antiprotonic_nucleosynthesizer",
+			title: "&d97. The Antiprotonic Nucleosynthesizer (Transmuting Matter!)",
+			description: [
+				"&7Craft the &dAntiprotonic Nucleosynthesizer&7 (&fmekanism:antiprotonic_nucleosynthesizer&7)! Using tiny amounts of Antimatter Gas, it transmutes ordinary items into rare endgame resources!"
+			],
+			x: 0.0, y: 34.5,
+			dependencies: ["mek_096_sps_pellet_antimatter"],
+			tasks: [ { type: "item", item: "mekanism:antiprotonic_nucleosynthesizer", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 6 } ]
+		},
+		{
+			id: "mek_098_modification_station_nutritional",
+			title: "&a98. Nutritional Liquifier & Canteen",
+			description: [
+				"&7Turn excess foods into &aNutritional Paste&7 inside a &aNutritional Liquifier&7 and fill a &aCanteen&7 for instant saturation on the go."
+			],
+			x: 3.0, y: 34.5,
+			dependencies: ["mek_056_precision_sawmill_boxes"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "mekanism:nutritional_liquifier", count: 1 },
+				{ type: "item", item: "mekanism:canteen", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "mek_099_solar_neutron_orbital_mastery",
+			title: "&e99. Orbital Polonium Array (10x Solar Neutron Activators)",
+			description: [
+				"&7Want to produce Pellets of Antimatter 10x faster? Place a full array of &e10x Solar Neutron Activators&7 on your &bOrbital Space Station&7 (where it is eternal day) so your SPS Reactor never waits for Polonium Gas!"
+			],
+			x: 6.0, y: 34.5,
+			dependencies: ["mek_093_sps_casings_custom_recipe"],
+			tasks: [ { type: "item", item: "mekanism:solar_neutron_activator", count: 10 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:pellet_polonium", count: 16 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "mek_100_extras_infinite_energy_cube_tanks",
+			title: "&6100. Mekanism: Extras – Infinite Energy Cube & Chemical Tank!",
+			description: [
+				"&7Craft the ultimate portable storage blocks from &6Mekanism: Extras&7: the &6Infinite Energy Cube&7, &6Infinite Fluid Tank&7, and &6Infinite Chemical Tank&7!"
+			],
+			x: 9.0, y: 34.5,
+			dependencies: ["mek_024_installer_8_infinite"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:infinite_energy_cube", count: 1 },
+				{ type: "item", item: "mekanism_extras:infinite_fluid_tank", count: 1 },
+				{ type: "item", item: "mekanism_extras:infinite_chemical_tank", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 8 } ]
+		},
+		{
+			id: "mek_101_extras_infinite_cables_pipes",
+			title: "&6101. Mekanism: Extras – Infinite Cables, Pipes & Tubes!",
+			description: [
+				"&7Upgrade your logistics network to the final &6Infinite Tier&7: &6Infinite Universal Cables&7, &6Infinite Mechanical Pipes&7, &6Infinite Pressurized Tubes&7, and &6Infinite Logistical Transporters&7!"
+			],
+			x: 12.0, y: 34.5,
+			dependencies: ["mek_100_extras_infinite_energy_cube_tanks"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:infinite_universal_cable", count: 8 },
+				{ type: "item", item: "mekanism_extras:infinite_mechanical_pipe", count: 8 },
+				{ type: "item", item: "mekanism_extras:infinite_pressurized_tube", count: 8 },
+				{ type: "item", item: "mekanism_extras:infinite_logistical_transporter", count: 8 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 8 } ]
+		},
+		{
+			id: "mek_102_infinite_smelting_enriching_factories",
+			title: "&6102. 17-Slot Infinite Smelting & Enriching Factories",
+			description: [
+				"&7Apply your &6Infinite Tier Installers&7 to create a &617-Slot Infinite Smelting Factory&7 and &617-Slot Infinite Enriching Factory&7!"
+			],
+			x: 15.0, y: 34.5,
+			dependencies: ["mek_024_installer_8_infinite"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:infinite_smelting_factory", count: 1 },
+				{ type: "item", item: "mekanism_extras:infinite_enriching_factory", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 8 } ]
+		},
+		{
+			id: "mek_103_infinite_crushing_infusing_factories",
+			title: "&6103. 17-Slot Infinite Crushing & Infusing Factories",
+			description: ["&7Upgrade your Crushing and Metallurgic Infusing Factories to the &617-Slot Infinite Tier&7!"],
+			x: 18.0, y: 34.5,
+			dependencies: ["mek_102_infinite_smelting_enriching_factories"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:infinite_crushing_factory", count: 1 },
+				{ type: "item", item: "mekanism_extras:infinite_infusing_factory", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 8 } ]
+		},
+		{
+			id: "mek_104_infinite_purifying_injecting_combining",
+			title: "&6104. 17-Slot Infinite Purifying, Injecting & Combining Factories",
+			description: [
+				"&7Complete the full set of &617-Slot Infinite Factories&7 by upgrading your Purification, Chemical Injection, and Combining Factories!"
+			],
+			x: 21.0, y: 34.5,
+			dependencies: ["mek_103_infinite_crushing_infusing_factories"],
+			tasks: [
+				{ type: "item", item: "mekanism_extras:infinite_purifying_factory", count: 1 },
+				{ type: "item", item: "mekanism_extras:infinite_injecting_factory", count: 1 },
+				{ type: "item", item: "mekanism_extras:infinite_combining_factory", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 10 } ]
+		},
+		{
+			id: "mek_105_grand_master_finale",
+			title: "&6&l★ 105. SUPREME OVERLORD OF MEKANISM & EXTRAS! ★",
+			description: [
+				"&6&lCongratulations, Supreme Engineer!",
+				"&7You have conquered all &a105 quests&7 of the Mekanism & Mekanism: Extras Bible!",
+				"",
+				"&7From your very first 1-slot Metallurgic Infuser in Phase 0, to a full 5x chemical ore plant processing alien Calorite, all 7 Mekanism Multiblocks (Dynamic Tank, Thermal Evaporation, Induction Matrix, Fission Reactor, Boiler, Industrial Turbine, Fusion Reactor, and SPS Antimatter Reactor), and an unstoppable wall of &617-Slot Infinite Factories&7—your industrial empire has reached absolute perfection!"
+			],
+			x: 25.0, y: 34.5,
+			size: 2.0,
+			shape: "octagon",
+			dependencies: [
+				"mek_053_chemical_crystallizer_5x_complete",
+				"mek_089_multiblock_7_fusion_reactor",
+				"mek_096_sps_pellet_antimatter",
+				"mek_104_infinite_purifying_injecting_combining"
+			],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [
+				{
+					type: "toast",
+					title: "105 Mekanism Quests Mastered!",
+					description: "You are the Supreme Overlord of Mekanism & Extras!"
+				},
+				{ type: "xp_levels", xp_levels: 25 }
+			]
+		}
+	]
+}

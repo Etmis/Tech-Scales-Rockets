@@ -1,0 +1,16 @@
+{
+	id: "tier_0_starter",
+	title: "&aPhase 0: Industrial Supply Crate",
+	icon: "industrialforegoing:machine_frame_pity",
+	rewards: [
+		{ item: "mekanism:ingot_osmium", count: 8, weight: 12 },
+		{ item: "minecraft:iron_ingot", count: 16, weight: 12 },
+		{ item: "minecraft:redstone", count: 24, weight: 10 },
+		{ item: "industrialforegoing:plastic", count: 6, weight: 8 },
+		{ item: "mekanism:ingot_steel", count: 6, weight: 8 },
+		{ item: "mekanism:basic_control_circuit", count: 2, weight: 5 },
+		{ item: "ae2:fluix_crystal", count: 8, weight: 6 },
+		{ item: "storagedrawers:upgrade_template", count: 4, weight: 7 },
+		{ item: "minecraft:diamond", count: 3, weight: 3 }
+	]
+}

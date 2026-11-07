@@ -1,0 +1,927 @@
+{
+	id: "sacred_armory",
+	title: "&eThe Sacred Armory & Vitality",
+	icon: "allthemodium:unobtainium_chestplate",
+	group: "group_ascension",
+	order_index: 9,
+	quests: [
+		{
+			id: "arm_welcome",
+			title: "&e&lThe Sacred Armor & Tool Pillar",
+			description: [
+				"&7In &6Tech, Scales & Rockets&7, your armor and tools are not disposable—they are lifelong companions that evolve alongside you from Phase 0 to Phase 7!",
+				"",
+				"&c&lSidegrade Gear Rules:",
+				"&8• &cDeleted: &7MekaSuit, Meka-Tool, Alloy Paxel, IF Infinity tools/backpack, and all weapons from Ice and Fire & L_Ender's Cataclysm are completely removed.",
+				"&8• &dCosmetic Trophies (0 Stats): &7Armors from &6Ice and Fire&7 (Dragon Scale, Tide Guardian, Dragonsteel) and &cCataclysm&7 (Ignitium, Cursium, Bone Reptile, Monstrous Helm) remain craftable, but have &e0 Armor/Toughness stats&7—serving purely as visual trophies for &dCosmetic Armor Reworked&7! (&2Twilight Forest&7 armors remain in Phase 1 as an optional early stepping stone).",
+				"",
+				"&a&lOne Continuous Evolution:",
+				"&8• &bArmor: &bDiamond &7-> &8Netherite &7-> &6Allthemodium &7-> &aVibranium &7-> &dUnobtainium&7.",
+				"&8• &eWeapons & Tools: &bDiamond &7-> &8Netherite &7-> &6Allthemodium &7-> &aVibranium &7-> &dUnobtainium &7-> &6ATM Alloy (Sword, Pickaxe, Axe, Shovel)&7!",
+				"",
+				"&7Every time you upgrade inside the &fSmithing Table&7, &a100% of your Enchantments, Apotheosis Gems/Affixes, Hermetic Space Enchants, and Astral Lumen Bindings carry over&7!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.65,
+			shape: "gear",
+			tasks: [ { id: "ARMT000000000001", type: "checkmark" } ],
+			rewards: [
+				{ id: "ARMR000000000001", type: "item", item: "minecraft:smithing_table" },
+				{ id: "ARMR000000000002", type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "arm_cosmetic_and_elytra",
+			title: "&dCosmetic Armor Trophies & Curios Slots",
+			description: [
+				"&7Want to wear badass Dragonsteel, Ignitium, or Cursium armor without losing the godlike protection of your Sacred Armor?",
+				"",
+				"&8• &eCosmetic Armor Reworked: &7Open your inventory and click the small armor icon to access 4 visual-only Cosmetic Armor slots! Place any crafted 0-stat Ice and Fire or Cataclysm armor there to show off your boss trophies!",
+				"&8• &bElytra & Jetpack (Curios): &7Your Elytra or Mekanism Jetpack goes into your Curios Back slot (or Angel Ring in Ring slot), so you never have to unequip your Sacred Chestplate!"
+			],
+			x: 0.0, y: -2.5,
+			shape: "rsquare",
+			dependencies: ["arm_welcome"],
+			tasks: [ { id: "ARMT000000000002", type: "checkmark" } ],
+			rewards: [
+				{ id: "ARMR000000000003", type: "item", item: "minecraft:armor_stand", count: 2 },
+				{ id: "ARMR000000000004", type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "arm_tier1_diamond",
+			title: "&bStep 1: Full Diamond Armor (Phase 0)",
+			description: [
+				"&7Forge a complete set of &bDiamond Armor&7.",
+				"",
+				"&eTip: &7Start enchanting and reforging this set right away! Even early Protection, Unbreaking, and Apotheosis Gem sockets will stay on this exact armor set all the way to Phase 7."
+			],
+			x: 3.5, y: 0.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["arm_welcome", "p0_iron_age"],
+			tasks: [
+				{ id: "ARMT000000000003", type: "item", item: "minecraft:diamond_helmet", count: 1 },
+				{ id: "ARMT000000000004", type: "item", item: "minecraft:diamond_chestplate", count: 1 },
+				{ id: "ARMT000000000005", type: "item", item: "minecraft:diamond_leggings", count: 1 },
+				{ id: "ARMT000000000006", type: "item", item: "minecraft:diamond_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000005", type: "item", item: "minecraft:diamond", count: 4 },
+				{ id: "ARMR000000000006", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "arm_twilight_stepping_stone",
+			title: "&2Optional Phase 1 Stepping Stone: Naga Armor",
+			description: [
+				"&7While Ice and Fire and Cataclysm armors have 0 stats, &2Twilight Forest armors&7 (&aNaga Scale&7, &2Ironwood&7, &eSteeleaf&7, &6Fiery&7, &7Knightmetal&7, &fYeti&7) keep their natural stats in Phase 1 as an optional stepping stone if you haven't finished your full Netherite set yet—and they also look great in Cosmetic Armor slots!"
+			],
+			x: 3.5, y: 1.75,
+			dependencies: ["arm_tier1_diamond", "p1a_slay_naga"],
+			optional: true,
+			tasks: [
+				{ id: "ARMT000000000007", type: "item", item: "twilightforest:naga_chestplate", count: 1 },
+				{ id: "ARMT000000000008", type: "item", item: "twilightforest:naga_leggings", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000007", type: "item", item: "twilightforest:naga_scale", count: 4 },
+				{ id: "ARMR000000000008", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "arm_netherite_template",
+			title: "&8Netherite Upgrade Template",
+			description: [
+				"&7Locate a Bastion Remnant in the Nether to acquire a &8Netherite Upgrade Smithing Template&7.",
+				"",
+				"&eRemember: &7Always duplicate your last template with &b7 Diamonds + 1 Netherrack&7 before using it—you need 8 templates total for your 4 armor pieces and 4 tools!"
+			],
+			x: 6.5, y: 0.0,
+			dependencies: ["arm_tier1_diamond", "0C7C80BC93C9A6BE"],
+			tasks: [ { id: "ARMT000000000009", type: "item", item: "minecraft:netherite_upgrade_smithing_template", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000009", type: "item", item: "minecraft:netherite_upgrade_smithing_template" },
+				{ id: "ARMR000000000010", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "arm_tier2_netherite",
+			title: "&8Step 2: Full Netherite Armor (Phase 0–1)",
+			description: [
+				"&7Upgrade all four pieces of your Diamond Armor into &8Netherite Armor&7 inside a Smithing Table.",
+				"",
+				"&7This set grants knockback resistance and toughness, carrying you through the Twilight Forest and the Deep Dark."
+			],
+			x: 9.5, y: 0.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["arm_netherite_template"],
+			tasks: [
+				{ id: "ARMT000000000010", type: "item", item: "minecraft:netherite_helmet", count: 1 },
+				{ id: "ARMT000000000011", type: "item", item: "minecraft:netherite_chestplate", count: 1 },
+				{ id: "ARMT000000000012", type: "item", item: "minecraft:netherite_leggings", count: 1 },
+				{ id: "ARMT000000000013", type: "item", item: "minecraft:netherite_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000011", type: "item", item: "minecraft:netherite_ingot", count: 2 },
+				{ id: "ARMR000000000012", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "arm_allthemodium_template",
+			title: "&6Allthemodium Upgrade Template (Suspicious Clay)",
+			description: [
+				"&7Walk along the Polished Basalt path leading to the central portal in an &8Ancient City&7, spot the lighter gray &bSuspicious Clay&7 block, and brush it with a &6Brush&7 to extract the &6Allthemodium Upgrade Smithing Template&7!",
+				"",
+				"&eDuplicate Immediately: &7Combine the template with &8Netherite Ingots + Deepslate&7 in a Crafting Table so you never run out!"
+			],
+			x: 12.5, y: 0.0,
+			dependencies: ["arm_tier2_netherite", "p2_mine_allthemodium"],
+			tasks: [
+				{ id: "ARMT000000000014", type: "item", item: "allthemodium:allthemodium_upgrade_smithing_template", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000013", type: "item", item: "allthemodium:allthemodium_upgrade_smithing_template" },
+				{ id: "ARMR000000000014", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "arm_tier3_allthemodium",
+			title: "&6Step 3: Full Allthemodium Armor (Phase 2)",
+			description: [
+				"&7Upgrade your Netherite Armor into indestructible &6Allthemodium Armor&7!",
+				"",
+				"&6Allthemodium Armor Perks (24 Defense, 5 Toughness/piece, 85 Enchantability):",
+				"&8• &7Completely indestructible (never loses durability).",
+				"&8• &7Piglin neutrality, Powdered Snow walking, fire/lava immunity, and zero fall/kinetic damage."
+			],
+			x: 15.5, y: 0.0,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["arm_allthemodium_template"],
+			tasks: [
+				{ id: "ARMT000000000015", type: "item", item: "allthemodium:allthemodium_helmet", count: 1 },
+				{ id: "ARMT000000000016", type: "item", item: "allthemodium:allthemodium_chestplate", count: 1 },
+				{ id: "ARMT000000000017", type: "item", item: "allthemodium:allthemodium_leggings", count: 1 },
+				{ id: "ARMT000000000018", type: "item", item: "allthemodium:allthemodium_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000015", type: "item", item: "allthemodium:allthemodium_ingot", count: 3 },
+				{ id: "ARMR000000000016", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "arm_vibranium_template",
+			title: "&aVibranium Upgrade Template (Suspicious Soul Sand)",
+			description: [
+				"&7Find a large two-sided &8Bastion Remnant&7 in the Nether (with lava lakes and a central bridge), place a block underneath the &8Suspicious Soul Sand&7 sticking out of the Blackstone walls/bridges, and brush it for the &aVibranium Upgrade Smithing Template&7!",
+				"",
+				"&6&lCustom KubeJS Duplication (Requires The Other):",
+				"&7To duplicate the Vibranium Template for all 8 pieces of your gear, combine &a1x Vibranium Template + 5x Allthemodium Ingots + 2x Dragon Bones + 1x Ancient Stone (from The Other)&7!"
+			],
+			x: 18.5, y: 0.0,
+			dependencies: ["arm_tier3_allthemodium", "p3_mine_vibranium"],
+			tasks: [ { id: "ARMT000000000019", type: "item", item: "allthemodium:vibranium_upgrade_smithing_template", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000017", type: "item", item: "allthemodium:vibranium_upgrade_smithing_template" },
+				{ id: "ARMR000000000018", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "arm_tier4_vibranium",
+			title: "&aStep 4: Full Vibranium Armor (Phase 3–4)",
+			description: [
+				"&7Upgrade your Allthemodium Armor into &aVibranium Armor&7 (32 Defense, 9 Toughness/piece, 0.8 Knockback Resistance/piece, 105 Enchantability)!",
+				"",
+				"&bHermetic Space Preparation (Phase 4):",
+				"&7In Phase 4, you will decompose crafted Ad Astra Space Suits into &bSpace Enchanted Books&7 (&9Space Breathing, Acid Rain Resistance, Thermal/Cryo Protection, Gravity Normalizing&7) and apply them directly onto this &aVibranium Armor&7 to fight Ice Dragons on Glacio and the 6 Cataclysm Titans!"
+			],
+			x: 21.5, y: 0.0,
+			size: 1.5,
+			shape: "pentagon",
+			dependencies: ["arm_vibranium_template"],
+			tasks: [
+				{ id: "ARMT000000000020", type: "item", item: "allthemodium:vibranium_helmet", count: 1 },
+				{ id: "ARMT000000000021", type: "item", item: "allthemodium:vibranium_chestplate", count: 1 },
+				{ id: "ARMT000000000022", type: "item", item: "allthemodium:vibranium_leggings", count: 1 },
+				{ id: "ARMT000000000023", type: "item", item: "allthemodium:vibranium_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000019", type: "item", item: "allthemodium:vibranium_ingot", count: 3 },
+				{ id: "ARMR000000000020", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "arm_hermetic_step1_space_suit",
+			title: "&bHermetic Seal 1: Space Suit Decomposition",
+			description: [
+				"&7In &6Tech, Scales & Rockets&7, standard crafting recipes for Giselle Space Enchantments are disabled!",
+				"",
+				"&7Instead, craft a standard &fAd Astra Space Suit&7 once as an intermediate, then decompose it in the &bIF Dissolution Chamber / Altar&7 into &bSpace Breathing&7 & &bGravity Normalizing&7 Enchanted Books and apply them directly to your &aVibranium Armor&7!"
+			],
+			x: 20.5, y: 1.75,
+			dependencies: ["arm_tier4_vibranium", "765E9198DEA62531"],
+			tasks: [
+				{ id: "ARMT000000000024", type: "item", item: "ad_astra:space_helmet", count: 1 },
+				{ id: "ARMT000000000025", type: "item", item: "ad_astra:space_suit", count: 1 },
+				{ id: "ARMT000000000026", type: "item", item: "ad_astra:space_pants", count: 1 },
+				{ id: "ARMT000000000027", type: "item", item: "ad_astra:space_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000021", type: "item", item: "ad_astra:oxygen_tank" },
+				{ id: "ARMR000000000022", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "arm_hermetic_step2_netherite_jetsuit",
+			title: "&4Hermetic Seal 2: Netherite & Jet Suit Enchants",
+			description: [
+				"&7Craft the &8Netherite Space Suit&7 and &4Jet Suit&7 using Ostrum and Calorite, then decompose them in the Dissolution Chamber / Altar to extract &6Space Fire Proof&7 and &aAcid Rain Proof&7 Enchanted Books for your &aSacred Vibranium Armor&7!",
+				"",
+				"&7Your Vibranium Armor is now 100% hermetically sealed for Venus and Glacio—and those space enchantments will carry over onto your &dUnobtainium Armor&7 in Phase 6!"
+			],
+			x: 22.5, y: 1.75,
+			dependencies: ["arm_hermetic_step1_space_suit", "F8BB6EE9EB71D928"],
+			tasks: [
+				{ id: "ARMT000000000028", type: "item", item: "ad_astra:netherite_space_suit", count: 1 },
+				{ id: "ARMT000000000029", type: "item", item: "ad_astra:jet_suit", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000023", type: "item", item: "ad_astra:ostrum_plate", count: 4 },
+				{ id: "ARMR000000000024", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "arm_unobtainium_template",
+			title: "&dUnobtainium Template (The Other Trial & Astral Duplication)",
+			description: [
+				"&7First, conquer the &cTrial Spawner&7 inside the diamond-shaped Library of an &6ATM Dungeon in The Other&7 to claim your first &dUnobtainium Upgrade Smithing Template&7!",
+				"",
+				"&6&lCustom KubeJS Astral Altar Duplication (1 -> 3 Templates):",
+				"&7Because vanilla Crafting Table duplication is disabled, multiply your template on the &dAstral Sorcery Altar&7 using:",
+				"&8• &d1x Unobtainium Upgrade Smithing Template &7(from the Trial Spawner)",
+				"&8• &eAncient Metal Ingots &7(Ancient Remnant)",
+				"&8• &8Monstrous Horn &7(Netherite Monstrosity)",
+				"&8• &6Piglich Hearts &7(&fallthemodium:piglich_heart&7 from The Other)",
+				"&8• &bCelestial Crystal &7& &9Starmetal Ingots &7(Astral Sorcery)"
+			],
+			x: 25.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["arm_tier4_vibranium", "p6_unobtainium_fusion"],
+			tasks: [
+				{ id: "ARMT000000000030", type: "item", item: "allthemodium:unobtainium_upgrade_smithing_template", count: 3 }
+			],
+			rewards: [
+				{ id: "ARMR000000000025", type: "item", item: "allthemodium:unobtainium_upgrade_smithing_template", count: 2 },
+				{ id: "ARMR000000000026", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "arm_tier5_unobtainium",
+			title: "&d&lStep 5: Full Unobtainium Armor (Phase 6 Finale)",
+			description: [
+				"&7The culmination of your Sacred Armor Line! Upgrade all four pieces of your Vibranium Armor into &dUnobtainium Armor&7 (40 Defense, 15 Toughness/piece, 1.0 full Knockback Immunity, 125 Enchantability)!",
+				"",
+				"&dYou are now clad in the strongest armor in existence, carrying every enchantment, Hermetic Space Enchant, and Apotheosis Gem socket you built throughout your entire playthrough!"
+			],
+			x: 28.0, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["arm_unobtainium_template"],
+			tasks: [
+				{ id: "ARMT000000000031", type: "item", item: "allthemodium:unobtainium_helmet", count: 1 },
+				{ id: "ARMT000000000032", type: "item", item: "allthemodium:unobtainium_chestplate", count: 1 },
+				{ id: "ARMT000000000033", type: "item", item: "allthemodium:unobtainium_leggings", count: 1 },
+				{ id: "ARMT000000000034", type: "item", item: "allthemodium:unobtainium_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000027", type: "item", item: "allthemodium:unobtainium_ingot", count: 4 },
+				{
+					id: "ARMR000000000028",
+					type: "toast",
+					title: "Sacred Armor Perfected!",
+					description: "You completed the full Unobtainium Armor line!"
+				},
+				{ id: "ARMR000000000029", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "arm_tools_diamond",
+			title: "&bSacred Tools Step 1: Diamond Arsenal",
+			description: [
+				"&7Just like your armor, forge your four dedicated &bDiamond Tools & Sword&7 (&bSword, Pickaxe, Axe, Shovel&7)!",
+				"",
+				"&cWhy No Alloy Paxel? &7The Alloy Paxel is removed due to technical enchantment limits, so you will carry and upgrade these four dedicated tools all the way to &6ATM Alloy&7 in Phase 7!"
+			],
+			x: 3.5, y: -2.5,
+			dependencies: ["arm_tier1_diamond"],
+			tasks: [
+				{ id: "ARMT000000000035", type: "item", item: "minecraft:diamond_sword", count: 1 },
+				{ id: "ARMT000000000036", type: "item", item: "minecraft:diamond_pickaxe", count: 1 },
+				{ id: "ARMT000000000037", type: "item", item: "minecraft:diamond_axe", count: 1 },
+				{ id: "ARMT000000000038", type: "item", item: "minecraft:diamond_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000030", type: "item", item: "minecraft:diamond", count: 2 },
+				{ id: "ARMR000000000031", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "arm_tools_diamond_netherite",
+			title: "&8Sacred Tools Step 2: Netherite Arsenal",
+			description: [
+				"&7Upgrade your Diamond Sword, Pickaxe, Axe, and Shovel into &8Netherite&7 inside a Smithing Table. A Netherite Pickaxe is required to mine your first &6Allthemodium Ore&7 in the Ancient City and Mining Dimension!"
+			],
+			x: 9.5, y: -2.5,
+			dependencies: ["arm_tools_diamond", "arm_netherite_template"],
+			tasks: [
+				{ id: "ARMT000000000039", type: "item", item: "minecraft:netherite_sword", count: 1 },
+				{ id: "ARMT000000000040", type: "item", item: "minecraft:netherite_pickaxe", count: 1 },
+				{ id: "ARMT000000000041", type: "item", item: "minecraft:netherite_axe", count: 1 },
+				{ id: "ARMT000000000042", type: "item", item: "minecraft:netherite_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000032", type: "item", item: "minecraft:netherite_ingot" },
+				{ id: "ARMR000000000033", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "arm_tools_allthemodium",
+			title: "&6Sacred Tools Step 3: Allthemodium Arsenal",
+			description: [
+				"&7Upgrade all four of your Netherite tools to indestructible &6Allthemodium&7! An Allthemodium Pickaxe is required to mine &aVibranium Ore&7 in the Nether (Y 64+) and The Other (Y 0–40)."
+			],
+			x: 15.5, y: -2.5,
+			dependencies: ["arm_tools_diamond_netherite", "arm_allthemodium_template"],
+			tasks: [
+				{ id: "ARMT000000000043", type: "item", item: "allthemodium:allthemodium_sword", count: 1 },
+				{ id: "ARMT000000000044", type: "item", item: "allthemodium:allthemodium_pickaxe", count: 1 },
+				{ id: "ARMT000000000045", type: "item", item: "allthemodium:allthemodium_axe", count: 1 },
+				{ id: "ARMT000000000046", type: "item", item: "allthemodium:allthemodium_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000034", type: "item", item: "allthemodium:allthemodium_ingot", count: 2 },
+				{ id: "ARMR000000000035", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "arm_tools_vibranium",
+			title: "&aSacred Tools Step 4: Vibranium Arsenal",
+			description: [
+				"&7Upgrade all four of your Allthemodium tools to &aVibranium&7! A Vibranium Pickaxe is required to mine &dRaw Unobtainium&7 in the End Highlands (1–2 blocks below surface) and &4Calorite&7 on Glacio."
+			],
+			x: 21.5, y: -2.5,
+			dependencies: ["arm_tools_allthemodium", "arm_vibranium_template"],
+			tasks: [
+				{ id: "ARMT000000000047", type: "item", item: "allthemodium:vibranium_sword", count: 1 },
+				{ id: "ARMT000000000048", type: "item", item: "allthemodium:vibranium_pickaxe", count: 1 },
+				{ id: "ARMT000000000049", type: "item", item: "allthemodium:vibranium_axe", count: 1 },
+				{ id: "ARMT000000000050", type: "item", item: "allthemodium:vibranium_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000036", type: "item", item: "allthemodium:vibranium_ingot", count: 2 },
+				{ id: "ARMR000000000037", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "arm_tools_unobtainium",
+			title: "&dSacred Tools Step 5: Unobtainium Arsenal (Phase 6)",
+			description: [
+				"&7Upgrade all four of your Vibranium tools (&dSword, Pickaxe, Axe, and Shovel&7) to &dUnobtainium&7 inside the Smithing Table!"
+			],
+			x: 28.0, y: -2.5,
+			dependencies: ["arm_tools_vibranium", "arm_unobtainium_template"],
+			tasks: [
+				{ id: "ARMT000000000051", type: "item", item: "allthemodium:unobtainium_sword", count: 1 },
+				{ id: "ARMT000000000052", type: "item", item: "allthemodium:unobtainium_pickaxe", count: 1 },
+				{ id: "ARMT000000000053", type: "item", item: "allthemodium:unobtainium_axe", count: 1 },
+				{ id: "ARMT000000000054", type: "item", item: "allthemodium:unobtainium_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000038", type: "item", item: "allthemodium:unobtainium_ingot", count: 2 },
+				{ id: "ARMR000000000039", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "arm_tools_alloy_catalysts",
+			title: "&dDivine Smithing Catalysts: Template & Singularity",
+			description: [
+				"&7Once you slay &4The Harbinger&7 in Phase 7 for &4Witherite Ingots&7, forge the two custom catalysts required for the final tool evolution:",
+				"&81. &6Cosmic Alloy Smithing Template (Iridescent Altar): &7Unobtainium Template + Starmetal + Fire, Lightning & Ice Dragonsteel + Desh, Ostrum & Calorite + Witherite Ingot.",
+				"&82. &dTri-Realm Alloy Singularity (IF Dissolution Chamber): &7All 3 Dual ATM Alloys + 2,000 mB Ether Gas + Pellet of Antimatter + Entro Ingot + The Allthemodium Carrot + Witherite Ingot + Cataclysmic Flux."
+			],
+			x: 30.5, y: -2.5,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["arm_tools_unobtainium", "B858B85E371FDBC4"],
+			tasks: [
+				{ id: "ARMT000000000055", type: "item", item: "kubejs:cosmic_alloy_smithing_template", count: 1 },
+				{ id: "ARMT000000000056", type: "item", item: "kubejs:tri_realm_alloy_singularity", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000040", type: "item", item: "kubejs:cosmic_alloy_smithing_template", count: 3 },
+				{ id: "ARMR000000000041", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "arm_tools_atm_alloy_finale",
+			title: "&6&lStep 6: ATM Alloy Sword, Pickaxe, Axe & Shovel (Phase 7 Finale!)",
+			description: [
+				"&7The supra-divine pinnacle of the Sacred Weapon & Tool Line!",
+				"",
+				"&7Upgrade your Unobtainium Sword, Pickaxe, Axe, and Shovel in the &fSmithing Table&7 using the &6Cosmic Alloy Smithing Template&7 and &dTri-Realm Alloy Singularity&7 with 100% preservation of all Enchantments, Gems, and Affixes!"
+			],
+			x: 33.5, y: -2.5,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["arm_tools_alloy_catalysts"],
+			tasks: [
+				{ id: "ARMT000000000057", type: "item", item: "allthemodium:alloy_sword", count: 1 },
+				{ id: "ARMT000000000058", type: "item", item: "allthemodium:alloy_pick", count: 1 },
+				{ id: "ARMT000000000059", type: "item", item: "allthemodium:alloy_axe", count: 1 },
+				{ id: "ARMT000000000060", type: "item", item: "allthemodium:alloy_shovel", count: 1 }
+			],
+			rewards: [
+				{
+					id: "ARMR000000000042",
+					type: "toast",
+					title: "ATM Alloy Arsenal Complete!",
+					description: "You have forged the ultimate weapons and tools!"
+				},
+				{ id: "ARMR000000000043", type: "xp_levels", xp_levels: 15 }
+			]
+		},
+		{
+			id: "arm_cosmetic_dragon_scale",
+			title: "&dCosmetic Trophy 1: Dragon Scale Armor",
+			description: [
+				"&7Craft any piece of &cDragon Scale Armor&7 or &3Tide Guardian Armor&7 from &6Ice and Fire&7!",
+				"",
+				"&eCosmetic Trophy Rule: &7All Ice and Fire armors have 0 stats so they never replace your Sacred Armor—equip them in your &dCosmetic Armor Reworked&7 slots to wear dragon scales into battle!"
+			],
+			x: 0.0, y: -4.5,
+			dependencies: ["arm_cosmetic_and_elytra", "p3_slay_fire_dragon"],
+			optional: true,
+			tasks: [ { id: "ARMT000000000061", type: "item", item: "iceandfire:armor_red_chestplate", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000044", type: "item", item: "iceandfire:dragonbone", count: 8 },
+				{ id: "ARMR000000000045", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "arm_cosmetic_dragonsteel",
+			title: "&dCosmetic Trophy 2: Dragonsteel Armor",
+			description: [
+				"&7Have extra &cFire&7, &9Lightning&7, or &bIce Dragonsteel Ingots&7 after building your Rockets and SPS Casings? Craft a piece of &cDragonsteel Armor&7 for your Cosmetic Armor slots!"
+			],
+			x: 0.0, y: -6.25,
+			dependencies: ["arm_cosmetic_dragon_scale", "p3_fire_dragonforge"],
+			optional: true,
+			tasks: [ { id: "ARMT000000000062", type: "item", item: "iceandfire:dragonsteel_fire_chestplate", count: 1 } ],
+			rewards: [ { id: "ARMR000000000046", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "arm_cosmetic_cataclysm",
+			title: "&dCosmetic Trophy 3: Cataclysmic Titan Armor",
+			description: [
+				"&7Show off your victories over the Cataclysmic Titans by crafting 0-stat &6Ignitium Armor&7, &bCursium Armor&7, &eBone Reptile Armor&7, or the &8Monstrous Helm&7 for your Cosmetic Armor slots!"
+			],
+			x: 0.0, y: -8.0,
+			dependencies: ["arm_cosmetic_dragonsteel", "010D00D471244C85"],
+			optional: true,
+			tasks: [ { id: "ARMT000000000063", type: "item", item: "cataclysm:ignitium_chestplate", count: 1 } ],
+			rewards: [ { id: "ARMR000000000047", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "arm_bp_leather",
+			title: "&6Backpack Step 1: Leather Backpack",
+			description: [
+				"&7Your &eSophisticated Backpack&7 grows alongside your Sacred Armor from Phase 0 to Phase 7 (since Industrial Foregoing's Infinity Backpack is removed)!",
+				"",
+				"&7Craft a Leather &6Backpack&7 in Phase 0."
+			],
+			x: 3.5, y: -5.0,
+			shape: "rsquare",
+			dependencies: ["arm_welcome"],
+			tasks: [ { id: "ARMT000000000064", type: "item", item: "sophisticatedbackpacks:backpack", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000048", type: "item", item: "sophisticatedbackpacks:upgrade_base", count: 2 },
+				{ id: "ARMR000000000049", type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "arm_bp_leather_iron",
+			title: "&fBackpack Step 2: Iron Backpack",
+			description: ["&7Upgrade your Leather Backpack with Iron Ingots into an &fIron Backpack&7 (54 slots, 2 upgrade slots)."],
+			x: 5.5, y: -5.0,
+			shape: "rsquare",
+			dependencies: ["arm_bp_leather"],
+			tasks: [ { id: "ARMT000000000065", type: "item", item: "sophisticatedbackpacks:iron_backpack", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000050", type: "item", item: "minecraft:gold_ingot", count: 8 },
+				{ id: "ARMR000000000051", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "arm_bp_gold",
+			title: "&6Backpack Step 3: Gold Backpack",
+			description: ["&7Upgrade your Iron Backpack with Gold Ingots into a &6Gold Backpack&7 (81 slots, 3 upgrade slots)."],
+			x: 7.5, y: -5.0,
+			shape: "rsquare",
+			dependencies: ["arm_bp_leather_iron"],
+			tasks: [ { id: "ARMT000000000066", type: "item", item: "sophisticatedbackpacks:gold_backpack", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000052", type: "item", item: "minecraft:diamond", count: 2 },
+				{ id: "ARMR000000000053", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "arm_bp_gold_diamond",
+			title: "&bBackpack Step 4: Diamond Backpack",
+			description: ["&7Upgrade your Gold Backpack with Diamonds into a &bDiamond Backpack&7 (108 slots, 5 upgrade slots)!"],
+			x: 9.5, y: -5.0,
+			shape: "rsquare",
+			dependencies: ["arm_bp_gold"],
+			tasks: [ { id: "ARMT000000000067", type: "item", item: "sophisticatedbackpacks:diamond_backpack", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000054", type: "item", item: "sophisticatedbackpacks:pickup_upgrade" },
+				{ id: "ARMR000000000055", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "arm_bp_netherite",
+			title: "&8Backpack Step 5: Netherite Backpack",
+			description: [
+				"&7Upgrade your Diamond Backpack into a fireproof &8Netherite Backpack&7 (120 inventory slots, 7 upgrade slots)!"
+			],
+			x: 11.5, y: -5.0,
+			size: 1.25,
+			shape: "rsquare",
+			dependencies: ["arm_bp_gold_diamond", "arm_netherite_template"],
+			tasks: [ { id: "ARMT000000000068", type: "item", item: "sophisticatedbackpacks:netherite_backpack", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000056", type: "item", item: "sophisticatedbackpacks:feeding_upgrade" },
+				{ id: "ARMR000000000057", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "arm_bp_pickup_magnet",
+			title: "&bBackpack QoL: Advanced Pickup & Magnet",
+			description: [
+				"&7Craft an &aAdvanced Pickup Upgrade&7 and &bAdvanced Magnet Upgrade&7 so mined ores and mob drops go straight into your filtered backpack!"
+			],
+			x: 5.5, y: -7.0,
+			dependencies: ["arm_bp_leather_iron"],
+			optional: true,
+			tasks: [
+				{ id: "ARMT000000000069", type: "item", item: "sophisticatedbackpacks:advanced_pickup_upgrade", count: 1 },
+				{ id: "ARMT000000000070", type: "item", item: "sophisticatedbackpacks:advanced_magnet_upgrade", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000058", type: "item", item: "sophisticatedbackpacks:upgrade_base", count: 2 },
+				{ id: "ARMR000000000059", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "arm_bp_feeding_compacting",
+			title: "&6Backpack QoL: Auto-Feeding & Compacting",
+			description: [
+				"&7Install an &6Advanced Feeding Upgrade&7 (automatically feeds you Delight meals or The Allthemodium Carrot from your backpack!) and an &eAdvanced Compacting Upgrade&7!"
+			],
+			x: 9.5, y: -7.0,
+			dependencies: ["arm_bp_gold_diamond"],
+			optional: true,
+			tasks: [
+				{ id: "ARMT000000000071", type: "item", item: "sophisticatedbackpacks:advanced_feeding_upgrade", count: 1 },
+				{ id: "ARMT000000000072", type: "item", item: "sophisticatedbackpacks:advanced_compacting_upgrade", count: 1 }
+			],
+			rewards: [ { id: "ARMR000000000060", type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "arm_bp_everlasting_tank",
+			title: "&dBackpack QoL: Everlasting Upgrade",
+			description: [
+				"&7Install a &cTank Upgrade&7, &eBattery Upgrade&7, or &dEverlasting Upgrade&7 (using a Nether Star so your backpack can never despawn or be destroyed!).",
+				"",
+				"&cPack Rule Reminder: &7If you use a Smelting/Auto-Smelting upgrade, remember that &dRaw Unobtainium&7 is strictly blacklisted and can only be smelted inside the Mekanism Combiner!"
+			],
+			x: 11.5, y: -7.0,
+			dependencies: ["arm_bp_netherite"],
+			optional: true,
+			tasks: [ { id: "ARMT000000000073", type: "item", item: "sophisticatedbackpacks:everlasting_upgrade", count: 1 } ],
+			rewards: [ { id: "ARMR000000000061", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "arm_bp_stack_1_2",
+			title: "&6Stack Upgrades Tier 1 & 2",
+			description: [
+				"&7Install &fStack Upgrade Tier 1&7 (2x stack size) and &6Stack Upgrade Tier 2&7 (4x stack size) into your backpack!"
+			],
+			x: 14.0, y: -5.0,
+			dependencies: ["arm_bp_netherite"],
+			tasks: [
+				{ id: "ARMT000000000074", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_1", count: 1 },
+				{ id: "ARMT000000000075", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_2", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000062", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_2" },
+				{ id: "ARMR000000000063", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "arm_bp_stack_3_4",
+			title: "&bStack Upgrades Tier 3 & 4 (Phase 3)",
+			description: [
+				"&7Craft &bStack Upgrade Tier 3&7 (8x stack size) and &dStack Upgrade Tier 4&7 (16x stack size = 1,024 items per slot)! You can even stack multiple Stack Upgrades in the same backpack for tens of thousands of items per slot!"
+			],
+			x: 16.5, y: -5.0,
+			size: 1.25,
+			shape: "rsquare",
+			dependencies: ["arm_bp_stack_1_2", "p3_mine_vibranium"],
+			tasks: [
+				{ id: "ARMT000000000076", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_3", count: 1 },
+				{ id: "ARMT000000000077", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_4", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000064", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_4" },
+				{ id: "ARMR000000000065", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "arm_bp_infinity",
+			title: "&d&lThe Crown Jewel: Backpack Infinity Upgrade (Phase 7)",
+			description: [
+				"&7After cooking &6The Allthemodium Apple&7, slaying &4The Harbinger&7, and synthesizing &dAntimatter&7 in Phase 7, combine them with an Unobtainium Block and Stack Upgrade Tier 4 to craft the &dInfinity Upgrade&7 (&fsophisticatedbackpacks:infinity_upgrade&7)!",
+				"",
+				"&7Every single item stack inside your backpack becomes infinite!"
+			],
+			x: 21.5, y: -5.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["arm_bp_stack_3_4", "p7_allthemodium_apple"],
+			tasks: [ { id: "ARMT000000000078", type: "item", item: "sophisticatedbackpacks:infinity_upgrade", count: 1 } ],
+			rewards: [ { id: "ARMR000000000066", type: "xp_levels", xp_levels: 10 } ]
+		},
+		{
+			id: "arm_bhc_amulet_canister",
+			title: "&cVitality Alchemy: Heart Amulet & Canisters",
+			description: [
+				"&7With &eBaubley Heart Canisters&7 and &eColorful Hearts&7, you can expand your health pool from 10 Hearts (1 row) all the way to &c50 Hearts (5 full color-coded rows)&7!",
+				"",
+				"&6&lCustom KubeJS Canister Recipe:",
+				"&7Combine &bOsmium&7, &fIron&7, and &cCarminite&7 (from the Twilight Forest Dark Tower) to forge empty &7Canisters&7 (&fbhc:canister&7), and craft a &cHeart Amulet&7 to hold them in your Curios slot!"
+			],
+			x: 3.5, y: 4.0,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["arm_welcome", "p1b_carminite"],
+			tasks: [
+				{ id: "ARMT000000000079", type: "item", item: "bhc:canister", count: 4 },
+				{ id: "ARMT000000000080", type: "item", item: "bhc:heart_amulet", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000067", type: "item", item: "bhc:canister", count: 4 },
+				{ id: "ARMR000000000068", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "arm_bhc_red_prep",
+			title: "&cRed Canister Catalyst: Mead & Red Hearts",
+			description: [
+				"&7Slay standard hostile mobs to collect &cRed Hearts&7 (&fbhc:red_heart&7), ferment &eMead&7 inside a Brewin' And Chewin' Keg, and obtain &6Meef Stroganoff&7 from the Twilight Labyrinth!"
+			],
+			x: 5.5, y: 5.5,
+			dependencies: ["arm_bhc_amulet_canister"],
+			tasks: [
+				{ id: "ARMT000000000081", type: "item", item: "bhc:red_heart", count: 4 },
+				{ id: "ARMT000000000082", type: "item", item: "brewinandchewin:mead", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000069", type: "item", item: "brewinandchewin:mead", count: 2 },
+				{ id: "ARMR000000000070", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "arm_bhc_red_1",
+			title: "&c2nd Row (Phase 1B): Red Heart Canister",
+			description: [
+				"&6&lCustom KubeJS Recipe – Red Heart Canister:",
+				"&8• &7Empty Canister (&fbhc:canister&7) & &cRed Heart &7(dropped by standard hostile mobs)",
+				"&8• &6Meef Stroganoff &7(&ftwilightforest:meef_stroganoff&7 from Minoshroom / Twilight Flavors & Delight)",
+				"&8• &cCarminite &7(&ftwilightforest:carminite&7)",
+				"&8• &eMead &7(&fbrewinandchewin:mead&7 from the Keg)"
+			],
+			x: 7.5, y: 4.0,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["arm_bhc_amulet_canister", "arm_bhc_red_prep"],
+			tasks: [ { id: "ARMT000000000083", type: "item", item: "bhc:red_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000071", type: "item", item: "bhc:red_heart", count: 4 },
+				{ id: "ARMR000000000072", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "arm_bhc_red_10",
+			title: "&cFull Red Row: 10x Red Heart Canisters (20 Hearts)",
+			description: [
+				"&7Craft a full stack of &c10x Red Heart Canisters&7 to reach &c20 Hearts&7 (and prepare extra Red Canisters to upgrade into Orange/Yellow Heart Canisters in Phase 3)!"
+			],
+			x: 7.5, y: 6.5,
+			shape: "heart",
+			dependencies: ["arm_bhc_red_1"],
+			tasks: [ { id: "ARMT000000000084", type: "item", item: "bhc:red_heart_canister", count: 10 } ],
+			rewards: [
+				{ id: "ARMR000000000073", type: "item", item: "bhc:canister", count: 5 },
+				{ id: "ARMR000000000074", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "arm_bhc_yellow_prep",
+			title: "&6Yellow Canister Catalyst: Bloody Mary & Dragon Bones",
+			description: [
+				"&7Slay bosses (such as the Wither or Twilight guardians) for &eYellow Hearts&7 (&fbhc:yellow_heart&7), gather &fDragon Bones&7 in The Other, and ferment &cBloody Mary&7 in your Keg!"
+			],
+			x: 10.5, y: 4.0,
+			dependencies: ["arm_bhc_red_1", "p3_slay_fire_dragon"],
+			tasks: [
+				{ id: "ARMT000000000085", type: "item", item: "bhc:yellow_heart", count: 4 },
+				{ id: "ARMT000000000086", type: "item", item: "brewinandchewin:bloody_mary", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000075", type: "item", item: "brewinandchewin:bloody_mary", count: 2 },
+				{ id: "ARMR000000000076", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "arm_bhc_yellow_1",
+			title: "&63rd Row (Phase 3): Orange / Yellow Heart Canister",
+			description: [
+				"&6&lCustom KubeJS Recipe – Orange / Yellow Heart Canister:",
+				"&8• &cRed Heart Canister &7& &eYellow Heart &7(dropped by bosses like the Wither)",
+				"&8• &fDragon Bone &7(&ficeandfire:dragonbone&7)",
+				"&8• &6Allthemodium Ingot &7(&fallthemodium:allthemodium_ingot&7)",
+				"&8• &cBloody Mary / Cocktail &7(&fbrewinandchewin:bloody_mary&7 / &dCocktails Delight&7)"
+			],
+			x: 12.5, y: 4.0,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["arm_bhc_red_1", "arm_bhc_yellow_prep"],
+			tasks: [ { id: "ARMT000000000087", type: "item", item: "bhc:yellow_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000077", type: "item", item: "bhc:yellow_heart", count: 4 },
+				{ id: "ARMR000000000078", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "arm_bhc_yellow_10",
+			title: "&6Full Orange / Yellow Row: 10x Canisters (30 Hearts)",
+			description: ["&7Craft a full stack of &e10x Yellow/Orange Heart Canisters&7 to reach &e30 Hearts&7!"],
+			x: 12.5, y: 6.5,
+			shape: "heart",
+			dependencies: ["arm_bhc_yellow_1"],
+			tasks: [ { id: "ARMT000000000088", type: "item", item: "bhc:yellow_heart_canister", count: 10 } ],
+			rewards: [
+				{ id: "ARMR000000000079", type: "item", item: "brewinandchewin:bloody_mary", count: 4 },
+				{ id: "ARMR000000000080", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "arm_bhc_green_prep",
+			title: "&aGreen Canister Catalyst: Dragon Leg & Space Metals",
+			description: [
+				"&7Slay the Ender Dragon for &aGreen Hearts&7 (&fbhc:green_heart&7), cook &5Dragon Leg with Sauce&7 (&fends_delight:dragon_leg_with_sauce&7), and bring back &6Desh&7 and &5Ostrum&7 from the Moon and Mars!"
+			],
+			x: 15.5, y: 4.0,
+			dependencies: ["arm_bhc_yellow_1", "E5CEF073E0A3D7E8"],
+			tasks: [
+				{ id: "ARMT000000000089", type: "item", item: "bhc:green_heart", count: 2 },
+				{ id: "ARMT000000000090", type: "item", item: "ends_delight:dragon_leg_with_sauce", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000081", type: "item", item: "ends_delight:dragon_leg_with_sauce" },
+				{ id: "ARMR000000000082", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "arm_bhc_green_1",
+			title: "&a4th Row (Phase 4): Green Heart Canister",
+			description: [
+				"&6&lCustom KubeJS Recipe – Green Heart Canister:",
+				"&8• &eYellow Heart Canister &7& &aGreen Heart &7(dropped by the Ender Dragon)",
+				"&8• &6Desh Ingot &7(&fad_astra:desh_ingot&7 – Moon)",
+				"&8• &5Ostrum Ingot &7(&fad_astra:ostrum_ingot&7 – Mars)",
+				"&8• &5Dragon Leg with Sauce &7(&fends_delight:dragon_leg_with_sauce&7)"
+			],
+			x: 17.5, y: 4.0,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["arm_bhc_yellow_1", "arm_bhc_green_prep"],
+			tasks: [ { id: "ARMT000000000091", type: "item", item: "bhc:green_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000083", type: "item", item: "bhc:green_heart", count: 4 },
+				{ id: "ARMR000000000084", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "arm_bhc_green_10",
+			title: "&aFull Green Row: 10x Green Heart Canisters (40 Hearts)",
+			description: ["&7Craft a full stack of &a10x Green Heart Canisters&7 to reach &a40 Hearts&7!"],
+			x: 17.5, y: 6.5,
+			shape: "heart",
+			dependencies: ["arm_bhc_green_1"],
+			tasks: [ { id: "ARMT000000000092", type: "item", item: "bhc:green_heart_canister", count: 10 } ],
+			rewards: [
+				{ id: "ARMR000000000085", type: "item", item: "ends_delight:dragon_leg_with_sauce", count: 2 },
+				{ id: "ARMR000000000086", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "arm_bhc_blue_prep",
+			title: "&9Soul Heart Amulet & Blue Canister Prep",
+			description: [
+				"&7Upgrade your Heart Amulet into the &6Soul Heart Amulet&7 (&fbhc:soul_heart_amulet&7) and prepare &bGuardian Soup&7 (&foceansdelight:guardian_soup&7) alongside &9Blue Hearts&7 (&fbhc:blue_heart&7)!"
+			],
+			x: 20.5, y: 4.0,
+			dependencies: ["arm_bhc_green_1", "30D6B532FF1866E0"],
+			tasks: [
+				{ id: "ARMT000000000093", type: "item", item: "bhc:soul_heart_amulet", count: 1 },
+				{ id: "ARMT000000000094", type: "item", item: "oceansdelight:guardian_soup", count: 1 }
+			],
+			rewards: [
+				{ id: "ARMR000000000087", type: "item", item: "bhc:blue_heart", count: 2 },
+				{ id: "ARMR000000000088", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "arm_bhc_blue_1",
+			title: "&95th Row (Phase 6): Blue Heart Canister",
+			description: [
+				"&6&lCustom KubeJS Recipe – Blue Heart Canister:",
+				"&8• &aGreen Heart Canister &7& &9Blue Heart &7(dropped by Warden / Evoker / Cataclysm bosses)",
+				"&8• &bCursium Ingot &7(&fcataclysm:cursium_ingot&7 – Maledictus)",
+				"&8• &6Ignitium Ingot &7(&fcataclysm:ignitium_ingot&7 – Ignis)",
+				"&8• &5Void Core &7(&fcataclysm:void_core&7 – Ender Guardian)",
+				"&8• &bUltimate Seafood & Pizza Feast &7(&foceansdelight:guardian_soup&7, &bRoll Delight&7 & &cFarmer's Pizzeria&7)"
+			],
+			x: 22.5, y: 4.0,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["arm_bhc_green_1", "arm_bhc_blue_prep"],
+			tasks: [ { id: "ARMT000000000095", type: "item", item: "bhc:blue_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "ARMR000000000089", type: "item", item: "bhc:blue_heart", count: 4 },
+				{ id: "ARMR000000000090", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "arm_bhc_blue_10",
+			title: "&9&lImmortal Vitality: All 40 Heart Canisters (50 Hearts)!",
+			description: [
+				"&7Equip &c10 Red&7, &e10 Yellow&7, &a10 Green&7, and &910 Blue Heart Canisters&7 inside your Soul Heart Amulet for the maximum &b50 Hearts (100 HP)&7!"
+			],
+			x: 22.5, y: 6.5,
+			size: 1.5,
+			shape: "heart",
+			dependencies: ["arm_bhc_blue_1", "arm_bhc_red_10", "arm_bhc_yellow_10", "arm_bhc_green_10"],
+			tasks: [ { id: "ARMT000000000096", type: "item", item: "bhc:blue_heart_canister", count: 10 } ],
+			rewards: [
+				{
+					id: "ARMR000000000091",
+					type: "toast",
+					title: "50 Hearts Unlocked!",
+					description: "You have maxed out Baubley Heart Canisters!"
+				},
+				{ id: "ARMR000000000092", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "arm_grand_finale",
+			title: "&e&l★ GRAND MASTER OF THE SACRED ARMORY! ★",
+			description: [
+				"&6&lCongratulations, Immortal Champion!",
+				"&7You have perfected every single pillar of the Sacred Armory:",
+				"&8• &dFull Unobtainium Sacred Armor &7(Hermetically Sealed & Mythic Reforged)",
+				"&8• &6Full ATM Alloy Weapons & Tools &7(Sword, Pickaxe, Axe & Shovel)",
+				"&8• &dNetherite Backpack with the Creative Infinity Upgrade",
+				"&8• &9All 40 Baubley Heart Canisters (50 Full Hearts)!"
+			],
+			x: 33.5, y: 0.0,
+			size: 2.0,
+			shape: "octagon",
+			dependencies: ["arm_tier5_unobtainium", "arm_tools_atm_alloy_finale", "arm_bp_infinity", "arm_bhc_blue_10"],
+			tasks: [ { id: "ARMT000000000097", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "ARMR000000000093",
+					type: "toast",
+					title: "THE SACRED ARMORY MASTERED!",
+					description: "You have mastered the Sacred Armory & Vitality!"
+				},
+				{ id: "ARMR000000000094", type: "xp_levels", xp_levels: 25 }
+			]
+		}
+	]
+}

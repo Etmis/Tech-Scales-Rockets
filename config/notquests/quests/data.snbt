@@ -1,0 +1,17 @@
+{
+	title: "&6&lTech, Scales & Rockets",
+	icon: "ad_astra:calorite_engine",
+	default_autoclaim_rewards: "disabled",
+	default_quest_shape: "circle",
+	default_team_reward: false,
+	give_book_on_first_join: true,
+	grid_scale: 0.5,
+	pause_game: false,
+	progression_mode: "linear",
+	show_locked_quest_details: true,
+	chapter_groups: [
+		{ id: "group_main", title: "&6&lI. Main Progression", icon: "kubejs:cataclysmic_flux" },
+		{ id: "group_ascension", title: "&e&lII. Sacred Gear & Vitality", icon: "allthemodium:unobtainium_chestplate" },
+		{ id: "group_systems", title: "&b&lIII. Tech, Starlight & Gastronomy", icon: "allthemodium:allthemodium_apple" }
+	]
+}

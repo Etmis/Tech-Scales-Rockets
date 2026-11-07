@@ -1,0 +1,811 @@
+{
+	id: "E37A57392B5A1076",
+	title: "&5P2: Darkness, Stars & Allthemodium",
+	icon: "allthemodium:teleport_pad",
+	group: "group_main",
+	order_index: 3,
+	quests: [
+		{
+			id: "p2_intro",
+			title: "&5The Overworld Runs Dry",
+			description: [
+				"&7Your Digital Miner has stripped the Overworld of its common riches, yet legends speak of an abundant &6Mining Dimension&7 pulsing with veins of indestructible &6Allthemodium&7.",
+				"",
+				"&e&lThree Keys to Forge the Teleport Pad:",
+				"&81. &cThe Nether Ritual (Top Branch): &7Cook spicy dishes from &cMy Nether's Delight&7 to transmute Wither Skeleton Skulls and claim a &fNether Star&7.",
+				"&82. &bStarlight Crafting Altar & Starmetal (Middle Branch): &7Upgrade to Tier 2 of Astral Sorcery and transmute Iron into &9Starmetal Ingots&7.",
+				"&83. &3The Deep Dark (Bottom Branch): &7Mine your first &6Allthemodium&7 on the walls of an Ancient City, brush &8Suspicious Clay&7 for the Smithing Template, and slay &3The Warden&7 for its &3Echo Shard&7."
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p1b_phase_1b_complete", "p1b_ae2_controller", "p1b_digital_miner"],
+			tasks: [
+				{ id: "90A1B2C3D4E5F603", type: "item", item: "ae2:controller", count: 1 },
+				{ id: "90A1B2C3D4E5F604", type: "item", item: "mekanism:digital_miner", count: 1 }
+			],
+			rewards: [
+				{ id: "90A1B2C3D4E5F601", type: "random", table_id: "tier_1_twilight" },
+				{ id: "90A1B2C3D4E5F602", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P2Q0000000000001",
+			title: "&7Preparing the Three Branches",
+			description: [
+				"&7Before diving into the three branches of Phase 2, make sure your base has plenty of &8Bone Blocks&7 and &8Coal Blocks&7 ready for the Nether Skull Ritual, and &fRaw Marble&7 for your Astral Altar expansion."
+			],
+			x: 0.0, y: -2.25,
+			dependencies: ["p2_intro"],
+			tasks: [ { id: "P2T0000000000001", type: "item", item: "astralsorcery:marble_raw", count: 32 } ],
+			rewards: [
+				{ id: "P2R0000000000001", type: "item", item: "astralsorcery:marble_raw", count: 32 },
+				{ id: "P2R0000000000002", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "C1FA8CE463035992",
+			title: "&cMy Nether's Delight: Ritual Foundations",
+			description: [
+				"&7Forget grinding thousands of Wither Skeletons in a fortress! In &eTech, Scales & Rockets&7, you can synthesize Wither Skeleton Skulls through a &cCulinary Alchemy Ritual&7!",
+				"",
+				"&7Head into the Nether and harvest &cBullet Peppers&7 and &6Hoglin Loins&7 from &cMy Nether's Delight&7."
+			],
+			x: 3.0, y: -3.0,
+			dependencies: ["p2_intro"],
+			tasks: [
+				{ id: "C0F7FBEB255967FC", type: "item", item: "minecraft:bone_block", count: 4 },
+				{ id: "074CF74C1F287A5B", type: "item", item: "minecraft:coal_block", count: 4 }
+			],
+			rewards: [
+				{ id: "17C11526B1F7FDE1", type: "random", table_id: "delight_feast" },
+				{ id: "4B6705400ED1ED14", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "P2Q0000000000002",
+			title: "&cHarvesting Bullet Peppers & Hoglin Loins",
+			description: [
+				"&7Explore the Crimson Forests and Nether Wastes to harvest &cBullet Peppers&7 (from Powder Canes) and butcher Hoglins with a Knife for &6Hoglin Loins&7 and &6Hoglin Hides&7!",
+				"",
+				"&eTip: &7You can plant Powder Canes on &cResurgent Soil&7 in your base or farm them automatically!"
+			],
+			x: 3.0, y: -5.0,
+			dependencies: ["C1FA8CE463035992"],
+			tasks: [
+				{ id: "P2T0000000000002", type: "item", item: "mynethersdelight:bullet_pepper", count: 4 },
+				{ id: "P2T0000000000003", type: "item", item: "mynethersdelight:hoglin_loin", count: 4 }
+			],
+			rewards: [
+				{ id: "P2R0000000000003", type: "item", item: "mynethersdelight:bullet_pepper", count: 8 },
+				{ id: "P2R0000000000004", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "P2Q0000000000003",
+			title: "&cFuture Masterchef Prep: Striderloaf",
+			description: [
+				"&7While hunting in the Nether, butcher Striders with a Knife to obtain &cMinced Strider&7 and &cStrider Slices&7!",
+				"",
+				"&7Cook a &cStriderloaf&7 (&fmynethersdelight:striderloaf&7) in your Cooking Pot—you will need it for the Phase 3 &6Allthemodium Carrot&7 and the Phase 7 &6Allthemodium Apple&7!"
+			],
+			x: 3.0, y: -6.75,
+			dependencies: ["P2Q0000000000002"],
+			optional: true,
+			tasks: [ { id: "P2T0000000000004", type: "item", item: "mynethersdelight:striderloaf", count: 1 } ],
+			rewards: [
+				{ id: "P2R0000000000005", type: "random", table_id: "delight_feast" },
+				{ id: "P2R0000000000006", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P2Q0000000000004",
+			title: "&6Cooking Spicy Hoglin Stew",
+			description: [
+				"&7Fire up your Farmer's Delight Cooking Pot and cook &6Spicy Hoglin Stew&7 (&fmynethersdelight:spicy_hoglin_stew&7) or &6Spicy Skewers&7!",
+				"",
+				"&7This blistering Nether delicacy is the biological catalyst required for the Wither Skeleton Skull ritual."
+			],
+			x: 4.5, y: -5.0,
+			dependencies: ["P2Q0000000000002"],
+			tasks: [ { id: "P2T0000000000005", type: "item", item: "mynethersdelight:spicy_hoglin_stew", count: 1 } ],
+			rewards: [
+				{ id: "P2R0000000000007", type: "item", item: "mynethersdelight:spicy_hoglin_stew", count: 2 },
+				{ id: "P2R0000000000008", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "1FA781F8A01C007B",
+			title: "&8The Culinary Wither Skull Ritual",
+			description: [
+				"&7Combine your spicy meal from &cMy Nether's Delight&7 with a &fBone Block&7, &8Coal Block&7, &cFiery Blood&7 (Hydra), and &cCarminite&7 (Ur-Ghast) to transmute &8Wither Skeleton Skulls&7 on demand!"
+			],
+			x: 6.0, y: -3.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["C1FA8CE463035992", "P2Q0000000000004"],
+			tasks: [ { id: "94EB6F2EAB358BB5", type: "item", item: "minecraft:wither_skeleton_skull", count: 3 } ],
+			rewards: [
+				{ id: "E908B41EAD510F68", type: "item", item: "minecraft:wither_skeleton_skull" },
+				{ id: "D7F299F65AE4CC4B", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P2Q0000000000005",
+			title: "&8Preparing the Wither Arena",
+			description: [
+				"&7Gather &8Soul Sand&7 (or Soul Soil) from the Nether and build a safe underground chamber or obsidian cage to fight the Wither away from your fragile machines!"
+			],
+			x: 7.5, y: -5.0,
+			dependencies: ["1FA781F8A01C007B"],
+			tasks: [ { id: "P2T0000000000006", type: "item", item: "minecraft:soul_sand", count: 4 } ],
+			rewards: [
+				{ id: "P2R0000000000009", type: "item", item: "minecraft:obsidian", count: 16 },
+				{ id: "P2R0000000000010", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "6CB413E894934DD9",
+			title: "&f&lSlaying the Wither: Nether Star",
+			description: [
+				"&7Assemble Soul Sand and your 3 Wither Skeleton Skulls to summon and slay &8The Wither&7!",
+				"",
+				"&7Claim its &fNether Star&7—needed for the &6Teleport Pad&7, &cFlux Plugs&7, and &dAE2 Quantum Links / Entangloporters&7!"
+			],
+			x: 9.0, y: -3.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["1FA781F8A01C007B"],
+			tasks: [ { id: "DFE3CE4BE11BE8C0", type: "item", item: "minecraft:nether_star", count: 1 } ],
+			rewards: [
+				{ id: "5FE91A4C2BE1E362", type: "item", item: "minecraft:nether_star" },
+				{ id: "DD0A853FB37CF2A5", type: "random", table_id: "tier_2_allthemodium" },
+				{ id: "730FFA892BD387B1", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P2Q0000000000006",
+			title: "&eSpoils of Death: Yellow Hearts",
+			description: [
+				"&7Each time you slay the Wither, it also drops &8Wither Bones&7 and &eYellow Hearts&7 from &6Baubley Heart Canisters&7!",
+				"",
+				"&7Save your Yellow Hearts and Wither Bones—in Phase 3, you will combine them with Allthemodium, Dragon Bones, and Bloody Mary cocktails to unlock your &63rd Row of Health (Orange/Yellow Heart Canisters)&7!"
+			],
+			x: 9.0, y: -5.0,
+			dependencies: ["6CB413E894934DD9"],
+			optional: true,
+			tasks: [ { id: "P2T0000000000007", type: "item", item: "bhc:yellow_heart", count: 1 } ],
+			rewards: [
+				{ id: "P2R0000000000011", type: "item", item: "bhc:yellow_heart" },
+				{ id: "P2R0000000000012", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ADB4DC2AE752752D",
+			title: "&bThe Lightwell & Liquid Starlight",
+			description: [
+				"&7On your &bIlluminated Crafting Table&7 at night, craft a &bLightwell&7.",
+				"",
+				"&6&lHow the Lightwell Works (1.21.1):",
+				"&8• &7Right-click an &bAquamarine&7 (or Resonating Gem) into the Lightwell basin. Keep the block directly above it clear!",
+				"&8• &7It will slowly dissolve the gem into &bLiquid Starlight&7 (Aquamarine has a high 0.35 production rate).",
+				"&8• &7Extract the Liquid Starlight with a Bucket or pipe it out from the bottom!"
+			],
+			x: 3.0, y: 0.0,
+			dependencies: ["p2_intro"],
+			tasks: [
+				{ id: "35E64F647113F61C", type: "item", item: "astralsorcery:lightwell", count: 1 },
+				{ id: "FB0D4B6FB3919D31", type: "item", item: "astralsorcery:liquid_starlight_bucket", count: 1 }
+			],
+			rewards: [
+				{ id: "345DFBFC4A0B5492", type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ id: "911809A345E3573F", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P2Q0000000000007",
+			title: "&fSculpting the Altar Multiblock",
+			description: [
+				"&7Before upgrading your altar, craft the architectural blocks required for the Tier 2 Starlight Altar multiblock: &8Sooty Marble&7, &fMarble Pillars&7, &fChiseled Marble&7, &fMarble Bricks&7, and &fRuned Marble&7."
+			],
+			x: 4.5, y: -1.5,
+			dependencies: ["ADB4DC2AE752752D"],
+			tasks: [
+				{ id: "P2T0000000000008", type: "item", item: "astralsorcery:sooty_marble_raw", count: 21 },
+				{ id: "P2T0000000000009", type: "item", item: "astralsorcery:marble_pillar", count: 8 }
+			],
+			rewards: [
+				{ id: "P2R0000000000013", type: "item", item: "astralsorcery:marble_runed", count: 16 },
+				{ id: "P2R0000000000014", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "9937B3BC5DCA9F25",
+			title: "&9Altar Tier 2: Starlight Crafting Altar",
+			description: [
+				"&7Upgrade your Illuminated Crafting Table in place into the &9Starlight / Resonating Crafting Altar (Tier 2)&7 (using 4 Marble Pillars, a Rock Crystal, 2 Runed Marble, and a Bucket of Liquid Starlight).",
+				"",
+				"&b&lBuilding the Altar Structure:",
+				"&8• &7Surround it with a &8Sooty Marble&7 floor, &fRuned Marble&7, and a ring of &bFocus Relays&7 (small pedestals that hold extra ingredients automatically—no linking tool needed!).",
+				"&8• &7Place a &eContainment Chalice&7 nearby; it automatically pulls Liquid Starlight from adjacent Lightwells and feeds the altar!",
+				"&8• &eTip: &7Right-click the altar with your &9Resonating Wand&7 to see ghost blocks of the required structure!"
+			],
+			x: 6.0, y: 0.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["ADB4DC2AE752752D"],
+			tasks: [ { id: "B44A18FA2FD5FADF", type: "item", item: "astralsorcery:altar_resonance", count: 1 } ],
+			rewards: [
+				{ id: "82CBF31589E243DC", type: "item", item: "astralsorcery:marble_raw", count: 64 },
+				{ id: "7FBA14A58E93B3F8", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P2Q0000000000008",
+			title: "&eContainment Chalice & Focus Relays",
+			description: [
+				"&7Craft &bFocus Relays&7 and a &eContainment Chalice&7 for your Starlight Crafting Altar!",
+				"",
+				"&7In Astral Sorcery 1.21.1, Focus Relays placed on the altar ring hold additional crafting reagents, while the Containment Chalice automatically draws Liquid Starlight from nearby Lightwells!"
+			],
+			x: 6.0, y: -1.5,
+			dependencies: ["9937B3BC5DCA9F25"],
+			optional: true,
+			tasks: [ { id: "P2T0000000000010", type: "item", item: "astralsorcery:chalice", count: 1 } ],
+			rewards: [
+				{ id: "P2R0000000000015", type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ id: "P2R0000000000016", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "BD02867A0B1AE7FE",
+			title: "&9Focal Point Transmutation: Starmetal!",
+			description: [
+				"&7In Astral Sorcery 1.21.1, &9Starmetal&7 is created at a natural &eFocal Point&7 at night!",
+				"",
+				"&6&lTwo Ways to Make Starmetal at a Focal Point (Night Only):",
+				"&81. &aFastest Way (20 seconds): &7Mine &fIron Ore&7 (or Deepslate Iron Ore) with Silk Touch and &eplace the ore block&7 in the center of a Focal Point at night. It transforms into &9Starmetal Ore&7!",
+				"&82. &eAlternative (2 minutes): &7Drop &fRaw Iron&7 in the center of the Focal Point at night to turn it into &9Raw Starmetal&7.",
+				"",
+				"&7Smelt it in a regular Furnace to obtain &9Starmetal Ingots&7! You can also craft a &9Starmetal Chisel&7 and left-click dropped Starmetal Ingots on the ground to shatter them into &bStardust&7."
+			],
+			x: 9.0, y: 0.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["9937B3BC5DCA9F25"],
+			tasks: [ { id: "38753824431539D6", type: "item", item: "astralsorcery:starmetal_ingot", count: 4 } ],
+			rewards: [
+				{ id: "4ADEC5A61DEB1269", type: "item", item: "astralsorcery:starmetal_ingot", count: 4 },
+				{ id: "2AFA86255BA7C071", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P2Q0000000000009",
+			title: "&bStardust & Resonating Gems",
+			description: [
+				"&7Shatter Starmetal Ingots into &bStardust&7 (or craft a Cutting Tool) and infuse Aquamarine with Liquid Starlight to create &9Resonating Gems&7!",
+				"",
+				"&7You will need both Stardust and Resonating Gems in Phase 3 to upgrade your altar to Tier 3 and grow &bCelestial Crystals&7."
+			],
+			x: 9.0, y: -1.5,
+			dependencies: ["BD02867A0B1AE7FE"],
+			tasks: [
+				{ id: "P2T0000000000011", type: "item", item: "astralsorcery:stardust", count: 4 },
+				{ id: "P2T0000000000012", type: "item", item: "astralsorcery:resonating_gem", count: 2 }
+			],
+			rewards: [
+				{ id: "P2R0000000000017", type: "item", item: "astralsorcery:stardust", count: 4 },
+				{ id: "P2R0000000000018", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "53523CBB93F3881C",
+			title: "&3Locating the Deep Dark",
+			description: [
+				"&7Use your &2Nature's Compass&7 to locate a &3Deep Dark&7 biome deep underground (below Y = 0).",
+				"",
+				"&7Search the Deep Dark until you find a sprawling &8Ancient City&7!"
+			],
+			x: 3.0, y: 3.0,
+			dependencies: ["p2_intro"],
+			tasks: [ { id: "AAE12C723F29E143", type: "biome", icon: "minecraft:sculk_catalyst", biome: "minecraft:deep_dark" } ],
+			rewards: [
+				{ id: "CF8DE40AF070371A", type: "item", item: "minecraft:white_wool", count: 32 },
+				{ id: "154886C4CFB58CEE", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P2Q0000000000010",
+			title: "&8Stealth in the Ancient City",
+			description: [
+				"&7Bring plenty of &fWool&7, Potions of &bNight Vision / Invisibility&7, and a &bHoe&7 when exploring an Ancient City!",
+				"",
+				"&7Wool blocks vibrations from reaching Sculk Sensors and Shriekers, while a Hoe breaks Sculk veins rapidly to expose glowing &6Allthemodium Ore&7 on the cave walls and ceilings!"
+			],
+			x: 3.0, y: 5.0,
+			dependencies: ["53523CBB93F3881C"],
+			tasks: [ { id: "B625F57477AF07C2", type: "item", item_tag: "minecraft:hoes", count: 1 } ],
+			rewards: [
+				{ id: "P2R0000000000019", type: "item", item: "minecraft:golden_apple" },
+				{ id: "P2R0000000000020", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "A5A349E61097552E",
+			title: "&6First Allthemodium: Ancient City Walls",
+			description: [
+				"&7Scan the cave walls and ceilings inside the &8Ancient City&7 for glowing &6Allthemodium Ore&7 (often partially covered by Sculk Veins) and mine it using your &8Netherite Pickaxe&7!",
+				"",
+				"&eTip: &7Break down your first ingot into &6Allthemodium Nuggets&7—just a few nuggets are enough to craft the &6Teleport Pad&7 (unlocking abundant veins in the Mining Dimension) and the &2Explorer's Compass&7!"
+			],
+			x: 6.0, y: 3.0,
+			dependencies: ["53523CBB93F3881C"],
+			tasks: [ { id: "109B3C7B6A0C9E7A", type: "item", item: "allthemodium:allthemodium_nugget", count: 2 } ],
+			rewards: [
+				{ id: "8A27088E9699273C", type: "item", item: "allthemodium:allthemodium_nugget", count: 4 },
+				{ id: "A7A0EB192EA38C6D", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P2Q0000000000011",
+			title: "&6Brushing Suspicious Clay: Allthemodium Template",
+			description: [
+				"&7Craft a &6Brush&7 (Feather + Copper Ingot + Stick) to extract the &6Allthemodium Upgrade Smithing Template&7!",
+				"",
+				"&6&lWhere to Find Suspicious Clay in the Ancient City:",
+				"&8• &7Walk along the path leading up to the giant central Portal Frame in the Ancient City.",
+				"&8• &7Look closely at the decorative rings of gray &8Polished Basalt&7 (which look like grey wood logs)—one block in the ring is replaced by a slightly lighter gray &bSuspicious Clay&7 block!",
+				"&8• &7Hold Right-Click on the Suspicious Clay with your &6Brush&7 to extract the template, then &aimmediately duplicate it&7 in a Crafting Table using &8Netherite Ingots + Deepslate&7!"
+			],
+			x: 6.0, y: 5.0,
+			dependencies: ["A5A349E61097552E"],
+			tasks: [
+				{ id: "P2T0000000000014", type: "item", item: "minecraft:brush", count: 1 },
+				{ id: "P2T0000000000015", type: "item", item: "allthemodium:allthemodium_upgrade_smithing_template", count: 1 }
+			],
+			rewards: [
+				{ id: "P2R0000000000021", type: "item", item: "allthemodium:allthemodium_upgrade_smithing_template" },
+				{ id: "P2R0000000000022", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "731ED6939FBA42FA",
+			title: "&3&lSilence Broken: Slay the Warden!",
+			description: [
+				"&7Trigger a Sculk Shrieker four times to summon the terror of the deep: &3The Warden&7!",
+				"",
+				"&7Use your Jetpack, ranged weapons, or enchanted Netherite gear to bring the beast down and harvest its &3Echo Shards&7!"
+			],
+			x: 9.0, y: 3.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["A5A349E61097552E"],
+			tasks: [ { id: "0F314A54710C8EE9", type: "item", item: "minecraft:echo_shard", count: 2 } ],
+			rewards: [
+				{ id: "0607D0AE9D3481AD", type: "item", item: "minecraft:echo_shard", count: 3 },
+				{ id: "B350849340F7C252", type: "random", table_id: "tier_2_allthemodium" },
+				{ id: "2823CD62B27F3B51", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "2A1CCE4C4A3DD93E",
+			title: "&6&lGateway to Riches: The Teleport Pad!",
+			description: [
+				"&7On your &9Starlight Crafting Altar&7, unite the trophies of Twilight, Nether, Deep Dark, and Starlight to forge the &6Allthemodium Teleport Pad&7!",
+				"",
+				"&6&lRecipe Components:",
+				"&8• &6Allthemodium Nuggets &7& &3Echo Shard &7(Ancient City / Warden)",
+				"&8• &fNether Star &7(The Wither)",
+				"&8• &9Starmetal Ingot &7(Astral Focal Point)",
+				"&8• &cFiery Blood&7, &fAlpha Yeti Fur &7& &bIce Bomb &7(Twilight Forest)",
+				"",
+				"&a&lHow to Use:",
+				"&7Place the Teleport Pad in the &aOverworld&7, make sure both of your hands are completely empty, and &eSneak + Right-Click&7 to teleport to the &6Mining Dimension&7! (&eAlways carry a spare Teleport Pad in your backpack so you never get stranded!&7)"
+			],
+			x: 12.5, y: 0.0,
+			size: 1.75,
+			shape: "gear",
+			dependencies: ["6CB413E894934DD9", "BD02867A0B1AE7FE", "731ED6939FBA42FA"],
+			tasks: [ { id: "6C923E4524566707", type: "item", item: "allthemodium:teleport_pad", count: 1 } ],
+			rewards: [
+				{ id: "DD973CE765D85434", type: "item", item: "allthemodium:teleport_pad" },
+				{
+					id: "F8A6B16C91720006",
+					type: "toast",
+					title: "Mining Dimension Unlocked!",
+					description: "Infinite ores and Allthemodium await!"
+				},
+				{ id: "61AC5315E8EE6C48", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P2Q0000000000012",
+			title: "&6Entering the Mining Dimension",
+			description: [
+				"&7Step through your Teleport Pad into the flat, eternal plains of the &6ATM Mining Dimension&7!",
+				"",
+				"&7Deploy your &eDigital Miner&7 here to strip-mine thousands of Iron, Osmium, Gold, Redstone, Diamond, Emerald, and Quartz ores without ever scarring the Overworld!"
+			],
+			x: 12.5, y: -2.5,
+			dependencies: ["2A1CCE4C4A3DD93E"],
+			tasks: [
+				{ id: "P2T0000000000016", type: "dimension", icon: "minecraft:diamond_pickaxe", dimension: "allthemodium:mining" }
+			],
+			rewards: [
+				{ id: "P2R0000000000023", type: "item", item: "allthemodium:allthemodium_nugget", count: 2 },
+				{ id: "P2R0000000000024", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "60DC5F682A7024DD",
+			title: "&2Structural Echolocation: Explorer's Compass",
+			description: [
+				"&7Combine an &3Echo Shard&7, &cCarminite&7, &6Allthemodium&7, and &2Nature's Compass&7 to craft the &2Explorer's Compass&7!",
+				"",
+				"&7From this moment on, you can locate any Ancient City, Nether Bastion, Dragon Roost in The Other, or Cataclysm boss arena across all dimensions!"
+			],
+			x: 12.5, y: 3.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["731ED6939FBA42FA", "2A1CCE4C4A3DD93E"],
+			tasks: [ { id: "5DDC0929B533677F", type: "item", item: "explorerscompass:explorerscompass", count: 1 } ],
+			rewards: [
+				{ id: "4C1523CF3BC71401", type: "random", table_id: "tier_2_allthemodium" },
+				{ id: "371F4007C191B88A", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p2_mine_allthemodium",
+			title: "&6&lGolden Radiance: Allthemodium Ingots!",
+			description: [
+				"&7Mine &6Allthemodium Ore&7 in the Deep Dark or the &6Mining Dimension&7 (requires a &8Netherite Pickaxe&7 with Fortune)!",
+				"",
+				"&eOre Multiplication Tip: &7Never smelt Raw Allthemodium directly in a furnace! Either crush it with an &6Ore Hammer&7 for easy 2x doubling, or run it through your &bMekanism 3x–5x chemical processing chain&7!"
+			],
+			x: 16.0, y: 0.0,
+			size: 1.5,
+			shape: "hexagon",
+			dependencies: ["2A1CCE4C4A3DD93E"],
+			tasks: [ { id: "F94E2DD132F55D70", type: "item", item: "allthemodium:allthemodium_ingot", count: 8 } ],
+			rewards: [
+				{ id: "E06606115EC422DD", type: "item", item: "allthemodium:allthemodium_ingot", count: 2 },
+				{ id: "123EA42465D37AB1", type: "random", table_id: "tier_2_allthemodium" },
+				{ id: "8DF874C5C402CEEE", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p2_allthemodium_armor",
+			title: "&6Sacred Pickaxe Step 3: Allthemodium!",
+			description: [
+				"&7Using your duplicated &6Allthemodium Upgrade Smithing Template&7, upgrade your Netherite Pickaxe into an indestructible &6Allthemodium Pickaxe&7 inside a Smithing Table!",
+				"",
+				"&aAll of your Enchantments and Apotheosis Gems carry over seamlessly! &7An &6Allthemodium Pickaxe&7 is mandatory to mine &aVibranium Ore&7 in Phase 3."
+			],
+			x: 16.0, y: 3.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["p2_mine_allthemodium", "P2Q0000000000011"],
+			tasks: [ { id: "5119D6B168021AD5", type: "item", item: "allthemodium:allthemodium_pickaxe", count: 1 } ],
+			rewards: [
+				{ id: "91AB6649E7D1C7D7", type: "item", item: "allthemodium:allthemodium_ingot" },
+				{ id: "C22BA995FFF976CE", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P2Q0000000000013",
+			title: "&6Full Allthemodium Armor Set",
+			description: [
+				"&7Complete your full set of &6Allthemodium Armor&7 (&6Helmet, Chestplate, Leggings, Boots&7)!",
+				"",
+				"&7Allthemodium Armor provides 24 Defense, 5 Toughness/piece, 85 Enchantability, is 100% indestructible, and makes &6Piglins neutral&7—which will be super helpful when hunting for the Vibranium Smithing Template inside Nether Bastions!"
+			],
+			x: 14.5, y: 5.0,
+			dependencies: ["p2_allthemodium_armor"],
+			tasks: [
+				{ id: "P2T0000000000017", type: "item", item: "allthemodium:allthemodium_helmet", count: 1 },
+				{ id: "5B748055069D5780", type: "item", item: "allthemodium:allthemodium_chestplate", count: 1 },
+				{ id: "P2T0000000000018", type: "item", item: "allthemodium:allthemodium_leggings", count: 1 },
+				{ id: "P2T0000000000019", type: "item", item: "allthemodium:allthemodium_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "P2R0000000000025", type: "item", item: "allthemodium:allthemodium_ingot" },
+				{ id: "P2R0000000000026", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P2Q0000000000014",
+			title: "&6Sacred Tools Step 3: Allthemodium Arsenal",
+			description: [
+				"&7Upgrade your Netherite Sword, Axe, and Shovel into indestructible &6Allthemodium&7 inside your Smithing Table!"
+			],
+			x: 17.5, y: 5.0,
+			dependencies: ["p2_allthemodium_armor"],
+			optional: true,
+			tasks: [
+				{ id: "P2T0000000000020", type: "item", item: "allthemodium:allthemodium_sword", count: 1 },
+				{ id: "P2T0000000000021", type: "item", item: "allthemodium:allthemodium_axe", count: 1 },
+				{ id: "P2T0000000000022", type: "item", item: "allthemodium:allthemodium_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "P2R0000000000027", type: "item", item: "allthemodium:allthemodium_ingot" },
+				{ id: "P2R0000000000028", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "C16FCB1104B1889C",
+			title: "&3Apothic Enchanting: Deepshelves",
+			description: [
+				"&7Combine &6Allthemodium Ingots&7 with &3Echo Shards&7 to craft &3Dormant Deepshelves&7 and awaken them into &3Deepshelves&7 (&3Echoing / Soul-Touched Deepshelves&7)!",
+				"",
+				"&7This pushes your Enchanting Table to much higher Eterna levels for Phase 3 dragon hunting."
+			],
+			x: 12.5, y: 5.0,
+			dependencies: ["p2_mine_allthemodium", "731ED6939FBA42FA"],
+			tasks: [ { id: "3E464F596213D138", type: "item", item: "apothic_enchanting:dormant_deepshelf", count: 2 } ],
+			rewards: [
+				{ id: "BBC5629C6E67BFFD", type: "item", item: "apothic_enchanting:dormant_deepshelf" },
+				{ id: "B1487835238B5184", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P2Q0000000000015",
+			title: "&3Echoing & Soul-Touched Sculkshelves",
+			description: [
+				"&7Infuse your Dormant Deepshelves into &3Deepshelves&7 and upgrade them into &3Echoing Sculkshelves&7 or &bSoul-Touched Sculkshelves&7!",
+				"",
+				"&7Echoing Sculkshelves provide massive Eterna and Quanta Stability!"
+			],
+			x: 12.5, y: 7.0,
+			dependencies: ["C16FCB1104B1889C"],
+			optional: true,
+			tasks: [
+				{ id: "P2T0000000000023", type: "item", item: "apothic_enchanting:echoing_deepshelf", count: 1 },
+				{ id: "P2T0000000000024", type: "item", item: "apothic_enchanting:soul_touched_deepshelf", count: 1 }
+			],
+			rewards: [
+				{ id: "P2R0000000000029", type: "item", item: "minecraft:echo_shard", count: 2 },
+				{ id: "P2R0000000000030", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "8D2792A553CD987D",
+			title: "&c&lMekanism Advanced Tier (5 Slots!)",
+			description: [
+				"&7Infuse &6Allthemodium Ingots&7 and &bOsmium&7 into your Mekanism circuitry to craft &cAdvanced Tier Installers&7!",
+				"",
+				"&7Upgrade your 3-slot Basic Factories into &c5-Slot Advanced Factories&7 for massive industrial throughput!"
+			],
+			x: 20.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p2_mine_allthemodium"],
+			tasks: [ { id: "C55F4AFC0D19C039", type: "item", item: "mekanism:advanced_tier_installer", count: 2 } ],
+			rewards: [
+				{ id: "93388FA349C0FAE5", type: "item", item: "mekanism:advanced_tier_installer", count: 2 },
+				{ id: "4B6F9FD7ECD387B6", type: "item", item: "mekanism:alloy_infused", count: 16 },
+				{ id: "B0468C5098D55AC9", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P2Q0000000000016",
+			title: "&c5-Slot Advanced Factory Line",
+			description: [
+				"&7Upgrade your core Smelting, Enriching, Crushing, and Infusing Factories to the &c5-Slot Advanced Tier&7!"
+			],
+			x: 22.0, y: -1.5,
+			dependencies: ["8D2792A553CD987D"],
+			tasks: [
+				{ id: "P2T0000000000025", type: "item", item: "mekanism:advanced_smelting_factory", count: 1 },
+				{ id: "P2T0000000000026", type: "item", item: "mekanism:advanced_enriching_factory", count: 1 },
+				{ id: "P2T0000000000027", type: "item", item: "mekanism:advanced_crushing_factory", count: 1 },
+				{ id: "P2T0000000000028", type: "item", item: "mekanism:advanced_infusing_factory", count: 1 }
+			],
+			rewards: [
+				{ id: "P2R0000000000031", type: "item", item: "mekanism:advanced_tier_installer" },
+				{ id: "P2R0000000000032", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "461E33557B9A04B3",
+			title: "&cLimitless Wireless Power: Flux Plug & Point",
+			description: [
+				"&7Using your &fNether Star&7, &6Allthemodium Ingots&7, and &cFlux Cores&7 from Phase 1B, construct &cFlux Plugs&7 (input power from generators/Induction Matrix) and &cFlux Points&7 (output power to machines)!",
+				"",
+				"&7Flux Networks transfer unlimited FE/t wirelessly across all dimensions—perfect for powering your Digital Miner in the Mining Dimension! (&cReminder: &7Flux Storage blocks are disabled; store your energy in the Mekanism Induction Matrix!&7)"
+			],
+			x: 16.0, y: -3.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["6CB413E894934DD9", "p2_mine_allthemodium"],
+			tasks: [
+				{ id: "C82EBE6AA092334D", type: "item", item: "fluxnetworks:flux_plug", count: 1 },
+				{ id: "38D561643A8AD17C", type: "item", item: "fluxnetworks:flux_point", count: 2 }
+			],
+			rewards: [
+				{ id: "03377E63E306C25C", type: "item", item: "fluxnetworks:flux_point", count: 2 },
+				{ id: "19D0974CAFA4651F", type: "item", item: "fluxnetworks:flux_core", count: 4 },
+				{ id: "6F8EF8AF09CC33B5", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P2Q0000000000017",
+			title: "&cWireless Inventory Charging: Flux Controller",
+			description: [
+				"&7Place a &cFlux Controller&7 on your Flux Network and enable Wireless Charging in its GUI!",
+				"",
+				"&7It will wirelessly charge tools, batteries, and gadgets right inside your inventory, Curios slots, and hotbar across any dimension!"
+			],
+			x: 16.0, y: -5.0,
+			dependencies: ["461E33557B9A04B3"],
+			optional: true,
+			tasks: [ { id: "P2T0000000000029", type: "item", item: "fluxnetworks:flux_controller", count: 1 } ],
+			rewards: [
+				{ id: "P2R0000000000033", type: "item", item: "fluxnetworks:flux_core", count: 4 },
+				{ id: "P2R0000000000034", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p2_gas_gen_and_induction",
+			title: "&3Gas-Burning Generator & Induction Matrix!",
+			description: [
+				"&7With &6Allthemodium&7 and &cFiery Blood&7 (from the Hydra), you unlock the midgame power leap!",
+				"",
+				"&8• &3Gas-Burning Generator: &7Combine Water, Hydrogen, and Bio-Fuel inside a &ePressurized Reaction Chamber (PRC)&7 to make &bEthylene&7 (and save Liquid Ethylene for Phase 4 Rocket Fuel!). Burn Ethylene in Gas-Burning Generators for thousands of FE/t!",
+				"&8• &aMekanism Induction Matrix: &7Because all Flux Storage batteries from Flux Networks are &cdeleted&7, the multiblock &aInduction Matrix&7 (scaling from Basic all the way to Infinite in Mekanism: Extras!) is your sole high-capacity energy bank!"
+			],
+			x: 20.0, y: -3.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["p2_mine_allthemodium"],
+			tasks: [
+				{ id: "90A1B2C3D4E5F613", type: "item", item: "mekanism:pressurized_reaction_chamber", count: 1 },
+				{ id: "90A1B2C3D4E5F614", type: "item", item: "mekanismgenerators:gas_burning_generator", count: 1 },
+				{ id: "90A1B2C3D4E5F615", type: "item", item: "mekanism:basic_induction_cell", count: 1 },
+				{ id: "90A1B2C3D4E5F616", type: "item", item: "mekanism:basic_induction_provider", count: 1 }
+			],
+			rewards: [
+				{ id: "90A1B2C3D4E5F610", type: "item", item: "mekanismgenerators:gas_burning_generator" },
+				{ id: "90A1B2C3D4E5F611", type: "item", item: "mekanism:induction_casing", count: 8 },
+				{ id: "90A1B2C3D4E5F612", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P2Q0000000000018",
+			title: "&bEthylene & Substrate Production",
+			description: [
+				"&7When your PRC produces gaseous &bEthylene&7, it also outputs solid &fSubstrate&7 as a byproduct!",
+				"",
+				"&7Don't void your Substrate—in Phase 4 & 6, infusing Substrate with Liquid Ethylene and Oxygen creates &fHDPE Pellets & Sheets&7!"
+			],
+			x: 20.0, y: -5.0,
+			dependencies: ["p2_gas_gen_and_induction"],
+			tasks: [ { id: "P2T0000000000030", type: "item", item: "mekanism:substrate", count: 8 } ],
+			rewards: [
+				{ id: "P2R0000000000035", type: "item", item: "mekanism:bio_fuel", count: 16 },
+				{ id: "P2R0000000000036", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P2Q0000000000019",
+			title: "&aBuilding the Induction Matrix",
+			description: [
+				"&7Assemble your multiblock &aMekanism Induction Matrix&7! Even a compact 3x4x3 or 4x4x4 hollow box of &fInduction Casings&7 with &aInduction Ports&7 (Shift+Right-Click one port with a Configurator to set it to Output!) can store billions of FE!",
+				"",
+				"&7Upgrade your internal cells and providers from Basic to &cAdvanced Induction Cells & Providers&7 as your power grid grows."
+			],
+			x: 22.0, y: -3.0,
+			dependencies: ["p2_gas_gen_and_induction"],
+			tasks: [
+				{ id: "P2T0000000000031", type: "item", item: "mekanism:induction_casing", count: 26 },
+				{ id: "P2T0000000000032", type: "item", item: "mekanism:induction_port", count: 2 }
+			],
+			rewards: [
+				{ id: "P2R0000000000037", type: "item", item: "mekanism:induction_casing", count: 8 },
+				{ id: "P2R0000000000038", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "D58C21C281473619",
+			title: "&dQuantum Ring & Quantum Entangloporter",
+			description: [
+				"&7Using &9Starmetal Ingots&7, &6Allthemodium Ingots&7, and &fNether Stars&7, you unlock cross-dimensional logistics:",
+				"",
+				"&8• &dME Quantum Ring & Link Chamber: &7Connects your AE2 network across dimensions (and is required in Phase 3 for your &bQuantum Bridge Card&7).",
+				"&8• &3Quantum Entangloporter (Mekanism): &7Wirelessly transfers Items, Fluids, Gases/Chemicals, Energy, and Heat across dimensions—vital in Phase 4 for sending Nuclear Waste to Earth Orbit!"
+			],
+			x: 20.0, y: 3.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["p2_mine_allthemodium"],
+			tasks: [
+				{ id: "28623E2CF67C1AB6", type: "item", item: "ae2:quantum_ring", count: 8 },
+				{ id: "D00F48F985D2136C", type: "item", item: "ae2:quantum_link", count: 1 },
+				{ id: "D00F48F985D2136D", type: "item", item: "mekanism:quantum_entangloporter", count: 1 }
+			],
+			rewards: [
+				{ id: "B0107BCA2C89BD90", type: "item", item: "ae2:quantum_ring", count: 8 },
+				{ id: "1A34834030BE2F9D", type: "item", item: "ae2:quantum_link" },
+				{ id: "7BA747ADE99A9686", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P2Q0000000000020",
+			title: "&dMatter Condenser & AE2 Singularities",
+			description: [
+				"&7To pair two AE2 Quantum Rings (or link a Wireless Terminal in Phase 3), craft a &bMatter Condenser&7, insert a &b256k Cell Component&7, and pump 256,000 items/fluids (like Cobblestone or Water) into it to compress a &dSingularity&7!",
+				"",
+				"&7Then throw the Singularity and Ender Dust on the ground and detonate TNT / Tiny TNT beside them to create a pair of &dQuantum Entangled Singularities&7!"
+			],
+			x: 20.0, y: 5.0,
+			dependencies: ["D58C21C281473619"],
+			tasks: [
+				{ id: "P2T0000000000033", type: "item", item: "ae2:condenser", count: 1 },
+				{ id: "P2T0000000000034", type: "item", item: "ae2:singularity", count: 1 }
+			],
+			rewards: [
+				{ id: "P2R0000000000039", type: "item", item: "ae2:singularity", count: 2 },
+				{ id: "P2R0000000000040", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "4AA122CCB9B25B98",
+			title: "&bApplied Mekanistics & Applied Delight",
+			description: [
+				"&7Supercharge your AE2 network with two essential Phase 2 integrations:",
+				"",
+				"&8• &bApplied Mekanistics: &7Craft &bChemical Storage Cells&7 to store Oxygen, Hydrogen, Ethylene, Sulfuric Acid, and later Polonium directly inside your AE2 ME Drives!",
+				"&8• &6Applied Delight: &7Connect &bME Pattern Providers&7 directly to your &6Farmer's Delight Cooking Pot&7 and &fCutting Board&7 so your factory cooks gourmet feasts on demand!"
+			],
+			x: 23.0, y: 3.0,
+			dependencies: ["D58C21C281473619"],
+			tasks: [ { id: "3CB038AE9AFDBC85", type: "item", item: "appmek:chemical_storage_cell_1k", count: 1 } ],
+			rewards: [
+				{ id: "2B6489AD0D12EFE8", type: "item", item: "appmek:chemical_storage_cell_4k" },
+				{ id: "2B6489AD0D12EFE9", type: "random", table_id: "delight_feast" },
+				{ id: "5DC1B7E1DC3BB71A", type: "xp", xp: 200 }
+			]
+		},
+		{
+			id: "P2Q0000000000021",
+			title: "&6Automated Culinary Patterns",
+			description: [
+				"&7Use &bME Chemical Import/Export/Storage Buses&7 from &bApplied Mekanistics&7 and place &bPattern Providers&7 on your Cooking Pot (&6Applied Delight&7)!",
+				"",
+				"&7Your AE2 network can now autocraft multi-step Delight meals for Heart Canisters, Boss Rituals, and the Allthemodium Carrot/Apple!"
+			],
+			x: 23.0, y: 5.0,
+			dependencies: ["4AA122CCB9B25B98"],
+			optional: true,
+			tasks: [ { id: "P2T0000000000035", type: "item", item: "appmek:chemical_cell_housing", count: 1 } ],
+			rewards: [
+				{ id: "P2R0000000000041", type: "item", item: "ae2:blank_pattern", count: 8 },
+				{ id: "P2R0000000000042", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p2_phase_2_complete",
+			title: "&5&lPhase 2 Complete: Ready for The Other!",
+			description: [
+				"&7Clad in gleaming &6Allthemodium Armor&7, backed by &c5-Slot Advanced Factories&7, &3Gas-Burning Generators&7, wireless &cFlux Power&7, and an &2Explorer's Compass&7, you are ready to enter the most dangerous realm yet.",
+				"",
+				"&6&lHow to Enter Phase 3 (The Other):",
+				"&7Take a &6Teleport Pad&7 into &cThe Nether&7, place it down, and Sneak + Right-Click with empty hands to enter &6The Other&7—home of &cFire&7 and &9Lightning Dragons&7, &6Pigliches&7, and &aVibranium&7!"
+			],
+			x: 25.0, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["8D2792A553CD987D", "p2_allthemodium_armor"],
+			tasks: [ { id: "33AF7A8B45EA1288", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "0DA2AF76224FC73E",
+					type: "toast",
+					title: "Phase 2 Complete!",
+					description: "Place a Teleport Pad in the Nether to enter The Other!"
+				},
+				{ id: "8C27296494992EE9", type: "random", table_id: "tier_2_allthemodium" },
+				{ id: "5601EB7382E3665E", type: "xp_levels", xp_levels: 5 }
+			]
+		}
+	]
+}

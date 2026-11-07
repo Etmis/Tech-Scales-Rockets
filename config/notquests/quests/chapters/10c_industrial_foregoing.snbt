@@ -1,0 +1,1284 @@
+{
+	id: "industrial_foregoing_mastery",
+	title: "&aIndustrial Foregoing",
+	icon: "industrialforegoing:machine_frame_supreme",
+	group: "group_systems",
+	order_index: 13,
+	quests: [
+		{
+			id: "if_01_welcome_pity_frame",
+			title: "&a&l1. Bio-Tech Foundations: Pity Machine Frame (Phase 0)",
+			description: [
+				"&7Welcome to the complete master guide for &aIndustrial Foregoing&7—built on one principle: &eif you can farm it, you can automate it&7!",
+				"",
+				"&6&lCraft the Industrial Foregoing Manual:",
+				"&7Combine a &fBook&7, a block of &6Dirt&7, and a piece of &cRedstone&7 to craft the in-game &aIndustrial Foregoing Manual&7, which lists every machine in the order you should build them.",
+				"",
+				"&6&lThe 4 Machine Frame Tiers in Tech, Scales & Rockets:",
+				"&81. &aPity Machine Frame (Phase 0): &7Crafted in a Crafting Table (Osmium, Iron, Logs & Redstone). Unlocks Latex & &fPlastic&7.",
+				"&82. &bSimple Machine Frame (Phase 1B): &7Crafted in the Dissolution Chamber (Naga Scales & Carminite). Unlocks crop/animal farms & &dPink Slime&7.",
+				"&83. &dAdvanced Machine Frame (Phase 3): &7Crafted in the Dissolution Chamber (Allthemodium, Dragon Blood & Pink Slime). Unlocks the &bStasis Chamber&7 & &aHydroponic Beds&7.",
+				"&84. &6Supreme Machine Frame (Phase 4): &7Crafted in the Dissolution Chamber (Vibranium, Desh Plates & Ether Gas). Unlocks the &4Tier 4 Rocket Engine&7, &dTri-Realm Alloy Singularity&7 & &6Ore Laser Base&7!",
+				"",
+				"&cPack Rules Reminder: &7Infinity Tools/Backpack, Mob Duplicator, Enchantment Factory/Applicator/Extractor, and Meat Feeder are removed to protect the core pillars of the modpack!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.75,
+			shape: "gear",
+			dependencies: ["p0_steel_casing"],
+			tasks: [ { id: "IFT0000000000001", type: "item", item: "industrialforegoing:machine_frame_pity", count: 2 } ],
+			rewards: [
+				{ id: "IFR0000000000001", type: "item", item: "industrialforegoing:machine_frame_pity", count: 2 },
+				{ id: "IFR0000000000002", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "if_01b_gui_and_copier",
+			title: "&b1B. GUI Side Config & Machine Settings Copier",
+			description: [
+				"&7Every machine in Industrial Foregoing shares the exact same interface—learn one and you know them all!",
+				"",
+				"&6&lHow Industrial Foregoing Machines Work:",
+				"&8• &bColored Side Squares (Bottom of GUI): &7Each colored square represents an internal tank or inventory. Click a square to highlight that resource and set any side of the machine to &aPush&7, &9Pull&7, or &cDisabled&7—letting machines shove products straight into an adjacent chest or machine without pipes!",
+				"&8• &aWork Bar & Redstone Modes: &7The green bar shows the work timer. Use the Redstone button to ignore Redstone, run only with/without a signal, or pulse a single operation.",
+				"&8• &dMachine Settings Copier: &7Configure one machine perfectly, &eShift+Click&7 it with the Copier to save its side settings, then &eShift+Click&7 other machines to paste those settings and automatically insert matching add-ons from your inventory! (&eShift+Click the air&7 to reset the tool)."
+			],
+			x: 0.0, y: -3.0,
+			dependencies: ["if_01_welcome_pity_frame"],
+			tasks: [ { id: "IFT0000000000002", type: "item", item: "industrialforegoing:machine_settings_copier", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000003", type: "item", item: "minecraft:redstone", count: 4 },
+				{ id: "IFR0000000000004", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "if_02_fluid_extractor",
+			title: "&22. Extract Latex: The Fluid Extractor",
+			description: [
+				"&7The &aFluid Extractor&7 (&findustrialforegoing:fluid_extractor&7) is your first real machine, pulling liquid &fLatex&7 out of any log placed in front of it.",
+				"",
+				"&ePro Tips for Maximum Latex:",
+				"&8• &7Each cycle takes ~5 seconds and slowly strips the log until it breaks.",
+				"&8• &7It runs with &ano power at all&7, but supplying FE makes it work &a3x faster&7!",
+				"&8• &6Stack Extractors on One Log: &7Point 3 or 4 Fluid Extractors at the exact same log block at once to multiply your Latex output without multiplying log usage! &6Acacia Logs&7 give the highest Latex yield!"
+			],
+			x: 2.5, y: 0.0,
+			dependencies: ["if_01_welcome_pity_frame"],
+			tasks: [
+				{ id: "IFT0000000000003", type: "item", item: "industrialforegoing:fluid_extractor", count: 2 },
+				{ id: "IFT0000000000004", type: "item", item: "minecraft:acacia_log", count: 32 }
+			],
+			rewards: [
+				{ id: "IFR0000000000005", type: "item", item: "industrialforegoing:fluid_extractor", count: 2 },
+				{ id: "IFR0000000000006", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "if_03_block_placer_wood_automation",
+			title: "&e3. Automating Log Placement: The Block Placer",
+			description: [
+				"&7A cheap way to keep your Fluid Extractors running hands-free is a &eBlock Placer&7 (&findustrialforegoing:block_placer&7) loaded with logs!",
+				"",
+				"&7Point a few Fluid Extractors at a single spot and place one Block Placer facing that same spot—it automatically replaces each log the moment it breaks!"
+			],
+			x: 5.0, y: -3.0,
+			dependencies: ["if_02_fluid_extractor"],
+			tasks: [ { id: "IFT0000000000005", type: "item", item: "industrialforegoing:block_placer", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000007", type: "item", item: "minecraft:acacia_log", count: 64 },
+				{ id: "IFR0000000000008", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "if_04_latex_processing_unit",
+			title: "&e4. Coagulating Latex: Latex Processing Unit",
+			description: [
+				"&7Pump your liquid &fLatex&7 into a &eLatex Processing Unit&7 (&findustrialforegoing:latex_processing_unit&7) along with &9Water&7 and &cFE Power&7, and it produces &fDry Rubber&7 (&findustrialforegoing:dryrubber&7) directly!",
+				"",
+				"&8• &7Each piece of &fDry Rubber&7 costs &e750 mB of Latex&7 and &9500 mB of Water&7, so keep both tanks topped up!"
+			],
+			x: 5.0, y: 0.0,
+			dependencies: ["if_02_fluid_extractor"],
+			tasks: [
+				{ id: "IFT0000000000006", type: "item", item: "industrialforegoing:latex_processing_unit", count: 1 },
+				{ id: "IFT0000000000007", type: "item", item: "industrialforegoing:dryrubber", count: 8 }
+			],
+			rewards: [
+				{ id: "IFR0000000000009", type: "item", item: "industrialforegoing:dryrubber", count: 8 },
+				{ id: "IFR0000000000010", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "if_05_dry_rubber_and_plastic",
+			title: "&f&l5. Turn Latex into Plastic (Phase 0 Keystone!)",
+			description: [
+				"&7Smelt your &fDry Rubber&7 (&findustrialforegoing:dryrubber&7) in any Furnace or Energized Smelter and it becomes &bPlastic&7 (&findustrialforegoing:plastic&7)!",
+				"",
+				"&6&lThe Single Most Important Material in the Mod:",
+				"&8• &dAE2 Fluix Glass Cables &7& &cMekanism Advanced Universal Cables &7(Phase 0)",
+				"&8• &aMekanism Basic Tier Installers &7(Phase 1A)",
+				"&8• &bDissolution Chamber&7, all 4 Machine Frame tiers, and every Add-On & Lens!"
+			],
+			x: 7.5, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["if_04_latex_processing_unit"],
+			tasks: [
+				{ id: "IFT0000000000008", type: "item", item: "industrialforegoing:dryrubber", count: 16 },
+				{ id: "IFT0000000000009", type: "item", item: "industrialforegoing:plastic", count: 32 }
+			],
+			rewards: [
+				{ id: "IFR0000000000011", type: "item", item: "industrialforegoing:plastic", count: 32 },
+				{ id: "IFR0000000000012", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_06_water_condensator",
+			title: "&96. Passive Water Source: The Water Condensator",
+			description: [
+				"&7Once you have your first few pieces of Plastic, place a &9Water Condensator&7 (&findustrialforegoing:water_condensator&7) next to a pool of water (with water source blocks on at least two horizontal sides).",
+				"",
+				"&7It generates infinite Water passively without power and can push it straight into an adjacent &eLatex Processing Unit&7 so you never haul water buckets by hand!"
+			],
+			x: 2.5, y: -3.0,
+			dependencies: ["if_01_welcome_pity_frame"],
+			tasks: [ { id: "IFT0000000000010", type: "item", item: "industrialforegoing:water_condensator", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000013", type: "item", item: "minecraft:bucket", count: 2 },
+				{ id: "IFR0000000000014", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "if_07_block_breaker",
+			title: "&77. The Block Breaker (Block Automation)",
+			description: [
+				"&7Craft a &7Block Breaker&7 (&findustrialforegoing:block_breaker&7)! Powered with FE, it breaks any block in front of it—great for early Cobblestone generators or breaking transformed Starmetal Ore blocks."
+			],
+			x: 7.5, y: -3.0,
+			dependencies: ["if_03_block_placer_wood_automation"],
+			tasks: [ { id: "IFT0000000000011", type: "item", item: "industrialforegoing:block_breaker", count: 1 } ],
+			rewards: [ { id: "IFR0000000000015", type: "xp", xp: 100 } ]
+		},
+		{
+			id: "if_08_sewer_and_composter",
+			title: "&68. Sewer, Sewage & Fertilizer Loop",
+			description: [
+				"&7Tie your animal and plant farms together with a closed fertilizer loop:",
+				"&81. &7Place a &6Sewer&7 (&findustrialforegoing:sewer&7) beneath an animal pen—animals standing above it passively produce &6Sewage&7 into its tank.",
+				"&82. &7Pipe that Sewage into a &6Sewage Composter&7 (&findustrialforegoing:sewage_composter&7) and it becomes solid &6Fertilizer&7 (&findustrialforegoing:fertilizer&7) for your Plant Fertilizer!"
+			],
+			x: 10.0, y: -3.0,
+			dependencies: ["if_05_dry_rubber_and_plastic"],
+			tasks: [
+				{ id: "IFT0000000000012", type: "item", item: "industrialforegoing:sewer", count: 1 },
+				{ id: "IFT0000000000013", type: "item", item: "industrialforegoing:sewage_composter", count: 1 },
+				{ id: "IFT0000000000014", type: "item", item: "industrialforegoing:fertilizer", count: 16 }
+			],
+			rewards: [
+				{ id: "IFR0000000000016", type: "item", item: "industrialforegoing:fertilizer", count: 32 },
+				{ id: "IFR0000000000017", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "if_09_spores_recreator_dye_mixer",
+			title: "&d9. Spores Recreator & Resourceful Furnace",
+			description: [
+				"&8• &dSpores Recreator: &7Uses Water to multiply Red/Brown Mushrooms and Nether Crimson/Warped Fungi!",
+				"&8• &6Resourceful Furnace: &7Smelts 3 items in parallel while generating liquid &aEssence&7 from smelting XP—perfect for smelting down dusts from your Fluid Sieving Machine!"
+			],
+			x: 12.5, y: -3.0,
+			dependencies: ["if_08_sewer_and_composter"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000015", type: "item", item: "industrialforegoing:spores_recreator", count: 1 },
+				{ id: "IFT0000000000016", type: "item", item: "industrialforegoing:resourceful_furnace", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000018", type: "xp", xp: 125 } ]
+		},
+		{
+			id: "if_10_simple_machine_frame",
+			title: "&b&l10. Tier 2: The Simple Machine Frame (Phase 1B)",
+			description: [
+				"&7Once you defeat the Naga and climb the Dark Tower in the Twilight Forest (Phase 1B), you can craft the Tier 2 frame: the &bSimple Machine Frame&7!",
+				"",
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &aPity Machine Frame &7+ &fPlastic",
+				"&8• &aNaga Scales &7(&ftwilightforest:naga_scale&7)",
+				"&8• &cCarminite &7(&ftwilightforest:carminite&7)",
+				"",
+				"&7The Simple Machine Frame is required for the &bDissolution Chamber&7, the &eMekanism Digital Miner&7, automated crop/animal farms, and &dPink Slime&7 production!"
+			],
+			x: 10.5, y: 0.0,
+			size: 1.55,
+			shape: "hexagon",
+			dependencies: ["if_05_dry_rubber_and_plastic", "p1b_carminite"],
+			tasks: [ { id: "IFT0000000000017", type: "item", item: "industrialforegoing:machine_frame_simple", count: 2 } ],
+			rewards: [
+				{ id: "IFR0000000000019", type: "item", item: "industrialforegoing:machine_frame_simple", count: 2 },
+				{ id: "IFR0000000000020", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_11_dissolution_chamber",
+			title: "&b&l11. The Heart of Bio-Tech: The Dissolution Chamber!",
+			description: [
+				"&7Craft the &bDissolution Chamber&7 (&findustrialforegoing:dissolution_chamber&7), which draws ~90 FE/t while dissolving items in a fluid bath!",
+				"",
+				"&6&lHow to Automate the Dissolution Chamber Without Jamming:",
+				"&7Because it only accepts &e1 item per slot&7 at a time and many recipes require two of the same ingredient, automating it without locking will cause stacks to pile into the wrong slot! &aClick the Padlock button&7 in its GUI to lock the recipe slots, or feed it via an &bItem Transporter&7 set to a regulation limit of 1 (or an AE2 Pattern Provider)!",
+				"",
+				"&eWhat It Unlocks in Tech, Scales & Rockets:",
+				"&8• &aAll Machine Add-Ons (Range, Speed, Efficiency, Processing) & Laser Lenses",
+				"&8• &dSolid Pink Slime&7, &dAdvanced Frames &7& &6Supreme Frames",
+				"&8• &6100% Bucket-Free Space Program (Phase 4): &7Pipe-fed &6Rocket Fuel&7, &bCryo Fuel&7, &4Tier 4 Calorite Engine&7 & Hermetic Space Enchant Books!",
+				"&8• &dPhase 7 Finale: &7The &dTri-Realm Alloy Singularity&7!"
+			],
+			x: 13.5, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["if_10_simple_machine_frame"],
+			tasks: [ { id: "IFT0000000000018", type: "item", item: "industrialforegoing:dissolution_chamber", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000021", type: "item", item: "industrialforegoing:plastic", count: 16 },
+				{ id: "IFR0000000000022", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_12_range_addons_0_to_5",
+			title: "&a12. Expanding Work Area: Range Addons (Tier 0 to Tier 5)",
+			description: [
+				"&7Range Add-Ons fit into any machine with a working area (like the Plant Sower, Plant Gatherer, or Mob Slaughter Factory) and come in &e12 tiers (Tier 0 to Tier 11)&7!",
+				"",
+				"&7Press &eShow Working Area&7 inside a machine's GUI to see its bounding box. Craft &aRange Addon Tier 0&7 (&findustrialforegoing:range_addon_tier_0&7), &aTier 2&7 (&findustrialforegoing:range_addon_tier_2&7), and &6Tier 5&7 (&findustrialforegoing:range_addon_tier_5&7) inside your Dissolution Chamber using liquid &fLatex&7!"
+			],
+			x: 13.5, y: -3.0,
+			dependencies: ["if_11_dissolution_chamber"],
+			tasks: [
+				{
+					id: "IFT0000000000019",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_0", count: 1, components: { "titanium:augments": { Range: 0.0f } } },
+					count: 1
+				},
+				{
+					id: "IFT0000000000020",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_2", count: 1, components: { "titanium:augments": { Range: 2.0f } } },
+					count: 1
+				},
+				{
+					id: "IFT0000000000021",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_5", count: 1, components: { "titanium:augments": { Range: 5.0f } } },
+					count: 1
+				}
+			],
+			rewards: [
+				{
+					id: "IFR0000000000023",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_6", count: 1, components: { "titanium:augments": { Range: 6.0f } } }
+				},
+				{ id: "IFR0000000000024", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "if_13_range_addons_7_to_11",
+			title: "&b13. Massive Coverage: Range Addons (Tier 7 to Tier 11)",
+			description: [
+				"&7Need a single Plant Gatherer or Mob Crusher to cover a massive 25x25 hall? Craft high-tier &bRange Addons (Tier 7 to Tier 11)&7 (&findustrialforegoing:range_addon_tier_7&7 to &findustrialforegoing:range_addon_tier_11&7)!"
+			],
+			x: 16.0, y: -3.0,
+			dependencies: ["if_12_range_addons_0_to_5"],
+			optional: true,
+			tasks: [
+				{
+					id: "IFT0000000000022",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_7", count: 1, components: { "titanium:augments": { Range: 7.0f } } },
+					count: 1
+				},
+				{
+					id: "IFT0000000000023",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_10", count: 1, components: { "titanium:augments": { Range: 10.0f } } },
+					count: 1
+				}
+			],
+			rewards: [
+				{
+					id: "IFR0000000000025",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_11", count: 1, components: { "titanium:augments": { Range: 11.0f } } }
+				},
+				{ id: "IFR0000000000026", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_14_speed_efficiency_processing_addons",
+			title: "&e14. Speed, Efficiency & Processing Addons (Tier 1 & Tier 2)",
+			description: [
+				"&7Slot all three performance add-on families into a machine's purple add-on slots for a fully optimized setup:",
+				"&8• &cSpeed Addon (Tier 1 & Tier 2): &7Makes the work bar fill faster.",
+				"&8• &aEfficiency Addon (Tier 1 & Tier 2): &7Reduces the FE power burned per operation.",
+				"&8• &bProcessing Addon (Tier 1 & Tier 2): &7Multiplies operations per work cycle!",
+				"",
+				"&ePro Tip: &7Tier 1 add-ons are modest—aim straight for &6Tier 2 Addons&7 (&findustrialforegoing:speed_addon_tier_2&7, &fefficiency_addon_tier_2&7, &fprocessing_addon_tier_2&7) and drop them into your Fluid Extractors, Dissolution Chamber, and Laser Drills!"
+			],
+			x: 18.5, y: -3.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["if_11_dissolution_chamber"],
+			tasks: [
+				{
+					id: "IFT0000000000024",
+					type: "item",
+					item: { id: "industrialforegoing:speed_addon_tier_1", count: 1, components: { "titanium:augments": { Speed: 2.0f } } },
+					count: 2
+				},
+				{
+					id: "IFT0000000000025",
+					type: "item",
+					item: {
+						id: "industrialforegoing:efficiency_addon_tier_1",
+						count: 1,
+						components: { "titanium:augments": { Efficiency: 0.9f } }
+					},
+					count: 2
+				},
+				{
+					id: "IFT0000000000026",
+					type: "item",
+					item: {
+						id: "industrialforegoing:processing_addon_tier_1",
+						count: 1,
+						components: { "titanium:augments": { Processing: 2.0f } }
+					},
+					count: 2
+				}
+			],
+			rewards: [
+				{
+					id: "IFR0000000000027",
+					type: "item",
+					item: { id: "industrialforegoing:speed_addon_tier_2", count: 1, components: { "titanium:augments": { Speed: 3.0f } } }
+				},
+				{
+					id: "IFR0000000000028",
+					type: "item",
+					item: {
+						id: "industrialforegoing:efficiency_addon_tier_2",
+						count: 1,
+						components: { "titanium:augments": { Efficiency: 0.8f } }
+					}
+				},
+				{
+					id: "IFR0000000000029",
+					type: "item",
+					item: {
+						id: "industrialforegoing:processing_addon_tier_2",
+						count: 1,
+						components: { "titanium:augments": { Processing: 3.0f } }
+					}
+				},
+				{ id: "IFR0000000000030", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_15_plant_sower_gatherer",
+			title: "&215. Automated Delight Farms: Plant Sower & Gatherer",
+			description: [
+				"&7Automate all your crops for the &612 Delight Mods&7 and Mekanism Bio-Fuel:",
+				"&8• &aPlant Sower (&findustrialforegoing:plant_sower&7): &7Place &aunderneath&7 pre-tilled, hydrated farmland! Its 9 colored filter slots map to the 9 quadrants above it. &eAlways lock the input with the Padlock button&7 so one fast-growing crop cannot fill every slot and crowd out the others!",
+				"&8• &2Plant Gatherer (&findustrialforegoing:plant_gatherer&7): &7Place &aat crop level&7 on the side of the field (with a Range Addon installed)! It harvests mature crops and trees while producing liquid &8Sludge&7 as a byproduct."
+			],
+			x: 16.5, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["if_11_dissolution_chamber"],
+			tasks: [
+				{ id: "IFT0000000000027", type: "item", item: "industrialforegoing:plant_sower", count: 1 },
+				{ id: "IFT0000000000028", type: "item", item: "industrialforegoing:plant_gatherer", count: 1 }
+			],
+			rewards: [
+				{
+					id: "IFR0000000000031",
+					type: "item",
+					item: { id: "industrialforegoing:range_addon_tier_4", count: 1, components: { "titanium:augments": { Range: 4.0f } } },
+					count: 2
+				},
+				{ id: "IFR0000000000032", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_16_plant_fertilizer",
+			title: "&616. Instant Crop Growth: The Plant Fertilizer",
+			description: [
+				"&7Place a &6Plant Fertilizer&7 (&findustrialforegoing:plant_fertilizer&7) facing your crop field and feed it either Bone Meal or &6Fertilizer&7 from your Sewage Composter—dramatically increasing crop yield from a fixed footprint!"
+			],
+			x: 16.5, y: 2.5,
+			dependencies: ["if_15_plant_sower_gatherer", "if_08_sewer_and_composter"],
+			tasks: [ { id: "IFT0000000000029", type: "item", item: "industrialforegoing:plant_fertilizer", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000033", type: "item", item: "industrialforegoing:fertilizer", count: 64 },
+				{ id: "IFR0000000000034", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "if_17_sludge_refiner",
+			title: "&817. Recycling Farm Sludge: The Sludge Refiner",
+			description: [
+				"&7Rather than throwing away the &8Sludge&7 from your Plant Gatherer, pipe it into a &8Sludge Refiner&7 (&findustrialforegoing:sludge_refiner&7)!",
+				"",
+				"&7It converts waste Sludge into passive bulk building blocks: Dirt, Sand, Red Sand, Gravel, Clay, and Soul Sand!"
+			],
+			x: 19.5, y: 2.5,
+			dependencies: ["if_15_plant_sower_gatherer"],
+			tasks: [ { id: "IFT0000000000030", type: "item", item: "industrialforegoing:sludge_refiner", count: 1 } ],
+			rewards: [ { id: "IFR0000000000035", type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "if_18_animal_rancher_feeder_breeder",
+			title: "&e18. Animal Husbandry: Feeder, Separator & Rancher",
+			description: [
+				"&7Chain these three machines across fenced pens so your animal farm runs itself:",
+				"&8• &eAnimal Feeder: &7Puts nearby animals into love mode using their breeding food (such as Wheat for cows).",
+				"&8• &bAnimal Baby Separator: &7Moves either babies or adults from one pen into the next! &cDirection Matters: &7It moves animals &efrom the side it faces&7 to its back side! Use one Feeder in Pen 1, a Separator moving babies into a grow-out Pen 2, and a second Separator moving adults into a kill Pen 3! (&eFence pens 2 blocks high so animals don't climb out!&7)",
+				"&8• &fAnimal Rancher: &7Milks cows, shears sheep, and collects ink from squids without harming them!"
+			],
+			x: 19.5, y: 0.0,
+			dependencies: ["if_15_plant_sower_gatherer"],
+			tasks: [
+				{ id: "IFT0000000000031", type: "item", item: "industrialforegoing:animal_feeder", count: 1 },
+				{ id: "IFT0000000000032", type: "item", item: "industrialforegoing:animal_baby_separator", count: 1 },
+				{ id: "IFT0000000000033", type: "item", item: "industrialforegoing:animal_rancher", count: 1 }
+			],
+			rewards: [
+				{ id: "IFR0000000000036", type: "item", item: "minecraft:wheat", count: 64 },
+				{ id: "IFR0000000000037", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_19_mob_imprisonment_tool",
+			title: "&d19. The Pokéball: Mob Imprisonment Tool (Boss Blacklist!)",
+			description: [
+				"&7Craft a &dMob Imprisonment Tool&7 (&findustrialforegoing:mob_imprisonment_tool&7) using Plastic and Ghast Tears!",
+				"",
+				"&7Right-click any passive animal, Villager, or standard hostile mob to capture and move it!",
+				"",
+				"&c&lPack Blacklist Rule:",
+				"&7All Bosses and Minibosses from &2Twilight Forest&7, &6Ice and Fire&7, and &cL_Ender's Cataclysm&7 are strictly blacklisted from both the Mob Imprisonment Tool and Apothic Spawners!"
+			],
+			x: 22.5, y: -3.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["if_11_dissolution_chamber"],
+			tasks: [ { id: "IFT0000000000034", type: "item", item: "industrialforegoing:mob_imprisonment_tool", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000038", type: "item", item: "industrialforegoing:mob_imprisonment_tool" },
+				{ id: "IFR0000000000039", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_20_mob_crusher_essence",
+			title: "&a20. Mob Farming & Looting: The Mob Crusher",
+			description: [
+				"&7The &aMob Crusher&7 (&findustrialforegoing:mob_crusher&7) kills mobs in its working area while &ekeeping all normal mob drops&7 and storing up to 32,000 mB of liquid &aEssence&7!",
+				"",
+				"&7You can toggle its GUI to either collect Essence or spend that experience on a &bLooting&7 effect for better drops!"
+			],
+			x: 22.5, y: 2.5,
+			dependencies: ["if_18_animal_rancher_feeder_breeder"],
+			tasks: [ { id: "IFT0000000000035", type: "item", item: "industrialforegoing:mob_crusher", count: 1 } ],
+			rewards: [ { id: "IFR0000000000040", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_21_mob_slaughter_factory_pink_slime",
+			title: "&d&l21. Producing Pink Slime: The Mob Slaughter Factory!",
+			description: [
+				"&7To progress to Phase 3 (&dAdvanced Machine Frame&7), you MUST produce liquid &dPink Slime&7!",
+				"",
+				"&6&lHow the Mob Slaughter Factory Works:",
+				"&81. &7The &dMob Slaughter Factory&7 (&findustrialforegoing:mob_slaughter_factory&7) kills mobs in its working area but gives &cno loot or Essence&7. Instead, it produces &6Liquid Meat&7 and &dPink Slime&7 fluid!",
+				"&82. &eHostile vs. Passive Mobs: &7Hostile mobs yield more &6Liquid Meat&7, while passive mobs with higher health (like &eCows&7 from your breeding pen!) give much more &dPink Slime&7!"
+			],
+			x: 22.5, y: 0.0,
+			size: 1.55,
+			shape: "gear",
+			dependencies: ["if_18_animal_rancher_feeder_breeder"],
+			tasks: [
+				{ id: "IFT0000000000036", type: "item", item: "industrialforegoing:mob_slaughter_factory", count: 1 },
+				{ id: "IFT0000000000037", type: "item", item: "industrialforegoing:pink_slime_bucket", count: 1 }
+			],
+			rewards: [
+				{ id: "IFR0000000000041", type: "item", item: "mekanism:advanced_fluid_tank" },
+				{ id: "IFR0000000000042", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "if_22_pink_slime_balls_ingots",
+			title: "&d22. Solid Pink Slime (Glass Pane Recipe) & Pink Slime Ingots",
+			description: [
+				"&7How do you get solid &dPink Slime&7 (&findustrialforegoing:pink_slime&7) and &dPink Slime Ingots&7 (&findustrialforegoing:pink_slime_ingot&7)?",
+				"&8• &dSolid Pink Slime: &7Combine &dPink Slime fluid&7 with a &fGlass Pane&7 inside the &bDissolution Chamber&7 to produce solid Pink Slime (which also releases &9Water&7 as a byproduct)!",
+				"&8• &dPink Slime Ingot: &7Infuse Iron Ingots + Gold Ingots + liquid Pink Slime inside your &bDissolution Chamber&7!"
+			],
+			x: 25.5, y: 0.0,
+			dependencies: ["if_21_mob_slaughter_factory_pink_slime"],
+			tasks: [
+				{ id: "IFT0000000000038", type: "item", item: "industrialforegoing:pink_slime", count: 4 },
+				{ id: "IFT0000000000039", type: "item", item: "industrialforegoing:pink_slime_ingot", count: 4 }
+			],
+			rewards: [
+				{ id: "IFR0000000000043", type: "item", item: "industrialforegoing:pink_slime_ingot", count: 4 },
+				{ id: "IFR0000000000044", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "if_23_mechanical_dirt",
+			title: "&823. Instant Mob Spawning: Mechanical Dirt",
+			description: [
+				"&7Craft &8Mechanical Dirt&7 (&findustrialforegoing:mechanical_dirt&7) inside the Dissolution Chamber!",
+				"",
+				"&7Fed with FE power + &6Liquid Meat&7 (from your Mob Slaughter Factory), Mechanical Dirt passively spawns random hostile mobs on top of itself in darkness—making your Slaughter Factory or Mob Crusher 100% self-sustaining!"
+			],
+			x: 25.5, y: 2.5,
+			dependencies: ["if_22_pink_slime_balls_ingots"],
+			optional: true,
+			tasks: [ { id: "IFT0000000000040", type: "item", item: "industrialforegoing:mechanical_dirt", count: 4 } ],
+			rewards: [
+				{ id: "IFR0000000000045", type: "item", item: "industrialforegoing:mechanical_dirt", count: 4 },
+				{ id: "IFR0000000000046", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "if_24_bioreactor_biofuel_gen",
+			title: "&224. Variety Power: Bioreactor & Biofuel Generator",
+			description: [
+				"&7The &2Bioreactor&7 (&findustrialforegoing:bioreactor&7) turns plant matter into &5Biofuel&7, but its efficiency depends entirely on &evariety&7!",
+				"",
+				"&8• &7Filling its slots with &aup to 9 different items&7 (saplings, seeds, dyes, carrots, potatoes, wheat) pushes efficiency toward &a100%&7, while a single repeated item leaves it very low!",
+				"&8• &7Burn Biofuel in the &2Biofuel Generator&7 (&findustrialforegoing:biofuel_generator&7), which outputs &a160 FE/t&7 (~640,000 FE per bucket)!"
+			],
+			x: 16.5, y: 5.0,
+			dependencies: ["if_16_plant_fertilizer"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000041", type: "item", item: "industrialforegoing:bioreactor", count: 1 },
+				{ id: "IFT0000000000042", type: "item", item: "industrialforegoing:biofuel_generator", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000047", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_25_pitiful_generator",
+			title: "&725. The Pitiful Generator (Mycelial Starter)",
+			description: [
+				"&7The &7Pitiful Generator&7 (&findustrialforegoing:pitiful_generator&7) burns coal or furnace fuel for 30 FE/t (storing 100,000 FE) and is required to craft the &cFurnace Mycelial Generator&7—the first of the 16 Mycelial Generators!"
+			],
+			x: 19.5, y: 5.0,
+			dependencies: ["if_24_bioreactor_biofuel_gen"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000043", type: "item", item: "industrialforegoing:pitiful_generator", count: 1 },
+				{ id: "IFT0000000000044", type: "item", item: "industrialforegoing:mycelial_furnace", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000048", type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "if_26_marine_fisher",
+			title: "&926. Automated Fishing for Roll Delight: Marine Fisher",
+			description: [
+				"&7Place a &9Marine Fisher&7 (&findustrialforegoing:marine_fisher&7) one block above a 3x3 pool of Water and supply it with FE!",
+				"",
+				"&7It catches endless Cod, Salmon, Pufferfish, and treasure for your &bRoll Delight&7 and &3Ocean's Delight&7 sushi kitchens!"
+			],
+			x: 22.5, y: 5.0,
+			dependencies: ["if_20_mob_crusher_essence"],
+			tasks: [ { id: "IFT0000000000045", type: "item", item: "industrialforegoing:marine_fisher", count: 1 } ],
+			rewards: [ { id: "IFR0000000000049", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_27_mob_detector",
+			title: "&c27. Smart Automation: The Mob Detector",
+			description: [
+				"&7Craft a &cMob Detector&7 (&findustrialforegoing:mob_detector&7)! It outputs a Redstone signal based on how many mobs are present in front of it—great for controlling mob farms and Wither cages."
+			],
+			x: 25.5, y: 5.0,
+			dependencies: ["if_26_marine_fisher"],
+			optional: true,
+			tasks: [ { id: "IFT0000000000046", type: "item", item: "industrialforegoing:mob_detector", count: 1 } ],
+			rewards: [ { id: "IFR0000000000050", type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "if_28_fluid_collector_placer",
+			title: "&928. Fluid Collector & Fluid Placer",
+			description: [
+				"&7Craft a &9Fluid Placer&7 and &9Fluid Collector&7—essential for automating in-world fluid reactions like Astral Sorcery Liquid Starlight pools!"
+			],
+			x: 25.5, y: -3.0,
+			dependencies: ["if_22_pink_slime_balls_ingots"],
+			tasks: [
+				{ id: "IFT0000000000047", type: "item", item: "industrialforegoing:fluid_placer", count: 1 },
+				{ id: "IFT0000000000048", type: "item", item: "industrialforegoing:fluid_collector", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000051", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_29_advanced_machine_frame",
+			title: "&d&l29. Tier 3: The Advanced Machine Frame (Phase 3)",
+			description: [
+				"&7Once you enter &6The Other&7 in Phase 3 and slay Fire & Lightning Dragons, pump liquid &dPink Slime&7 into your &bDissolution Chamber&7 to forge the &dAdvanced Machine Frame&7!",
+				"",
+				"&6&lCustom KubeJS Dissolution Chamber Recipe:",
+				"&8• &bSimple Machine Frame &7+ &fPlastic",
+				"&8• &6Allthemodium Ingots &7(&fallthemodium:allthemodium_ingot&7)",
+				"&8• &cFire Dragon Blood &7(&ficeandfire:fire_dragon_blood&7)",
+				"&8• &9Lightning Dragon Blood &7(&ficeandfire:lightning_dragon_blood&7)",
+				"&8• &dLiquid Pink Slime &7(&findustrialforegoing:pink_slime&7)",
+				"",
+				"&aUnlocks the Stasis Chamber, Hydroponic Beds, Bio-Ore Multiplication & Wither Builder!"
+			],
+			x: 28.5, y: 0.0,
+			size: 1.65,
+			shape: "hexagon",
+			dependencies: [
+				"if_22_pink_slime_balls_ingots",
+				"if_21_mob_slaughter_factory_pink_slime",
+				"p3_slay_fire_dragon",
+				"p3_slay_lightning_dragon"
+			],
+			tasks: [ { id: "IFT0000000000049", type: "item", item: "industrialforegoing:machine_frame_advanced", count: 2 } ],
+			rewards: [
+				{ id: "IFR0000000000052", type: "item", item: "industrialforegoing:machine_frame_advanced", count: 2 },
+				{ id: "IFR0000000000053", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "if_30_stasis_chamber",
+			title: "&b&l30. Freezing Bosses in Time: The Stasis Chamber!",
+			description: [
+				"&7Using your new &dAdvanced Machine Frame&7, craft the &bStasis Chamber&7 (&findustrialforegoing:stasis_chamber&7)!",
+				"",
+				"&6&lHow the Stasis Chamber Works:",
+				"&7Place a Stasis Chamber and power it, then summon your &8Wither&7 directly above it so the Chamber freezes the boss in place in its &e3x3x3 working area&7 and stops it from powering up! It freezes the entity's AI, hides its boss bar, and heals it continuously.",
+				"",
+				"&c&lNever Let the Stasis Chamber Lose Power:",
+				"&7The setup only stays safe while the Stasis Chamber has FE! If it loses energy, the frozen Wither breaks free and wrecks your base. Give the Stasis Chamber its own dedicated backup power source and install Speed/Efficiency Add-Ons!"
+			],
+			x: 28.5, y: 4.0,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["if_29_advanced_machine_frame"],
+			tasks: [ { id: "IFT0000000000050", type: "item", item: "industrialforegoing:stasis_chamber", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000054", type: "item", item: "minecraft:wither_skeleton_skull", count: 3 },
+				{ id: "IFR0000000000055", type: "item", item: "minecraft:soul_sand", count: 4 },
+				{ id: "IFR0000000000056", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "if_31_hydroponic_bed",
+			title: "&a31. Hyper-Speed Agriculture: The Hydroponic Bed!",
+			description: [
+				"&7The &aHydroponic Bed&7 (&findustrialforegoing:hydroponic_bed&7) acts as compact high-tech farmland—plant any crop or sapling directly on top of it!",
+				"",
+				"&a&lHow It Works:",
+				"&81. &7Supply it with &9Water&7 and &cFE Power&7 to grow crops rapidly.",
+				"&82. &7Supplying &3Ether Gas&7 (in Phase 4) lets it &aautomatically harvest and replant&7 the mature plant!",
+				"&83. &7Insert a &bHydroponic Simulation Processor&7 inside it while it works so it records growth data to unlock the upgraded Simulated Hydroponic Bed!"
+			],
+			x: 28.5, y: 7.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["if_29_advanced_machine_frame"],
+			tasks: [ { id: "IFT0000000000051", type: "item", item: "industrialforegoing:hydroponic_bed", count: 4 } ],
+			rewards: [
+				{ id: "IFR0000000000057", type: "item", item: "industrialforegoing:hydroponic_bed", count: 2 },
+				{ id: "IFR0000000000058", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "if_32_simulated_hydroponic_bed",
+			title: "&a32. Zero-Cost Virtual Crops: Simulated Hydroponic Bed",
+			description: [
+				"&7The &aSimulated Hydroponic Bed&7 (&findustrialforegoing:simulated_hydroponic_bed&7) grows crops from stored &bHydroponic Simulation Processor&7 data!",
+				"",
+				"&6&lWhy the Simulated Hydroponic Bed is Endgame Perfection:",
+				"&8• &7It &aonly needs FE power&7 to run—no Water, no Ether Gas, and no physical plant entity on top!",
+				"&8• &7It improves its output over time as it keeps simulating, and handles saplings and tree mutations cleanly!"
+			],
+			x: 28.5, y: 10.0,
+			dependencies: ["if_31_hydroponic_bed"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000052", type: "item", item: "industrialforegoing:simulated_hydroponic_bed", count: 1 },
+				{
+					id: "IFT0000000000053",
+					type: "item",
+					item: {
+						id: "industrialforegoing:hydroponic_simulation_processor",
+						count: 1,
+						components: { "industrialforegoing:hydroponic_simulation_processor": { } }
+					},
+					count: 1
+				}
+			],
+			rewards: [ { id: "IFR0000000000059", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_33_wither_builder",
+			title: "&833. Automated Summoning: The Wither Builder",
+			description: [
+				"&7Craft a &8Wither Builder&7 (&findustrialforegoing:wither_builder&7)!",
+				"",
+				"&7Supply it with FE, 4x Soul Sand, and 3x Wither Skeleton Skulls (from your Phase 2 Culinary Ritual!)—it automatically constructs the Wither multiblock above itself!"
+			],
+			x: 25.5, y: 10.0,
+			dependencies: ["if_30_stasis_chamber"],
+			tasks: [ { id: "IFT0000000000054", type: "item", item: "industrialforegoing:wither_builder", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000060", type: "item", item: "minecraft:wither_skeleton_skull", count: 3 },
+				{ id: "IFR0000000000061", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "if_34_washing_fermentation_sieving",
+			title: "&634. Multiplying Ores (2x–5x): Washing, Fermentation & Sieving",
+			description: [
+				"&7Industrial Foregoing's biological ore multiplication chain turns 1 Raw Ore into &aup to 5x Ingots&7 (except Raw Unobtainium, which is locked to the Mekanism Combiner):",
+				"&81. &9Washing Factory: &7Combines Raw Ore with &6Liquid Meat&7 to make &6Raw Ore Meat&7.",
+				"&82. &eFermentation Station: &7Ferments that meat! Choose your multiplier:",
+				"   &8• &f2x Doubling: &7~5 seconds, no catalyst needed.",
+				"   &8• &a3x Tripling: &7~45 seconds.",
+				"   &8• &d4x Quadrupling: &7Requires &dPink Slime&7 (~2 minutes).",
+				"   &8• &35x Quintupling: &7Requires &3Ether Gas&7!",
+				"&83. &bFluid Sieving Machine: &7Uses &eSand&7 to sieve Fermented Ore Meat into clean Ore Dusts, which you smelt in a &6Resourceful Furnace&7!"
+			],
+			x: 22.5, y: 10.0,
+			dependencies: ["if_29_advanced_machine_frame"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000055", type: "item", item: "industrialforegoing:washing_factory", count: 1 },
+				{ id: "IFT0000000000056", type: "item", item: "industrialforegoing:fermentation_station", count: 1 },
+				{ id: "IFT0000000000057", type: "item", item: "industrialforegoing:fluid_sieving_machine", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000062", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_35_potion_brewer",
+			title: "&d35. Automated Alchemy: The Potion Brewer",
+			description: [
+				"&7The &dPotion Brewer&7 (&findustrialforegoing:potion_brewer&7) automates brewing end to end, running up to 6 steps in order from filling bottles with Water through Nether Wart and modifiers up to Dragon's Breath!",
+				"",
+				"&7Lock the recipe and it churns out Splash or Lingering potions endlessly!"
+			],
+			x: 19.5, y: 10.0,
+			dependencies: ["if_29_advanced_machine_frame"],
+			optional: true,
+			tasks: [ { id: "IFT0000000000058", type: "item", item: "industrialforegoing:potion_brewer", count: 1 } ],
+			rewards: [ { id: "IFR0000000000063", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_36_material_stonework_factory",
+			title: "&736. All-in-One Cobbleworks: Material StoneWork Factory!",
+			description: [
+				"&7The &7Material StoneWork Factory&7 (&findustrialforegoing:material_stonework_factory&7) chains vanilla stone-processing steps into a single block!",
+				"",
+				"&7Given Water and Lava, you define each of its 4 sequential stages as &eSmelting&7, &eCrushing&7, or &eCrafting&7—turning Cobblestone into Stone, Smooth Stone, Gravel, Sand, Glass, or Silicon automatically!"
+			],
+			x: 16.5, y: 10.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["if_29_advanced_machine_frame"],
+			tasks: [ { id: "IFT0000000000059", type: "item", item: "industrialforegoing:material_stonework_factory", count: 1 } ],
+			rewards: [
+				{
+					id: "IFR0000000000064",
+					type: "item",
+					item: { id: "industrialforegoing:speed_addon_tier_2", count: 1, components: { "titanium:augments": { Speed: 3.0f } } }
+				},
+				{ id: "IFR0000000000065", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "if_37_fluid_laser_base_optics",
+			title: "&3&l37. Wither Milking Step 1: The Fluid Laser Base (Phase 4)",
+			description: [
+				"&6&lCustom KubeJS Recipe – Fluid Laser Base:",
+				"&7Requires &aVibranium Ingots&7 (&fallthemodium:vibranium_ingot&7) + &fAstral Sorcery Glass Lenses&7 (&fastralsorcery:glass_lens&7)!",
+				"",
+				"&7The &bFluid Laser Base&7 does no work on its own until &bLaser Drills&7 point at it from within their 3x3x3 range!"
+			],
+			x: 13.5, y: 10.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["if_30_stasis_chamber", "p3_celestial_crystal_lumen"],
+			tasks: [ { id: "IFT0000000000060", type: "item", item: "industrialforegoing:fluid_laser_base", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000066", type: "item", item: "astralsorcery:glass_lens", count: 2 },
+				{ id: "IFR0000000000067", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "if_38_laser_drills_and_purple_lens",
+			title: "&538. Wither Milking Step 2: Laser Drills & Purple Laser Lens",
+			description: [
+				"&7Craft at least &b4x Laser Drills&7 (&findustrialforegoing:laser_drill&7) and &51x Purple Laser Lens&7 (&findustrialforegoing:purple_laser_lens&7) inside your Dissolution Chamber!",
+				"",
+				"&eAiming Your Laser Drills:",
+				"&7Laser Drills draw ~1,000 FE per operation and their facing depends on the direction you are looking when you place them. When placed within the 3x3x3 range of your Fluid Laser Base, you will see &bparticle beams&7 traveling from each drill into the base!"
+			],
+			x: 10.5, y: 10.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["if_37_fluid_laser_base_optics"],
+			tasks: [
+				{ id: "IFT0000000000061", type: "item", item: "industrialforegoing:laser_drill", count: 4 },
+				{ id: "IFT0000000000062", type: "item", item: "industrialforegoing:purple_laser_lens", count: 1 }
+			],
+			rewards: [
+				{ id: "IFR0000000000068", type: "item", item: "industrialforegoing:laser_drill", count: 4 },
+				{ id: "IFR0000000000069", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "if_39_extracting_ether_gas",
+			title: "&3&l39. Wither Milking Step 3: Pipe-Fed Ether Gas Extraction!",
+			description: [
+				"&6&lComplete Wither Milking Setup Guide:",
+				"&81. &7Power your &bStasis Chamber&7 on the floor (with backup power so it never turns off!).",
+				"&82. &7Set your &bFluid Laser Base&7 a few blocks above the Stasis Chamber and insert the &5Purple Laser Lens&7 (&findustrialforegoing:purple_laser_lens&7).",
+				"&83. &7Ring the base with powered &bLaser Drills&7 fitted with Tier 2 Speed/Processing Add-Ons.",
+				"&84. &7Summon &8The Wither&7 directly above the Stasis Chamber! The Chamber freezes it in place and your Fluid Laser Base steadily fills with &3Ether Gas&7—pipe it directly out into your tanks or Dissolution Chamber!",
+				"",
+				"&eWhere Piped Ether Gas is Used:",
+				"&8• &6Supreme Machine Frames &7(Phase 4)",
+				"&8• &bMekanism Elite Tier Installers (7 Slots)",
+				"&8• &4Tier 4 Calorite Rocket Engine &7(2,000 mB piped directly into the Dissolution Chamber!)",
+				"&8• &dTri-Realm Alloy Singularity &7(Phase 7 Divine Smithing!)"
+			],
+			x: 7.5, y: 10.0,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["if_38_laser_drills_and_purple_lens"],
+			tasks: [
+				{ id: "IFT0000000000063", type: "item", item: "industrialforegoing:fluid_laser_base", count: 1 },
+				{ id: "IFT0000000000064", type: "item", item: "industrialforegoing:purple_laser_lens", count: 1 }
+			],
+			rewards: [
+				{ id: "IFR0000000000070", type: "item", item: "mekanism:elite_fluid_tank" },
+				{
+					id: "IFR0000000000071",
+					type: "toast",
+					title: "Wither Milked!",
+					description: "You have automated Ether Gas extraction!"
+				},
+				{ id: "IFR0000000000072", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "if_40_nether_lava_laser_drilling",
+			title: "&640. Bonus Fluid Laser Trick: Infinite Lava",
+			description: [
+				"&7Did you know a second &bFluid Laser Base&7 placed in &cThe Nether&7 with an &6Orange Laser Lens&7 (&findustrialforegoing:orange_laser_lens&7) drills infinite &6Lava&7 out of thin air without causing any world block updates?"
+			],
+			x: 7.5, y: 13.0,
+			dependencies: ["if_39_extracting_ether_gas"],
+			optional: true,
+			tasks: [ { id: "IFT0000000000065", type: "item", item: "industrialforegoing:orange_laser_lens", count: 1 } ],
+			rewards: [ { id: "IFR0000000000073", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_41_supreme_machine_frame",
+			title: "&6&l41. Tier 4: The Supreme Machine Frame (Phase 4)!",
+			description: [
+				"&7Pipe liquid &3Ether Gas&7 directly into your &bDissolution Chamber&7 along with lunar &6Desh Plates&7 to forge the highest tier of Industrial Foregoing chassis: the &6Supreme Machine Frame&7!",
+				"",
+				"&6&lCustom KubeJS Dissolution Chamber Recipe:",
+				"&8• &dAdvanced Machine Frame &7+ &fPlastic",
+				"&8• &aVibranium Ingots &7(&fallthemodium:vibranium_ingot&7)",
+				"&8• &6Desh Plates &7(&fad_astra:desh_plate&7 from the Moon)",
+				"&8• &3Piped Liquid Ether Gas &7(&findustrialforegoing:ether_gas&7)"
+			],
+			x: 4.0, y: 10.0,
+			size: 1.65,
+			shape: "hexagon",
+			dependencies: ["if_39_extracting_ether_gas", "p4_moon_desh"],
+			tasks: [ { id: "IFT0000000000066", type: "item", item: "industrialforegoing:machine_frame_supreme", count: 2 } ],
+			rewards: [
+				{ id: "IFR0000000000074", type: "item", item: "industrialforegoing:machine_frame_supreme", count: 2 },
+				{ id: "IFR0000000000075", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "if_41b_bucket_free_aerospace_synthesis",
+			title: "&b41B. 100% Bucket-Free Space Program (Dissolution Chamber!)",
+			description: [
+				"&7In &6Tech, Scales & Rockets&7, the &bDissolution Chamber&7 replaces Ad Astra's deleted Fuel Refinery and Cryo Freezer:",
+				"&81. &6Rocket Fuel (&fad_astra:fuel&6): &7Pipe in &9Liquid Ethylene&7 (from Mekanism Rotary Condensentrator) + &dDragon's Breath&7 + &cFire/Lightning Dragon Blood&7.",
+				"&82. &bCryo Fuel (&fad_astra:cryo_fuel&b): &7Pipe in &bLiquid Starlight&7 (Astral Sorcery) + &bIce Shards&7 + &5Ostrum Dust&7.",
+				"&83. &4Tier 4 Calorite Engine: &7Combine &5Ostrum Plates&7, &cFire &9& Lightning Dragonsteel&7, &bIce Shards&7, and a &6Supreme Machine Frame&7 flooded with &32,000 mB of piped Ether Gas / Cryo Fuel&7!"
+			],
+			x: 4.0, y: 7.0,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["if_41_supreme_machine_frame"],
+			tasks: [ { id: "IFT0000000000067", type: "item", item: "ad_astra:calorite_engine", count: 1 } ],
+			rewards: [ { id: "IFR0000000000076", type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "if_41c_tri_realm_alloy_singularity",
+			title: "&d41C. Phase 7 Synthesis: Tri-Realm Alloy Singularity!",
+			description: [
+				"&7In Phase 7, your &bDissolution Chamber&7 performs the penultimate step of Divine Smithing: synthesizing the &dTri-Realm Alloy Singularity&7 (&fkubejs:tri_realm_alloy_singularity&7)!",
+				"",
+				"&6&lDissolution Chamber Recipe:",
+				"&8• &7All 3 Dual ATM Alloys (&6Allthemodium-Vibranium&7, &aVibranium-Unobtainium&7, &dUnobtainium-Allthemodium&7)",
+				"&8• &dPellet of Antimatter &7(Mekanism) & &aEntro Ingot &7(ExtendedAE)",
+				"&8• &6The Allthemodium Carrot &7(Delight)",
+				"&8• &4Witherite Ingot &7(The Harbinger) & &dCataclysmic Flux",
+				"&8• &3Piped Liquid Input: &32,000 mB of Ether Gas&7!"
+			],
+			x: 1.0, y: 7.0,
+			size: 1.5,
+			shape: "hexagon",
+			dependencies: ["if_41b_bucket_free_aerospace_synthesis"],
+			tasks: [ { id: "IFT0000000000068", type: "item", item: "kubejs:tri_realm_alloy_singularity", count: 1 } ],
+			rewards: [ { id: "IFR0000000000077", type: "xp_levels", xp_levels: 8 } ]
+		},
+		{
+			id: "if_42_mycelial_generators_set1",
+			title: "&c42. Mycelial Network Part 1: Slimey, Culinary, Potion & Disenchantment",
+			description: [
+				"&7Industrial Foregoing features &e16 unique Mycelial Generators&7! If all 16 generators are running simultaneously near a &dMycelial Reactor&7, the Reactor outputs &a25,000,000 FE/t&7!",
+				"",
+				"&8• &aSlimey Mycelial: &7Consumes Milk + Slimeballs.",
+				"&8• &6Culinary Mycelial: &7Consumes any food from your 12 Delight kitchens!",
+				"&8• &dPotion Mycelial: &7Consumes brewed Potions.",
+				"&8• &5Disenchantment Mycelial: &7Consumes Enchanted Books."
+			],
+			x: 7.5, y: 16.0,
+			dependencies: ["if_41_supreme_machine_frame"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000074", type: "item", item: "industrialforegoing:mycelial_slimey", count: 1 },
+				{ id: "IFT0000000000075", type: "item", item: "industrialforegoing:mycelial_culinary", count: 1 },
+				{ id: "IFT0000000000076", type: "item", item: "industrialforegoing:mycelial_potion", count: 1 },
+				{ id: "IFT0000000000077", type: "item", item: "industrialforegoing:mycelial_disenchantment", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000080", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_43_mycelial_generators_set2",
+			title: "&643. Mycelial Network Part 2: Ender, Explosive, Frosty & Halitosis",
+			description: [
+				"&8• &3Ender Mycelial: &7Consumes Ender Pearls / Eyes of Ender.",
+				"&8• &cExplosive Mycelial: &7Consumes Gunpowder / TNT.",
+				"&8• &bFrosty Mycelial: &7Consumes Snowballs / Ice / Blue Ice.",
+				"&8• &dHalitosis Mycelial: &7Consumes &dDragon's Breath&7!"
+			],
+			x: 10.5, y: 16.0,
+			dependencies: ["if_42_mycelial_generators_set1"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000078", type: "item", item: "industrialforegoing:mycelial_ender", count: 1 },
+				{ id: "IFT0000000000079", type: "item", item: "industrialforegoing:mycelial_explosive", count: 1 },
+				{ id: "IFT0000000000080", type: "item", item: "industrialforegoing:mycelial_frosty", count: 1 },
+				{ id: "IFT0000000000081", type: "item", item: "industrialforegoing:mycelial_halitosis", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000081", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_44_mycelial_generators_set3",
+			title: "&e44. Mycelial Network Part 3: Magma, Pink, Netherstar & Death",
+			description: [
+				"&8• &6Magma Mycelial: &7Consumes Lava + Redstone.",
+				"&8• &dPink Mycelial: &7Consumes any Pink Dye / Pink Wool / Pink Slime.",
+				"&8• &fNetherstar Mycelial: &7Consumes Nether Stars.",
+				"&8• &8Death Mycelial: &7Consumes Rotten Flesh / Bones / Wither Skulls."
+			],
+			x: 13.5, y: 16.0,
+			dependencies: ["if_43_mycelial_generators_set2"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000082", type: "item", item: "industrialforegoing:mycelial_magma", count: 1 },
+				{ id: "IFT0000000000083", type: "item", item: "industrialforegoing:mycelial_pink", count: 1 },
+				{ id: "IFT0000000000084", type: "item", item: "industrialforegoing:mycelial_netherstar", count: 1 },
+				{ id: "IFT0000000000085", type: "item", item: "industrialforegoing:mycelial_death", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000082", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_45_mycelial_generators_set4_reactor",
+			title: "&d45. Mycelial Network Part 4 & The 25M FE/t Mycelial Reactor!",
+			description: [
+				"&8• &cRocket Mycelial: &7Consumes Firework Rockets.",
+				"&8• &4Crimed Mycelial: &7Consumes Nether Wart + Warped/Crimson Fungi.",
+				"&8• &6Meatallurgic Mycelial: &7Consumes Liquid Meat + any Metal Ingot.",
+				"&8• &dThe Mycelial Reactor (&findustrialforegoing:mycelial_reactor&7): &7Produces a staggering &a25,000,000 FE/t&7 when all 16 Mycelial Generators around it are actively producing power at the same time!",
+				"",
+				"&eCrucial Tip – Drain Every Buffer:",
+				"&7A Mycelial Generator that fills its internal energy buffer counts as idle and stops the Mycelial Reactor! Constantly drain power out of all 16 generators into a high-capacity buffer like your &aMekanism Induction Matrix&7!"
+			],
+			x: 16.5, y: 16.0,
+			size: 1.45,
+			shape: "octagon",
+			dependencies: ["if_44_mycelial_generators_set3", "if_25_pitiful_generator"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000086", type: "item", item: "industrialforegoing:mycelial_rocket", count: 1 },
+				{ id: "IFT0000000000087", type: "item", item: "industrialforegoing:mycelial_crimed", count: 1 },
+				{ id: "IFT0000000000088", type: "item", item: "industrialforegoing:mycelial_meatallurgic", count: 1 },
+				{ id: "IFT0000000000089", type: "item", item: "industrialforegoing:mycelial_reactor", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000083", type: "xp_levels", xp_levels: 8 } ]
+		},
+		{
+			id: "if_46_ore_laser_base_unlock",
+			title: "&6&l46. The Endgame Quarry: Ore Laser Base (Phase 7 Finale!)",
+			description: [
+				"&7In Phase 7, after synthesizing &dAntimatter&7 and slaying &4The Harbinger&7, you unlock the ultimate mining machine in the modpack: the &6Ore Laser Base&7 (&findustrialforegoing:ore_laser_base&7)!",
+				"",
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &eMekanism Digital Miner &7(from Phase 1B)",
+				"&8• &6Supreme Machine Frame &7(from Phase 4)",
+				"&8• &fAstral Sorcery Glass Lenses &7(&fastralsorcery:glass_lens&7)",
+				"&8• &dUnobtainium Ingots&7, &4Witherite Ingot &7& &dPellet of Antimatter&7!",
+				"",
+				"&a&lHow Lenses & Weights Work:",
+				"&7The Ore Laser Base generates ores out of thin air when powered by surrounding &bLaser Drills&7! Each colored &bLaser Lens&7 biases the output toward certain ores, and stacking multiple lenses of one color raises the odds of that ore (while mixing colors produces a broad spread of Overworld, Nether, Space, and Divine ores at once)!"
+			],
+			x: 0.0, y: 10.0,
+			size: 1.75,
+			shape: "gear",
+			dependencies: ["if_41_supreme_machine_frame", "p7_allthemodium_apple"],
+			tasks: [ { id: "IFT0000000000090", type: "item", item: "industrialforegoing:ore_laser_base", count: 1 } ],
+			rewards: [
+				{ id: "IFR0000000000084", type: "item", item: "industrialforegoing:laser_drill", count: 8 },
+				{ id: "IFR0000000000085", type: "toast", title: "Ore Laser Base Online!", description: "Infinite ores from thin air!" },
+				{ id: "IFR0000000000086", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "if_47_laser_lens_white_gray",
+			title: "&f47. Laser Lenses: White & Light Gray (Iron, Osmium & Quartz)",
+			description: [
+				"&7Craft &fWhite&7 (&findustrialforegoing:white_laser_lens&7) and &7Light Gray Laser Lenses&7 (&findustrialforegoing:light_gray_laser_lens&7) to bias your Ore Laser Base toward Iron, Osmium, Tin, and Nether Quartz!"
+			],
+			x: 0.0, y: 19.0,
+			dependencies: ["if_46_ore_laser_base_unlock"],
+			tasks: [
+				{ id: "IFT0000000000091", type: "item", item: "industrialforegoing:white_laser_lens", count: 1 },
+				{ id: "IFT0000000000092", type: "item", item: "industrialforegoing:light_gray_laser_lens", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000087", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_48_laser_lens_yellow_orange",
+			title: "&e48. Laser Lenses: Yellow & Orange (Gold, Desh & Allthemodium!)",
+			description: [
+				"&7Craft &eYellow&7 (&findustrialforegoing:yellow_laser_lens&7) and &6Orange Laser Lenses&7 (&findustrialforegoing:orange_laser_lens&7) to bias your Ore Laser Base toward Gold, Copper, Glowstone, &6Desh&7, and &6Allthemodium&7!"
+			],
+			x: 3.0, y: 19.0,
+			dependencies: ["if_47_laser_lens_white_gray"],
+			tasks: [
+				{ id: "IFT0000000000093", type: "item", item: "industrialforegoing:yellow_laser_lens", count: 1 },
+				{ id: "IFT0000000000094", type: "item", item: "industrialforegoing:orange_laser_lens", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000088", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_49_laser_lens_red_brown",
+			title: "&c49. Laser Lenses: Red & Brown (Redstone, Debris & Calorite!)",
+			description: [
+				"&7Craft &cRed&7 (&findustrialforegoing:red_laser_lens&7) and &6Brown Laser Lenses&7 (&findustrialforegoing:brown_laser_lens&7) to bias your Ore Laser Base toward Redstone, &8Ancient Debris&7, &5Ostrum&7, and &4Calorite&7!"
+			],
+			x: 6.0, y: 19.0,
+			dependencies: ["if_48_laser_lens_yellow_orange"],
+			tasks: [
+				{ id: "IFT0000000000095", type: "item", item: "industrialforegoing:red_laser_lens", count: 1 },
+				{ id: "IFT0000000000096", type: "item", item: "industrialforegoing:brown_laser_lens", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000089", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_50_laser_lens_lightblue_cyan_blue",
+			title: "&b50. Laser Lenses: Light Blue, Cyan & Blue (Diamonds, Lapis & Fluorite)",
+			description: [
+				"&7Craft &bLight Blue&7 (&findustrialforegoing:light_blue_laser_lens&7), &3Cyan&7 (&findustrialforegoing:cyan_laser_lens&7), and &9Blue Laser Lenses&7 (&findustrialforegoing:blue_laser_lens&7) to bias your Ore Laser Base toward Diamonds, Lapis Lazuli, Fluorite, and Certus/Aquamarine!"
+			],
+			x: 9.0, y: 19.0,
+			dependencies: ["if_49_laser_lens_red_brown"],
+			tasks: [
+				{ id: "IFT0000000000097", type: "item", item: "industrialforegoing:light_blue_laser_lens", count: 1 },
+				{ id: "IFT0000000000098", type: "item", item: "industrialforegoing:cyan_laser_lens", count: 1 },
+				{ id: "IFT0000000000099", type: "item", item: "industrialforegoing:blue_laser_lens", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000090", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_51_laser_lens_lime_green",
+			title: "&a51. Laser Lenses: Lime & Green (Uranium, Emeralds & Vibranium!)",
+			description: [
+				"&7Craft &aLime&7 (&findustrialforegoing:lime_laser_lens&7) and &2Green Laser Lenses&7 (&findustrialforegoing:green_laser_lens&7) to bias your Ore Laser Base toward Uranium, Emeralds, and &aVibranium&7!"
+			],
+			x: 12.0, y: 19.0,
+			dependencies: ["if_50_laser_lens_lightblue_cyan_blue"],
+			tasks: [
+				{ id: "IFT0000000000100", type: "item", item: "industrialforegoing:lime_laser_lens", count: 1 },
+				{ id: "IFT0000000000101", type: "item", item: "industrialforegoing:green_laser_lens", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000091", type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "if_52_laser_lens_magenta_purple",
+			title: "&d52. Laser Lenses: Magenta & Purple (Unobtainium!)",
+			description: [
+				"&7Craft &dMagenta&7 (&findustrialforegoing:magenta_laser_lens&7) and &5Purple Laser Lenses&7 (&findustrialforegoing:purple_laser_lens&7) to bias your Ore Laser Base toward &dUnobtainium&7!"
+			],
+			x: 15.0, y: 19.0,
+			dependencies: ["if_51_laser_lens_lime_green"],
+			tasks: [
+				{ id: "IFT0000000000102", type: "item", item: "industrialforegoing:magenta_laser_lens", count: 1 },
+				{ id: "IFT0000000000103", type: "item", item: "industrialforegoing:purple_laser_lens", count: 1 }
+			],
+			rewards: [ { id: "IFR0000000000092", type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "if_53_max_laser_drill_array",
+			title: "&653. The 32-Drill Overdrive Array",
+			description: [
+				"&7Want your Ore Laser Base to generate dozens of ores per second? Surround it with &b32x Laser Drills&7 (stacked around its 3x3x3 neighborhood) and use your &bMachine Settings Copier&7 to clone &cSpeed Addon Tier 2&7 and &bProcessing Addon Tier 2&7 into every drill!"
+			],
+			x: 18.0, y: 19.0,
+			dependencies: ["if_52_laser_lens_magenta_purple"],
+			tasks: [
+				{ id: "IFT0000000000104", type: "item", item: "industrialforegoing:laser_drill", count: 16 },
+				{
+					id: "IFT0000000000105",
+					type: "item",
+					item: { id: "industrialforegoing:speed_addon_tier_2", count: 1, components: { "titanium:augments": { Speed: 3.0f } } },
+					count: 4
+				},
+				{
+					id: "IFT0000000000106",
+					type: "item",
+					item: {
+						id: "industrialforegoing:processing_addon_tier_2",
+						count: 1,
+						components: { "titanium:augments": { Processing: 3.0f } }
+					},
+					count: 4
+				}
+			],
+			rewards: [
+				{ id: "IFR0000000000093", type: "item", item: "industrialforegoing:laser_drill", count: 8 },
+				{ id: "IFR0000000000094", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "if_54_conveyor_belts_upgrades",
+			title: "&854. Industrial Conveyor Belts (Glowstone & Plastic Upgrades)",
+			description: [
+				"&7Conveyors (&findustrialforegoing:conveyor&7) move items, entities, and fluids horizontally across the ground!",
+				"",
+				"&ePro Tips:",
+				"&8• &eGlowstone Upgrade: &7Dyeing/upgrading a Conveyor with Glowstone makes items and mobs travel much faster!",
+				"&8• &fPlastic Upgrade: &7Applying Plastic to a Conveyor stops items on top from being picked up by players or magnets!",
+				"&8• &7Accepts Extraction, Insertion, Dropping, and Bouncing upgrades."
+			],
+			x: 19.5, y: 16.0,
+			dependencies: ["if_05_dry_rubber_and_plastic"],
+			optional: true,
+			tasks: [ { id: "IFT0000000000107", type: "item", item: "industrialforegoing:conveyor", count: 16 } ],
+			rewards: [ { id: "IFR0000000000095", type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "if_55_transporters_world",
+			title: "&b55. Item & Fluid Transporters (1-Item Regulation)",
+			description: [
+				"&7Craft &bItem Transporters&7 (&findustrialforegoing:item_transporter_type&7) and &9Fluid Transporters&7 (&findustrialforegoing:fluid_transporter_type&7)—they push items or fluids across a 1-block gap!",
+				"",
+				"&eDissolution Chamber Trick: &7An Item Transporter set to a &eregulation limit of 1&7 forces exactly 1 item into each locked slot of a Dissolution Chamber so stacks never jam!"
+			],
+			x: 22.5, y: 16.0,
+			dependencies: ["if_54_conveyor_belts_upgrades"],
+			optional: true,
+			tasks: [
+				{ id: "IFT0000000000108", type: "item", item: "industrialforegoing:item_transporter_type", count: 2 },
+				{ id: "IFT0000000000109", type: "item", item: "industrialforegoing:fluid_transporter_type", count: 2 }
+			],
+			rewards: [ { id: "IFR0000000000096", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_56_fluid_sieving_essence",
+			title: "&a56. Liquid Essence & Loot Filtering",
+			description: [
+				"&7Have excess green &aEssence&7 from your Mob Crusher or Resourceful Furnace? Bucket or pipe it into your AE2 network or use an &bEnchantment Sorter&7 to filter enchanted mob-farm drops!"
+			],
+			x: 19.5, y: 13.0,
+			dependencies: ["if_20_mob_crusher_essence"],
+			optional: true,
+			tasks: [ { id: "IFT0000000000110", type: "item", item: "industrialforegoing:essence_bucket", count: 1 } ],
+			rewards: [ { id: "IFR0000000000097", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "if_57_all_four_frames_mastered",
+			title: "&657. The Four Pillars of Bio-Tech: All 4 Machine Frames",
+			description: [
+				"&7Hold all four tiers of Industrial Foregoing Machine Frames—&aPity&7, &bSimple&7, &dAdvanced&7, and &6Supreme&7—symbolizing your journey from Phase 0 tree-tapping to Phase 4 Wither-milking!"
+			],
+			x: 25.5, y: 16.0,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: [
+				"if_01_welcome_pity_frame",
+				"if_10_simple_machine_frame",
+				"if_29_advanced_machine_frame",
+				"if_41_supreme_machine_frame"
+			],
+			tasks: [
+				{ id: "IFT0000000000111", type: "item", item: "industrialforegoing:machine_frame_pity", count: 1 },
+				{ id: "IFT0000000000112", type: "item", item: "industrialforegoing:machine_frame_simple", count: 1 },
+				{ id: "IFT0000000000113", type: "item", item: "industrialforegoing:machine_frame_advanced", count: 1 },
+				{ id: "IFT0000000000114", type: "item", item: "industrialforegoing:machine_frame_supreme", count: 1 }
+			],
+			rewards: [
+				{ id: "IFR0000000000098", type: "item", item: "industrialforegoing:machine_frame_supreme", count: 2 },
+				{ id: "IFR0000000000099", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "if_58_grand_master_finale",
+			title: "&a&l★ 58. GRAND BIO-ENGINEER OF INDUSTRIAL FOREGOING! ★",
+			description: [
+				"&a&lCongratulations, Master Bio-Engineer!",
+				"&7You have completed the entire &aIndustrial Foregoing Mastery Guide&7!",
+				"",
+				"&7From extracting your first drops of Latex in Phase 0, to automating all 12 Delight crops, harvesting Pink Slime, freezing the Wither atop a Stasis Chamber to drill Ether Gas, synthesizing 100% bucket-free Rocket & Cryo Fuels, forging the Tri-Realm Alloy Singularity, and generating every ore in the cosmos with the &6Ore Laser Base&7—you have conquered bio-industrial engineering!"
+			],
+			x: 25.5, y: 19.0,
+			size: 2.0,
+			shape: "octagon",
+			dependencies: [
+				"if_46_ore_laser_base_unlock",
+				"if_41c_tri_realm_alloy_singularity",
+				"if_53_max_laser_drill_array",
+				"if_57_all_four_frames_mastered"
+			],
+			tasks: [
+				{ id: "IFT0000000000115", type: "item", item: "industrialforegoing:ore_laser_base", count: 1 },
+				{ id: "IFT0000000000116", type: "item", item: "kubejs:tri_realm_alloy_singularity", count: 1 }
+			],
+			rewards: [
+				{
+					id: "IFR0000000000100",
+					type: "toast",
+					title: "Bio-Tech Quests Mastered!",
+					description: "You are a Grand Bio-Engineer of Industrial Foregoing!"
+				},
+				{ id: "IFR0000000000101", type: "xp_levels", xp_levels: 20 }
+			]
+		}
+	]
+}

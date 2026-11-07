@@ -1,0 +1,271 @@
+{
+  "_schemaVersion": 7,
+  "_lastMCVersionId": 767,
+  "generalSettings": {
+    "detectATLauncherInstance": true,
+    "detectCurseManifest": true,
+    "detectMultiMCManifest": true,
+    "detectMCUpdaterInstance": true,
+    "detectTechnicPack": true,
+    "detectModrinthPack": true,
+    "detectBiomeData": true,
+    "detectDimensionData": true,
+    "detectWorldData": true,
+    "clientId": "450485984333660181",
+    "defaultIcon": "grass",
+    "enableJoinRequests": false,
+    "preferredClientLevel": 3,
+    "resetTimeOnInit": false,
+    "autoRegister": false
+  },
+  "biomeSettings": {
+    "fallbackBiomeIcon": "unknown",
+    "biomeData": {
+      "default": {
+        "textOverride": "Exploring {biome.name}"
+      },
+      "deep_dark": {
+        "textOverride": "Sneaking in the Deep Dark"
+      }
+    }
+  },
+  "dimensionSettings": {
+    "fallbackDimensionIcon": "unknown",
+    "dimensionData": {
+      "default": {
+        "textOverride": "In the {dimension.name}"
+      },
+      "overworld": {
+        "textOverride": "Automating in the Overworld",
+        "iconOverride": "grass"
+      },
+      "the_nether": {
+        "textOverride": "Braving the Nether",
+        "iconOverride": "nether"
+      },
+      "the_end": {
+        "textOverride": "Seeking Unobtainium in The End",
+        "iconOverride": "end"
+      },
+      "twilightforest:twilight_forest": {
+        "textOverride": "Awakening Magic in the Twilight Forest"
+      },
+      "allthemodium:mining": {
+        "textOverride": "Strip-Mining in the Mining Dimension"
+      },
+      "allthemodium:the_other": {
+        "textOverride": "Hunting Dragons in The Other"
+      },
+      "ad_astra:earth_orbit": {
+        "textOverride": "Synthesizing Polonium in Earth Orbit"
+      },
+      "ad_astra:moon": {
+        "textOverride": "Mining Desh on the Moon"
+      },
+      "ad_astra:moon_orbit": {
+        "textOverride": "Orbiting the Moon"
+      },
+      "ad_astra:mars": {
+        "textOverride": "Extracting Ostrum on Mars"
+      },
+      "ad_astra:mars_orbit": {
+        "textOverride": "Orbiting Mars"
+      },
+      "ad_astra:venus": {
+        "textOverride": "Surviving the Heat of Venus"
+      },
+      "ad_astra:venus_orbit": {
+        "textOverride": "Orbiting Venus"
+      },
+      "ad_astra:glacio": {
+        "textOverride": "Braving Ice Dragons & Calorite on Glacio"
+      },
+      "ad_astra:glacio_orbit": {
+        "textOverride": "Orbiting Glacio"
+      }
+    }
+  },
+  "serverSettings": {
+    "fallbackServerIcon": "default",
+    "fallbackServerName": "Tech, Scales & Rockets Server",
+    "fallbackServerMotd": "Tech, Scales & Rockets",
+    "serverData": {
+      "default": {
+        "textOverride": "Multiplayer ({server.players.current}/{server.players.max})"
+      }
+    },
+    "pingRateInterval": 5,
+    "pingRateUnit": "minutes"
+  },
+  "statusMessages": {
+    "mainMenuData": {
+      "textOverride": "In the Main Menu"
+    },
+    "loadingData": {
+      "textOverride": "Initializing Tech, Scales & Rockets..."
+    },
+    "lanData": {
+      "textOverride": "Co-op on LAN"
+    },
+    "singleplayerData": {
+      "textOverride": "Singleplayer World"
+    },
+    "realmData": {
+      "textOverride": "Playing on a Realm"
+    }
+  },
+  "advancedSettings": {
+    "enablePerGui": false,
+    "enablePerItem": false,
+    "enablePerEntity": true,
+    "formatWords": true,
+    "debugMode": false,
+    "verboseMode": false,
+    "refreshRate": 2,
+    "allowPlaceholderPreviews": false,
+    "guiSettings": {
+      "fallbackGuiIcon": "unknown",
+      "guiData": {
+        "default": {
+          "textOverride": "In {screen.name}"
+        }
+      }
+    },
+    "itemMessages": {
+      "default": "Holding {item.message.holding}"
+    },
+    "entitySettings": {
+      "fallbackEntityIcon": "unknown",
+      "targetData": {
+        "default": {
+          "textOverride": "Targeting {entity.target.name}"
+        },
+        "twilightforest:naga": {
+          "textOverride": "⚔️ Fighting the Naga!"
+        },
+        "twilightforest:lich": {
+          "textOverride": "⚔️ Fighting the Twilight Lich!"
+        },
+        "twilightforest:hydra": {
+          "textOverride": "⚔️ Fighting the Hydra!"
+        },
+        "twilightforest:ur_ghast": {
+          "textOverride": "⚔️ Fighting the Ur-Ghast!"
+        },
+        "twilightforest:alpha_yeti": {
+          "textOverride": "⚔️ Fighting the Alpha Yeti!"
+        },
+        "twilightforest:snow_queen": {
+          "textOverride": "⚔️ Fighting the Snow Queen!"
+        },
+        "minecraft:wither": {
+          "textOverride": "⚔️ Fighting the Wither!"
+        },
+        "minecraft:warden": {
+          "textOverride": "🔊 Facing the Warden in the Deep Dark!"
+        },
+        "minecraft:ender_dragon": {
+          "textOverride": "🐉 Slaying the Ender Dragon!"
+        },
+        "iceandfire:fire_dragon": {
+          "textOverride": "🐉 Battling a Fire Dragon!"
+        },
+        "iceandfire:ice_dragon": {
+          "textOverride": "❄️ Battling an Ice Dragon!"
+        },
+        "iceandfire:lightning_dragon": {
+          "textOverride": "⚡ Battling a Lightning Dragon!"
+        },
+        "cataclysm:ancient_remnant": {
+          "textOverride": "💀 Awakening the Ancient Remnant!"
+        },
+        "cataclysm:ignis": {
+          "textOverride": "🔥 Clashing with Ignis!"
+        },
+        "cataclysm:netherite_monstrosity": {
+          "textOverride": "🌋 Fighting the Netherite Monstrosity!"
+        },
+        "cataclysm:the_leviathan": {
+          "textOverride": "🌊 Facing The Leviathan in the Abyss!"
+        },
+        "cataclysm:maledictus": {
+          "textOverride": "👻 Fighting Maledictus!"
+        },
+        "cataclysm:ender_guardian": {
+          "textOverride": "🟣 Fighting the Ender Guardian!"
+        },
+        "cataclysm:the_harbinger": {
+          "textOverride": "☢️ FINAL BOSS: Fighting The Harbinger!"
+        }
+      },
+      "ridingData": {
+        "default": {
+          "textOverride": "Riding {entity.riding.name}"
+        },
+        "ad_astra:tier_1_rocket": {
+          "textOverride": "🚀 Launching to the Moon (Tier 1 Rocket)"
+        },
+        "ad_astra:tier_2_rocket": {
+          "textOverride": "🚀 Launching to Mars (Tier 2 Rocket)"
+        },
+        "ad_astra:tier_3_rocket": {
+          "textOverride": "🚀 Launching to Venus (Tier 3 Rocket)"
+        },
+        "ad_astra:tier_4_rocket": {
+          "textOverride": "🚀 Launching to Glacio (Tier 4 Rocket)"
+        }
+      }
+    },
+    "allowEndpointIcons": true,
+    "serverIconEndpoint": "https://api.mcsrvstat.us/icon/{server.address.short}",
+    "playerSkinEndpoint": "https://mc-heads.net/avatar/{getOrDefault(player.uuid.short, player.name)}",
+    "allowDuplicatePackets": false,
+    "maxConnectionAttempts": 10,
+    "enableClassGraph": false
+  },
+  "accessibilitySettings": {
+    "languageId": "en_us",
+    "stripTranslationColors": false,
+    "stripTranslationFormatting": false,
+    "stripExtraGuiElements": false,
+    "configKeyCode": -1
+  },
+  "displaySettings": {
+    "presenceData": {
+      "enabled": true,
+      "useAsMain": false,
+      "isInstance": false,
+      "activityType": 0,
+      "statusDisplayType": 0,
+      "partyPrivacy": 1,
+      "details": "{getFirst(menu.message, entity.target.message, entity.riding.message, dimension.message)}",
+      "detailsUrl": "",
+      "gameState": "Tech, Scales & Rockets | {getOrDefault(server.message, 'Singleplayer')}",
+      "gameStateUrl": "",
+      "appName": "",
+      "largeImageKey": "{getFirst(menu.icon, dimension.icon)}",
+      "largeImageText": "{getFirst(menu.message, biome.message, dimension.message)} ({custom.player_info_health})",
+      "largeImageUrl": "",
+      "smallImageKey": "{getFirst(player.icon, server.icon, pack.icon)}",
+      "smallImageText": "{custom.player_info_out} | Pack by EtmisTheFox ({custom.mods})",
+      "smallImageUrl": "",
+      "startTimestamp": "{data.general.time}",
+      "endTimestamp": "",
+      "buttons": {}
+    },
+    "dynamicIcons": {
+      "EtmisTheFox": "https://mc-heads.net/avatar/490d66be08f544eabb4cf4ca11f6e7f0"
+    },
+    "dynamicVariables": {
+      "mods": "{general.mods} Mods",
+      "player_info_coordinate": "At {player.position.x}, {player.position.z}",
+      "players": "{server.players.current} / {server.players.max} Players",
+      "player_info_in": "({custom.player_info.health})",
+      "player_info_items": "Items: {item.main_hand.message}",
+      "player_info_out": "Playing as {player.name}",
+      "player_info_health": "HP: {player.health.current}/{player.health.max}",
+      "world_info": "On {world.name}",
+      "pack": "Tech, Scales & Rockets"
+    }
+  }
+}

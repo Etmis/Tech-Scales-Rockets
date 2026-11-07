@@ -1,0 +1,583 @@
+{
+	id: "apothic_mastery",
+	title: "&5Apothic Enchanting, Gems & Spawners",
+	icon: "apothic_enchanting:draconic_endshelf",
+	group: "group_ascension",
+	order_index: 10,
+	quests: [
+		{
+			id: "apo_welcome",
+			title: "&5&lApothic Mastery: Beyond Vanilla Limits",
+			description: [
+				"&7Because you carry one single &eSacred Armor & Tool Line&7 throughout the entire pack, &5Apothic Enchanting&7, &6Apotheosis Gems/Affixes&7, and &4Apothic Spawners&7 are the primary way to scale your combat power against 2x-boosted Dragons and Cataclysm Titans!",
+				"",
+				"&c&lImportant Pack Rules:",
+				"&8• &7Industrial Foregoing's Enchantment Factory, Applicator, and Extractor are &c&lremoved&7 to preserve Apothic Enchanting!",
+				"&8• &7Industrial Foregoing's Mob Duplicator is &c&lremoved&7 to preserve Apothic Spawners!",
+				"",
+				"&eUnderstanding the 4 Enchanting Stats:",
+				"&8• &aEterna: &7Determines the maximum XP level of the Enchanting Table (up to Level 100!).",
+				"&8• &cQuanta: &7Increases random variance around the base Eterna level (can roll much higher—or lower unless rectified!).",
+				"&8• &dArcana: &7Guarantees more enchantments per roll and makes rare enchantments common.",
+				"&8• &eRectification: &7Blocks negative Quanta variance so your rolls only go UP!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.65,
+			shape: "gear",
+			tasks: [ { id: "APOT000000000001", type: "item", item: "minecraft:enchanting_table", count: 1 } ],
+			rewards: [
+				{ id: "APOR000000000001", type: "item", item: "minecraft:bookshelf", count: 15 },
+				{ id: "APOR000000000002", type: "item", item: "minecraft:lapis_lazuli", count: 32 },
+				{ id: "APOR000000000003", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "apo_vanilla_shelves_skulls",
+			title: "&6Baseline Eterna 15: Bookshelves & Skulls",
+			description: [
+				"&7Place 15 vanilla &6Bookshelves&7 around your Enchanting Table to reach the baseline &a15 Eterna (Level 30)&7.",
+				"",
+				"&7You can also place &fCandles&7 or &8Skulls&7 around the table for early boosts to &dArcana&7 and &cQuanta&7 before unlocking modded shelves in Phase 1A!"
+			],
+			x: 1.75, y: 0.0,
+			dependencies: ["apo_welcome"],
+			tasks: [ { id: "APOT000000000002", type: "item", item: "minecraft:bookshelf", count: 15 } ],
+			rewards: [
+				{ id: "APOR000000000004", type: "item", item: "minecraft:lapis_lazuli", count: 16 },
+				{ id: "APOR000000000005", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "apo_hellshelf",
+			title: "&cTier 1A: Hellshelves (Phase 1A)",
+			description: [
+				"&7In Phase 1A, combine Nether bricks, Blaze Rods, and Twilight elements to craft &cHellshelves&7!",
+				"",
+				"&7Hellshelves provide your first step past Eterna 15 along with extra &cQuanta&7."
+			],
+			x: 3.5, y: -1.5,
+			shape: "rsquare",
+			dependencies: ["apo_welcome", "apo_vanilla_shelves_skulls", "p1a_slay_naga"],
+			tasks: [ { id: "APOT000000000003", type: "item", item: "apothic_enchanting:hellshelf", count: 4 } ],
+			rewards: [
+				{ id: "APOR000000000006", type: "item", item: "apothic_enchanting:hellshelf", count: 2 },
+				{ id: "APOR000000000007", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "apo_blazing_glowing_hellshelf",
+			title: "&6Infused, Blazing & Glowing Hellshelves",
+			description: [
+				"&7Place a regular &cHellshelf&7 inside your Enchanting Table (with Lapis Lazuli) to perform &6Infusion Enchanting&7, turning it into an &cInfused Hellshelf&7!",
+				"",
+				"&7Then upgrade your Infused Hellshelves into &4Blazing Hellshelves&7 (high Eterna) or &6Glowing Hellshelves&7 (high Quanta) to reach &aEterna 45&7!"
+			],
+			x: 5.5, y: -1.5,
+			dependencies: ["apo_hellshelf"],
+			tasks: [
+				{ id: "APOT000000000004", type: "item", item: "apothic_enchanting:blazing_hellshelf", count: 1 },
+				{ id: "APOT000000000005", type: "item", item: "apothic_enchanting:glowing_hellshelf", count: 1 }
+			],
+			rewards: [
+				{ id: "APOR000000000008", type: "item", item: "apothic_enchanting:infused_hellshelf" },
+				{ id: "APOR000000000009", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "apo_seashelf",
+			title: "&bTier 1B: Seashelves (Phase 1A)",
+			description: [
+				"&6&lCustom KubeJS Recipe – Seashelf:",
+				"&7Requires &aNaga Scales&7 (&ftwilightforest:naga_scale&7) + &bAquamarine&7 (&fastralsorcery:aquamarine&7)!",
+				"",
+				"&7Seashelves boost both &aEterna&7 and &dArcana&7 (and are also needed for &aApplied Experienced&7 in Phase 1B!)."
+			],
+			x: 3.5, y: 1.5,
+			shape: "rsquare",
+			dependencies: ["apo_welcome", "apo_vanilla_shelves_skulls", "p1a_slay_naga"],
+			tasks: [ { id: "APOT000000000006", type: "item", item: "apothic_enchanting:seashelf", count: 4 } ],
+			rewards: [
+				{ id: "APOR000000000010", type: "item", item: "apothic_enchanting:seashelf", count: 2 },
+				{ id: "APOR000000000011", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "apo_crystalline_heart_seashelf",
+			title: "&3Crystalline & Heart-Forged Seashelves",
+			description: [
+				"&7Infuse your Seashelves inside the Enchanting Table into &bInfused Seashelves&7, then upgrade them into &bCrystalline Seashelves&7 or &3Heart-Forged Seashelves&7 for massive &dArcana&7!"
+			],
+			x: 5.5, y: 1.5,
+			dependencies: ["apo_seashelf"],
+			tasks: [
+				{ id: "APOT000000000007", type: "item", item: "apothic_enchanting:crystal_seashelf", count: 1 },
+				{ id: "APOT000000000008", type: "item", item: "apothic_enchanting:heart_seashelf", count: 1 }
+			],
+			rewards: [
+				{ id: "APOR000000000012", type: "item", item: "apothic_enchanting:infused_seashelf" },
+				{ id: "APOR000000000013", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "apo_sightshelf_tomes",
+			title: "&eShelves of Sight & Scrap Tomes",
+			description: [
+				"&7Craft &6Shelves of Sight&7 so you can see the exact list of enchantments you will receive before clicking, and craft &eScrap Tomes&7 / &bExtraction Tomes&7 to strip enchantments off unwanted gear onto books!"
+			],
+			x: 5.5, y: 0.0,
+			dependencies: ["apo_blazing_glowing_hellshelf", "apo_crystalline_heart_seashelf"],
+			optional: true,
+			tasks: [
+				{ id: "APOT000000000009", type: "item", item: "apothic_enchanting:sightshelf", count: 1 },
+				{ id: "APOT000000000010", type: "item", item: "apothic_enchanting:scrap_tome", count: 2 }
+			],
+			rewards: [
+				{ id: "APOR000000000014", type: "item", item: "apothic_enchanting:scrap_tome", count: 4 },
+				{ id: "APOR000000000015", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "apo_dormant_deepshelf",
+			title: "&3Tier 2: Dormant Deepshelves (Phase 2)",
+			description: [
+				"&6&lCustom KubeJS Recipe – Dormant Deepshelf:",
+				"&7Requires &6Allthemodium Ingots&7 (&fallthemodium:allthemodium_ingot&7) + &3Echo Shards&7 (&fminecraft:echo_shard&7)!",
+				"",
+				"&7Infuse Dormant Deepshelves in a Level 45+ Enchanting Table to awaken them into &3Deepshelves&7!"
+			],
+			x: 8.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["apo_hellshelf", "apo_seashelf", "p2_mine_allthemodium", "731ED6939FBA42FA"],
+			tasks: [ { id: "APOT000000000011", type: "item", item: "apothic_enchanting:dormant_deepshelf", count: 4 } ],
+			rewards: [
+				{ id: "APOR000000000016", type: "item", item: "apothic_enchanting:dormant_deepshelf", count: 2 },
+				{ id: "APOR000000000017", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "apo_echoing_soul_deepshelf",
+			title: "&3Echoing & Soul-Touched Sculkshelves",
+			description: [
+				"&7Upgrade your awakened &3Deepshelves&7 using Echo Shards and Sculk Shriekers/Sensors into &3Echoing Sculkshelves&7 and &bSoul-Touched Sculkshelves&7—pushing your Enchanting Table up to &aEterna 60–70&7!"
+			],
+			x: 8.0, y: -2.5,
+			dependencies: ["apo_dormant_deepshelf"],
+			tasks: [
+				{ id: "APOT000000000012", type: "item", item: "apothic_enchanting:echoing_sculkshelf", count: 1 },
+				{ id: "APOT000000000013", type: "item", item: "apothic_enchanting:soul_touched_sculkshelf", count: 1 }
+			],
+			rewards: [
+				{ id: "APOR000000000018", type: "item", item: "minecraft:echo_shard", count: 2 },
+				{ id: "APOR000000000019", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "apo_endshelf",
+			title: "&dTier 3: Endshelves (Phase 3)",
+			description: [
+				"&6&lCustom KubeJS Recipe – Endshelf:",
+				"&7Requires &aVibranium Ingots&7 (&fallthemodium:vibranium_ingot&7) + &fDragon Bones&7 (&ficeandfire:dragonbone&7)!",
+				"",
+				"&7Endshelves push your Enchanting Table up to &aEterna 80–90&7!"
+			],
+			x: 11.5, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["apo_dormant_deepshelf", "p3_mine_vibranium", "p3_slay_fire_dragon"],
+			tasks: [ { id: "APOT000000000017", type: "item", item: "apothic_enchanting:endshelf", count: 4 } ],
+			rewards: [
+				{ id: "APOR000000000021", type: "item", item: "apothic_enchanting:endshelf", count: 2 },
+				{ id: "APOR000000000022", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "apo_library",
+			title: "&bThe Enchantment Library",
+			description: [
+				"&7Never store Enchanted Books in chests! Craft an &bEnchantment Library&7 (and later upgrade it into the &6Library of Alexandria&7).",
+				"",
+				"&7Drop any Enchanted Book inside—it stores enchantment points digitally and lets you extract custom combined books of the highest level you have unlocked!"
+			],
+			x: 11.5, y: -2.5,
+			shape: "rsquare",
+			dependencies: ["apo_dormant_deepshelf"],
+			tasks: [ { id: "APOT000000000018", type: "item", item: "apothic_enchanting:library", count: 1 } ],
+			rewards: [
+				{ id: "APOR000000000023", type: "item", item: "minecraft:book", count: 32 },
+				{ id: "APOR000000000024", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "apo_treasure_shelf",
+			title: "&6Rolling Treasure Enchants: Treasure Shelf",
+			description: [
+				"&7Want to roll &6Treasure Enchantments&7 (like Mending, Soulbound, or Frost Walker) directly inside your Enchanting Table? Place a &6Treasure Shelf&7 (&fapothic_enchanting:treasure_shelf&7) next to your table!"
+			],
+			x: 11.5, y: 2.0,
+			dependencies: ["apo_endshelf"],
+			optional: true,
+			tasks: [ { id: "APOT000000000019", type: "item", item: "apothic_enchanting:treasure_shelf", count: 1 } ],
+			rewards: [ { id: "APOR000000000025", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "apo_pearl_endshelf",
+			title: "&dTier 4: Pearlescent Endshelves (Phase 4)",
+			description: [
+				"&6&lCustom KubeJS Recipe – Pearlescent Endshelf:",
+				"&7Requires lunar &6Desh Plates&7 (&fad_astra:desh_plate&7) + Martian &5Ostrum Plates&7 (&fad_astra:ostrum_plate&7)!",
+				"",
+				"&7Pearlescent Endshelves provide huge boosts to Eterna, Quanta, and Arcana simultaneously."
+			],
+			x: 15.5, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["apo_endshelf", "p4_moon_desh", "E5CEF073E0A3D7E8"],
+			tasks: [ { id: "APOT000000000020", type: "item", item: "apothic_enchanting:pearl_endshelf", count: 4 } ],
+			rewards: [
+				{ id: "APOR000000000026", type: "item", item: "apothic_enchanting:pearl_endshelf", count: 2 },
+				{ id: "APOR000000000027", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "apo_ender_library",
+			title: "&6Library of Alexandria",
+			description: [
+				"&7Infuse your Enchantment Library at high Eterna/Arcana to create the &6Library of Alexandria&7 (&fapothic_enchanting:ender_library&7), increasing the maximum storable enchantment tier even further!"
+			],
+			x: 15.5, y: -2.5,
+			dependencies: ["apo_library", "apo_pearl_endshelf"],
+			tasks: [ { id: "APOT000000000021", type: "item", item: "apothic_enchanting:ender_library", count: 1 } ],
+			rewards: [ { id: "APOR000000000028", type: "xp_levels", xp_levels: 6 } ]
+		},
+		{
+			id: "apo_specialized_tomes",
+			title: "&bSpecialized Enchanting Tomes",
+			description: [
+				"&7Craft specialized Tomes (&cTome of Weaponry&7, &bTome of the Chestplate&7, &eTome of Miners&7, etc.) to target specific equipment slots when rolling Level 100 enchantments and storing them in your Library of Alexandria!"
+			],
+			x: 15.5, y: 2.0,
+			dependencies: ["apo_pearl_endshelf"],
+			optional: true,
+			tasks: [
+				{ id: "APOT000000000022", type: "item", item: "apothic_enchanting:weapon_tome", count: 1 },
+				{ id: "APOT000000000023", type: "item", item: "apothic_enchanting:pickaxe_tome", count: 1 }
+			],
+			rewards: [ { id: "APOR000000000029", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "apo_draconic_endshelf",
+			title: "&5&lTier 5: Draconic Endshelves (Phase 6 Max!)",
+			description: [
+				"&6&lCustom KubeJS Recipe – Draconic Endshelf:",
+				"&8• &dUnobtainium Ingot &7(&fallthemodium:unobtainium_ingot&7)",
+				"&8• &6Ignitium Ingot &7(&fcataclysm:ignitium_ingot&7)",
+				"&8• &bCursium Ingot &7(&fcataclysm:cursium_ingot&7)",
+				"&8• &5Void Core &7(&fcataclysm:void_core&7)",
+				"",
+				"&7Each &5Draconic Endshelf&7 provides a massive &a+20 Eterna&7—just five of them max out your table at &a100 Eterna (Level 100)&7, leaving plenty of room for Rectifier Tier 3s, Pearlescent Endshelves, and Treasure Shelves!"
+			],
+			x: 19.5, y: 0.0,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["apo_pearl_endshelf", "p6_unobtainium_fusion"],
+			tasks: [ { id: "APOT000000000024", type: "item", item: "apothic_enchanting:draconic_endshelf", count: 4 } ],
+			rewards: [
+				{ id: "2F438C84181B212A", type: "item", item: "apothic_enchanting:draconic_endshelf" },
+				{
+					id: "APOR000000000030",
+					type: "toast",
+					title: "Level 100 Enchanting!",
+					description: "You have unlocked Draconic Endshelves!"
+				},
+				{ id: "APOR000000000031", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "apo_world_tiers",
+			title: "&6Apotheosis World Tiers (Ctrl + T)",
+			description: [
+				"&7In &6Apotheosis (1.21.1)&7, rare Affix Gear and Gems drop based on your active &eWorld Tier&7!",
+				"",
+				"&6&lThe 5 World Tiers (Press Ctrl + T):",
+				"&81. &aHaven: &7Starting tier (Common & Uncommon gear).",
+				"&82. &9Frontier: &7Unlocked after equipping full Iron/Diamond & entering the Nether (Rare gear).",
+				"&83. &5Ascent: &7Unlocked after defeating the Wither / entering The End (Epic gear).",
+				"&84. &dSummit: &7Unlocked after slaying the Ender Dragon (Mythic gear begins to drop!).",
+				"&85. &6Pinnacle: &7Unlocked after equipping full Mythic gear & slaying an Apothic Invader in Summit (Flawless/Perfect Gems & max Mythic drops)!",
+				"",
+				"&eTip: &7Always press &6Ctrl + T&7 as soon as you complete a tier's advancement to manually activate the next World Tier!"
+			],
+			x: 0.0, y: -5.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["apo_welcome"],
+			tasks: [ { id: "APOT000000000025", type: "checkmark" } ],
+			rewards: [ { id: "APOR000000000032", type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "apo_salvaging_table",
+			title: "&7Salvaging Table & Gem Dust",
+			description: [
+				"&7Found unwanted Affix Armor, Weapons, or low-tier Gems? Do NOT throw them away!",
+				"",
+				"&7Build a &7Salvaging Table&7 (&fapotheosis:salvaging_table&7) to break down affix gear into Rarity Materials and crush unwanted Gems into &bGem Dust&7!"
+			],
+			x: 3.5, y: -5.0,
+			dependencies: ["apo_world_tiers"],
+			tasks: [
+				{ id: "APOT000000000026", type: "item", item: "apotheosis:salvaging_table", count: 1 },
+				{ id: "APOT000000000027", type: "item", item: "apotheosis:gem_dust", count: 4 }
+			],
+			rewards: [
+				{ id: "APOR000000000033", type: "item", item: "apotheosis:gem_dust", count: 8 },
+				{ id: "APOR000000000034", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "apo_rarity_materials_early",
+			title: "&9Early Rarity Materials: Common to Rare",
+			description: [
+				"&7Salvage Common, Uncommon, and Rare affix items in your Salvaging Table to stockpile &7Common Material&7 (&fapotheosis:common_material&7), &aUncommon Material&7 (&fapotheosis:uncommon_material&7), and &9Rare Material&7 (&fapotheosis:rare_material&7)!"
+			],
+			x: 3.5, y: -7.0,
+			dependencies: ["apo_salvaging_table"],
+			tasks: [
+				{ id: "APOT000000000028", type: "item", item: "apotheosis:mysterious_scrap_metal", count: 4 },
+				{ id: "APOT000000000029", type: "item", item: "apotheosis:timeworn_fabric", count: 4 },
+				{ id: "APOT000000000030", type: "item", item: "apotheosis:luminous_crystal_shard", count: 4 }
+			],
+			rewards: [
+				{ id: "APOR000000000035", type: "item", item: "apotheosis:luminous_crystal_shard", count: 4 },
+				{ id: "APOR000000000036", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "apo_rarity_materials_late",
+			title: "&6Endgame Rarity Materials: Epic & Mythic",
+			description: [
+				"&7Advance your World Tier (`Ctrl + T`) to &5Ascent&7, &dSummit&7, and &6Pinnacle&7 and hunt Apothic Invaders to salvage &5Epic Material&7 (&fapotheosis:epic_material&7) and &6Mythic Material&7 (&fapotheosis:mythic_material&7)!"
+			],
+			x: 7.5, y: -7.0,
+			dependencies: ["apo_rarity_materials_early"],
+			tasks: [
+				{ id: "APOT000000000031", type: "item", item: "apotheosis:arcane_sands", count: 4 },
+				{ id: "APOT000000000032", type: "item", item: "apotheosis:godforged_pearl", count: 4 }
+			],
+			rewards: [
+				{ id: "APOR000000000037", type: "item", item: "apotheosis:godforged_pearl", count: 4 },
+				{ id: "APOR000000000038", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "apo_gem_cutting_table",
+			title: "&bGem Cutting Table: Flawless & Perfect Gems",
+			description: [
+				"&7Craft a &bGem Cutting Table&7 (&fapotheosis:gem_cutting_table&7)!",
+				"",
+				"&7Combine two identical Gems of the same purity with &bGem Dust&7 and Rarity Materials to upgrade them through &7Cracked -> Chipped -> Flawed -> Normal -> Flawless -> &6Perfect&7 purity before socketing them into your &eSacred Armor&7 inside a Smithing Table!"
+			],
+			x: 7.5, y: -5.0,
+			dependencies: ["apo_salvaging_table"],
+			tasks: [ { id: "APOT000000000033", type: "item", item: "apotheosis:gem_cutting_table", count: 1 } ],
+			rewards: [
+				{ id: "APOR000000000039", type: "item", item: "apotheosis:gem_dust", count: 12 },
+				{ id: "APOR000000000040", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "apo_reforging_table",
+			title: "&6Reforging Table: Mythic Sacred Gear!",
+			description: [
+				"&7How do you get &6Mythic Affixes&7 and &bGem Sockets&7 onto your crafted &6Allthemodium&7, &aVibranium&7, or &dUnobtainium&7 Sacred Armor?",
+				"",
+				"&7Build a &6Simple Reforging Table&7 or full &6Reforging Table&7 (&fapotheosis:reforging_table&7)! Insert your Sacred Armor piece along with &bGem Dust&7, &6Rarity Materials&7, and &dSigils of Rebirth&7 to roll powerful custom Affixes and Gem Sockets directly onto your armor!"
+			],
+			x: 11.5, y: -5.0,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["apo_gem_cutting_table"],
+			tasks: [
+				{ id: "APOT000000000034", type: "item", item: "apotheosis:reforging_table", count: 1 },
+				{ id: "APOT000000000035", type: "item", item: "apotheosis:sigil_of_rebirth", count: 4 }
+			],
+			rewards: [
+				{ id: "APOR000000000041", type: "item", item: "apotheosis:sigil_of_rebirth", count: 8 },
+				{ id: "APOR000000000042", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "apo_sigils_socketing_withdrawal",
+			title: "&bSigils of Socketing & Withdrawal",
+			description: [
+				"&7Master the utility Sigils in a &fSmithing Table&7:",
+				"&8• &bSigil of Socketing (&fapotheosis:sigil_of_socketing&7): &7Adds an extra Gem Socket to your Sacred Armor or Weapon (up to 4 sockets!).",
+				"&8• &eSigil of Withdrawal (&fapotheosis:sigil_of_withdrawal&7): &7Safely extracts socketed Gems from your gear without destroying the item or the Gems!",
+				"&8• &7Sigil of Unnaming: &7Resets the custom affix name of an item."
+			],
+			x: 11.5, y: -7.0,
+			dependencies: ["apo_reforging_table"],
+			tasks: [
+				{ id: "APOT000000000036", type: "item", item: "apotheosis:sigil_of_socketing", count: 1 },
+				{ id: "APOT000000000037", type: "item", item: "apotheosis:sigil_of_withdrawal", count: 1 }
+			],
+			rewards: [
+				{ id: "APOR000000000043", type: "item", item: "apotheosis:sigil_of_socketing", count: 2 },
+				{ id: "APOR000000000044", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "apo_augmenting_table",
+			title: "&dAugmenting Table: Perfecting Every Stat",
+			description: [
+				"&7Once your Sacred Armor has Mythic rarity, craft an &dAugmenting Table&7 (&fapotheosis:augmenting_table&7) and feed it &dSigils of Enhancement&7!",
+				"",
+				"&7You can upgrade or reroll individual affix lines one by one until every single stat on your Unobtainium Armor and ATM Alloy Weapons is at 100% perfection!"
+			],
+			x: 15.5, y: -5.0,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["apo_reforging_table"],
+			tasks: [
+				{ id: "APOT000000000038", type: "item", item: "apotheosis:augmenting_table", count: 1 },
+				{ id: "APOT000000000039", type: "item", item: "apotheosis:sigil_of_enhancement", count: 2 }
+			],
+			rewards: [
+				{ id: "APOR000000000045", type: "item", item: "apotheosis:sigil_of_enhancement", count: 4 },
+				{ id: "APOR000000000046", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "apo_spawners_intro",
+			title: "&4Apothic Spawners: Silk Touch & Blacklist Rules",
+			description: [
+				"&7In this pack, Industrial Foregoing's &cMob Duplicator is removed&7—automated mob farming is the domain of &4Apothic Spawners&7!",
+				"",
+				"&6&lHow to Collect Spawners:",
+				"&7Mine any vanilla or dungeon Monster Spawner using a Pickaxe enchanted with &bSilk Touch&7!",
+				"",
+				"&c&lStrict Boss Blacklist Rule:",
+				"&7All bosses and minibosses from &2Twilight Forest&7, &6Ice and Fire&7, and &cL_Ender's Cataclysm&7 are blacklisted from &eCapturing&7 spawn eggs and &eMob Imprisonment Tools&7. Spawners are for regular mobs, Blaze Rods, Ender Pearls, Guardians (for Ocean's Delight), and Pink Slime fodder!"
+			],
+			x: 3.5, y: 4.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["apo_welcome"],
+			tasks: [ { id: "APOT000000000040", type: "item", item: "minecraft:spawner", count: 1 } ],
+			rewards: [
+				{ id: "APOR000000000047", type: "item", item: "minecraft:quartz", count: 16 },
+				{ id: "APOR000000000048", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "apo_spawner_capturing",
+			title: "&dThe Capturing Enchantment & Spawn Eggs",
+			description: [
+				"&7Enchant your Sword with &dCapturing&7 to give every normal mob you kill a chance to drop its &eSpawn Egg&7!",
+				"",
+				"&7Right-click any placed Spawner with a Spawn Egg to change what mob it spawns!"
+			],
+			x: 6.0, y: 3.0,
+			dependencies: ["apo_spawners_intro"],
+			tasks: [ { id: "APOT000000000041", type: "checkmark" } ],
+			rewards: [
+				{ id: "APOR000000000049", type: "item", item: "minecraft:lapis_lazuli", count: 16 },
+				{ id: "APOR000000000050", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "apo_spawner_modifiers",
+			title: "&eSpawner Speed & Count: Sugar, Clocks & Eyes",
+			description: [
+				"&7Hold a modifier item in your main hand (and a &fNether Quartz&7 in your off-hand to invert the effect if needed) and right-click a placed Spawner! Press &eJEI Uses (U)&7 on a Spawner to view all modifiers:",
+				"",
+				"&8• &fSugar: &7Decreases Min Spawn Delay (faster spawns!).",
+				"&8• &eClock: &7Decreases Max Spawn Delay.",
+				"&8• &dFermented Spider Eye: &7Increases Spawn Count per cycle.",
+				"&8• &6Ghast Tear: &7Increases Max Nearby Entities."
+			],
+			x: 8.0, y: 4.5,
+			dependencies: ["apo_spawners_intro", "apo_spawner_capturing"],
+			tasks: [
+				{ id: "APOT000000000042", type: "item", item: "minecraft:sugar", count: 16 },
+				{ id: "APOT000000000043", type: "item", item: "minecraft:clock", count: 4 },
+				{ id: "APOT000000000044", type: "item", item: "minecraft:fermented_spider_eye", count: 4 },
+				{ id: "APOT000000000045", type: "item", item: "minecraft:ghast_tear", count: 4 }
+			],
+			rewards: [
+				{ id: "APOR000000000051", type: "item", item: "minecraft:soul_lantern", count: 4 },
+				{ id: "APOR000000000052", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "apo_spawner_redstone_range",
+			title: "&cRedstone Control & Range Modifiers",
+			description: [
+				"&7Upgrade your Spawner's control and range:",
+				"&8• &cRedstone Comparator: &7Enables Redstone Control—flip a Lever or Redstone Link to turn your Spawner on/off instantly!",
+				"&8• &6Blaze Rod: &7Increases Spawn Range.",
+				"&8• &bPrismarine Crystals: &7Increases Player Activation Range."
+			],
+			x: 11.5, y: 4.5,
+			dependencies: ["apo_spawner_modifiers"],
+			tasks: [
+				{ id: "APOT000000000046", type: "item", item: "minecraft:comparator", count: 1 },
+				{ id: "APOT000000000047", type: "item", item: "minecraft:blaze_rod", count: 4 },
+				{ id: "APOT000000000048", type: "item", item: "minecraft:prismarine_crystals", count: 4 }
+			],
+			rewards: [
+				{ id: "APOR000000000053", type: "item", item: "minecraft:comparator", count: 2 },
+				{ id: "APOR000000000054", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "apo_spawner_endgame_modifiers",
+			title: "&5Max Spawner Upgrades: NoAI, Echo Shards & Conditions",
+			description: [
+				"&7Make your Spawner completely independent of players, light levels, and mob AI:",
+				"&8• &5Chorus Fruit / Golden Apple: &7Enables &aNoAI&7 (spawned mobs stand completely still and don't cause lag!).",
+				"&8• &eSoul Lantern: &7Ignores Light Level conditions.",
+				"&8• &dDragon Egg / Conduit: &7Ignores Spawn Conditions & Player Requirement (runs 24/7 when chunkloaded!).",
+				"&8• &3Echo Shard: &7Grants extra loot drops from spawned mobs!"
+			],
+			x: 15.5, y: 4.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["apo_spawner_redstone_range"],
+			tasks: [
+				{ id: "APOT000000000049", type: "item", item: "minecraft:chorus_fruit", count: 1 },
+				{ id: "APOT000000000050", type: "item", item: "minecraft:soul_lantern", count: 1 },
+				{ id: "APOT000000000051", type: "item", item: "minecraft:echo_shard", count: 1 }
+			],
+			rewards: [
+				{ id: "APOR000000000055", type: "item", item: "minecraft:echo_shard", count: 2 },
+				{ id: "APOR000000000056", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "apo_grand_finale",
+			title: "&5&l★ GRAND MASTER OF APOTHEOSIS! ★",
+			description: [
+				"&5&lCongratulations, Grand Arcanist of Apotheosis!",
+				"&7You have conquered all three pillars of the Apothic suite:",
+				"&8• &5Level 100 Draconic Enchanting & The Library of Alexandria",
+				"&8• &6Pinnacle World Tier, Perfect Gems & 100% Augmented Mythic Gear",
+				"&8• &4Max-Stat Automated Apothic Spawners!"
+			],
+			x: 23.0, y: 0.0,
+			size: 2.0,
+			shape: "octagon",
+			dependencies: ["apo_draconic_endshelf", "apo_ender_library", "apo_augmenting_table", "apo_spawner_endgame_modifiers"],
+			tasks: [ { id: "APOT000000000052", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "APOR000000000057",
+					type: "toast",
+					title: "APOTHIC MASTERY COMPLETE!",
+					description: "You have mastered Apothic Enchanting, Gems & Spawners!"
+				},
+				{ id: "APOR000000000058", type: "xp_levels", xp_levels: 20 }
+			]
+		}
+	]
+}

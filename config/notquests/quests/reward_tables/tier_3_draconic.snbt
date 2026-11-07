@@ -1,0 +1,13 @@
+{
+	id: "tier_3_draconic",
+	title: "&6Phase 3: Draconic & Vibranium Vault",
+	icon: "iceandfire:dragonsteel_fire_ingot",
+	rewards: [
+		{ item: "iceandfire:dragonbone", count: 12, weight: 10 },
+		{ item: "iceandfire:fire_dragon_blood", count: 4, weight: 8 },
+		{ item: "iceandfire:lightning_dragon_blood", count: 4, weight: 8 },
+		{ item: "allthemodium:vibranium_nugget", count: 6, weight: 7 },
+		{ item: "mekanism:ultimate_control_circuit", count: 3, weight: 5 },
+		{ item: "allthemodium:allthemodium_ingot", count: 2, weight: 4 }
+	]
+}

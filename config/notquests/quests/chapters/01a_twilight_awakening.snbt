@@ -1,0 +1,795 @@
+{
+	id: "92C61BCEA856403E",
+	title: "&2P1A: Twilight Awakening",
+	icon: "twilightforest:naga_scale",
+	group: "group_main",
+	order_index: 1,
+	quests: [
+		{
+			id: "p1a_welcome_twilight",
+			title: "&2Stepping into Eternal Twilight",
+			description: [
+				"&7You have crossed the threshold into &2The Twilight Forest&7.",
+				"",
+				"&7Here, ancient magic saturates every root and stone. In &ePhase 1A&7, your primary targets are the first two guardians of the forest: &aThe Naga&7 and &eThe Twilight Lich&7 (both of whom also drop unique leveling RPG artifacts from &2Reliquified Twilight Forest&7!).",
+				"",
+				"&6&lWhat Phase 1A Unlocks:",
+				"&8• &aMekanism Basic Tier (3-Slot Factories): &7Requires Naga Scales & Plastic.",
+				"&8• &bWind & Advanced Solar Generators: &7Requires Aquamarine & Astral Glass Lenses.",
+				"&8• &2Nature's Compass: &7Requires Naga Scales & Osmium.",
+				"&8• &bMekanism Jetpack: &7Requires Steel, Osmium, Naga Scales & a Lich Trophy.",
+				"&8• &9Astral Sorcery Tier 1 (Illuminated Table) & Apothic Shelves: &7Aquamarine, Focal Points & Naga Scales."
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p0_twilight_prep"],
+			tasks: [
+				{
+					id: "70A1B2C3D4E5F603",
+					type: "dimension",
+					icon: "twilightforest:hollow_oak_sapling",
+					dimension: "twilightforest:twilight_forest"
+				}
+			],
+			rewards: [
+				{ id: "70A1B2C3D4E5F601", type: "item", item: "minecraft:torch", count: 32 },
+				{ id: "70A1B2C3D4E5F602", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P1AQ000000000001",
+			title: "&dReliquified Twilight Artifacts",
+			description: [
+				"&7Throughout the Twilight Forest, you will find giant hollow hills, hedge mazes, and boss courtyards teeming with &2Reliquified Twilight Forest&7 & &dRelics&7 artifacts!",
+				"",
+				"&7Whenever a Relic drops, inspect it in your inventory to level up its active and passive abilities and equip it in your Curios slots!"
+			],
+			x: 0.0, y: -2.0,
+			dependencies: ["p1a_welcome_twilight"],
+			tasks: [ { id: "P1AT000000000001", type: "checkmark" } ],
+			rewards: [
+				{ id: "P1AR000000000001", type: "item", item: "minecraft:experience_bottle", count: 4 },
+				{ id: "P1AR000000000002", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P1AQ000000000002",
+			title: "&2Canopy Timber & Fireflies",
+			description: [
+				"&7Chop down giant &2Twilight Oak&7 or &2Canopy Trees&7 and catch glowing &eFireflies&7 on their trunks.",
+				"",
+				"&7Fireflies make great decorative lighting and are used in Twilight crafting!"
+			],
+			x: 0.0, y: 2.0,
+			dependencies: ["p1a_welcome_twilight"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000002", type: "item", item: "twilightforest:twilight_oak_log", count: 16 } ],
+			rewards: [
+				{ id: "P1AR000000000003", type: "item", item: "twilightforest:firefly", count: 8 },
+				{ id: "P1AR000000000004", type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "B6D835A0B7D747DF",
+			title: "&8Eyes of the Forest: Raven Feather",
+			description: [
+				"&7The Twilight Forest is vast and governed by a strict progression lock. To navigate its biomes and locate boss courtyards, hunt an &8Obsidian Raven&7 for a &fRaven Feather&7.",
+				"",
+				"&7Combine it with Torchberries and Glowstone Dust to craft a &eBlank Magic Map Focus&7."
+			],
+			x: 2.5, y: 0.0,
+			dependencies: ["p1a_welcome_twilight"],
+			tasks: [
+				{ id: "14D59BC98E51F614", type: "item", item: "twilightforest:raven_feather", count: 1 },
+				{ id: "358CB0B21619F649", type: "item", item: "twilightforest:torchberries", count: 4 }
+			],
+			rewards: [
+				{ id: "7C991F51F2254807", type: "item", item: "minecraft:glowstone_dust", count: 8 },
+				{ id: "BAE42B78DCFF3D50", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "P1AQ000000000003",
+			title: "&6Hollow Hills & Ironwood",
+			description: [
+				"&7Notice those massive dome-shaped hills dotting the forest? Those are &6Hollow Hills&7!",
+				"",
+				"&7Inside, ratusan of stalactites hang from the ceiling made of Iron, Gold, Redstone, Diamond, and Emerald ores—along with chests containing &aLive Roots&7 for &2Ironwood&7!"
+			],
+			x: 2.5, y: -2.0,
+			dependencies: ["B6D835A0B7D747DF"],
+			tasks: [
+				{ id: "P1AT000000000003", type: "item", item: "twilightforest:liveroot", count: 2 },
+				{ id: "P1AT000000000004", type: "item", item: "twilightforest:ironwood_ingot", count: 4 }
+			],
+			rewards: [
+				{ id: "P1AR000000000005", type: "item", item: "twilightforest:ironwood_ingot", count: 4 },
+				{ id: "P1AR000000000006", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "C0D3D8B59216EF1D",
+			title: "&eCharting the Unknown: Magic Map",
+			description: [
+				"&7Surround your &eMagic Map Focus&7 with Paper to create a &6Magic Map&7.",
+				"",
+				"&7Right-click it to reveal nearby boss icons! Your first destination is the stone courtyard of &aThe Naga&7."
+			],
+			x: 5.0, y: 0.0,
+			dependencies: ["B6D835A0B7D747DF"],
+			tasks: [ { id: "CA3DCEBECEA9B5D4", type: "item", item: "twilightforest:magic_map_focus", count: 1 } ],
+			rewards: [
+				{ id: "1233653C36B109AC", type: "item", item: "minecraft:paper", count: 16 },
+				{ id: "3EDCF5F645DEAE54", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "p1a_slay_naga",
+			title: "&a&lBoss 1: The Naga",
+			description: [
+				"&7Enter the Naga Courtyard and slay the giant serpent!",
+				"",
+				"&eCombat Tip: &7Block its charge attack with a &fShield&7 at the right moment to stun it and deal massive counter-damage!",
+				"",
+				"&aImportant: &7Kill multiple Nagas if you can! You will need plenty of &aNaga Scales&7 for Basic Tier Installers, Simple Machine Frames, your Jetpack, Nature's Compass, and Enchanting Shelves. (&2Naga Scale Armor&7 is also unlocked as an optional early-game stepping stone before Netherite!)."
+			],
+			x: 8.0, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["C0D3D8B59216EF1D"],
+			tasks: [
+				{ id: "6CE2408D5929E777", type: "item", item: "twilightforest:naga_trophy", count: 1 },
+				{ id: "BC45C57E42B8395B", type: "item", item: "twilightforest:naga_scale", count: 8 }
+			],
+			rewards: [
+				{ id: "DB542A35B9994236", type: "item", item: "twilightforest:naga_scale", count: 6 },
+				{ id: "04B4BA6D0700389D", type: "random", table_id: "tier_1_twilight" },
+				{ id: "2350E756BD550D65", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P1AQ000000000004",
+			title: "&aOptional Armor: Naga Scale Set",
+			description: [
+				"&7Unlike Ice and Fire or Cataclysm armors (which have 0 stats), &2Twilight Forest armors&7 are left in their natural state as an optional early-game stepping stone if you haven't finished your full Netherite set yet!",
+				"",
+				"&7Craft a &aNaga Scale Tunic&7 and &aNaga Scale Leggings&7—they come pre-enchanted with Fire Protection III and Protection III!"
+			],
+			x: 9.5, y: -2.0,
+			dependencies: ["p1a_slay_naga"],
+			optional: true,
+			tasks: [
+				{ id: "P1AT000000000005", type: "item", item: "twilightforest:naga_chestplate", count: 1 },
+				{ id: "P1AT000000000006", type: "item", item: "twilightforest:naga_leggings", count: 1 }
+			],
+			rewards: [
+				{ id: "P1AR000000000007", type: "item", item: "twilightforest:naga_scale", count: 4 },
+				{ id: "P1AR000000000008", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "DBA1ED4E18336FD6",
+			title: "&2Nature's Compass",
+			description: [
+				"&7Infuse &aNaga Scales&7 and &bOsmium&7 into a compass to create &2Nature's Compass&7!",
+				"",
+				"&7Right-click it to search for any biome in the Overworld, Nether, or Twilight Forest. This will be critical in Phase 2 when hunting for the &8Deep Dark&7!"
+			],
+			x: 8.0, y: -2.0,
+			shape: "rsquare",
+			dependencies: ["p1a_slay_naga"],
+			tasks: [ { id: "C293ACBF6EEEF943", type: "item", item: "naturescompass:naturescompass", count: 1 } ],
+			rewards: [
+				{ id: "857A96A7E4FD069D", type: "item", item: "twilightforest:naga_scale", count: 4 },
+				{ id: "A61610DA87EE60FA", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "D74669D02C30CE8A",
+			title: "&dTwilight Flavors & Delight",
+			description: [
+				"&7Even monsters in the Twilight Forest are culinary ingredients! With &eTwilight Flavors & Delight&7, you can butcher forest creatures and cook exotic dishes that grant powerful buffs.",
+				"",
+				"&7Collect &aRaw Venison&7 or &eRaw Meef&7 as you explore."
+			],
+			x: 8.0, y: -3.5,
+			dependencies: ["DBA1ED4E18336FD6"],
+			tasks: [
+				{ id: "E9F3A38434E81008", type: "item", item: "twilightforest:raw_venison", count: 4 },
+				{ id: "AC8CBB49F4B74D5B", type: "item", item: "twilightforest:raw_meef", count: 4 }
+			],
+			rewards: [
+				{ id: "7BCCA7863302DF04", type: "random", table_id: "delight_feast" },
+				{ id: "DF4102784E6A9AD8", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P1AQ000000000005",
+			title: "&6Forest Gastronomy: Venison & Meef",
+			description: [
+				"&7Roast your Venison and Meef into &6Venison Steaks&7 and &6Meef Steaks&7, or use your Cooking Pot to prepare hearty &dTwilight Flavors & Delight&7 meals for your upcoming boss battles!"
+			],
+			x: 8.0, y: -5.0,
+			dependencies: ["D74669D02C30CE8A"],
+			tasks: [
+				{ id: "P1AT000000000007", type: "item", item: "twilightforest:cooked_venison", count: 4 },
+				{ id: "P1AT000000000008", type: "item", item: "twilightforest:cooked_meef", count: 4 }
+			],
+			rewards: [
+				{ id: "P1AR000000000009", type: "random", table_id: "delight_feast" },
+				{ id: "P1AR000000000010", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P1AQ000000000006",
+			title: "&dBonus: The Questing Ram",
+			description: [
+				"&7Find a &aQuest Grove&7 in the Enchanted Forest biome and feed the rainbow &dQuesting Ram&7 one block of every single Wool color (all 16 colors)!",
+				"",
+				"&7In return, the Ram showers you with Diamond, Emerald, Gold, and Iron blocks along with its Horn!"
+			],
+			x: 9.5, y: -3.5,
+			dependencies: ["D74669D02C30CE8A"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000009", type: "item", item: "twilightforest:crumble_horn", count: 1 } ],
+			rewards: [
+				{ id: "P1AR000000000011", type: "item", item: "minecraft:diamond_block", count: 4 },
+				{ id: "P1AR000000000012", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "4D8A63EE846DD49C",
+			title: "&a&lMekanism Basic Tier (3 Slots!)",
+			description: [
+				"&7By combining the organic resilience of &aNaga Scales&7 with &fIndustrial Foregoing Plastic&7, you can finally upgrade your 1-slot Mekanism machines!",
+				"",
+				"&7Craft &aBasic Tier Installers&7 and Shift+Right-Click them onto your Metallurgic Infuser, Enrichment Chamber, Crusher, and Energized Smelter.",
+				"",
+				"&eTip: &7Turn on &aAuto-Sort&7 inside your new 3-slot Basic Factories to split incoming items evenly across all 3 parallel slots!"
+			],
+			x: 11.0, y: 0.0,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["p1a_slay_naga"],
+			tasks: [ { id: "568585828668FBA6", type: "item", item: "mekanism:basic_tier_installer", count: 2 } ],
+			rewards: [
+				{ id: "783B20B07B0C1F30", type: "item", item: "mekanism:basic_tier_installer", count: 2 },
+				{ id: "C14CD9EE12CD2190", type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "C550D13B4BD2B3D1", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "28C2644EE659D1B7",
+			title: "&a3-Slot Factory Array",
+			description: [
+				"&7Don't stop at just one Basic Factory! Upgrade your entire core processing line—&eBasic Smelting Factory&7, &bBasic Enriching Factory&7, &6Basic Crushing Factory&7, and &dBasic Infusing Factory&7.",
+				"",
+				"&7Your resource throughput has just tripled!"
+			],
+			x: 11.0, y: -2.0,
+			dependencies: ["4D8A63EE846DD49C"],
+			tasks: [
+				{ id: "81FBEDEADF3D1C4C", type: "item", item: "mekanism:basic_smelting_factory", count: 1 },
+				{ id: "D6E8AE1779DDB877", type: "item", item: "mekanism:basic_enriching_factory", count: 1 },
+				{ id: "38EB8245F5CF5334", type: "item", item: "mekanism:basic_crushing_factory", count: 1 },
+				{ id: "4B0F5E2843DF1138", type: "item", item: "mekanism:basic_infusing_factory", count: 1 }
+			],
+			rewards: [
+				{ id: "984AC34FC28E8238", type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "BAC587A7EBF866DD", type: "item", item: "mekanism:upgrade_energy", count: 4 },
+				{ id: "3F9CDDD50F50D5A1", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P1AQ000000000007",
+			title: "&aCompressing & Sawing Factories",
+			description: [
+				"&7Upgrade your Osmium Compressor and Precision Sawmill with Basic Tier Installers into &aBasic Compressing&7 and &aBasic Sawing Factories&7!"
+			],
+			x: 12.5, y: -2.0,
+			dependencies: ["28C2644EE659D1B7"],
+			optional: true,
+			tasks: [
+				{ id: "P1AT000000000010", type: "item", item: "mekanism:basic_compressing_factory", count: 1 },
+				{ id: "P1AT000000000011", type: "item", item: "mekanism:basic_sawing_factory", count: 1 }
+			],
+			rewards: [
+				{ id: "P1AR000000000013", type: "item", item: "mekanism:basic_tier_installer" },
+				{ id: "P1AR000000000014", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "P1AQ000000000008",
+			title: "&bSplitting Water: Electrolytic Separator",
+			description: [
+				"&7Before setting up 3x Ore Tripling or fueling your future Jetpack, craft an &bElectrolytic Separator&7!",
+				"",
+				"&7Pump Water into it to split $H_2O$ into &bHydrogen&7 (Jetpack fuel) and &9Oxygen&7 (reagent for the Purification Chamber)!"
+			],
+			x: 11.0, y: -3.5,
+			dependencies: ["28C2644EE659D1B7"],
+			tasks: [ { id: "P1AT000000000012", type: "item", item: "mekanism:electrolytic_separator", count: 1 } ],
+			rewards: [
+				{ id: "P1AR000000000015", type: "item", item: "mekanism:basic_chemical_tank" },
+				{ id: "P1AR000000000016", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "E76C5015D51500E2",
+			title: "&bChemical Ore Tripling (3x Line)",
+			description: [
+				"&7Now that your machines have 3 slots, consider upgrading from 2x Ore Doubling to &b3x Ore Tripling&7:",
+				"",
+				"&81. &ePurification Chamber &7(fed with Oxygen from Electrolytic Separator) turns 1 Raw Ore into &f2 Clumps&7.",
+				"&82. &6Crusher &7turns Clumps into &7Dirty Dusts&7.",
+				"&83. &bEnrichment Chamber &7turns Dirty Dusts into clean &fDusts&7.",
+				"&84. &aEnergized Smelter &7smelts them into Ingots!"
+			],
+			x: 11.0, y: -5.0,
+			dependencies: ["P1AQ000000000008"],
+			optional: true,
+			tasks: [ { id: "14BB47B9E9BD5619", type: "item", item: "mekanism:purification_chamber", count: 1 } ],
+			rewards: [
+				{ id: "BB355A239DBB4DC3", type: "item", item: "mekanism:basic_tier_installer" },
+				{ id: "E01E60A26CCD515E", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P1AQ000000000009",
+			title: "&aBasic Purifying Factory & Gas Upgrades",
+			description: [
+				"&7Apply a Basic Tier Installer to your Purification Chamber to turn it into a &a3-Slot Basic Purifying Factory&7, and install &eGas Upgrades&7 to dramatically reduce its Oxygen consumption!"
+			],
+			x: 12.5, y: -5.0,
+			dependencies: ["E76C5015D51500E2"],
+			optional: true,
+			tasks: [
+				{ id: "P1AT000000000013", type: "item", item: "mekanism:basic_purifying_factory", count: 1 },
+				{ id: "P1AT000000000014", type: "item", item: "mekanism:upgrade_chemical", count: 4 }
+			],
+			rewards: [
+				{ id: "P1AR000000000017", type: "item", item: "mekanism:upgrade_chemical", count: 4 },
+				{ id: "P1AR000000000018", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "073FFF5F68D7572A",
+			title: "&bAstral Sorcery 2.0: Aquamarine & Marble",
+			description: [
+				"&b&lWelcome to the 1.21.1 Astral Sorcery Rework!",
+				"&7Forget old 1.16 guides—Collector Crystals and Spectral Relays are gone. In 1.21.1, starlight reaches the Overworld through natural &eFocal Points&7!",
+				"",
+				"&81. &7Dig &bAquamarine Shale&7 from riverbeds and shallow shores.",
+				"&82. &7Mine large veins of &fRaw Marble&7 underground (between Y 0 and Y 100).",
+				"&83. &7Combine a &fBook&7 and an &bAquamarine&7 to craft the Astral &9Tome&7!"
+			],
+			x: 2.5, y: 2.0,
+			shape: "pentagon",
+			dependencies: ["p1a_welcome_twilight"],
+			tasks: [ { id: "2EB97B68CE5CCE31", type: "item", item: "astralsorcery:aquamarine", count: 16 } ],
+			rewards: [
+				{ id: "E5EA705F4ECBD228", type: "item", item: "astralsorcery:aquamarine", count: 12 },
+				{ id: "08D176CAAC7425BE", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P1AQ000000000010",
+			title: "&fQuarrying Astral Marble",
+			description: [
+				"&7Gather plenty of &fRaw Marble&7 and &8Sooty Marble&7 (crafted from Marble and Coal)!",
+				"",
+				"&7Your future Starlight, Celestial, Attunement, and Iridescent Altars will require hundreds of Marble Bricks, Pillars, Chiseled Marble, and Sooty Marble blocks."
+			],
+			x: 0.0, y: 4.0,
+			dependencies: ["073FFF5F68D7572A"],
+			tasks: [ { id: "P1AT000000000015", type: "item", item: "astralsorcery:marble_raw", count: 32 } ],
+			rewards: [
+				{ id: "P1AR000000000019", type: "item", item: "astralsorcery:marble_raw", count: 32 },
+				{ id: "P1AR000000000020", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "6B50BA9C4AC68857",
+			title: "&eConstellation Paper, Astrolabe & Focal Points",
+			description: [
+				"&7Find &fConstellation Paper&7 in loot chests (dungeons, mineshafts, ruins, temples) and right-click it to see which major constellation (&bAevitas, Armara, Discidia, Evorsio, Vicio&7) it holds.",
+				"",
+				"&6&lHow to Trace & Find a Focal Point:",
+				"&81. &7Craft an &eAstrolabe&7 (6 Gold Ingots, 1 Glass Pane, 1 Aquamarine, 1 Spyglass).",
+				"&82. &7On a night when your constellation is in the sky, look through the Astrolabe, hold &eSneak&7, and drag lines between the stars to discover it!",
+				"&83. &7Look for a &abare patch of grass&7 (cleared of all flowers/bushes—about 1 per 10x10 chunks). Looking through the Astrolabe at night reveals a glowing &fcolumn of starlight&7 over this &eFocal Point&7!"
+			],
+			x: 2.5, y: 4.0,
+			dependencies: ["073FFF5F68D7572A"],
+			tasks: [
+				{ id: "5D05E5D0EA4ED806", type: "item", item: "minecraft:spyglass", count: 1 },
+				{ id: "7B9A2E9DE4652F4D", type: "item", item: "astralsorcery:astrolabe", count: 1 }
+			],
+			rewards: [
+				{ id: "6B4ADD099DDDD0E1", type: "item", item: "minecraft:ender_pearl", count: 2 },
+				{ id: "DFFF26437BB9E40E", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "C58EB1EB877F9490",
+			title: "&9Tier 1: Illuminated Table, Wand & Illumination Powder",
+			description: [
+				"&7Stand at the exact center of a &eFocal Point&7 at night under an open sky and drop items in a pile on the ground:",
+				"",
+				"&8• &bIlluminated Crafting Table (Altar Tier 1): &7Drop &f1x Crafting Table + 4x Marble&7 together at the center of a Focal Point at night.",
+				"&8• &9Resonating Wand: &7Drop &f2x Marble + 2x Aquamarine + 1x Ender Pearl&7 together at the center of a Focal Point at night.",
+				"",
+				"&7Once built, craft &eIllumination Powder&7 (&fastralsorcery:illumination_powder&7) on the table at night—you will need it for the &dAE2 ME Controller&7 in Phase 1B!"
+			],
+			x: 5.0, y: 4.0,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["6B50BA9C4AC68857"],
+			tasks: [
+				{ id: "E837CE2AC414D1A7", type: "item", item: "astralsorcery:altar_illumination", count: 1 },
+				{ id: "E837CE2AC414D1A8", type: "item", item: "astralsorcery:wand", count: 1 },
+				{ id: "E837CE2AC414D1A9", type: "item", item: "astralsorcery:illumination_powder", count: 4 }
+			],
+			rewards: [
+				{ id: "52E74B8092D9C630", type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ id: "BF76E5B219B684BC", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P1AQ000000000011",
+			title: "&eStarlight Illumination",
+			description: [
+				"&7Right-click &eIllumination Powder&7 anywhere on the ground to place permanent, invisible magical light sources, or combine it with Coal on the altar to craft &8Nocturnal Powder&7 (which spawns shadowy monsters when thrown!)."
+			],
+			x: 5.0, y: 6.0,
+			dependencies: ["C58EB1EB877F9490"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000016", type: "item", item: "astralsorcery:illumination_powder", count: 8 } ],
+			rewards: [
+				{ id: "P1AR000000000021", type: "item", item: "astralsorcery:illumination_powder", count: 8 },
+				{ id: "P1AR000000000022", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "9EC4475F9EC9F97D",
+			title: "&fRock Crystals & Astral Glass Lens",
+			description: [
+				"&7Once you have made the &bIlluminated Crafting Table&7, two sources of &fRock Crystals&7 open up:",
+				"",
+				"&81. &fDeep Mining (Y -60 to Y -57): &7Walk near Bedrock while holding your &9Resonating Wand&7. It will send white sparkles through solid stone where &fRock Crystal Ore&7 is hidden! &cStay close when mining it&7, or the crystal will be lost.",
+				"&82. &eShooting Stars: &7Around midnight, a shooting star may fall nearby! Reach its crater before dawn to find a &fRock Crystal&7, gems, and a mysterious &dArtifact&7!",
+				"",
+				"&7Use your Rock Crystal and Aquamarine on the altar to craft a &fGlass Lens&7 (&fastralsorcery:glass_lens&7)."
+			],
+			x: 8.0, y: 4.0,
+			dependencies: ["C58EB1EB877F9490"],
+			tasks: [
+				{ id: "A1E9C867AB75ABBD", type: "item", item: "astralsorcery:rock_crystal", count: 1 },
+				{ id: "A1E9C867AB75ABBE", type: "item", item: "astralsorcery:glass_lens", count: 1 }
+			],
+			rewards: [
+				{ id: "DD2C0C2BBEB1549A", type: "item", item: "minecraft:diamond", count: 4 },
+				{ id: "EC620F22AC06B5CE", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P1AQ000000000012",
+			title: "&bStockpiling Astral Optics",
+			description: [
+				"&7Craft extra &fAstral Glass Lenses&7 now!",
+				"",
+				"&6&lWhere You Will Need Glass Lenses:",
+				"&8• &9Advanced Solar Generators &7(Phase 1A)",
+				"&8• &7Tier 1 Rocket Optical Navigation &7(Phase 4)",
+				"&8• &bFluid Laser Base &7for Wither Milking (Phase 4)",
+				"&8• &eOrbital Solar Neutron Activators &7(Phase 4)",
+				"&8• &6Ore Laser Base &7(Phase 7)!"
+			],
+			x: 8.0, y: 6.0,
+			dependencies: ["9EC4475F9EC9F97D"],
+			tasks: [ { id: "P1AT000000000017", type: "item", item: "astralsorcery:glass_lens", count: 4 } ],
+			rewards: [
+				{ id: "P1AR000000000023", type: "item", item: "astralsorcery:glass_lens", count: 2 },
+				{ id: "P1AR000000000024", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "23A3351B690B4B9E",
+			title: "&cApothic Enchanting: Hellshelves",
+			description: [
+				"&7Vanilla bookshelves won't be enough to protect you against the horrors of the deep woods.",
+				"",
+				"&7Craft &cHellshelves&7 (using Naga Scales & Lich elements) to boost your Enchanting Table's &cEterna&7 and &6Quanta&7 stats!"
+			],
+			x: 11.0, y: 2.0,
+			dependencies: ["p1a_slay_naga", "073FFF5F68D7572A"],
+			tasks: [ { id: "B52D8CACD3DD24AF", type: "item", item: "apothic_enchanting:hellshelf", count: 2 } ],
+			rewards: [
+				{ id: "A5E42BADADE2297B", type: "item", item: "minecraft:lapis_lazuli", count: 32 },
+				{ id: "257AAA726F30E876", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "P1AQ000000000013",
+			title: "&6Infused & Blazing Hellshelves",
+			description: [
+				"&7Infuse your Hellshelves in an Enchanting Table to create &cInfused Hellshelves&7, then upgrade them into &6Blazing&7 or &4Glowing Hellshelves&7!"
+			],
+			x: 11.0, y: 4.0,
+			dependencies: ["23A3351B690B4B9E"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000018", type: "item", item: "apothic_enchanting:infused_hellshelf", count: 1 } ],
+			rewards: [
+				{ id: "P1AR000000000025", type: "item", item: "apothic_enchanting:infused_hellshelf" },
+				{ id: "P1AR000000000026", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "5B1FB8CCA9458D02",
+			title: "&bApothic Enchanting: Seashelves",
+			description: [
+				"&7By combining &aNaga Scales&7 with &bAquamarine&7 from Astral Sorcery, you unlock &bSeashelves&7!",
+				"",
+				"&7Seashelves provide high &dArcana&7, guaranteeing rare and powerful enchantments on your &bSacred Armor&7 and weapons (and are also needed for &aApplied Experienced&7 in Phase 1B!)."
+			],
+			x: 13.0, y: 2.0,
+			shape: "rsquare",
+			dependencies: ["23A3351B690B4B9E"],
+			tasks: [ { id: "FBA5115EEDE6B6F6", type: "item", item: "apothic_enchanting:seashelf", count: 2 } ],
+			rewards: [
+				{ id: "32837A780BE00C66", type: "item", item: "apothic_enchanting:seashelf" },
+				{ id: "7E72B47D78D6F04F", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P1AQ000000000014",
+			title: "&3Infused Seashelves & Enchant Library",
+			description: [
+				"&7Infuse your Seashelves into &bInfused Seashelves&7 and upgrade them into &3Crystalline&7 or &9Heart-Forged Seashelves&7!",
+				"",
+				"&7Don't forget to also craft an &bEnchantment Library&7 to store and combine all your enchanted books effortlessly!"
+			],
+			x: 13.5, y: 4.0,
+			dependencies: ["5B1FB8CCA9458D02"],
+			optional: true,
+			tasks: [
+				{ id: "P1AT000000000019", type: "item", item: "apothic_enchanting:infused_seashelf", count: 1 },
+				{ id: "P1AT000000000020", type: "item", item: "apothic_enchanting:library", count: 1 }
+			],
+			rewards: [
+				{ id: "P1AR000000000027", type: "item", item: "apothic_enchanting:infused_seashelf" },
+				{ id: "P1AR000000000028", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "P1AQ000000000015",
+			title: "&dApotheosis Reforging & Gem Sockets",
+			description: [
+				"&7Remember that your &bSacred Armor & Weapons&7 retain all &dApotheosis Gems&7 and &6Affixes&7 across every single Smithing Table upgrade from Diamond to Unobtainium/ATM Alloy!",
+				"",
+				"&7Build a &8Salvaging Table&7, &6Reforging Table&7, and &bGem Cutting Table&7 to socket high-tier Gems into your gear early!"
+			],
+			x: 12.5, y: 4.0,
+			dependencies: ["5B1FB8CCA9458D02"],
+			tasks: [
+				{ id: "P1AT000000000021", type: "item", item: "apotheosis:salvaging_table", count: 1 },
+				{ id: "P1AT000000000022", type: "item", item: "apotheosis:reforging_table", count: 1 }
+			],
+			rewards: [
+				{ id: "P1AR000000000029", type: "item", item: "apotheosis:gem_dust", count: 4 },
+				{ id: "P1AR000000000030", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "p1a_solar_wind_gen",
+			title: "&bWind & Advanced Solar Generators",
+			description: [
+				"&7By combining &aNaga Scales&7, &bAquamarine&7, and &fAstral Glass Lenses&7, you unlock clean, renewable energy in Phase 1A!",
+				"",
+				"&8• &bWind Generator: &7Produces more FE/t the higher you place it in the sky.",
+				"&8• &9Advanced Solar Generator: &7Harnesses starlight and sunlight through Astral optics (and can also heat Thermal Evaporation Towers from their top corners!)."
+			],
+			x: 15.5, y: 2.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["4D8A63EE846DD49C", "9EC4475F9EC9F97D"],
+			tasks: [
+				{ id: "EFF1660CE0A4CAAC", type: "item", item: "mekanismgenerators:wind_generator", count: 1 },
+				{ id: "EFF1660CE0A4CAAD", type: "item", item: "mekanismgenerators:advanced_solar_generator", count: 1 }
+			],
+			rewards: [
+				{ id: "9968079F4C76201D", type: "item", item: "mekanism:basic_energy_cube" },
+				{ id: "13E0BD7B0D7F7C7F", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P1AQ000000000016",
+			title: "&cAdvanced Energy Cube & Piping",
+			description: [
+				"&7With your Wind and Advanced Solar Generators producing steady power, upgrade your Basic Energy Cube into an &cAdvanced Energy Cube&7!",
+				"",
+				"&7Also upgrade your Mechanical Pipes and Pressurized Tubes to the &cAdvanced&7 tier using Infused Alloys."
+			],
+			x: 15.5, y: 4.0,
+			dependencies: ["p1a_solar_wind_gen"],
+			tasks: [
+				{ id: "P1AT000000000023", type: "item", item: "mekanism:advanced_energy_cube", count: 1 },
+				{ id: "P1AT000000000024", type: "item", item: "mekanism:advanced_mechanical_pipe", count: 8 }
+			],
+			rewards: [
+				{ id: "P1AR000000000031", type: "item", item: "mekanism:advanced_universal_cable", count: 8 },
+				{ id: "P1AR000000000032", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "9DCE025E1B54EEE6",
+			title: "&eAscending the Lich Tower",
+			description: [
+				"&7With the Naga's protection broken, the magical barrier surrounding the &eLich Tower&7 dissipates.",
+				"",
+				"&7Climb the central staircase to the very top to confront the undead sorcerer."
+			],
+			x: 14.5, y: 0.0,
+			dependencies: ["4D8A63EE846DD49C"],
+			tasks: [ { id: "437AA1949A7A13D7", type: "item", item: "mekanism:alloy_infused", count: 4 } ],
+			rewards: [
+				{ id: "81F7389C4FD8F24F", type: "item", item: "minecraft:golden_apple", count: 2 },
+				{ id: "A86AF293B7D8B4F4", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P1AQ000000000017",
+			title: "&aLich Tower Libraries & Steeleaf",
+			description: [
+				"&7Explore the side libraries of the Lich Tower as you climb! Their chests contain enchanted books, potions, and valuable &eSteeleaf&7!"
+			],
+			x: 14.5, y: -2.0,
+			dependencies: ["9DCE025E1B54EEE6"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000025", type: "item", item: "twilightforest:steeleaf_ingot", count: 8 } ],
+			rewards: [
+				{ id: "P1AR000000000033", type: "item", item: "twilightforest:steeleaf_ingot", count: 8 },
+				{ id: "P1AR000000000034", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "EFA7A9DFDAACF914",
+			title: "&e&lBoss 2: The Twilight Lich",
+			description: [
+				"&7Defeat the &eTwilight Lich&7 atop his tower!",
+				"",
+				"&6Combat Guide:",
+				"&8• &ePhase 1: &7The Lich is protected by floating shields. Deflect his blue Ender Pearls back at him (hit them with your sword) to shatter his shields!",
+				"&8• &ePhase 2: &7Dodge his zombie summons and drain attacks.",
+				"&8• &ePhase 3: &7Finish him off in melee combat and claim the &6Lich Trophy&7!"
+			],
+			x: 17.5, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["9DCE025E1B54EEE6"],
+			tasks: [ { id: "7FE8436CEC1FDDC2", type: "item", item: "twilightforest:lich_trophy", count: 1 } ],
+			rewards: [
+				{ id: "64D0F0CDA305E727", type: "random", table_id: "tier_1_twilight" },
+				{ id: "B79A76C4210BAC22", type: "random", table_id: "delight_feast" },
+				{ id: "03EBD89896FC8D44", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P1AQ000000000018",
+			title: "&eArcane Spoils: Lich Scepters",
+			description: [
+				"&7The Twilight Lich drops one of four powerful &dScepters&7 (&eScepter of Twilight, Life Draining, Zombie, or Fortification&7)!",
+				"",
+				"&eTip: &7The &eScepter of Fortification&7 surrounds you with golden shields just like the Lich, making it an incredible defensive off-hand tool for early boss fights!"
+			],
+			x: 17.5, y: -2.0,
+			dependencies: ["EFA7A9DFDAACF914"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000026", type: "item", item: "twilightforest:fortification_scepter", count: 1 } ],
+			rewards: [
+				{ id: "P1AR000000000035", type: "item", item: "minecraft:ender_pearl", count: 8 },
+				{ id: "P1AR000000000036", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "P1AQ000000000019",
+			title: "&c4x Ore Quadrupling: Chemical Injection",
+			description: [
+				"&7With the Lich defeated, you can also prepare for &b4x Ore Quadrupling&7 in Mekanism!",
+				"",
+				"&7Evaporate Water into &eBrine&7 in a Thermal Evaporation Plant, split Brine into &aSodium&7 and &2Chlorine&7, combine Chlorine with Hydrogen in a &eChemical Infuser&7 to make &fHydrogen Chloride&7, and inject it into a &cChemical Injection Chamber&7 to turn 1 Raw Ore into &64 Shards&7!"
+			],
+			x: 17.5, y: 2.0,
+			dependencies: ["EFA7A9DFDAACF914"],
+			optional: true,
+			tasks: [
+				{ id: "P1AT000000000027", type: "item", item: "mekanism:chemical_injection_chamber", count: 1 },
+				{ id: "P1AT000000000028", type: "item", item: "mekanism:chemical_infuser", count: 1 }
+			],
+			rewards: [
+				{ id: "P1AR000000000037", type: "item", item: "mekanism:basic_tier_installer" },
+				{ id: "P1AR000000000038", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p1a_jetpack",
+			title: "&b&lTaking Flight: Mekanism Jetpack!",
+			description: [
+				"&7No more walking on foot! Using the &eLich Trophy&7 as an arcane thruster core alongside &fSteel&7, &bOsmium&7, and &aNaga Scales&7, craft your &bMekanism Jetpack&7!",
+				"",
+				"&eHow to Fuel It:",
+				"&7Pump &bHydrogen&7 from an &eElectrolytic Separator&7 (splitting Water) into the Jetpack, and toggle flight modes (Regular / Hover) using your Mekanism keybinds!"
+			],
+			x: 20.5, y: 0.0,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["EFA7A9DFDAACF914"],
+			tasks: [ { id: "0BD8A1A9002D4F43", type: "item", item: "mekanism:jetpack", count: 1 } ],
+			rewards: [
+				{ id: "8A62F09AB2489771", type: "item", item: "mekanism:electrolytic_separator" },
+				{ id: "465F740D21F4BC06", type: "toast", title: "Skies Unlocked!", description: "You crafted the Mekanism Jetpack!" },
+				{ id: "280A16AC3BE19CC2", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P1AQ000000000020",
+			title: "&bSafe Landings: Free Runners",
+			description: [
+				"&7Pair your new Jetpack with &bMekanism Free Runners&7!",
+				"",
+				"&7Free Runners give you step-assist and completely negate fall damage as long as they have FE—saving you from clumsy Jetpack landings!"
+			],
+			x: 20.5, y: -2.0,
+			dependencies: ["p1a_jetpack"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000029", type: "item", item: "mekanism:free_runners", count: 1 } ],
+			rewards: [
+				{ id: "P1AR000000000039", type: "item", item: "mekanism:energy_tablet" },
+				{ id: "P1AR000000000040", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "P1AQ000000000021",
+			title: "&6Armored Jetpack Upgrade",
+			description: [
+				"&7Want extra protection while flying? Combine your Mekanism Jetpack with Steel Dust and Bronze/Diamonds to upgrade it into an &6Armored Jetpack&7!",
+				"",
+				"&cNote: &7Keep a regular Jetpack or craft a spare later—you will need a Mekanism Jetpack in Phase 7 to forge the &eAngel Ring&7!"
+			],
+			x: 20.5, y: 2.0,
+			dependencies: ["p1a_jetpack"],
+			optional: true,
+			tasks: [ { id: "P1AT000000000030", type: "item", item: "mekanism:jetpack_armored", count: 1 } ],
+			rewards: [
+				{ id: "P1AR000000000041", type: "item", item: "mekanism:ingot_steel", count: 8 },
+				{ id: "P1AR000000000042", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "p1a_phase_1a_complete",
+			title: "&2&lReady for the Deep Woods (Phase 1B)",
+			description: [
+				"&7With your &bMekanism Jetpack&7 strapped to your back, your &bIlluminated Crafting Table&7 harnessing Focal Point starlight, and &a3-Slot Basic Factories&7 humming at home, you are ready for the second wave of the Twilight Forest!",
+				"",
+				"&6&lNext Up in Phase 1B:",
+				"&7Hunt down the remaining bosses (&eMinoshroom, Hydra, Knight Phantoms, Ur-Ghast, Alpha Yeti & Snow Queen&7) to unlock the &bDigital Miner&7, &dAE2 ME Controller&7, &aSimple Machine Frame&7, &aApplied Experienced&7, and &cRed Heart Canisters&7!"
+			],
+			x: 23.5, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["p1a_jetpack"],
+			tasks: [ { id: "1939994B684F0ECC", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "F5BB0800BEB2661D",
+					type: "toast",
+					title: "Phase 1A Complete!",
+					description: "Proceed to Phase 1B: Heart of the Forest."
+				},
+				{ id: "4ABA53037A95ED72", type: "random", table_id: "tier_1_twilight" },
+				{ id: "5EB0A5C13F9D1949", type: "xp_levels", xp_levels: 3 }
+			]
+		}
+	]
+}

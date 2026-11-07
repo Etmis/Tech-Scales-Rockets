@@ -1,0 +1,705 @@
+{
+	id: "C54CD537323C9350",
+	title: "&cP5: Awakening of Evil",
+	icon: "cataclysm:ignitium_ingot",
+	group: "group_main",
+	order_index: 6,
+	quests: [
+		{
+			id: "p5_intro",
+			title: "&c&lThe Six Seals of Unobtainium",
+			description: [
+				"&7In Phase 4, you mined &dRaw Unobtainium&7 in the End, only to discover that no furnace or chemical plant in the universe can melt it.",
+				"",
+				"&7Now that you have returned from the stars with &6Desh&7, &5Ostrum&7, &4Calorite&7, and &bIce Dragonsteel&7, you finally possess the keys to awaken the &cSix Ancient Titans of L_Ender's Cataclysm&7 (who also drop leveling RPG artifacts from &cReliquified L_Ender's Cataclysm&7)!",
+				"",
+				"&4&lTwo-Wave War Structure (Phase 5A & 5B):",
+				"&8• &aWave 5A (Ancient Remnant & Netherite Monstrosity): &7Slaying these first two titans &aimmediately unlocks 11-Slot Absolute Factories & Absolute Induction Cells&7 right in the middle of Phase 5!",
+				"&8• &cWave 5B (Ignis, Leviathan, Maledictus & Ender Guardian): &7With 11-slot factories behind you, slay the remaining four apocalyptic bosses to complete &dCataclysmic Flux&7!",
+				"&8• &eCosmetic Trophy Rule: &7Cataclysm weapons are removed, and Cataclysm armors (&cIgnitium, Cursium, etc.&7) have &e0 stats&7—serving purely as visual trophies for &dCosmetic Armor Reworked&7!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.75,
+			shape: "gear",
+			dependencies: ["p4_phase_4_complete", "p4_ice_dragonforge", "p4_ultimate_tier_installer"],
+			tasks: [
+				{ id: "C0A1B2C3D4E5F603", type: "item", item: "iceandfire:dragonsteel_ice_ingot", count: 1 },
+				{ id: "C0A1B2C3D4E5F604", type: "item", item: "ad_astra:calorite_ingot", count: 1 }
+			],
+			rewards: [
+				{ id: "C0A1B2C3D4E5F601", type: "item", item: "minecraft:enchanted_golden_apple", count: 2 },
+				{ id: "C0A1B2C3D4E5F602", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P5Q0000000000001",
+			title: "&6Pre-War Combat Preparation",
+			description: [
+				"&7Every Cataclysm Titan has boosted Health and Attack Damage in this modpack!",
+				"",
+				"&ePre-War Checklist:",
+				"&8• &7Eat &6The Allthemodium Carrot&7 before every boss fight for 5 minutes of pure Saturation.",
+				"&8• &7Make sure you have all &a40 Hearts&7 (Red, Yellow, and Green Heart Canisters) equipped.",
+				"&8• &7Socket your &aSacred Vibranium Armor & Sword&7 with high-tier Apotheosis Gems!"
+			],
+			x: 0.0, y: 3.0,
+			dependencies: ["p5_intro"],
+			tasks: [ { id: "P5T0000000000001", type: "item", item: "allthemodium:allthemodium_carrot", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000001", type: "item", item: "minecraft:golden_apple", count: 2 },
+				{ id: "P5R0000000000002", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000002",
+			title: "&dReliquified Cataclysm Artifacts",
+			description: [
+				"&7With &cReliquified L_Ender's Cataclysm&7 installed, slaying Cataclysm bosses rewards you with devastating leveling RPG relics!",
+				"",
+				"&7Check your Curios slots after each boss kill and level up their abilities using XP."
+			],
+			x: 0.0, y: -3.0,
+			dependencies: ["p5_intro"],
+			tasks: [ { id: "P5T0000000000002", type: "checkmark" } ],
+			rewards: [
+				{ id: "P5R0000000000003", type: "item", item: "minecraft:experience_bottle", count: 8 },
+				{ id: "P5R0000000000004", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000003",
+			title: "&eLocating the Cursed Pyramid",
+			description: [
+				"&7Use your &2Explorer's Compass&7 in the Overworld desert to locate the colossal sunken &eCursed Pyramid&7 (search for &fcataclysm:cursed_pyramid&7)."
+			],
+			x: 2.5, y: -3.0,
+			dependencies: ["p5_intro"],
+			tasks: [ { id: "P5T0000000000003", type: "item", item: "explorerscompass:explorerscompass", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000005", type: "item", item: "astralsorcery:starmetal_ingot", count: 4 },
+				{ id: "P5R0000000000006", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000004",
+			title: "&eClearing the Pyramid: Koboletons",
+			description: [
+				"&7Guard the corridors of the Cursed Pyramid against &eKoboletons&7 and the hulking &eKobolediator&7 miniboss!",
+				"",
+				"&7Slaying them yields &eKoboleton Bones&7 and &eAncient Metal Nuggets&7."
+			],
+			x: 2.5, y: -5.0,
+			dependencies: ["P5Q0000000000003"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000004", type: "item", item: "cataclysm:koboleton_bone", count: 2 } ],
+			rewards: [
+				{ id: "P5R0000000000007", type: "item", item: "cataclysm:koboleton_bone", count: 4 },
+				{ id: "P5R0000000000008", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "E740DBF00C3516FF",
+			title: "&eWave 5A-1: Crafting the Necklace of the Desert",
+			description: [
+				"&6&lCustom KubeJS Recipe – Necklace of the Desert (Wave 5A):",
+				"&8• &6Desh Plates &7(Moon)",
+				"&8• &9Starmetal Ingots &7(Astral Focal Point)",
+				"&8• &fNether Star &7(The Wither)",
+				"&8• &fDragon Bones &7(Ice and Fire)"
+			],
+			x: 5.0, y: -3.0,
+			shape: "rsquare",
+			dependencies: ["p5_intro", "P5Q0000000000003"],
+			tasks: [ { id: "20F6D0440FC3E132", type: "item", item: "cataclysm:necklace_of_the_desert", count: 1 } ],
+			rewards: [
+				{ id: "D5F524C802C1F870", type: "item", item: "ad_astra:desh_plate", count: 4 },
+				{ id: "243F5DB5563C01FD", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "B68AD269B99A1833",
+			title: "&e&lTitan 1 (Wave 5A): Ancient Remnant",
+			description: [
+				"&7Descend into the inner sanctum of the Cursed Pyramid and right-click the skeletal remains with your &eNecklace of the Desert&7 to awaken &eThe Ancient Remnant&7!",
+				"",
+				"&6&lExclusive Role of Ancient Metal Ingots:",
+				"&8• &aImmediately unlocks Mekanism: Extras Absolute Tier (11 Slots!) &7when combined with the Monstrous Horn!",
+				"&8• &7Forging the &dUnobtainium Upgrade Smithing Template &7in Phase 6.",
+				"&8• &7Synthesizing &dCataclysmic Flux&7!"
+			],
+			x: 8.0, y: -3.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["E740DBF00C3516FF"],
+			tasks: [
+				{ id: "644A1168C5CEEC9A", type: "kill", entity: "cataclysm:ancient_remnant", value: 1 },
+				{ id: "32CFA1C2AF074B43", type: "item", item: "cataclysm:ancient_metal_ingot", count: 4 }
+			],
+			rewards: [
+				{ id: "C3B625A21D23F5A4", type: "item", item: "cataclysm:ancient_metal_ingot", count: 4 },
+				{ id: "64E9C0F0E78D1737", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P5Q0000000000005",
+			title: "&eAncient Metal Reserves",
+			description: [
+				"&7The Ancient Remnant also drops a &eSandstorm in a Bottle&7 (or Remnant Skull)!",
+				"",
+				"&7Remember: you can craft &eBone Reptile Armor&7 as a 0-stat visual trophy for your &dCosmetic Armor Reworked&7 slots, but save the majority of your &eAncient Metal Ingots&7 for Absolute Tier Installers, Unobtainium Smithing Templates, and Cataclysmic Flux!"
+			],
+			x: 8.0, y: -5.0,
+			dependencies: ["B68AD269B99A1833"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000005", type: "item", item: "cataclysm:ancient_metal_block", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000009", type: "item", item: "cataclysm:ancient_metal_ingot", count: 2 },
+				{ id: "P5R0000000000010", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000006",
+			title: "&4Locating the Soul Blacksmith",
+			description: [
+				"&7Travel to the Nether and use your &2Explorer's Compass&7 to locate the massive &4Soul Blacksmith&7 (&fcataclysm:soul_blacksmith&7)."
+			],
+			x: 2.5, y: 3.0,
+			dependencies: ["p5_intro"],
+			tasks: [ { id: "P5T0000000000006", type: "dimension", dimension: "minecraft:the_nether" } ],
+			rewards: [
+				{ id: "P5R0000000000011", type: "item", item: "ad_astra:ostrum_plate", count: 2 },
+				{ id: "P5R0000000000012", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "96739121572C5099",
+			title: "&8Wave 5A-2: The Ostrum Awakening Plate",
+			description: [
+				"&c&lCustom KubeJS Awakening Mechanic (Wave 5A):",
+				"&7Inside the forge sits the &8Netherite Monstrosity&7, completely dormant and invulnerable (NoAI). It will NOT wake up on its own! Bring Martian &5Ostrum Plates&7 and a fiery core!"
+			],
+			x: 5.0, y: 3.0,
+			shape: "rsquare",
+			dependencies: ["p5_intro", "P5Q0000000000006"],
+			tasks: [ { id: "21FB2902A05EFDA3", type: "item", item: "ad_astra:ostrum_plate", count: 2 } ],
+			rewards: [
+				{ id: "BE85B9D4BA5B4D76", type: "item", item: "minecraft:golden_apple", count: 4 },
+				{ id: "4DCD2E89E7C7A6ED", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "89ED36773D1D9F73",
+			title: "&8&lTitan 2 (Wave 5A): Netherite Monstrosity",
+			description: [
+				"&e&lHow to Awaken:",
+				"&7Walk up to the sleeping &8Netherite Monstrosity&7 and &6Right-Click it with an Ostrum Plate&7 (&fad_astra:ostrum_plate&7) in your main hand!",
+				"",
+				"&7Slay the molten juggernaut and claim its &8Monstrous Horn&7!",
+				"",
+				"&6&lExclusive Role of the Monstrous Horn:",
+				"&8• &aImmediately unlocks Mekanism: Extras Absolute Tier (11 Slots!) &7and &aAbsolute Induction Cells&7!",
+				"&8• &7Forging the &dUnobtainium Upgrade Smithing Template &7in Phase 6."
+			],
+			x: 8.0, y: 3.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["96739121572C5099"],
+			tasks: [
+				{ id: "1A92CB4B86E34350", type: "kill", entity: "cataclysm:netherite_monstrosity", value: 1 },
+				{ id: "24C260D021C287AA", type: "item", item: "cataclysm:monstrous_horn", count: 1 }
+			],
+			rewards: [
+				{ id: "A22D9886FE3DD85C", type: "item", item: "cataclysm:monstrous_horn" },
+				{ id: "43915F23755EA43C", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P5Q0000000000007",
+			title: "&dCosmetic Trophy: The Monstrous Helm",
+			description: [
+				"&7Want to wear the fearsome &8Monstrous Helm&7? In &6Tech, Scales & Rockets&7, its armor stats are set to 0 so you can wear it in your &dCosmetic Armor Reworked&7 helmet slot while keeping your Hermetic Vibranium Helmet's protection underneath!"
+			],
+			x: 8.0, y: 5.0,
+			dependencies: ["89ED36773D1D9F73"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000007", type: "item", item: "cataclysm:monstrous_helm", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000013", type: "item", item: "minecraft:netherite_ingot", count: 2 },
+				{ id: "P5R0000000000014", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000008",
+			title: "&aRadiance Alloys & Absolute Circuits",
+			description: [
+				"&7With the first two Titans defeated in Wave 5A, you unlock the first tier of &aMekanism: Extras&7!",
+				"",
+				"&7Start by crafting &aRadiance Alloys&7 (&fmekanism_extras:alloy_radiance&7) and &aAbsolute Control Circuits&7 (&fmekanism_extras:absolute_control_circuit&7)."
+			],
+			x: 9.75, y: 0.0,
+			dependencies: ["B68AD269B99A1833", "89ED36773D1D9F73"],
+			tasks: [
+				{ id: "P5T0000000000008", type: "item", item: "mekanism_extras:alloy_radiance", count: 4 },
+				{ id: "P5T0000000000009", type: "item", item: "mekanism_extras:absolute_control_circuit", count: 2 }
+			],
+			rewards: [
+				{ id: "P5R0000000000015", type: "item", item: "mekanism_extras:alloy_radiance", count: 4 },
+				{ id: "P5R0000000000016", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p5_absolute_tier_installer",
+			title: "&a&lWave 5A Reward: Absolute Tier (11 Slots!)",
+			description: [
+				"&7With the first two Titans defeated in Wave 5A, you don't have to wait until Phase 6 to break past 9-slot factories!",
+				"",
+				"&6&lCustom KubeJS Recipe – Absolute Tier Installer:",
+				"&8• &eAncient Metal Ingot &7(Ancient Remnant)",
+				"&8• &8Monstrous Horn &7(Netherite Monstrosity)",
+				"&8• &4Calorite Ingot &7(Glacio)",
+				"",
+				"&7Upgrade your 9-slot Ultimate Factories into &a11-Slot Absolute Factories&7 and upgrade your Induction Matrix with &aAbsolute Induction Cells&7 before taking on Wave 5B!"
+			],
+			x: 12.0, y: 0.0,
+			size: 1.65,
+			shape: "gear",
+			dependencies: ["B68AD269B99A1833", "89ED36773D1D9F73", "P5Q0000000000008"],
+			tasks: [ { id: "C0A1B2C3D4E5F613", type: "item", item: "mekanism_extras:absolute_tier_installer", count: 2 } ],
+			rewards: [
+				{ id: "C0A1B2C3D4E5F610", type: "item", item: "mekanism_extras:absolute_tier_installer", count: 2 },
+				{
+					id: "C0A1B2C3D4E5F611",
+					type: "toast",
+					title: "Wave 5A Complete: Absolute Industry!",
+					description: "11-Slot Absolute Factories unlocked mid-Phase 5!"
+				},
+				{ id: "C0A1B2C3D4E5F612", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P5Q0000000000009",
+			title: "&aAbsolute Induction Matrix Upgrade",
+			description: [
+				"&7Upgrade your Induction Matrix with &aAbsolute Induction Cells&7 and &aAbsolute Induction Providers&7 from &eMekanism: Extras&7!",
+				"",
+				"&7A single Absolute Induction Cell holds &e3.27 TeraFE&7—preparing your power bank for the Phase 6 Fusion Reactor and Phase 7 SPS Antimatter Reactor!"
+			],
+			x: 12.0, y: -2.5,
+			dependencies: ["p5_absolute_tier_installer"],
+			tasks: [
+				{ id: "P5T0000000000010", type: "item", item: "mekanism_extras:absolute_induction_cell", count: 1 },
+				{ id: "P5T0000000000011", type: "item", item: "mekanism_extras:absolute_induction_provider", count: 1 }
+			],
+			rewards: [
+				{ id: "P5R0000000000017", type: "item", item: "mekanism_extras:alloy_radiance", count: 4 },
+				{ id: "P5R0000000000018", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P5Q0000000000010",
+			title: "&aAbsolute Logistics & Piping",
+			description: [
+				"&7Upgrade your cables, pipes, and tubes to &aAbsolute Universal Cables&7, &aAbsolute Mechanical Pipes&7, and &aAbsolute Pressurized Tubes&7 for staggering transfer rates!"
+			],
+			x: 12.0, y: 2.5,
+			dependencies: ["p5_absolute_tier_installer"],
+			optional: true,
+			tasks: [
+				{ id: "P5T0000000000012", type: "item", item: "mekanism_extras:absolute_universal_cable", count: 8 },
+				{ id: "P5T0000000000013", type: "item", item: "mekanism_extras:absolute_pressurized_tube", count: 8 }
+			],
+			rewards: [
+				{ id: "P5R0000000000019", type: "item", item: "mekanism_extras:absolute_universal_cable", count: 8 },
+				{ id: "P5R0000000000020", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000011",
+			title: "&6Locating the Burning Arena",
+			description: [
+				"&7Use your &2Explorer's Compass&7 in the Nether to locate the towering &6Burning Arena&7 (&fcataclysm:burning_arena&7)."
+			],
+			x: 15.0, y: -4.5,
+			dependencies: ["p5_absolute_tier_installer"],
+			tasks: [ { id: "P5T0000000000014", type: "item", item: "twilightforest:fiery_blood", count: 4 } ],
+			rewards: [
+				{ id: "P5R0000000000021", type: "item", item: "twilightforest:fiery_blood", count: 4 },
+				{ id: "P5R0000000000022", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "B00224B76F7364A0",
+			title: "&6Wave 5B-3: Forging Burning Ashes",
+			description: [
+				"&c&lImportant KubeJS Change (Wave 5B):",
+				"&7Ignited Revenants in the arena do &c&lNOT&7 drop Burning Ashes directly! Instead, you must craft &6Burning Ashes&7 yourself using:",
+				"&8• &cFire Dragonsteel Ingot &7/ &cFire Dragon Blood",
+				"&8• &5Ostrum Plates &7(Mars)",
+				"&8• &cFiery Blood &7(Twilight Hydra)"
+			],
+			x: 17.5, y: -4.5,
+			shape: "rsquare",
+			dependencies: ["p5_absolute_tier_installer", "P5Q0000000000011"],
+			tasks: [ { id: "6E75E3D531D3C191", type: "item", item: "cataclysm:burning_ashes", count: 1 } ],
+			rewards: [
+				{ id: "5C1AEAB6D7DC86B3", type: "item", item: "iceandfire:dragonsteel_fire_ingot", count: 2 },
+				{ id: "DDC2A6412C0224EE", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000012",
+			title: "&6Clearing the Ignited Revenants",
+			description: [
+				"&7Clear the Ignited Revenants and Ignited Berserkers guarding the Burning Arena's upper platform before activating the central altar!"
+			],
+			x: 17.5, y: -6.5,
+			dependencies: ["B00224B76F7364A0"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000015", type: "item", item: "cataclysm:dying_ember", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000023", type: "item", item: "minecraft:blaze_rod", count: 4 },
+				{ id: "P5R0000000000024", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "010D00D471244C85",
+			title: "&6&lTitan 3 (Wave 5B): Ignis, the Eternal Flame",
+			description: [
+				"&7Right-click the central Altar of Fire atop the Burning Arena with your &6Burning Ashes&7 to summon &6Ignis&7!",
+				"",
+				"&eCombat Tip: &7Watch his shield stances carefully and dodge his phase-2 blue soul-fire sword slams (which heal him if they hit you!).",
+				"",
+				"&6&lExclusive Role of Ignitium Ingots:",
+				"&8• &7Core thermal catalyst for &dCataclysmic Flux &7(to melt Unobtainium)",
+				"&8• &7Igniting the &6Mekanism Fusion Reactor &7in Phase 6",
+				"&8• &7Unlocking &cMekanism: Extras Supreme Tier (13 Slots)&7, &9Blue Heart Canisters&7 & &dDraconic Endshelves&7!"
+			],
+			x: 20.5, y: -4.5,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["B00224B76F7364A0"],
+			tasks: [
+				{ id: "0C7AA88135509B9D", type: "kill", entity: "cataclysm:ignis", value: 1 },
+				{ id: "623908A2867A8093", type: "item", item: "cataclysm:ignitium_ingot", count: 3 }
+			],
+			rewards: [
+				{ id: "F091FE1680C14F5B", type: "item", item: "cataclysm:ignitium_ingot", count: 3 },
+				{ id: "47C4ADDBACE4FE25", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P5Q0000000000013",
+			title: "&dCosmetic Trophy: Ignitium Armor",
+			description: [
+				"&7Want to wear the blazing &6Ignitium Armor&7 set? In &6Tech, Scales & Rockets&7, Ignitium Armor has 0 stats and is designed exclusively for your &dCosmetic Armor Reworked&7 slots! Only craft it if you have spare Ignitium Ingots after reserving enough for Cataclysmic Flux and your Fusion Reactor."
+			],
+			x: 20.5, y: -6.5,
+			dependencies: ["010D00D471244C85"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000016", type: "item", item: "cataclysm:ignitium_chestplate", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000025", type: "item", item: "cataclysm:ignitium_ingot" },
+				{ id: "P5R0000000000026", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P5Q0000000000014",
+			title: "&3Ocean's Delight & Roll Delight Prep",
+			description: [
+				"&7To craft the &3Abyssal Sacrifice&7 for The Leviathan, you must first master seafood and sushi gastronomy from &3Ocean's Delight&7 and &bRoll Delight&7!",
+				"",
+				"&7Hunt Guardians and Elder Guardians in an Ocean Monument with your Knife to harvest &3Guardian Tails&7 and &3Elder Guardian Slabs&7."
+			],
+			x: 15.0, y: -1.5,
+			dependencies: ["p5_absolute_tier_installer"],
+			tasks: [
+				{ id: "P5T0000000000017", type: "item", item: "oceansdelight:guardian_tail", count: 2 },
+				{ id: "P5T0000000000018", type: "item", item: "minecraft:heart_of_the_sea", count: 1 }
+			],
+			rewards: [
+				{ id: "P5R0000000000027", type: "item", item: "oceansdelight:guardian_tail", count: 4 },
+				{ id: "P5R0000000000028", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "37D40676B620D92E",
+			title: "&3Wave 5B-4: The Abyssal Sacrifice",
+			description: [
+				"&7Locate the underwater &3Sunken City&7 in a Deep Ocean biome using your &2Explorer's Compass&7.",
+				"",
+				"&6&lCustom KubeJS Recipe – Abyssal Sacrifice (Wave 5B):",
+				"&7Prepare an ultimate seafood & sushi feast from &3Ocean's Delight&7 (&bGuardian Soup&7) and &bRoll Delight&7, then combine:",
+				"&8• &4Calorite Ingots &7(Glacio) & &bIce Shards",
+				"&8• &bGuardian Soup &7(&foceansdelight:guardian_soup&7) & &bRoll Delight &7delicacies",
+				"&8• &bHeart of the Sea &7& &bIce Dragon Blood"
+			],
+			x: 17.5, y: -1.5,
+			shape: "rsquare",
+			dependencies: ["p5_absolute_tier_installer", "P5Q0000000000014"],
+			tasks: [
+				{ id: "C539FB17F28B7E96", type: "item", item: "oceansdelight:guardian_soup", count: 1 },
+				{ id: "652892B19715DD51", type: "item", item: "cataclysm:abyssal_sacrifice", count: 1 }
+			],
+			rewards: [
+				{ id: "7AB02A96385F89CE", type: "item", item: "oceansdelight:guardian_soup", count: 2 },
+				{ id: "A0EDC5EB8FFF1BC6", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000015",
+			title: "&3Sanctum of the Sunken City",
+			description: [
+				"&7Explore the flooded halls of the &3Sunken City&7 and defeat the Deepling Priests, Deepling Warlocks, and Coralssus minibosses guarding the central Altar of Abyss!"
+			],
+			x: 17.5, y: -3.0,
+			dependencies: ["37D40676B620D92E"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000019", type: "item", item: "cataclysm:athame", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000029", type: "item", item: "cataclysm:coral_chunk", count: 4 },
+				{ id: "P5R0000000000030", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "98FFD0879A82B5CB",
+			title: "&3&lTitan 4 (Wave 5B): The Leviathan",
+			description: [
+				"&7Dive into the Sunken City abyssal chamber and right-click the Altar of Abyss with your &3Abyssal Sacrifice&7 to summon &3The Leviathan&7!",
+				"",
+				"&6&lExclusive Role of Leviathan / Abyssal Components:",
+				"&8• &7High-pressure core for &dExtendedAE Mega Machines (ME Assembler Matrix)&7",
+				"&8• &7Unlocking &cMekanism: Extras Supreme Tier (13 Slots)&7",
+				"&8• &7Reinforcing the &3SPS Antimatter Reactor&7!"
+			],
+			x: 20.5, y: -1.5,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["37D40676B620D92E"],
+			tasks: [ { id: "F995606691ABA012", type: "kill", entity: "cataclysm:the_leviathan", value: 1 } ],
+			rewards: [
+				{ id: "A6308CBF2661DC48", type: "item", item: "cataclysm:abyssal_sacrifice" },
+				{ id: "E412B6FBA7C89DB7", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P5Q0000000000016",
+			title: "&dSpoils of the Deep: Abyssal Egg",
+			description: [
+				"&7If The Leviathan drops an &dAbyssal Egg&7, you can hatch your very own baby Leviathan pet—or keep its abyssal drops ready for &cSupreme Tier Installers&7 and &dExtendedAE&7 in Phase 6!"
+			],
+			x: 20.5, y: -3.0,
+			dependencies: ["98FFD0879A82B5CB"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000020", type: "item", item: "cataclysm:abyssal_egg", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000031", type: "item", item: "cataclysm:abyssal_sacrifice" },
+				{ id: "P5R0000000000032", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P5Q0000000000017",
+			title: "&bLocating the Frosted Prison",
+			description: [
+				"&7Use your &2Explorer's Compass&7 in a snowy Overworld biome to locate the sprawling &bFrosted Prison&7 (&fcataclysm:frosted_prison&7)."
+			],
+			x: 15.0, y: 1.5,
+			dependencies: ["p5_absolute_tier_installer"],
+			tasks: [ { id: "P5T0000000000021", type: "item", item: "ad_astra:ice_shard", count: 4 } ],
+			rewards: [
+				{ id: "P5R0000000000033", type: "item", item: "ad_astra:ice_shard", count: 8 },
+				{ id: "P5R0000000000034", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "2DAFC0999C2EF84D",
+			title: "&bWave 5B-5: The Ice Dragonsteel Tombstone Key",
+			description: [
+				"&c&lCustom KubeJS Awakening Mechanic (Wave 5B):",
+				"&7At the center of the Frosted Prison stands the &bCursed Tombstone&7 (&fcataclysm:cursed_tombstone&7). To shatter its seal, bring &4Calorite&7, &bIce Shards&7, and an &bIce Dragonsteel Ingot&7 (&ficeandfire:dragonsteel_ice_ingot&7) forged on Glacio!"
+			],
+			x: 17.5, y: 1.5,
+			shape: "rsquare",
+			dependencies: ["p5_absolute_tier_installer", "P5Q0000000000017"],
+			tasks: [ { id: "6FAD098B5D34C781", type: "item", item: "iceandfire:dragonsteel_ice_ingot", count: 1 } ],
+			rewards: [
+				{ id: "D1268071A3D0E88E", type: "item", item: "iceandfire:dragonsteel_ice_ingot", count: 2 },
+				{ id: "56E1F3B92400DB2C", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000018",
+			title: "&8Draugr & Black Steel",
+			description: [
+				"&7Fight through the Draugr, Elite Draugr, Royal Draugr, and Aptrgangr minibosses patrolling the Frosted Prison courtyard and collect &8Black Steel Ingots&7!"
+			],
+			x: 17.5, y: 3.0,
+			dependencies: ["2DAFC0999C2EF84D"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000022", type: "item", item: "cataclysm:black_steel_ingot", count: 4 } ],
+			rewards: [
+				{ id: "P5R0000000000035", type: "item", item: "cataclysm:black_steel_ingot", count: 8 },
+				{ id: "P5R0000000000036", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "E3956EB4D4A29D24",
+			title: "&b&lTitan 5 (Wave 5B): Maledictus",
+			description: [
+				"&e&lHow to Awaken:",
+				"&7Hold an &bIce Dragonsteel Ingot&7 in your main hand and &6Right-Click the Cursed Tombstone&7 to summon the spectral warlord &bMaledictus&7!",
+				"",
+				"&7Defeat him and claim his &bCursium Ingots&7!",
+				"",
+				"&6&lExclusive Role of Cursium Ingots:",
+				"&8• &7Synthesizing &dCataclysmic Flux &7(to melt Unobtainium)",
+				"&8• &7Unlocking &dMekanism: Extras Cosmic Tier (15 Slots)",
+				"&8• &7Forging &9Blue Heart Canisters (5th Row of Health!) &7& &dDraconic Endshelves&7!"
+			],
+			x: 20.5, y: 1.5,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["2DAFC0999C2EF84D"],
+			tasks: [
+				{ id: "AA2047F17D3C9E6E", type: "kill", entity: "cataclysm:maledictus", value: 1 },
+				{ id: "EFB38B280F045046", type: "item", item: "cataclysm:cursium_ingot", count: 3 }
+			],
+			rewards: [
+				{ id: "F39D451A5450AD82", type: "item", item: "cataclysm:cursium_ingot", count: 3 },
+				{ id: "7023CE4F2263AF92", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P5Q0000000000019",
+			title: "&dCosmetic Trophy: Cursium Armor",
+			description: [
+				"&7Just like Ignitium Armor, &bCursium Armor&7 has 0 stats and serves as a spectral trophy for your &dCosmetic Armor Reworked&7 slots! Make sure to prioritize your Cursium Ingots for Cataclysmic Flux, 15-slot Cosmic Factories, and Blue Heart Canisters first."
+			],
+			x: 20.5, y: 3.0,
+			dependencies: ["E3956EB4D4A29D24"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000023", type: "item", item: "cataclysm:cursium_chestplate", count: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000037", type: "item", item: "cataclysm:cursium_ingot" },
+				{ id: "P5R0000000000038", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P5Q0000000000020",
+			title: "&5Locating the Ruined Citadel",
+			description: [
+				"&7Travel to &5The End&7 and use your &2Explorer's Compass&7 to locate the floating &5Ruined Citadel&7 (&fcataclysm:ruined_citadel&7)."
+			],
+			x: 15.0, y: 4.5,
+			dependencies: ["p5_absolute_tier_installer"],
+			tasks: [ { id: "P5T0000000000024", type: "dimension", dimension: "minecraft:the_end" } ],
+			rewards: [
+				{ id: "P5R0000000000039", type: "item", item: "astralsorcery:celestial_crystal" },
+				{ id: "P5R0000000000040", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "5E519EE72A78E8B3",
+			title: "&5Wave 5B-6: Crafting the Celestial Void Eye",
+			description: [
+				"&6&lCustom KubeJS Recipe – Void Eye (Wave 5B):",
+				"&8• &4Calorite Plate &7(Glacio) & &5Ostrum Plate &7(Mars)",
+				"&8• &bCelestial Crystal &7(Astral Sorcery)",
+				"&8• &bIce Dragon Blood &7(Glacio)"
+			],
+			x: 17.5, y: 4.5,
+			shape: "rsquare",
+			dependencies: ["p5_absolute_tier_installer", "P5Q0000000000020"],
+			tasks: [ { id: "49F34397A7DACCC3", type: "item", item: "cataclysm:void_eye", count: 1 } ],
+			rewards: [
+				{ id: "141ADC1FF4895E3E", type: "item", item: "ad_astra:calorite_plate", count: 2 },
+				{ id: "589DB1986EF49B51", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P5Q0000000000021",
+			title: "&5Citadel Sentinel: Ender Golem",
+			description: [
+				"&7Descend through the Ruined Citadel's Purpur halls and defeat the &5Ender Golem&7 miniboss guarding the lower sanctum!"
+			],
+			x: 17.5, y: 6.5,
+			dependencies: ["5E519EE72A78E8B3"],
+			optional: true,
+			tasks: [ { id: "P5T0000000000025", type: "kill", entity: "cataclysm:ender_golem", value: 1 } ],
+			rewards: [
+				{ id: "P5R0000000000041", type: "item", item: "minecraft:ender_pearl", count: 4 },
+				{ id: "P5R0000000000042", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "22F3EA5B698AA0FF",
+			title: "&5&lTitan 6 (Wave 5B): Ender Guardian",
+			description: [
+				"&c&lCustom KubeJS Awakening Mechanic:",
+				"&7At the bottom of the Ruined Citadel, the &5Ender Guardian&7 slumbers inside its shell (NoAI/Invulnerable)—automatic proximity awakening is &cdisabled&7!",
+				"",
+				"&e&lHow to Awaken:",
+				"&7Walk up to the sleeping Ender Guardian and &6Right-Click it with your crafted Void Eye&7 (&fcataclysm:void_eye&7)!",
+				"",
+				"&6&lExclusive Role of the Void Core:",
+				"&8• &7Synthesizing &dCataclysmic Flux &7(to melt Unobtainium)",
+				"&8• &7Unlocking &dMekanism: Extras Cosmic Tier (15 Slots)",
+				"&8• &7Crafting the &dTempad&7, &9Blue Heart Canisters&7 & &dDraconic Endshelves&7!"
+			],
+			x: 20.5, y: 4.5,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["5E519EE72A78E8B3"],
+			tasks: [
+				{ id: "BCC337F61E3EB4F9", type: "kill", entity: "cataclysm:ender_guardian", value: 1 },
+				{ id: "6E2713F156AE1821", type: "item", item: "cataclysm:void_core", count: 1 }
+			],
+			rewards: [
+				{ id: "BD598816C05A0049", type: "item", item: "cataclysm:void_core" },
+				{ id: "3087C89C784A9960", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P5Q0000000000022",
+			title: "&dReady for Alchemical Convergence",
+			description: [
+				"&7Gather your &dRaw Unobtainium&7 from the End alongside your newly claimed &eAncient Metal&7, &6Ignitium&7, &bCursium&7, &5Void Core&7, and &4Calorite&7!",
+				"",
+				"&7Everything is ready for the great alchemical convergence in Phase 6."
+			],
+			x: 22.5, y: 0.0,
+			dependencies: ["010D00D471244C85", "98FFD0879A82B5CB", "E3956EB4D4A29D24", "22F3EA5B698AA0FF"],
+			tasks: [ { id: "P5T0000000000026", type: "item", item: "allthemodium:raw_unobtainium", count: 3 } ],
+			rewards: [
+				{ id: "P5R0000000000043", type: "item", item: "allthemodium:raw_unobtainium" },
+				{ id: "P5R0000000000044", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p5_phase_5_complete",
+			title: "&d&lPhase 5 Complete: The Six Titans Have Fallen!",
+			description: [
+				"&7Ancient Metal, Monstrous Horn, Ignitium, Abyssal essence, Cursium, and the Void Core are all in your hands!",
+				"",
+				"&d&lNext Up in Phase 6 (Birth of a God):",
+				"&8• &7Fuse the spoils of the Titans into &dCataclysmic Flux&7 (&fkubejs:cataclysmic_flux&7)!",
+				"&8• &7Smelt &dRaw Unobtainium&7 in a &a1:3 ratio&7 inside the &eMekanism Combiner&7!",
+				"&8• &7Ignite the &6Mekanism Fusion Reactor&7 and ascend to &dUnobtainium Armor&7, &9Blue Heart Canisters (50 Hearts)&7, &dExtendedAE&7, and &c13-to-15 Slot Mekanism: Extras Factories&7!"
+			],
+			x: 25.0, y: 0.0,
+			size: 1.85,
+			shape: "gear",
+			dependencies: ["010D00D471244C85", "98FFD0879A82B5CB", "E3956EB4D4A29D24", "22F3EA5B698AA0FF", "P5Q0000000000022"],
+			tasks: [ { id: "1D6C827126356522", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "A1949650CDF0F5CB",
+					type: "toast",
+					title: "All 6 Titans Defeated!",
+					description: "Proceed to Phase 6: Birth of a God (Unobtainium)!"
+				},
+				{ id: "64D45B95B77AB8BC", type: "random", table_id: "tier_4_cosmic" },
+				{ id: "4B82D73835A02803", type: "xp_levels", xp_levels: 10 }
+			]
+		}
+	]
+}

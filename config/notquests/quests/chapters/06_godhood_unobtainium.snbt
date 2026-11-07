@@ -1,0 +1,589 @@
+{
+	id: "2E15AE73B4CDBA4F",
+	title: "&dP6: Birth of a God",
+	icon: "kubejs:cataclysmic_flux",
+	group: "group_main",
+	order_index: 7,
+	quests: [
+		{
+			id: "p6_intro",
+			title: "&dThe Alchemical Convergence",
+			description: [
+				"&7All six Cataclysmic Titans lie defeated. In your hands rest the essences of desert antiquity, molten hellfire, abyssal pressure, spectral frost, and the void itself.",
+				"",
+				"&7Now you are ready to perform the greatest alchemical fusion in the modpack: synthesizing &dCataclysmic Flux&7 to finally tame &dRaw Unobtainium&7 and ignite an artificial sun!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p5_phase_5_complete"],
+			tasks: [
+				{ id: "D0A1B2C3D4E5F603", type: "item", item: "cataclysm:ancient_metal_ingot", count: 1 },
+				{ id: "D0A1B2C3D4E5F604", type: "item", item: "cataclysm:ignitium_ingot", count: 1 },
+				{ id: "D0A1B2C3D4E5F605", type: "item", item: "cataclysm:cursium_ingot", count: 1 },
+				{ id: "D0A1B2C3D4E5F606", type: "item", item: "cataclysm:void_core", count: 1 }
+			],
+			rewards: [
+				{ id: "D0A1B2C3D4E5F601", type: "random", table_id: "tier_4_cosmic" },
+				{ id: "D0A1B2C3D4E5F602", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "30D6B532FF1866E0",
+			title: "&d&lSynthesizing Cataclysmic Flux!",
+			description: [
+				"&7Unite the trophies of the Titans to craft a batch of &d4x Cataclysmic Flux&7 (&fkubejs:cataclysmic_flux&7)!",
+				"",
+				"&6&lCustom KubeJS Recipe (Yields 4x Cataclysmic Flux):",
+				"&8• &eAncient Metal Ingot &7(Ancient Remnant)",
+				"&8• &6Ignitium Ingot &7(Ignis)",
+				"&8• &bCursium Ingot &7(Maledictus)",
+				"&8• &5Void Core &7(Ender Guardian)",
+				"&8• &4Calorite Ingot &7(Glacio)"
+			],
+			x: 3.5, y: 0.0,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["p6_intro"],
+			tasks: [ { id: "29B7A2F870B941CE", type: "item", item: "kubejs:cataclysmic_flux", count: 4 } ],
+			rewards: [
+				{
+					id: "265FDAC2388E5BC5",
+					type: "toast",
+					title: "Cataclysmic Flux Created!",
+					description: "You can now fuse Raw Unobtainium in the Combiner!"
+				},
+				{ id: "54B694E36FA49E9F", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P6Q0000000000001",
+			title: "&eThe Alchemical Crucible: Mekanism Combiner",
+			description: [
+				"&7Construct a &eMekanism Combiner&7 (and upgrade it into a Combining Factory)!",
+				"",
+				"&7The Combiner is the ONLY machine in the universe capable of fusing &dCataclysmic Flux&7 with &dRaw Unobtainium&7—and in Phase 7, you will also use it to fuse the three dual ATM Alloys!"
+			],
+			x: 3.5, y: -2.5,
+			dependencies: ["30D6B532FF1866E0"],
+			tasks: [ { id: "P6T0000000000001", type: "item", item: "mekanism:combiner", count: 1 } ],
+			rewards: [
+				{ id: "P6R0000000000001", type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "P6R0000000000002", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p6_unobtainium_fusion",
+			title: "&d&lTaming the Untamable: Unobtainium Ingots!",
+			description: [
+				"&7Remember: all standard Furnaces, Blast Furnaces, Auto-Smelt, Backpack Smelting Upgrades, and Mekanism 2x–5x lines are &c&lcompletely disabled&7 for Unobtainium!",
+				"",
+				"&a&lHow to Smelt Unobtainium (Mekanism Combiner 1:3):",
+				"&8• &d3x Raw Unobtainium &7+ &d1x Cataclysmic Flux &7= &d3x Unobtainium Ingots&7!",
+				"",
+				"&eWhy 1:3 Ratio? &7Because one craft of Cataclysmic Flux gives 4 Flux, a single set of Cataclysm boss kills yields &a12 Unobtainium Ingots&7—so you never have to grind bosses hundreds of times!"
+			],
+			x: 7.5, y: 0.0,
+			size: 1.75,
+			shape: "hexagon",
+			dependencies: ["30D6B532FF1866E0"],
+			tasks: [ { id: "BCE0D67CC57F0044", type: "item", item: "allthemodium:unobtainium_ingot", count: 12 } ],
+			rewards: [
+				{ id: "CDF51E0BD24B670E", type: "item", item: "allthemodium:unobtainium_ingot", count: 2 },
+				{ id: "7C6827EF4000957F", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P6Q0000000000002",
+			title: "&dDense Divinity: Unobtainium Block",
+			description: [
+				"&7Compress 9 Unobtainium Ingots into a solid &dUnobtainium Block&7!",
+				"",
+				"&7You will need Unobtainium Blocks in Phase 7 to cook &6The Allthemodium Apple&7 and craft the &dCreative Backpack Infinity Upgrade&7!"
+			],
+			x: 5.5, y: -2.5,
+			dependencies: ["p6_unobtainium_fusion"],
+			tasks: [ { id: "P6T0000000000002", type: "item", item: "allthemodium:unobtainium_block", count: 1 } ],
+			rewards: [
+				{ id: "P6R0000000000003", type: "item", item: "allthemodium:unobtainium_ingot", count: 2 },
+				{ id: "P6R0000000000004", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "193C29D3E781FDBC",
+			title: "&dThe Other Dungeon Trial & Astral Template Duplication",
+			description: [
+				"&7How do you obtain and multiply the &dUnobtainium Upgrade Smithing Template&7?",
+				"",
+				"&6&lStep 1 – The ATM Dungeon Trial Spawner (The Other):",
+				"&8• &7Locate an &6ATM Dungeon&7 in &6The Other&7 dimension (a massive structure with bookshelves in the walls).",
+				"&8• &7Find the diamond-shaped &eLibrary Room&7 on your map and defeat the waves of Evokers and Vexes from the &cTrial Spawner&7 to claim your first &dUnobtainium Upgrade Smithing Template&7!",
+				"",
+				"&6&lStep 2 – Astral Altar Duplication (1 -> 3 Templates):",
+				"&7Vanilla Crafting Table duplication is disabled! To multiply your template for all your armor and tools, infuse it on your &dAstral Sorcery Altar&7 with:",
+				"&8• &d1x Unobtainium Upgrade Smithing Template &7(from the Trial Spawner)",
+				"&8• &eAncient Metal Ingots &7(Ancient Remnant) & &8Monstrous Horn &7(Netherite Monstrosity)",
+				"&8• &6Piglich Hearts &7(from The Other) & &bCelestial Crystal / Starmetal&7!"
+			],
+			x: 7.5, y: 3.5,
+			size: 1.35,
+			shape: "pentagon",
+			dependencies: ["p6_unobtainium_fusion"],
+			tasks: [
+				{ id: "59A7839FF0DDA503", type: "item", item: "allthemodium:unobtainium_upgrade_smithing_template", count: 3 }
+			],
+			rewards: [
+				{ id: "2BDD48F07F565CEE", type: "item", item: "allthemodium:unobtainium_upgrade_smithing_template" },
+				{ id: "8BEEC10061048F2D", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p6_unobtainium_armor",
+			title: "&d&lSacred Armor Finale: Unobtainium Godhood!",
+			description: [
+				"&7From Diamond -> Netherite -> Allthemodium -> Vibranium, your lifelong set of armor reaches its ultimate destiny!",
+				"",
+				"&7In a Smithing Table, upgrade your &aVibranium Armor&7 into &dUnobtainium Armor&7!",
+				"",
+				"&aEvery enchantment, Hermetic Space Enchant, Lumen binding, Artifact enhancement, and Apotheosis Gem you have collected since Phase 0 is preserved on your new divine armor!"
+			],
+			x: 9.5, y: 3.5,
+			size: 1.65,
+			shape: "pentagon",
+			dependencies: ["193C29D3E781FDBC"],
+			tasks: [
+				{ id: "564C72E02E0CC6D2", type: "item", item: "allthemodium:unobtainium_helmet", count: 1 },
+				{ id: "1BB601278362C04E", type: "item", item: "allthemodium:unobtainium_chestplate", count: 1 },
+				{ id: "134E2BD28A144637", type: "item", item: "allthemodium:unobtainium_leggings", count: 1 },
+				{ id: "2940711E50EFB95D", type: "item", item: "allthemodium:unobtainium_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "99881D01E3BA4907", type: "item", item: "allthemodium:unobtainium_ingot" },
+				{
+					id: "ADAA613873136C31",
+					type: "toast",
+					title: "Sacred Armor Completed!",
+					description: "You have forged full Unobtainium Armor!"
+				},
+				{ id: "CAFB8CC4B4C8205D", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "A15EAEA338E786B7",
+			title: "&dUnobtainium Sword, Pickaxe, Axe & Shovel",
+			description: [
+				"&7Upgrade your Vibranium Sword, Pickaxe, Axe, and Shovel into &dUnobtainium&7 inside the Smithing Table!",
+				"",
+				"&7In Phase 7, these four Unobtainium tools will undergo one final, transcendent evolution into &6ATM Alloy Weapons & Tools&7!"
+			],
+			x: 9.5, y: 5.5,
+			dependencies: ["p6_unobtainium_armor"],
+			tasks: [
+				{ id: "5239B8AC56D8D221", type: "item", item: "allthemodium:unobtainium_sword", count: 1 },
+				{ id: "17FE71C469FD39BB", type: "item", item: "allthemodium:unobtainium_pickaxe", count: 1 },
+				{ id: "17FE71C469FD39BC", type: "item", item: "allthemodium:unobtainium_axe", count: 1 },
+				{ id: "17FE71C469FD39BD", type: "item", item: "allthemodium:unobtainium_shovel", count: 1 }
+			],
+			rewards: [
+				{ id: "A8EAAD84E14549B4", type: "item", item: "allthemodium:unobtainium_ingot" },
+				{ id: "985F10A717B01352", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P6Q0000000000003",
+			title: "&bSeafood & Pizza Gastronomy",
+			description: [
+				"&7Prepare a gourmet pizza from &cFarmer's Pizzeria&7 alongside your &3Ocean's Delight&7 & &bRoll Delight&7 seafood feast to catalyze the final tier of Heart Canisters!"
+			],
+			x: 3.5, y: 2.5,
+			dependencies: ["30D6B532FF1866E0"],
+			tasks: [ { id: "P6T0000000000003", type: "item", item: "oceansdelight:guardian_soup", count: 1 } ],
+			rewards: [
+				{ id: "P6R0000000000005", type: "random", table_id: "delight_feast" },
+				{ id: "P6R0000000000006", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "72B909945528FBF4",
+			title: "&9&l5th Row of Health: Blue Heart Canisters!",
+			description: [
+				"&7Complete your vitality ascension and unlock the final 5th row of health (&b50 Hearts Total&7)!",
+				"",
+				"&6&lCustom KubeJS Recipe – Blue Heart Canister:",
+				"&8• &bCursium Ingot &7(Maledictus)",
+				"&8• &6Ignitium Ingot &7(Ignis)",
+				"&8• &5Void Core &7(Ender Guardian)",
+				"&8• &bUltimate Seafood / Pizza Feast &7(&3Ocean's Delight Guardian Soup&7, &bRoll Delight&7 & &cFarmer's Pizzeria&7)",
+				"&8• &aGreen Heart Canister &7& &9Blue Heart"
+			],
+			x: 5.5, y: 2.5,
+			size: 1.5,
+			shape: "heart",
+			dependencies: ["30D6B532FF1866E0", "P6Q0000000000003"],
+			tasks: [ { id: "9CDC16A1AC6A58FF", type: "item", item: "bhc:blue_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "D8D1E715EEAEBF2F", type: "item", item: "bhc:blue_heart", count: 4 },
+				{ id: "2C54BA177582D93B", type: "item", item: "oceansdelight:guardian_soup", count: 2 },
+				{ id: "A76C7F6B197EA9B3", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P6Q0000000000004",
+			title: "&9Max Vitality: 50 Full Hearts!",
+			description: [
+				"&7Equip a full stack of &910x Blue Heart Canisters&7 alongside your Red, Yellow, and Green Canisters to reach the maximum &b50 Full Hearts (100 HP)&7!"
+			],
+			x: 5.5, y: 4.5,
+			dependencies: ["72B909945528FBF4"],
+			optional: true,
+			tasks: [ { id: "P6T0000000000004", type: "item", item: "bhc:blue_heart_canister", count: 10 } ],
+			rewards: [
+				{ id: "P6R0000000000007", type: "item", item: "bhc:blue_heart_canister", count: 2 },
+				{ id: "P6R0000000000008", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "5E192DD43B265B9E",
+			title: "&5&lMax Enchanting: Draconic Endshelves!",
+			description: [
+				"&7Forge the ultimate tier of &5Apothic Enchanting&7: the &5Draconic Endshelf&7!",
+				"",
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &dUnobtainium Ingot",
+				"&8• &6Ignitium Ingot &7(Ignis)",
+				"&8• &bCursium Ingot &7(Maledictus)",
+				"&8• &5Void Core &7(Ender Guardian)",
+				"",
+				"&7Just five Draconic Endshelves push your Enchanting Table to the absolute maximum &a100 Eterna (Level 100 Enchanting)&7!"
+			],
+			x: 12.5, y: 3.5,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["p6_unobtainium_fusion"],
+			tasks: [ { id: "4E3EC50296FEAF6D", type: "item", item: "apothic_enchanting:draconic_endshelf", count: 2 } ],
+			rewards: [
+				{ id: "BC5C3A1022D371A9", type: "item", item: "apothic_enchanting:draconic_endshelf", count: 2 },
+				{ id: "4F8DB472299C6807", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P6Q0000000000005",
+			title: "&dThe Library of Alexandria",
+			description: [
+				"&7Upgrade your Enchantment Library into the &dLibrary of Alexandria&7 (&fapothic_enchanting:ender_library&7) to store massive enchantment levels and extract max-level books for your Unobtainium gear!"
+			],
+			x: 12.5, y: 5.5,
+			dependencies: ["5E192DD43B265B9E"],
+			optional: true,
+			tasks: [ { id: "P6T0000000000005", type: "item", item: "apothic_enchanting:ender_library", count: 1 } ],
+			rewards: [ { id: "P6R0000000000009", type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "P6Q0000000000006",
+			title: "&aExtendedAE: Entro Ingots & Concurrent Processors",
+			description: [
+				"&7Grow &aEntro Crystals&7 on Budding Entroized Fluix blocks and combine them into &aEntro Ingots&7 (&fextendedae:entro_ingot&7) and &bConcurrent Processors&7!",
+				"",
+				"&7You will need Entro Ingots right now for &dExtendedAE&7 mega-machines and in Phase 7 for the &dTri-Realm Alloy Singularity&7!"
+			],
+			x: 7.5, y: -5.0,
+			dependencies: ["p6_unobtainium_fusion"],
+			tasks: [
+				{ id: "P6T0000000000006", type: "item", item: "extendedae:entro_ingot", count: 4 },
+				{ id: "P6T0000000000007", type: "item", item: "extendedae:concurrent_processor", count: 4 }
+			],
+			rewards: [
+				{ id: "P6R0000000000010", type: "item", item: "extendedae:entro_ingot", count: 4 },
+				{ id: "P6R0000000000011", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "BA0E318A7755A417",
+			title: "&bExtendedAE: Extended Molecular Assembler",
+			description: [
+				"&7Using the pressure core of the Leviathan, &6Ignitium&7, and &4Calorite&7, unlock &dExtendedAE&7 mega-machines! Craft the &bExtended Molecular Assembler&7 (&fextendedae:ex_molecular_assembler&7) and &bExtended Pattern Providers&7.",
+				"",
+				"&7They execute multiple crafting jobs in parallel at 8x speed!"
+			],
+			x: 10.0, y: -5.0,
+			dependencies: ["p6_unobtainium_fusion", "P6Q0000000000006"],
+			tasks: [
+				{ id: "1229A7D0045E2AC0", type: "item", item: "extendedae:ex_molecular_assembler", count: 2 },
+				{ id: "E6B575CEB377E2C5", type: "item", item: "extendedae:ex_pattern_provider", count: 2 }
+			],
+			rewards: [
+				{ id: "D334B80BE047F045", type: "item", item: "extendedae:ex_molecular_assembler", count: 2 },
+				{ id: "DF9B5ED5AD381DB3", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P6Q0000000000007",
+			title: "&bExtended Inscribers & Interfaces",
+			description: [
+				"&7Upgrade your AE2 Inscribers and Interfaces into &bExtended Inscribers&7 (which hold 4 jobs at once) and &bExtended IO Ports / Import & Export Buses&7!"
+			],
+			x: 10.0, y: -7.0,
+			dependencies: ["BA0E318A7755A417"],
+			optional: true,
+			tasks: [
+				{ id: "P6T0000000000008", type: "item", item: "extendedae:ex_inscriber", count: 1 },
+				{ id: "P6T0000000000009", type: "item", item: "extendedae:ex_interface", count: 1 }
+			],
+			rewards: [
+				{ id: "P6R0000000000012", type: "item", item: "extendedae:ex_inscriber" },
+				{ id: "P6R0000000000013", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "18BB8A8FE320C499",
+			title: "&d&lExtendedAE: The Assembler Matrix!",
+			description: [
+				"&7Replace entire rooms of Pattern Providers and Molecular Assemblers with a single multiblock: the &dME Assembler Matrix&7!",
+				"",
+				"&7Construct the multiblock using &dAssembler Matrix Frames&7 (&fextendedae:assembler_matrix_frame&7), Walls, Pattern Cores, and Speed Cores for near-instantaneous autocrafting!"
+			],
+			x: 12.5, y: -5.0,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["BA0E318A7755A417"],
+			tasks: [
+				{ id: "BB1C359037088C0F", type: "item", item: "extendedae:assembler_matrix_frame", count: 8 },
+				{ id: "4C8790D8A4FF9DB3", type: "item", item: "extendedae:assembler_matrix_wall", count: 8 }
+			],
+			rewards: [
+				{ id: "CB649667915F553E", type: "item", item: "extendedae:assembler_matrix_frame", count: 8 },
+				{ id: "EFE1585449B086D5", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P6Q0000000000008",
+			title: "&dAssembler Matrix Pattern, Craft & Speed Cores",
+			description: [
+				"&7Fill the interior of your ME Assembler Matrix multiblock with &dAssembler Matrix Pattern Cores&7, &bCraft Cores&7, and up to 5x &cSpeed Cores&7!"
+			],
+			x: 15.0, y: -5.0,
+			dependencies: ["18BB8A8FE320C499"],
+			tasks: [
+				{ id: "P6T0000000000010", type: "item", item: "extendedae:assembler_matrix_pattern", count: 1 },
+				{ id: "P6T0000000000011", type: "item", item: "extendedae:assembler_matrix_crafter", count: 1 },
+				{ id: "P6T0000000000012", type: "item", item: "extendedae:assembler_matrix_speed", count: 1 }
+			],
+			rewards: [
+				{ id: "P6R0000000000014", type: "item", item: "extendedae:assembler_matrix_speed" },
+				{ id: "P6R0000000000015", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "6B198D7031052910",
+			title: "&6&lMastering Space-Time: The Tempad!",
+			description: [
+				"&7Harnessing the &5Void Core&7 (Ender Guardian), &6Ignitium&7, and &dUnobtainium&7, construct the &6Tempad&7 (&ftempad:tempad&7)!",
+				"",
+				"&7Save coordinates anywhere across the Overworld, Nether, End, Twilight Forest, The Other, Orbit, Moon, Mars, Venus, or Glacio and open instant Timedoors at will!"
+			],
+			x: 10.0, y: -2.5,
+			size: 1.5,
+			shape: "rsquare",
+			dependencies: ["p6_unobtainium_fusion"],
+			tasks: [ { id: "B654C57D50C6E9E0", type: "item", item: "tempad:tempad", count: 1 } ],
+			rewards: [
+				{ id: "28830D9F74F2BA7C", type: "toast", title: "Timedoors Unlocked!", description: "You crafted the Tempad!" },
+				{ id: "ABF3AED0663532AF", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P6Q0000000000009",
+			title: "&cThermonuclear Alloys & Supreme Circuits",
+			description: [
+				"&7Craft &cThermonuclear Alloys&7 (&fmekanism_extras:alloy_thermonuclear&7) and &cSupreme Control Circuits&7 (&fmekanism_extras:supreme_control_circuit&7) to prepare for 13-slot Supreme Factories!"
+			],
+			x: 10.0, y: -1.0,
+			dependencies: ["p6_unobtainium_fusion"],
+			tasks: [
+				{ id: "P6T0000000000013", type: "item", item: "mekanism_extras:alloy_thermonuclear", count: 4 },
+				{ id: "P6T0000000000014", type: "item", item: "mekanism_extras:supreme_control_circuit", count: 2 }
+			],
+			rewards: [
+				{ id: "P6R0000000000016", type: "item", item: "mekanism_extras:alloy_thermonuclear", count: 4 },
+				{ id: "P6R0000000000017", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "DABE59156F8F8EC5",
+			title: "&c&lMekanism: Extras – Supreme Tier (13 Slots!)",
+			description: [
+				"&7Push your 11-slot Absolute Factories (unlocked in Wave 5A) even further by harnessing Unobtainium, Ignis's hellfire, and the crushing pressure of the Leviathan!",
+				"",
+				"&6&lSupreme Tier Installer Recipe:",
+				"&8• &dUnobtainium Ingot",
+				"&8• &6Ignitium Ingot &7(Ignis)",
+				"&8• &3Abyssal Sacrifice / Leviathan Pressure Core &7(The Leviathan)",
+				"",
+				"&7Upgrade your 11-slot Absolute Factories into &c13-Slot Supreme Factories&7!"
+			],
+			x: 12.5, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p6_unobtainium_fusion", "P6Q0000000000009"],
+			tasks: [ { id: "4E55423D8E9A4916", type: "item", item: "mekanism_extras:supreme_tier_installer", count: 2 } ],
+			rewards: [
+				{ id: "596486E7B195AA4B", type: "item", item: "mekanism_extras:supreme_tier_installer", count: 2 },
+				{ id: "72079EB4FDA21B62", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P6Q0000000000010",
+			title: "&bShining Alloys & Cosmic Circuits",
+			description: [
+				"&7Craft &bShining Alloys&7 (&fmekanism_extras:alloy_shining&7) and &dCosmic Control Circuits&7 (&fmekanism_extras:cosmic_control_circuit&7)!"
+			],
+			x: 15.0, y: -1.0,
+			dependencies: ["DABE59156F8F8EC5"],
+			tasks: [
+				{ id: "P6T0000000000015", type: "item", item: "mekanism_extras:alloy_shining", count: 4 },
+				{ id: "P6T0000000000016", type: "item", item: "mekanism_extras:cosmic_control_circuit", count: 2 }
+			],
+			rewards: [
+				{ id: "P6R0000000000018", type: "item", item: "mekanism_extras:alloy_shining", count: 4 },
+				{ id: "P6R0000000000019", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p6_cosmic_tier_installer",
+			title: "&d&lMekanism: Extras – Cosmic Tier (15 Slots!)",
+			description: [
+				"&7Infuse your factories with spectral frost, the heart of the void, and Iridescent starlight!",
+				"",
+				"&6&lCosmic Tier Installer Recipe:",
+				"&8• &dUnobtainium Ingot",
+				"&8• &bCursium Ingot &7(Maledictus)",
+				"&8• &5Void Core &7(Ender Guardian)",
+				"&8• &bIridescent Starlight Essence / Celestial Crystal &7(Astral Sorcery)",
+				"",
+				"&7Upgrade your 13-slot Supreme Factories into &d15-Slot Cosmic Factories&7! Only the final 17-slot Infinite Tier in Phase 7 stands above this!"
+			],
+			x: 17.5, y: 0.0,
+			size: 1.65,
+			shape: "gear",
+			dependencies: ["DABE59156F8F8EC5", "P6Q0000000000010"],
+			tasks: [ { id: "90AB9F2FED63C4EB", type: "item", item: "mekanism_extras:cosmic_tier_installer", count: 2 } ],
+			rewards: [
+				{ id: "B09B3DECE96BF63B", type: "item", item: "mekanism_extras:cosmic_tier_installer", count: 2 },
+				{
+					id: "FC5A1A1C0A5C701E",
+					type: "toast",
+					title: "15-Slot Cosmic Factories!",
+					description: "Your factories now operate across 15 parallel slots!"
+				},
+				{ id: "72E2647BFF3586E8", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "P6Q0000000000011",
+			title: "&cSupreme & Cosmic Induction Matrix",
+			description: [
+				"&7Upgrade your Induction Matrix with &cSupreme&7 or &dCosmic Induction Cells & Providers&7 so it can absorb and output the tens of millions of FE/t generated by your Fusion Reactor!"
+			],
+			x: 17.5, y: -2.0,
+			dependencies: ["p6_cosmic_tier_installer"],
+			tasks: [
+				{ id: "P6T0000000000017", type: "item", item: "mekanism_extras:supreme_induction_cell", count: 1 },
+				{ id: "P6T0000000000018", type: "item", item: "mekanism_extras:supreme_induction_provider", count: 1 }
+			],
+			rewards: [
+				{ id: "P6R0000000000020", type: "item", item: "mekanism_extras:alloy_shining", count: 2 },
+				{ id: "P6R0000000000021", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P6Q0000000000012",
+			title: "&cDeuterium & &aTritium Fuel Lines",
+			description: [
+				"&7Prepare the two nuclear isotopes required to fuel your &6Fusion Reactor&7:",
+				"&81. &cDeuterium: &7Equip &9Electric Pumps&7 with &bFilter Upgrades&7 over water to pump &9Heavy Water&7, then split it inside an &bElectrolytic Separator&7 into &cDeuterium&7!",
+				"&82. &aTritium: &7Evaporate Water -> Brine -> &eLiquid Lithium&7 in two Thermal Evaporation Towers, Rotary Condensentrate it into gaseous &eLithium&7, and pass it through &eSolar Neutron Activators&7 on your Orbital Space Station to produce &aTritium&7!"
+			],
+			x: 15.0, y: 3.5,
+			dependencies: ["p6_unobtainium_fusion"],
+			tasks: [
+				{ id: "P6T0000000000019", type: "item", item: "mekanism:upgrade_filter", count: 4 },
+				{ id: "P6T0000000000020", type: "item", item: "mekanism:thermal_evaporation_controller", count: 1 }
+			],
+			rewards: [
+				{ id: "P6R0000000000022", type: "item", item: "mekanism:upgrade_filter", count: 4 },
+				{ id: "P6R0000000000023", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p6_fusion_reactor",
+			title: "&6&lIgniting an Artificial Sun: The Fusion Reactor!",
+			description: [
+				"&7Using &dUnobtainium&7, &6Ignitium&7 (from Ignis), and &4Calorite&7, construct and ignite the &6Mekanism Fusion Reactor&7!",
+				"",
+				"&8• &7Feed it &cDeuterium&7 (from Heavy Water) and &aTritium&7 (from Lithium in Orbital Solar Neutron Activators).",
+				"&8• &7Ignite it with a &dD-T Fuel Hohlraum&7 and a 400M FE &cLaser Amplifier&7 pulse!",
+				"&8• &7It generates tens of millions of FE/t, stored in your &4Supreme / Cosmic Induction Matrix&7—power that is mandatory to feed the &3SPS Antimatter Reactor&7 in Phase 7!"
+			],
+			x: 17.5, y: 3.5,
+			size: 1.6,
+			shape: "octagon",
+			dependencies: ["p6_unobtainium_fusion", "P6Q0000000000012"],
+			tasks: [
+				{ id: "D0A1B2C3D4E5F612", type: "item", item: "mekanismgenerators:fusion_reactor_controller", count: 1 },
+				{ id: "D0A1B2C3D4E5F613", type: "item", item: "mekanismgenerators:fusion_reactor_frame", count: 36 },
+				{ id: "D0A1B2C3D4E5F614", type: "item", item: "mekanismgenerators:laser_focus_matrix", count: 1 }
+			],
+			rewards: [
+				{ id: "D0A1B2C3D4E5F610", type: "item", item: "mekanismgenerators:hohlraum" },
+				{ id: "D0A1B2C3D4E5F611", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "P6Q0000000000013",
+			title: "&cLaser Amplification & Ignition",
+			description: [
+				"&7Craft a &dHohlraum&7 (filled with D-T Fuel in a Chemical Infuser), a &cLaser Amplifier&7, and several &cLasers&7!",
+				"",
+				"&7Place the D-T Fuel Hohlraum inside the Fusion Reactor Controller, let your Laser Amplifier accumulate at least &e400 Million FE&7, and fire it into the &eLaser Focus Matrix&7 to ignite the star!"
+			],
+			x: 17.5, y: 5.5,
+			dependencies: ["p6_fusion_reactor"],
+			tasks: [
+				{ id: "P6T0000000000021", type: "item", item: "mekanismgenerators:hohlraum", count: 1 },
+				{ id: "P6T0000000000022", type: "item", item: "mekanism:laser_amplifier", count: 1 },
+				{ id: "P6T0000000000023", type: "item", item: "mekanism:laser", count: 2 }
+			],
+			rewards: [
+				{ id: "P6R0000000000024", type: "item", item: "mekanism:laser", count: 2 },
+				{ id: "P6R0000000000025", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p6_phase_6_complete",
+			title: "&d&lPhase 6 Complete: The Threshold of Omnipotence",
+			description: [
+				"&7You wear indestructible &dUnobtainium Armor&7, possess &950 Hearts&7, teleport across dimensions with the &6Tempad&7, harness an artificial sun in your &6Fusion Reactor&7, and run &d15-Slot Cosmic Factories&7.",
+				"",
+				"&4&lFinal Chapter – Phase 7 (Absolute Power):",
+				"&8• &7Construct the &3SPS Reactor&7 and synthesize &dPellets of Antimatter&7.",
+				"&8• &7Awaken &4The Harbinger&7 using Antimatter to claim &4Witherite Ingots&7.",
+				"&8• &7Perform the &6Divine Smithing Fusion&7 to forge the ultimate &6ATM Alloy Sword, Pickaxe, Axe & Shovel&7!",
+				"&8• &7Complete the &6Masterchef Challenge&7 to cook &6The Allthemodium Apple&7 and claim your &d17-Slot Infinite Factories&7, &6Ore Laser Base&7, &eAngel Ring&7, and &dCreative Backpack Infinity Upgrade&7!"
+			],
+			x: 21.0, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["p6_cosmic_tier_installer", "p6_fusion_reactor", "p6_unobtainium_armor"],
+			tasks: [ { id: "D4929DE6F1936582", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "659B71E4BD9F4386",
+					type: "toast",
+					title: "Phase 6 Complete!",
+					description: "Enter the final chapter: Phase 7 – Absolute Power!"
+				},
+				{ id: "44BD4386FCFD84F5", type: "xp_levels", xp_levels: 10 }
+			]
+		}
+	]
+}

@@ -1,0 +1,1950 @@
+{
+	id: "ae2_and_extended",
+	title: "&dAE2 & ExtendedAE",
+	icon: "extendedae:assembler_matrix_frame",
+	group: "group_systems",
+	order_index: 12,
+	quests: [
+		{
+			id: "ae2_001_welcome",
+			title: "&d&l1. Welcome to Digital Logistics (AE2 & ExtendedAE)",
+			description: [
+				"&7Welcome to the ultimate, 104-quest masterclass for &bApplied Energistics 2&7, &dExtendedAE&7, and all their addons!",
+				"",
+				"&6&lHow AE2 Works in Tech, Scales & Rockets:",
+				"&8• &ePhase 0 (Ad-Hoc Era): &7The &dME Controller&7 is locked! However, as soon as you make &fIndustrial Foregoing Plastic&7, you can craft &dFluix Glass Cables&7 and build an &b8-Channel Ad-Hoc Network&7.",
+				"&8• &ePhase 1B (Controller Era): &7Defeating the Hydra, Alpha Yeti, and Snow Queen unlocks the &dME Controller&7 (32 channels per face!), P2P Tunnels, and full Autocrafting.",
+				"&8• &ePhase 2 & 3 (Quantum Era): &7Allthemodium, Starmetal, and Vibranium unlock the &dQuantum Bridge&7 and &5Infinite Wireless Terminals&7.",
+				"&8• &ePhase 6 (ExtendedAE Era): &7Unlocks &dExtendedAE&7 mega-machines and the &dME Assembler Matrix&7!",
+				"",
+				"&bTip: &7Hold &eG&7 over any AE2 item in JEI to open the interactive &bGuideME&7 manual!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.75,
+			shape: "gear",
+			dependencies: ["p0_iron_age"],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [
+				{ type: "item", item: "ae2:certus_quartz_crystal", count: 8 },
+				{ type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "ae2_002_meteorite_compass",
+			title: "&82. Hunting the Fallen Star: Meteorite Compass",
+			description: [
+				"&7Before you can build a single computer chip, you need technology from outer space.",
+				"",
+				"&7Craft a &8Meteorite Compass&7. Its needle does not point North—it points directly to the nearest chunk containing &8Sky Stone&7 from a crashed AE2 Meteorite!"
+			],
+			x: 2.5, y: 0.0,
+			dependencies: ["ae2_001_welcome"],
+			tasks: [ { type: "item", item: "ae2:meteorite_compass", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "minecraft:iron_ingot", count: 8 },
+				{ type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "ae2_003_sky_stone",
+			title: "&83. Mining Sky Stone",
+			description: [
+				"&7Follow your Meteorite Compass until you find a giant spherical crater or underground boulder made of dark &8Sky Stone&7.",
+				"",
+				"&7Mine at least a stack of Sky Stone with a Diamond/Osmium+ Pickaxe! You will need smelted &8Smooth Sky Stone&7 later to craft &dME Controllers&7 and &bME Chests&7."
+			],
+			x: 5.0, y: 0.0,
+			dependencies: ["ae2_002_meteorite_compass"],
+			tasks: [ { type: "item", item: "ae2:sky_stone_block", count: 16 } ],
+			rewards: [
+				{ type: "item", item: "ae2:sky_stone_block", count: 32 },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "ae2_004_mysterious_cube",
+			title: "&b4. The Mysterious Cube & All 4 Presses",
+			description: [
+				"&7Dig into the exact center of the Sky Stone meteorite to uncover the glowing &bMysterious Cube&7.",
+				"",
+				"&7Break the Mysterious Cube with a pickaxe—in 1.21.1, a single cube drops &aall four Inscriber Presses&7 at once! Never lose them (though you can duplicate them in an Inscriber using a Block of Iron if you want multiple lines)."
+			],
+			x: 7.5, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["ae2_003_sky_stone"],
+			tasks: [
+				{ type: "item", item: "ae2:calculation_processor_press", count: 1 },
+				{ type: "item", item: "ae2:engineering_processor_press", count: 1 },
+				{ type: "item", item: "ae2:logic_processor_press", count: 1 },
+				{ type: "item", item: "ae2:silicon_press", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "minecraft:iron_block", count: 2 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "ae2_005_certus_quartz",
+			title: "&b5. Harvesting Certus Quartz",
+			description: [
+				"&7Around the inside of the meteorite (just like Amethyst Geodes), you will see &bCertus Quartz Blocks&7 and &bBudding Certus Quartz&7 with crystal clusters growing on them.",
+				"",
+				"&7Mine the fully grown &bCertus Quartz Clusters&7 to harvest &bCertus Quartz Crystals&7 and &bCertus Quartz Dust&7."
+			],
+			x: 7.5, y: -2.5,
+			dependencies: ["ae2_004_mysterious_cube"],
+			tasks: [
+				{ type: "item", item: "ae2:certus_quartz_crystal", count: 16 },
+				{ type: "item", item: "ae2:certus_quartz_dust", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:certus_quartz_crystal", count: 16 },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "ae2_006_budding_certus",
+			title: "&b6. Moving Budding Certus Quartz Home",
+			description: [
+				"&7Unlike vanilla Budding Amethyst, &bBudding Certus Quartz&7 CAN be moved back to your base!",
+				"",
+				"&eHow It Works:",
+				"&8• &7Mining &bFlawed, Chipped, or Damaged Budding Certus Quartz&7 without &bSilk Touch&7 degrades it by one tier (or use a &eMekanism Cardboard Box&7 to move even &bFlawless Budding Certus Quartz&7 without degrading it!).",
+				"&8• &7You can also recharge degraded Certus blocks back into Budding blocks by tossing &bCharged Certus Quartz&7 + normal Certus Quartz Blocks into water!"
+			],
+			x: 7.5, y: -4.5,
+			dependencies: ["ae2_005_certus_quartz"],
+			tasks: [ { type: "item", item: "ae2:quartz_block", count: 4 } ],
+			rewards: [
+				{ type: "item", item: "mekanism:cardboard_box", count: 2 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "ae2_007_quartz_glass_wrench",
+			title: "&f7. Nether Quartz Wrench & Quartz Glass",
+			description: [
+				"&7Before placing any AE2 machines, craft a &fCertus or Nether Quartz Wrench&7 (lets you rotate AE2 blocks and Shift+Right-Click to dismantle cables/parts instantly) and &bQuartz Glass&7 (smelted Glass + Certus Quartz Dust)."
+			],
+			x: 10.0, y: -2.5,
+			dependencies: ["ae2_005_certus_quartz"],
+			tasks: [
+				{ type: "item", item: "ae2:nether_quartz_wrench", count: 1 },
+				{ type: "item", item: "ae2:quartz_glass", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:quartz_vibrant_glass", count: 8 },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "ae2_008_the_charger",
+			title: "&b8. The Charger & Wooden Crank",
+			description: [
+				"&7Craft an &bAE2 Charger&7! It energizes ordinary Certus Quartz Crystals into &bCharged Certus Quartz Crystals&7.",
+				"",
+				"&eHow to Power the Charger:",
+				"&7You can attach a &6Wooden Crank&7 on top and turn it by hand, OR simply connect a &aMekanism Universal Cable&7 to the top or bottom of the Charger to power it automatically with FE!"
+			],
+			x: 10.0, y: 0.0,
+			dependencies: ["ae2_004_mysterious_cube"],
+			tasks: [
+				{ type: "item", item: "ae2:charger", count: 1 },
+				{ type: "item", item: "ae2:charged_certus_quartz_crystal", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:charged_certus_quartz_crystal", count: 8 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "ae2_009_fluix_crystals",
+			title: "&d9. In-World Alchemy: Fluix Crystals & Dust",
+			description: [
+				"&7Dig a 1-block hole filled with &9Water&7 and throw in:",
+				"&8• &b1x Charged Certus Quartz Crystal",
+				"&8• &f1x Nether Quartz",
+				"&8• &c1x Redstone Dust",
+				"",
+				"&7After a brief crackle of lightning, they fuse into &d2x Fluix Crystals&7! Crush half of them inside your &eMekanism Crusher&7 (or Inscriber) to obtain &dFluix Dust&7."
+			],
+			x: 12.5, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["ae2_008_the_charger"],
+			tasks: [
+				{ type: "item", item: "ae2:fluix_crystal", count: 16 },
+				{ type: "item", item: "ae2:fluix_dust", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:fluix_crystal", count: 16 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "ae2_010_crystal_growth_accelerator",
+			title: "&b10. Faster Buds: Crystal Growth Accelerator",
+			description: [
+				"&7Place &bCrystal Growth Accelerators&7 adjacent to your Budding Certus Quartz blocks and power them (via top/bottom cable).",
+				"",
+				"&7They shower the budding block with lightning, accelerating Certus Quartz cluster growth by 10x!"
+			],
+			x: 10.0, y: -4.5,
+			dependencies: ["ae2_006_budding_certus", "ae2_009_fluix_crystals"],
+			optional: true,
+			tasks: [ { type: "item", item: "ae2:growth_accelerator", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "ae2:certus_quartz_crystal", count: 32 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "ae2_011_silicon_smelting",
+			title: "&711. Refining Silicon",
+			description: [
+				"&7Smelt &bCertus Quartz Dust&7 (or Nether Quartz Dust) inside a Furnace or Mekanism Energized Smelter to produce &7Silicon&7.",
+				"",
+				"&7Every single AE2 Processor requires 1x Printed Silicon as its base layer!"
+			],
+			x: 15.0, y: -2.5,
+			dependencies: ["ae2_009_fluix_crystals"],
+			tasks: [ { type: "item", item: "ae2:silicon", count: 32 } ],
+			rewards: [
+				{ type: "item", item: "ae2:silicon", count: 32 },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "ae2_012_the_inscriber",
+			title: "&e12. The Inscriber (How Sidedness & Auto-Export Work)",
+			description: [
+				"&7Craft your first &eInscriber&7! You can power it directly with a Mekanism Universal Cable.",
+				"",
+				"&6&lNew in 1.21.1 – Easy Inscriber Automation:",
+				"&7In modern AE2, the Inscriber has two awesome buttons inside its GUI:",
+				"&8• &aAuto-Export: &7Automatically pushes finished items out into adjacent chests or pipes!",
+				"&8• &bBuffer Size (1 vs 64): &7Lets you insert full stacks of 64 Gold/Silicon/Certus/Diamonds instead of 1 item at a time!"
+			],
+			x: 15.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_009_fluix_crystals"],
+			tasks: [ { type: "item", item: "ae2:inscriber", count: 1 } ],
+			rewards: [
+				{ id: "11F12CFA41AA907C", type: "item", item: "ae2:inscriber" },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "ae2_013_printed_silicon",
+			title: "&713. Pressing Printed Silicon",
+			description: [
+				"&7Place your &7Inscriber Silicon Press&7 into the top slot of the Inscriber and feed &7Silicon&7 into the middle slot to stamp &7Printed Silicon&7."
+			],
+			x: 17.5, y: -2.5,
+			dependencies: ["ae2_011_silicon_smelting", "ae2_012_the_inscriber"],
+			tasks: [ { type: "item", item: "ae2:printed_silicon", count: 16 } ],
+			rewards: [
+				{ type: "item", item: "ae2:printed_silicon", count: 8 },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "ae2_014_logic_processor",
+			title: "&614. Gold Chips: Logic Processors",
+			description: [
+				"&81. &7Stamp &6Gold Ingots&7 with the &6Logic Press&7 to make &6Printed Logic Circuits&7.",
+				"&82. &7Remove the press, then put &6Printed Logic Circuit&7 (top), &cRedstone&7 (middle), and &7Printed Silicon&7 (bottom) into the Inscriber to create &6Logic Processors&7!"
+			],
+			x: 17.5, y: 0.0,
+			dependencies: ["ae2_012_the_inscriber", "ae2_013_printed_silicon"],
+			tasks: [
+				{ type: "item", item: "ae2:printed_logic_processor", count: 8 },
+				{ type: "item", item: "ae2:logic_processor", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:logic_processor", count: 8 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "ae2_015_calculation_processor",
+			title: "&b15. Certus Chips: Calculation Processors",
+			description: [
+				"&81. &7Stamp &bCertus Quartz Crystals&7 with the &bCalculation Press&7 to make &bPrinted Calculation Circuits&7.",
+				"&82. &7Combine &bPrinted Calculation Circuit&7 + &cRedstone&7 + &7Printed Silicon&7 in the Inscriber to create &bCalculation Processors&7 (used for Storage Cells and Crafting CPUs)!"
+			],
+			x: 20.0, y: 0.0,
+			dependencies: ["ae2_014_logic_processor"],
+			tasks: [
+				{ type: "item", item: "ae2:printed_calculation_processor", count: 8 },
+				{ type: "item", item: "ae2:calculation_processor", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:calculation_processor", count: 8 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "ae2_016_engineering_processor",
+			title: "&d16. Diamond Chips: Engineering Processors",
+			description: [
+				"&81. &7Stamp &bDiamonds&7 with the &dEngineering Press&7 to make &dPrinted Engineering Circuits&7.",
+				"&82. &7Combine &dPrinted Engineering Circuit&7 + &cRedstone&7 + &7Printed Silicon&7 in the Inscriber to create &dEngineering Processors&7 (used for Drives, Controllers, and Pattern Providers)!"
+			],
+			x: 22.5, y: 0.0,
+			dependencies: ["ae2_015_calculation_processor"],
+			tasks: [
+				{ type: "item", item: "ae2:printed_engineering_processor", count: 8 },
+				{ type: "item", item: "ae2:engineering_processor", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:engineering_processor", count: 8 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "ae2_017_acceleration_cards",
+			title: "&a17. Speeding It Up: Acceleration Cards",
+			description: [
+				"&7Is your Inscriber too slow? Craft &bBasic Cards&7 and &dAdvanced Cards&7, then turn Advanced Cards + Fluix Crystals into &aAcceleration Cards&7 (&fae2:speed_card&7)!",
+				"",
+				"&7Insert up to 4 Acceleration Cards into your Inscriber, Charger, or Import/Export Buses for a massive speed boost!"
+			],
+			x: 20.0, y: -2.5,
+			dependencies: ["ae2_015_calculation_processor"],
+			tasks: [
+				{ type: "item", item: "ae2:basic_card", count: 2 },
+				{ type: "item", item: "ae2:advanced_card", count: 2 },
+				{ type: "item", item: "ae2:speed_card", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:speed_card", count: 4 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "ae2_018_five_inscriber_setup",
+			title: "&e18. The 5-Inscriber Parallel Array",
+			description: [
+				"&7Until you unlock &dExtendedAE's Extended Inscriber&7, the smartest way to process chips is building &a5 Inscribers side-by-side&7:",
+				"&8• &7Inscriber 1: Dedicated Silicon Press",
+				"&8• &7Inscriber 2: Dedicated Logic Press",
+				"&8• &7Inscriber 3: Dedicated Calculation Press",
+				"&8• &7Inscriber 4: Dedicated Engineering Press",
+				"&8• &7Inscriber 5: Empty (for final Redstone assembly)!"
+			],
+			x: 22.5, y: -2.5,
+			dependencies: ["ae2_016_engineering_processor", "ae2_017_acceleration_cards"],
+			tasks: [ { type: "item", item: "ae2:inscriber", count: 4 } ],
+			rewards: [
+				{ type: "item", item: "ae2:speed_card", count: 8 },
+				{ type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "ae2_019_quartz_fiber_plastic_cables",
+			title: "&d19. Quartz Fiber & Fluix Glass Cables (Plastic Gate!)",
+			description: [
+				"&7First, craft &fQuartz Fiber&7 (Glass + Certus Dust). Placed between two cables, Quartz Fiber transfers &aAE Power ONLY (no data/channels)&7—which is crucial for building Sub-Networks later!",
+				"",
+				"&c&lCustom KubeJS Recipe – ME Fluix Glass Cable:",
+				"&7Combine &fQuartz Fiber&7 + &dFluix Crystals&7 + &fIndustrial Foregoing Plastic&7 to craft your first &dME Fluix Glass Cables&7! Standard Glass Cables carry up to &e8 Channels&7."
+			],
+			x: 25.5, y: 0.0,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["ae2_016_engineering_processor", "p0_plastic"],
+			tasks: [
+				{ type: "item", item: "ae2:quartz_fiber", count: 6 },
+				{ type: "item", item: "ae2:fluix_glass_cable", count: 16 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:fluix_glass_cable", count: 16 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_020_covered_and_smart_cables",
+			title: "&b20. Covered Cables & Smart Cables (See Your Channels!)",
+			description: [
+				"&7Wrap a Fluix Glass Cable with Wool to make an &8ME Covered Cable&7, then combine it with Redstone and Glowstone to make an &bME Fluix Smart Cable&7!",
+				"",
+				"&a&lWhy Smart Cables Are a Lifesaver:",
+				"&7Smart Cables have glowing Neon Stripes along their sides! Each lit stripe represents &e1 active channel (up to 8 stripes)&7. If a device isn't working, look at the Smart Cable stripes to see if you exceeded the 8-channel limit!"
+			],
+			x: 25.5, y: 2.5,
+			dependencies: ["ae2_019_quartz_fiber_plastic_cables"],
+			tasks: [
+				{ type: "item", item: "ae2:fluix_covered_cable", count: 8 },
+				{ type: "item", item: "ae2:fluix_smart_cable", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:fluix_smart_cable", count: 16 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "ae2_021_energy_acceptor",
+			title: "&b21. First Network Step 1: The Energy Acceptor",
+			description: [
+				"&6&lBuilding Your First Phase 0 Ad-Hoc Network (Step 1 of 5):",
+				"&7Because the ME Controller is locked until Phase 1B, you will build a controller-less &bAd-Hoc Network&7! An entire Ad-Hoc Network can support &eup to 8 channel-using devices total&7.",
+				"",
+				"&81. &7Craft an &bEnergy Acceptor&7 (&fae2:energy_acceptor&7) and connect it to your Mekanism power cables.",
+				"&82. &7Attach your &bME Fluix Smart Cable&7 to any side of the Energy Acceptor. (&aThe Energy Acceptor uses 0 channels!&7)"
+			],
+			x: 25.5, y: 5.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_020_covered_and_smart_cables"],
+			tasks: [ { type: "item", item: "ae2:energy_acceptor", count: 1 } ],
+			rewards: [
+				{ id: "6B180917213B48D1", type: "item", item: "ae2:energy_cell" },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_022_energy_cells",
+			title: "&922. Power Buffer: Energy Cell & Dense Energy Cell",
+			description: [
+				"&7If a large storage bus or crafting operation causes a sudden power spike, an unbuffered AE2 network will flicker offline and kick you out of the terminal GUI!",
+				"",
+				"&7Place an &9Energy Cell&7 (or &9Dense Energy Cell&7 made from 8 Energy Cells + Calculation Processor) anywhere on your cable line. It stores AE power like a battery and uses &a0 channels&7!"
+			],
+			x: 28.5, y: 5.0,
+			dependencies: ["ae2_021_energy_acceptor"],
+			tasks: [
+				{ type: "item", item: "ae2:energy_cell", count: 1 },
+				{ type: "item", item: "ae2:dense_energy_cell", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:energy_cell", count: 2 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_023_cores_and_panels",
+			title: "&e23. Formation Cores, Annihilation Cores & Illuminated Panels",
+			description: [
+				"&7Before we attach a screen or storage bus to your cable, craft the three fundamental building blocks of all AE2 cable parts:",
+				"&8• &bFormation Core: &7Converts digital data back into matter (used for Export Buses, Pattern Providers, Terminals).",
+				"&8• &cAnnihilation Core: &7Converts matter into digital data (used for Import Buses, Terminals).",
+				"&8• &eIlluminated Panel: &7The glowing display screen for all Terminals (also lights up your room!)."
+			],
+			x: 22.5, y: 5.0,
+			dependencies: ["ae2_021_energy_acceptor"],
+			tasks: [
+				{ type: "item", item: "ae2:formation_core", count: 4 },
+				{ type: "item", item: "ae2:annihilation_core", count: 4 },
+				{ type: "item", item: "ae2:semi_dark_monitor", count: 3 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:formation_core", count: 4 },
+				{ type: "item", item: "ae2:annihilation_core", count: 4 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "ae2_024_crafting_terminal",
+			title: "&b24. First Network Step 2: ME Crafting Terminal",
+			description: [
+				"&6&lBuilding Your First Phase 0 Ad-Hoc Network (Step 2 of 5):",
+				"&7Craft an &bME Terminal&7 and upgrade it with a Crafting Table and Calculation Processor into an &bME Crafting Terminal&7!",
+				"",
+				"&7Place it directly onto the front of your Smart Cable. It lights up! (&eChannels Used: 1 / 8&7)."
+			],
+			x: 19.5, y: 5.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_023_cores_and_panels"],
+			tasks: [
+				{ type: "item", item: "ae2:terminal", count: 1 },
+				{ type: "item", item: "ae2:crafting_terminal", count: 1 }
+			],
+			rewards: [ { type: "xp", xp: 150 } ]
+		},
+		{
+			id: "ae2_025_storage_bus_drawers",
+			title: "&625. First Network Step 3: Storage Bus on Drawer Controller!",
+			description: [
+				"&6&lBuilding Your First Phase 0 Ad-Hoc Network (Step 3 of 5):",
+				"&7Before filling up expensive digital disks with thousands of Cobblestone, Iron, and Logs, craft an &bME Storage Bus&7!",
+				"",
+				"&ePro Trick:",
+				"&7Attach the &bME Storage Bus&7 directly onto your &6Storage Drawers Controller&7 and set its Priority inside the GUI to &a+1000&7! Now your entire wall of drawers is accessible inside your Crafting Terminal while using only &e1 Channel&7! (&eChannels Used: 2 / 8&7)."
+			],
+			x: 16.5, y: 5.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_024_crafting_terminal"],
+			tasks: [ { type: "item", item: "ae2:storage_bus", count: 1 } ],
+			rewards: [
+				{ id: "380A275F969D5098", type: "item", item: "ae2:storage_bus" },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_026_me_drive_and_chest",
+			title: "&b26. First Network Step 4: The ME Drive",
+			description: [
+				"&6&lBuilding Your First Phase 0 Ad-Hoc Network (Step 4 of 5):",
+				"&7For non-bulk items, tools, and fluids, craft an &bME Drive&7 (or an &bME Chest&7 for a single cell).",
+				"",
+				"&7An &bME Drive&7 holds &a10 Storage Cells&7 in a single block while consuming only &e1 Channel&7! Connect it to your Smart Cable next to your Crafting Terminal (&eChannels Used: 3 / 8&7)."
+			],
+			x: 13.5, y: 5.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_025_storage_bus_drawers"],
+			tasks: [ { type: "item", item: "ae2:drive", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "ae2:item_cell_housing", count: 2 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_027_1k_4k_cells",
+			title: "&a27. First Network Step 5: 1k & 4k Item Storage Cells!",
+			description: [
+				"&6&lBuilding Your First Phase 0 Ad-Hoc Network (Step 5 of 5):",
+				"&7Craft &b1k&7 and &b4k ME Storage Components&7, place them inside &fME Item Cell Housings&7, and slide your new &a1k & 4k ME Item Storage Cells&7 into your ME Drive!",
+				"",
+				"&a&lHow AE2 Storage Cells Work (Bytes vs. 63 Types):",
+				"&8• &7Every Item Storage Cell (whether 1k or 256k) can hold a maximum of &e63 different item types&7!",
+				"&8• &7Unstackable items with random durability/NBT (like mob-dropped bows and armor) eat up 1 of your 63 types each—keep trash gear out of your Drives or salvage it in an Apotheosis Salvaging Table!",
+				"",
+				"&aCongratulations! Your Phase 0 Ad-Hoc Network is 100% operational with 5 spare channels left!"
+			],
+			x: 10.5, y: 5.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["ae2_026_me_drive_and_chest"],
+			tasks: [
+				{ type: "item", item: "ae2:cell_component_1k", count: 3 },
+				{ type: "item", item: "ae2:cell_component_4k", count: 1 },
+				{ type: "item", item: "ae2:item_storage_cell_4k", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:item_storage_cell_4k", count: 2 },
+				{ type: "toast", title: "First AE2 Network Online!", description: "You built your 8-channel Ad-Hoc Network!" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_028_wireless_booster_early",
+			title: "&b28. Local Wireless Access Point & Boosters",
+			description: [
+				"&7Even before unlocking the Phase 3 Quantum Bridge Card, you can attach an &bME Wireless Access Point&7 to your network (uses 1 channel) and fill it with &bWireless Boosters&7 for short-range wireless access around your base room!"
+			],
+			x: 10.5, y: 2.5,
+			dependencies: ["ae2_027_1k_4k_cells"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "ae2:wireless_access_point", count: 1 },
+				{ type: "item", item: "ae2:wireless_booster", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:wireless_booster", count: 8 },
+				{ type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "ae2_029_16k_64k_cells",
+			title: "&b29. Scaling Storage: 16k & 64k Item Cells",
+			description: [
+				"&7Combine 3x 4k Components with a Calculation Processor for a &b16k Component&7, and 3x 16k Components for a &664k Component&7!",
+				"",
+				"&eTip: &7Hold an empty Storage Cell in your hand and &eSneak + Right-Click in the air&7 to pop the Storage Component out of its Housing so you can upgrade it to the next tier without wasting the housing!"
+			],
+			x: 7.5, y: 5.0,
+			dependencies: ["ae2_027_1k_4k_cells"],
+			tasks: [
+				{ type: "item", item: "ae2:item_storage_cell_16k", count: 1 },
+				{ type: "item", item: "ae2:item_storage_cell_64k", count: 1 }
+			],
+			rewards: [
+				{ id: "6AE02A996647A7FB", type: "item", item: "ae2:item_storage_cell_16k" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_030_256k_cells",
+			title: "&d30. Maximum Base Density: 256k Item Storage Cell",
+			description: [
+				"&7Using &8Sky Dust&7 (crushed Sky Stone), craft the massive &d256k ME Item Storage Cell&7—capable of storing hundreds of thousands of items inside a single drive slot!"
+			],
+			x: 5.0, y: 5.0,
+			dependencies: ["ae2_029_16k_64k_cells"],
+			tasks: [
+				{ type: "item", item: "ae2:sky_dust", count: 4 },
+				{ type: "item", item: "ae2:item_storage_cell_256k", count: 1 }
+			],
+			rewards: [
+				{ id: "374D4124DDCF0E4C", type: "item", item: "ae2:item_storage_cell_64k" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_031_fluid_storage_cells",
+			title: "&931. Digital Liquids: ME Fluid Storage Cells",
+			description: [
+				"&7Place a 1k–256k Storage Component inside a Copper &9ME Fluid Cell Housing&7 to create an &9ME Fluid Storage Cell&7!",
+				"",
+				"&7Each Fluid Cell holds up to &b18 different fluid types&7 (Water, Lava, Latex, Pink Slime, Liquid Starlight, Ether Gas, Rocket Fuel, Cryo Fuel!). You can fill/empty buckets directly inside your normal Crafting Terminal!"
+			],
+			x: 7.5, y: 2.5,
+			dependencies: ["ae2_027_1k_4k_cells"],
+			tasks: [
+				{ type: "item", item: "ae2:fluid_cell_housing", count: 2 },
+				{ type: "item", item: "ae2:fluid_storage_cell_16k", count: 1 }
+			],
+			rewards: [
+				{ id: "505E6A6A100293F1", type: "item", item: "ae2:fluid_storage_cell_16k" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_032_cell_workbench",
+			title: "&e32. Partitioning Cells: The Cell Workbench",
+			description: [
+				"&7Want a specific Fluid Cell to ONLY accept &dPink Slime&7 and &3Ether Gas&7, or an Item Cell to only accept Gems?",
+				"",
+				"&7Place the cell inside a &eCell Workbench&7! Here you can set an exact item/fluid filter (Partition) and insert Upgrade Cards directly into the cell!"
+			],
+			x: 5.0, y: 2.5,
+			dependencies: ["ae2_029_16k_64k_cells"],
+			tasks: [ { type: "item", item: "ae2:cell_workbench", count: 1 } ],
+			rewards: [ { type: "xp", xp: 150 } ]
+		},
+		{
+			id: "ae2_033_cell_upgrade_cards",
+			title: "&c33. Equal Distribution & Overflow Destruction Cards",
+			description: [
+				"&7Insert these two genius cards into your Storage Cells inside the Cell Workbench:",
+				"&8• &bEqual Distribution Card: &7Splits the cell's bytes evenly across item types so one item can't hog 100% of the disk.",
+				"&8• &cOverflow Destruction Card: &7Automatically voids any excess items/fluids once a partitioned cell is 100% full—preventing automated farms from clogging your entire AE2 network!"
+			],
+			x: 2.5, y: 2.5,
+			dependencies: ["ae2_032_cell_workbench"],
+			tasks: [
+				{ type: "item", item: "ae2:equal_distribution_card", count: 1 },
+				{ type: "item", item: "ae2:void_card", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:void_card", count: 2 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_034_io_port",
+			title: "&b34. Defragmenting Drives: The ME IO Port",
+			description: [
+				"&7Upgrading from 4k cells to 64k cells? Don't move thousands of items by hand!",
+				"",
+				"&7Connect an &bME IO Port&7 to your network, drop your old 4k cells in the left slot, and toggle the arrow to &eEmpty to Network&7—it dumps all items onto your new 64k drives in seconds (especially with Speed Cards installed)!"
+			],
+			x: 2.5, y: 5.0,
+			dependencies: ["ae2_029_16k_64k_cells"],
+			tasks: [ { type: "item", item: "ae2:io_port", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "ae2:speed_card", count: 4 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_035_portable_cells",
+			title: "&a35. Portable Cells (Digital Backpacks)",
+			description: [
+				"&7Combine an ME Chest, Energy Cell, and Storage Component to craft a &aPortable Item or Fluid Cell&7—a handheld battery-powered mini-terminal you can take on mining trips!"
+			],
+			x: 0.0, y: 5.0,
+			dependencies: ["ae2_034_io_port"],
+			optional: true,
+			tasks: [ { type: "item", item: "ae2:portable_item_cell_4k", count: 1 } ],
+			rewards: [ { type: "xp", xp: 125 } ]
+		},
+		{
+			id: "ae2_036_me_controller",
+			title: "&d&l36. The Brain: ME Controller (Phase 1B Unlock!)",
+			description: [
+				"&7Once you slay the Hydra, Alpha Yeti, and Snow Queen in Phase 1B, you unlock the heart of AE2: the &dME Controller&7!",
+				"",
+				"&6&lCustom KubeJS Recipe:",
+				"&8• &cFiery Blood &7(Hydra) + &fAlpha Yeti Fur &7+ &bIce Bomb &7(Snow Queen) + &bAquamarine &7(Astral Sorcery) + &8Smooth Sky Stone &7+ &dEngineering Processor&7.",
+				"",
+				"&a&lHow ME Controller Multiblocks Work:",
+				"&81. &7Each exposed face of an ME Controller outputs &a32 Channels&7!",
+				"&82. &7You can connect multiple ME Controllers together in a hollow frame or cross up to &e7x7x7&7.",
+				"&83. &cRule: &7No single controller block may touch more than 3 other controller blocks along the same axis (no 2x2 solid squares), and a network can only have ONE connected Controller multiblock!"
+			],
+			x: 0.0, y: 8.5,
+			size: 1.65,
+			shape: "gear",
+			dependencies: ["ae2_027_1k_4k_cells", "p1b_slay_snow_queen"],
+			tasks: [ { type: "item", item: "ae2:controller", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "ae2:controller", count: 3 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_037_dense_smart_cables",
+			title: "&d37. 32-Channel Highways: ME Smart Dense Cables",
+			description: [
+				"&7Normal Fluix Glass/Smart Cables only carry 8 channels—if you plug a normal cable into an ME Controller face, you waste 24 of its 32 channels!",
+				"",
+				"&7Combine 4 Covered/Smart Cables with Redstone and Glowstone to craft thick &dME Fluix Smart Dense Cables&7! Plug Dense Cables directly into your ME Controller faces to carry all &a32 channels&7 per line, then branch off with normal 8-channel Smart Cables!"
+			],
+			x: 3.0, y: 8.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_036_me_controller"],
+			tasks: [
+				{ type: "item", item: "ae2:fluix_covered_dense_cable", count: 8 },
+				{ type: "item", item: "ae2:fluix_smart_dense_cable", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:fluix_smart_dense_cable", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_038_colored_cables_anchors",
+			title: "&e38. Cable Anchors, Facades & Color Coding",
+			description: [
+				"&7Running two Dense Cables side-by-side? If both are purple Fluix, they will merge and overload!",
+				"",
+				"&eTwo Ways to Keep Parallel Cables Separate:",
+				"&81. &bColor Coding: &7Craft colored Smart/Dense Cables using any Dye (or paint placed cables with a &bColor Applicator&7). Different colored cables NEVER connect to each other (only to unpainted Fluix cables)!",
+				"&82. &7Cable Anchors: &7Cut Iron/Osmium with a knife/saw to make &7Cable Anchors&7. Place an anchor between two cables of the same color to stop them from connecting, or craft 4 Anchors + any block into &fCable Facades&7 to hide cables inside walls!"
+			],
+			x: 6.0, y: 8.5,
+			dependencies: ["ae2_037_dense_smart_cables"],
+			tasks: [ { type: "item", item: "ae2:cable_anchor", count: 16 } ],
+			rewards: [
+				{ type: "item", item: "ae2:cable_anchor", count: 32 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_039_network_tool",
+			title: "&b39. Diagnostics: The Network Tool",
+			description: [
+				"&7Craft a &bNetwork Tool&7! Right-clicking any cable or machine on your AE2 network opens a diagnostic window showing total power draw, energy storage, and every active block and channel on the network. Plus, it acts as a 9-slot pouch for your Upgrade Cards!"
+			],
+			x: 6.0, y: 11.0,
+			dependencies: ["ae2_038_colored_cables_anchors"],
+			tasks: [ { type: "item", item: "ae2:network_tool", count: 1 } ],
+			rewards: [ { type: "xp", xp: 125 } ]
+		},
+		{
+			id: "ae2_040_p2p_tunnels_guide",
+			title: "&b40. Mastering P2P Tunnels & The Memory Card",
+			description: [
+				"&7How do pros wire 500 machines without running thick Dense Cables everywhere? &bME P2P Tunnels&7!",
+				"",
+				"&6&lStep-by-Step P2P Channel Compression Guide:",
+				"&81. &7Place an &bME P2P Tunnel&7 flat against a face of your &dME Controller&7 (this is your &aInput P2P&7, capable of sucking in 32 channels).",
+				"&82. &7Connect the back of that P2P Tunnel to a standard 8-channel cable (the P2P tunnel itself only uses &e1 channel&7 on this carrier wire— meaning 1 standard wire can carry &a8 P2P tunnels = 256 channels&7!).",
+				"&83. &7In your machine room, place an &cOutput ME P2P Tunnel&7 on the carrier wire.",
+				"&84. &7Hold a &eMemory Card&7: &aShift + Right-Click&7 the Input P2P (at the Controller) to copy its frequency, then &aRight-Click&7 the Output P2P (in the machine room) to link them!",
+				"&85. &7Now attach a Dense Cable to the front of the Output P2P—all 32 channels from the Controller appear right there!"
+			],
+			x: 9.0, y: 8.5,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["ae2_038_colored_cables_anchors"],
+			tasks: [
+				{ type: "item", item: "ae2:me_p2p_tunnel", count: 2 },
+				{ type: "item", item: "ae2:memory_card", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:me_p2p_tunnel", count: 4 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_041_fe_fluid_item_p2p",
+			title: "&641. Attuning P2P Tunnels (FE, Fluids, Redstone, Light)",
+			description: [
+				"&7Did you know P2P Tunnels don't just carry AE2 channels? Right-click a placed ME P2P Tunnel with an item to attune it:",
+				"&8• &cUniversal Cable / Energy Cell: &7Turns into an &cFE Power P2P Tunnel&7!",
+				"&8• &9Bucket: &7Turns into a &9Fluid P2P Tunnel&7!",
+				"&8• &6Chest / Hopper: &7Turns into an &6Item P2P Tunnel&7!",
+				"&8• &4Redstone Torch: &7Turns into a &4Redstone P2P Tunnel&7!"
+			],
+			x: 9.0, y: 11.0,
+			dependencies: ["ae2_040_p2p_tunnels_guide"],
+			optional: true,
+			tasks: [ { type: "checkmark" } ],
+			rewards: [
+				{ type: "item", item: "ae2:me_p2p_tunnel", count: 2 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_042_import_export_buses",
+			title: "&b42. Automation Basics: Import & Export Buses",
+			description: [
+				"&8• &bME Import Bus: &7Attach to any chest or machine output side to pull items/fluids/gases into your AE2 storage.",
+				"&8• &bME Export Bus: &7Attach to any machine input side and put an item/fluid in its filter slot to continuously push that resource from your AE2 storage into the machine!"
+			],
+			x: 12.0, y: 8.5,
+			dependencies: ["ae2_040_p2p_tunnels_guide"],
+			tasks: [
+				{ type: "item", item: "ae2:import_bus", count: 4 },
+				{ type: "item", item: "ae2:export_bus", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:speed_card", count: 8 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_043_capacity_fuzzy_redstone_cards",
+			title: "&e43. Bus Upgrade Cards: Capacity, Fuzzy, Redstone & Inverter",
+			description: [
+				"&7Supercharge your Import, Export, and Storage Buses with specialized Upgrade Cards:",
+				"&8• &bCapacity Card: &7Expands an Import/Export Bus filter from 1 slot up to 9 slots!",
+				"&8• &eFuzzy Card: &7Lets a bus ignore item durability/damage (great for filtering damaged armor drops!).",
+				"&8• &cRedstone Card: &7Lets you turn a bus ON/OFF with a Level Emitter or Redstone signal.",
+				"&8• &8Inverter Card: &7Changes a Storage/Export Bus filter from a Whitelist into a Blacklist!"
+			],
+			x: 12.0, y: 11.0,
+			dependencies: ["ae2_042_import_export_buses"],
+			tasks: [
+				{ type: "item", item: "ae2:capacity_card", count: 2 },
+				{ type: "item", item: "ae2:fuzzy_card", count: 1 },
+				{ type: "item", item: "ae2:redstone_card", count: 1 },
+				{ type: "item", item: "ae2:inverter_card", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:capacity_card", count: 2 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_044_formation_annihilation_planes",
+			title: "&344. In-World Automation & Subnets: Formation & Annihilation Planes",
+			description: [
+				"&8• &bME Formation Plane: &7Acts like a Storage Bus that places blocks or drops items directly into the world in front of it! (Amazing for placing Iron Ore on an Astral Focal Point or placing logs for Industrial Foregoing Fluid Extractors!)",
+				"&8• &cME Annihilation Plane: &7Automatically breaks any block in front of it (and can even be enchanted with &bFortune III&7 or &bSilk Touch&7 in an anvil!).",
+				"",
+				"&eHow to Build a 0-Channel Subnet:",
+				"&7Separate a small cable line from your main network using &fQuartz Fiber&7 (transfers power only). On that isolated cable, place an &cAnnihilation Plane&7 + a filtered &bStorage Bus&7 pointing into a chest—it will only break blocks once they transform into the filtered item (like Certus Clusters or Starmetal Ore)!"
+			],
+			x: 15.0, y: 8.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_042_import_export_buses"],
+			tasks: [
+				{ type: "item", item: "ae2:formation_plane", count: 1 },
+				{ type: "item", item: "ae2:annihilation_plane", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:quartz_fiber", count: 8 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_045_me_interface_stockkeeping",
+			title: "&b45. The ME Interface & Crafting Cards",
+			description: [
+				"&7An &bME Interface&7 (full block or flat cable part) is your network's universal doorway:",
+				"&81. &aUniversal Input: &7Any item, fluid, or gas piped into an ME Interface goes straight into your AE2 storage!",
+				"&82. &ePassive Stock-Keeping: &7Set an item/fluid in the top filter slot (e.g., 64 Enriched Redstone) and insert a &eCrafting Card&7—the Interface will automatically keep 64 Enriched Redstone stocked at all times!"
+			],
+			x: 18.0, y: 8.5,
+			dependencies: ["ae2_044_formation_annihilation_planes"],
+			tasks: [
+				{ type: "item", item: "ae2:interface", count: 2 },
+				{ type: "item", item: "ae2:crafting_card", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:interface", count: 2 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_046_level_emitters",
+			title: "&c46. Stock Control: ME Level Emitters",
+			description: [
+				"&7Want your Wither Skull Ritual or Latex line to automatically stop once you have 1,000 Plastic in storage?",
+				"",
+				"&7Point an &cME Level Emitter&7 at your machine or Export Bus (with a Redstone Card), put Plastic in the Emitter's filter, type `1000`, and set it to emit/stop a redstone signal when that threshold is reached!"
+			],
+			x: 18.0, y: 11.0,
+			dependencies: ["ae2_045_me_interface_stockkeeping"],
+			tasks: [ { type: "item", item: "ae2:level_emitter", count: 2 } ],
+			rewards: [ { type: "xp", xp: 150 } ]
+		},
+		{
+			id: "ae2_047_blank_patterns_encoding",
+			title: "&b47. Autocrafting Step 1: Blank Patterns & Encoding Terminal",
+			description: [
+				"&6&lWelcome to Step-by-Step Autocrafting (Step 1 of 6):",
+				"&7Craft &bBlank Patterns&7 and attach an &bME Pattern Encoding Terminal&7 to your network.",
+				"",
+				"&eThe Two Types of Patterns Inside the Encoding Terminal:",
+				"&81. &aCrafting Table Icon (Crafting Pattern): &7For normal 3x3 Crafting Table recipes and Smithing/Stonecutting recipes (executed inside &bMolecular Assemblers&7).",
+				"&82. &6Furnace Icon (Processing Pattern): &7For machines—Smelters, Crushers, Metallurgic Infusers, Inscribers, Dissolution Chambers, and Cooking Pots!"
+			],
+			x: 21.0, y: 8.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_045_me_interface_stockkeeping"],
+			tasks: [
+				{ type: "item", item: "ae2:blank_pattern", count: 16 },
+				{ type: "item", item: "ae2:pattern_encoding_terminal", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:blank_pattern", count: 32 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_048_crafting_cpu_units",
+			title: "&a48. Autocrafting Step 2: Crafting Units & Co-Processors",
+			description: [
+				"&6&lStep-by-Step Autocrafting (Step 2 of 6 – Building the Brain):",
+				"&7To run a crafting request, your network needs a rectangular multiblock &aCrafting CPU&7! Every block in the cuboid must be a Crafting Unit derivative:",
+				"&8• &7Crafting Unit: &7Base frame block.",
+				"&8• &dCrafting Co-Processing Unit: &7Adds parallel threads so one CPU can push ingredients into multiple Molecular Assemblers or machines simultaneously!",
+				"&8• &bCrafting Monitor: &7Displays the icon and count of the item currently being crafted."
+			],
+			x: 24.0, y: 8.5,
+			dependencies: ["ae2_047_blank_patterns_encoding"],
+			tasks: [
+				{ type: "item", item: "ae2:crafting_unit", count: 4 },
+				{ type: "item", item: "ae2:crafting_accelerator", count: 2 },
+				{ type: "item", item: "ae2:crafting_monitor", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:crafting_accelerator", count: 2 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_049_crafting_storage_1k_to_256k",
+			title: "&a49. Autocrafting Step 3: 1k to 256k Crafting Storage",
+			description: [
+				"&6&lStep-by-Step Autocrafting (Step 3 of 6):",
+				"&7Combine Crafting Units with 1k–256k Storage Components to create &b1k, 4k, 16k, 64k, or 256k Crafting Storage&7 blocks!",
+				"",
+				"&eHow to Assemble Your First Crafting CPU:",
+				"&7Place &b1x 16k Crafting Storage + 2x Co-Processing Units + 1x Crafting Monitor&7 in a 2x2x1 rectangle (or 1x4 line) connected to a cable. The multiblock will merge into a single Crafting CPU using only &e1 Channel&7! Build 4 to 6 separate Crafting CPUs so your base can run multiple jobs at once!"
+			],
+			x: 27.0, y: 8.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_048_crafting_cpu_units"],
+			tasks: [
+				{ type: "item", item: "ae2:4k_crafting_storage", count: 1 },
+				{ type: "item", item: "ae2:16k_crafting_storage", count: 1 },
+				{ type: "item", item: "ae2:64k_crafting_storage", count: 1 }
+			],
+			rewards: [
+				{ id: "B4C1048C478C8008", type: "item", item: "ae2:64k_crafting_storage" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_050_pattern_providers_molecular_assemblers",
+			title: "&b50. Autocrafting Step 4: Pattern Providers & Molecular Assemblers",
+			description: [
+				"&6&lStep-by-Step Autocrafting (Step 4 of 6 – 3x3 Crafting Recipes):",
+				"&7Craft &bME Pattern Providers&7 and &bMolecular Assemblers&7!",
+				"",
+				"&eHow to Build a Molecular Assembler Checkerboard:",
+				"&81. &7Place an &bME Pattern Provider&7 and surround all 6 of its faces with &bMolecular Assemblers&7 (Pattern Providers automatically power adjacent Molecular Assemblers and share channels!).",
+				"&82. &7Insert 5x &aAcceleration Cards&7 into each Molecular Assembler.",
+				"&83. &7Put your encoded &a3x3 Crafting Patterns&7 inside the Pattern Provider—now you can middle-click any 3x3 item in your Crafting Terminal to craft it automatically!"
+			],
+			x: 27.0, y: 11.5,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["ae2_049_crafting_storage_1k_to_256k"],
+			tasks: [
+				{ type: "item", item: "ae2:pattern_provider", count: 4 },
+				{ type: "item", item: "ae2:molecular_assembler", count: 6 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:pattern_provider", count: 2 },
+				{ type: "item", item: "ae2:molecular_assembler", count: 4 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_051_pattern_access_terminal",
+			title: "&b51. Remote Pattern Management: Pattern Access Terminal",
+			description: [
+				"&7Once you have dozens of Pattern Providers spread across your base, don't walk around looking for them!",
+				"",
+				"&7Attach an &bME Pattern Access Terminal&7 next to your main Crafting Terminal—it lists every single Pattern Provider on your network so you can insert or remove patterns from one screen!"
+			],
+			x: 24.0, y: 11.5,
+			dependencies: ["ae2_050_pattern_providers_molecular_assemblers"],
+			tasks: [ { type: "item", item: "ae2:pattern_access_terminal", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "ae2:blank_pattern", count: 16 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_052_machine_autocrafting_mekanism",
+			title: "&652. Autocrafting Step 5: Machine Processing (Smelters & Infusers)",
+			description: [
+				"&6&lStep-by-Step Autocrafting (Step 5 of 6 – Automating Mekanism Machines):",
+				"&7How do you automate &cInfused Alloys&7, &bControl Circuits&7, or &fSteel&7 inside a Mekanism Metallurgic Infuser or Smelter?",
+				"",
+				"&81. &7Place an &bME Pattern Provider&7 directly touching the back of your Mekanism machine.",
+				"&82. &7Open the Mekanism machine's &eSide Config&7 -> &cItems&7 tab:",
+				"   &8• &7Set the back face (touching the Pattern Provider) to &dInput/Output (Purple)&7 and click &aAuto-Eject ON&7!",
+				"   &8• &7Set another face (or the same face if using Enriched Carbon/Redstone via an Export Bus!) to &eExtra (Yellow)&7 to keep the machine permanently filled with Enriched Redstone/Carbon/Diamond!",
+				"&83. &7Encode a &6Processing Pattern&7 (e.g., 1x Iron Ingot -> 1x Infused Alloy) and place it inside the Pattern Provider!"
+			],
+			x: 21.0, y: 11.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_050_pattern_providers_molecular_assemblers"],
+			tasks: [
+				{ type: "item", item: "ae2:pattern_provider", count: 2 },
+				{ type: "item", item: "mekanism:metallurgic_infuser", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "mekanism:enriched_redstone", count: 16 },
+				{ type: "item", item: "mekanism:enriched_diamond", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_053_dissolution_chamber_autocrafting",
+			title: "&b53. Autocrafting Step 6: Fluid + Item Processing (Dissolution Chamber!)",
+			description: [
+				"&6&lStep-by-Step Autocrafting (Step 6 of 6 – Multi-Input Fluid + Item Machines):",
+				"&7In modern AE2 (1.21.1), a single &bME Pattern Provider&7 can push &aBOTH Items AND Fluids&7 from a Processing Pattern at the same time!",
+				"",
+				"&eHow to Automate the Industrial Foregoing Dissolution Chamber:",
+				"&81. &7In the Pattern Encoding Terminal (Processing Mode), click the `+` on the recipe from JEI—both the 8 solid items AND the exact mB of Liquid Latex / Pink Slime / Ether Gas will appear in the pattern!",
+				"&82. &7Place the &bPattern Provider&7 directly on the Dissolution Chamber.",
+				"&83. &7Inside the Pattern Provider GUI, turn &cBlocking Mode ON&7 (so it waits for one craft to finish before sending the next) and set the Dissolution Chamber's Item & Fluid sides to push/pull from the Provider!"
+			],
+			x: 18.0, y: 14.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_052_machine_autocrafting_mekanism"],
+			tasks: [ { type: "item", item: "industrialforegoing:dissolution_chamber", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "ae2:blank_pattern", count: 16 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_054_applied_delight_kitchen_autocrafting",
+			title: "&654. Applied Delight: Automating the Cooking Pot & Cutting Board!",
+			description: [
+				"&7Thanks to &6Applied Delight&7, your AE2 network is also a 5-star Masterchef!",
+				"",
+				"&8• &7Place an &bME Pattern Provider&7 against a &6Farmer's Delight Cooking Pot&7 (over a Stove) or &fCutting Board&7.",
+				"&8• &7Encode Processing Patterns for &6Spicy Hoglin Stew&7, &cStriderloaf&7, &bGuardian Soup&7, &5Dragon Leg with Sauce&7, and eventually &6The Allthemodium Apple&7!",
+				"&8• &7Pull finished dishes out into your Pattern Provider or via an Import Bus!"
+			],
+			x: 21.0, y: 14.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_052_machine_autocrafting_mekanism"],
+			tasks: [
+				{ type: "item", item: "farmersdelight:cooking_pot", count: 1 },
+				{ type: "item", item: "farmersdelight:cutting_board", count: 1 }
+			],
+			rewards: [
+				{ type: "random", table_id: "delight_feast" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_055_crafting_tree_visualizer",
+			title: "&a55. AE2: Crafting Tree Visualizer",
+			description: [
+				"&7Notice the new visual tree tab when ordering a complex craft like a Tier Installer or Supreme Machine Frame?",
+				"",
+				"&7Thanks to &aAE2: Crafting Tree&7, you can view a full visual flowchart of every sub-step in your crafting job, zoom in/out, and spot exactly which bottleneck machine is holding up your order!"
+			],
+			x: 24.0, y: 14.0,
+			dependencies: ["ae2_050_pattern_providers_molecular_assemblers"],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [ { type: "xp", xp: 150 } ]
+		},
+		{
+			id: "ae2_056_appmek_housing",
+			title: "&956. Applied Mekanistics: Chemical Cell Housing",
+			description: [
+				"&7With &9Applied Mekanistics&7, your AE2 network can store, transport, and autocraft with every &bMekanism Gas, Infuse Type, Pigment, and Ore Slurry&7!",
+				"",
+				"&7Start by crafting an &bME Chemical Cell Housing&7 using Osmium Ingots, Quartz Glass, and Redstone."
+			],
+			x: 15.0, y: 14.0,
+			dependencies: ["ae2_053_dissolution_chamber_autocrafting"],
+			tasks: [ { type: "item", item: "appmek:chemical_cell_housing", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "appmek:chemical_cell_housing", count: 2 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_057_appmek_1k_to_16k_cells",
+			title: "&957. 1k to 16k Chemical Storage Cells",
+			description: [
+				"&7Combine standard AE2 1k, 4k, or 16k Storage Components with Chemical Cell Housings to craft &b1k, 4k, and 16k ME Chemical Storage Cells&7!",
+				"",
+				"&7Each Chemical Cell holds up to &b18 different Mekanism chemical types&7 (Oxygen, Hydrogen, Ethylene, Chlorine, Hydrogen Chloride, Sulfuric Acid, Fissile Fuel, Polonium, etc.)!"
+			],
+			x: 12.0, y: 14.0,
+			dependencies: ["ae2_056_appmek_housing"],
+			tasks: [
+				{ type: "item", item: "appmek:chemical_storage_cell_1k", count: 1 },
+				{ type: "item", item: "appmek:chemical_storage_cell_4k", count: 1 },
+				{ type: "item", item: "appmek:chemical_storage_cell_16k", count: 1 }
+			],
+			rewards: [
+				{ id: "536BF029D2817827", type: "item", item: "appmek:chemical_storage_cell_16k" },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_058_appmek_64k_256k_cells",
+			title: "&958. High-Capacity 64k & 256k Chemical Cells",
+			description: [
+				"&7Need to buffer millions of mB of Nuclear Waste, Steam, or Sulfuric Acid for your 5x Ore Processing line? Upgrade to &664k&7 and &d256k ME Chemical Storage Cells&7!",
+				"",
+				"&cImportant Safety Note: &7Radioactive gases (like Nuclear Waste or Polonium targeting Fission) have special rules—normal Polonium/Plutonium gases and slurries store effortlessly!"
+			],
+			x: 9.0, y: 14.0,
+			dependencies: ["ae2_057_appmek_1k_to_16k_cells"],
+			tasks: [
+				{ type: "item", item: "appmek:chemical_storage_cell_64k", count: 1 },
+				{ type: "item", item: "appmek:chemical_storage_cell_256k", count: 1 }
+			],
+			rewards: [
+				{ id: "CCEDD9DE029F4288", type: "item", item: "appmek:chemical_storage_cell_64k" },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_059_appmek_chemical_p2p",
+			title: "&959. Gas Autocrafting & Chemical P2P Tunnels",
+			description: [
+				"&7Your standard &bME Import Bus, Export Bus, Storage Bus, Pattern Provider, and Interface&7 automatically support Mekanism Gases once Applied Mekanistics is installed!",
+				"",
+				"&ePro Tip: &7You can also right-click an &bME P2P Tunnel&7 with a Mekanism Gas Tank or Pressurized Tube to attune it into a &9Chemical P2P Tunnel&7!"
+			],
+			x: 9.0, y: 16.5,
+			dependencies: ["ae2_057_appmek_1k_to_16k_cells"],
+			optional: true,
+			tasks: [ { type: "checkmark" } ],
+			rewards: [
+				{ type: "item", item: "ae2:me_p2p_tunnel", count: 2 },
+				{ type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "ae2_060_applied_experienced",
+			title: "&a60. Applied Experienced: Digital XP Cells",
+			description: [
+				"&7With &aApplied Experienced&7, you can craft &aExperience Storage Cells&7 and an &aExperience Terminal / Acceptor&7!",
+				"",
+				"&7Drain your player XP levels directly into your AE2 drives before fighting bosses, and withdraw exact levels whenever you use your &5Apothic Enchanting Table&7!"
+			],
+			x: 6.0, y: 14.0,
+			shape: "rsquare",
+			dependencies: ["ae2_057_appmek_1k_to_16k_cells"],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "ae2_061_spatial_pylons_io",
+			title: "&361. Spatial IO: Packing Entire Rooms onto a Disk!",
+			description: [
+				"&7Did you know AE2 can teleport an entire 3D room (including machines, spawners, or a boss cage) into a digital pocket dimension?",
+				"",
+				"&7Craft a &3Spatial IO Port&7 and &3Spatial Pylons&7! Build a frame of Spatial Pylons around a room, insert a &3Spatial Storage Cell&7 (2³, 16³, or 128³), and supply a Redstone signal + massive AE power in Dense Energy Cells to pack the room inside the cell!"
+			],
+			x: 6.0, y: 16.5,
+			dependencies: ["ae2_036_me_controller"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "ae2:spatial_io_port", count: 1 },
+				{ type: "item", item: "ae2:spatial_pylon", count: 8 },
+				{ type: "item", item: "ae2:spatial_storage_cell_2", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:spatial_pylon", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_062_matter_condenser",
+			title: "&562. The Matter Condenser: Matter Balls & Singularities",
+			description: [
+				"&7To build a cross-dimensional &dQuantum Network Bridge&7 in Phase 2, you first need a &dSingularity&7!",
+				"",
+				"&6&lHow to Condense 256,000 Items in Seconds:",
+				"&81. &7Craft a &5Matter Condenser&7 (&fae2:condenser&7).",
+				"&82. &7Insert a &664k ME Storage Component&7 into the top-right slot and toggle the mode button to &dSingularity (256,000 items)&7.",
+				"&83. &7Pump infinite Water (from an Electric Pump with speed upgrades or a Sink) or pipe Cobblestone directly into the Matter Condenser—every mB/item counts toward the 256,000 total!"
+			],
+			x: 3.0, y: 14.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_036_me_controller"],
+			tasks: [
+				{ type: "item", item: "ae2:condenser", count: 1 },
+				{ type: "item", item: "ae2:matter_ball", count: 16 },
+				{ type: "item", item: "ae2:singularity", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:singularity", count: 2 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_063_quantum_entangled_singularity",
+			title: "&d63. Explosive Physics: Quantum Entangled Singularities",
+			description: [
+				"&7Crush an &3Ender Pearl&7 inside your Mekanism Crusher or Inscriber to obtain &3Ender Dust&7, and craft &cTiny TNT&7.",
+				"",
+				"&6&lHow to Create a Linked Pair:",
+				"&7Drop &d1x Singularity + 1x Ender Dust&7 on the ground together and detonate &cTiny TNT&7 (or regular TNT) right next to them! They will transform into a &dmatched pair of 2x Quantum Entangled Singularities&7.",
+				"",
+				"&ePro Tip: &7Rename the pair inside an Anvil (e.g., `Mining Dim` or `Orbital Station`) so you never mix up multiple pairs!"
+			],
+			x: 0.0, y: 14.0,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["ae2_062_matter_condenser"],
+			tasks: [
+				{ type: "item", item: "ae2:ender_dust", count: 2 },
+				{ type: "item", item: "ae2:tiny_tnt", count: 1 },
+				{ type: "item", item: "ae2:quantum_entangled_singularity", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:singularity", count: 2 },
+				{ type: "item", item: "ae2:ender_dust", count: 2 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_064_quantum_ring_link_chamber",
+			title: "&d&l64. The Quantum Network Bridge (Phase 2 Unlock!)",
+			description: [
+				"&7In Phase 2, once you have &9Starmetal Ingots&7, &6Allthemodium Ingots&7, a &fNether Star&7, and &3Echo Shards&7, you can construct the &dME Quantum Network Bridge&7!",
+				"",
+				"&6&lHow to Build a Two-Sided Quantum Bridge (16 Rings + 2 Links):",
+				"&81. &7Build a 3x3 vertical ring of &d8x ME Quantum Rings&7 around a central &d1x ME Quantum Link Chamber&7 at your home base.",
+				"&82. &7Build a second 3x3 ring (&d8x Quantum Rings + 1x Quantum Link Chamber&7) in the Mining Dimension, on your Orbital Space Station, or on Glacio!",
+				"&83. &7Put one half of your &dQuantum Entangled Singularity&7 pair into the Home Link Chamber, and the matching half into the Remote Link Chamber!",
+				"&84. &7Power the remote side (and chunkload both sides)—it transmits &a32 Channels&7 across dimensions!"
+			],
+			x: 0.0, y: 17.0,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["ae2_063_quantum_entangled_singularity", "p2_mine_allthemodium"],
+			tasks: [
+				{ type: "item", item: "ae2:quantum_ring", count: 16 },
+				{ type: "item", item: "ae2:quantum_link", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "ae2:quantum_ring", count: 8 },
+				{ id: "641F148E960DF1FB", type: "item", item: "ae2:quantum_link" },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_065_wireless_crafting_terminal",
+			title: "&565. AE2WTLib: Wireless Crafting Terminal (Phase 3)",
+			description: [
+				"&7In Phase 3, combine &aVibranium&7, &cDragon Scales&7, &cDragon Blood&7, and an &dAE2 Quantum Ring&7 to forge the &bWireless Crafting Terminal&7!",
+				"",
+				"&7Place it inside the top-right linking slot of your home &bME Wireless Access Point&7 to bind it to your network, and equip it in your dedicated Curios slot!"
+			],
+			x: 0.0, y: 20.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_064_quantum_ring_link_chamber", "p3_mine_vibranium"],
+			tasks: [ { type: "item", item: "ae2:wireless_crafting_terminal", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_066_wireless_pattern_terminals",
+			title: "&566. AE2WTLib: Wireless Pattern Encoding & Access Terminals",
+			description: [
+				"&7With &5AE2WTLib&7, you can also craft:",
+				"&8• &bWireless Pattern Encoding Terminal (&fae2wtlib:wireless_pattern_encoding_terminal&7)",
+				"&8• &bWireless Pattern Access Terminal (&fae2wtlib:wireless_pattern_access_terminal&7)",
+				"",
+				"&7Combine all three Wireless Terminals in a Crafting Table to merge them into the all-in-one &dWireless Universal Terminal&7!"
+			],
+			x: 3.0, y: 20.0,
+			dependencies: ["ae2_065_wireless_crafting_terminal"],
+			tasks: [
+				{ type: "item", item: "ae2wtlib:wireless_pattern_encoding_terminal", count: 1 },
+				{ type: "item", item: "ae2wtlib:wireless_pattern_access_terminal", count: 1 },
+				{ type: "item", item: "ae2wtlib:wireless_universal_terminal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "ae2_067_quantum_bridge_card",
+			title: "&d&l67. AE2WTLib: The Quantum Bridge Card (Infinite Range!)",
+			description: [
+				"&7Forget Wireless Boosters! Craft the &dQuantum Bridge Card&7 (&fae2wtlib:quantum_bridge_card&7) using &aVibranium&7, &cDragon Scales&7, &cDragon Blood&7, and an &dAE2 Quantum Ring&7!",
+				"",
+				"&7Insert the &dQuantum Bridge Card&7 into the upgrade slot of your Wireless Crafting / Universal Terminal—as long as your home Wireless Access Point is chunkloaded, you have &ainfinite range wireless access across all dimensions and planets&7!"
+			],
+			x: 6.0, y: 20.0,
+			size: 1.55,
+			shape: "gear",
+			dependencies: ["ae2_065_wireless_crafting_terminal"],
+			tasks: [ { type: "item", item: "ae2wtlib:quantum_bridge_card", count: 1 } ],
+			rewards: [
+				{ type: "toast", title: "Omnipresent AE2!", description: "Infinite cross-dimensional wireless access unlocked!" },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "ae2_068_magnet_card",
+			title: "&b68. AE2WTLib: The Magnet Card",
+			description: [
+				"&7Craft a &bMagnet Card&7 (&fae2wtlib:magnet_card&7) and insert it into your Wireless Terminal!",
+				"",
+				"&7Any items you mine anywhere in the universe are vacuumed straight into your home AE2 storage drives without ever touching your player inventory!"
+			],
+			x: 6.0, y: 22.5,
+			dependencies: ["ae2_067_quantum_bridge_card"],
+			tasks: [ { type: "item", item: "ae2wtlib:magnet_card", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_069_extendedae_intro_entro_seed",
+			title: "&a&l69. ExtendedAE Step 1: The Entro Seed",
+			description: [
+				"&7Now that you have mastered standard AE2, it is time to upgrade your entire base with &dExtendedAE&7!",
+				"",
+				"&6&lHow to Start ExtendedAE:",
+				"&81. &7Craft &aEntro Dust&7 / &aEntro Seeds&7 (&fextendedae:entro_seed&7).",
+				"&82. &7Right-click an &aEntro Seed&7 onto a placed &dFluix Block&7 (&fae2:fluix_block&7)—it transforms the Fluix Block into a &aBudding Entroized Fluix&7 block!"
+			],
+			x: 9.0, y: 20.0,
+			size: 1.5,
+			shape: "hexagon",
+			dependencies: ["ae2_050_pattern_providers_molecular_assemblers"],
+			tasks: [
+				{ type: "item", item: "ae2:fluix_block", count: 2 },
+				{ type: "item", item: "extendedae:entro_seed", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:entro_seed", count: 4 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_070_entro_crystals_dust",
+			title: "&a70. Harvesting Entro Crystals & Entro Dust",
+			description: [
+				"&7Place &bCrystal Growth Accelerators&7 around your Budding Entroized Fluix block and harvest fully grown clusters to obtain &aEntro Crystals&7 (&fextendedae:entro_crystal&7)!",
+				"",
+				"&7Crush half of your Entro Crystals into &aEntro Dust&7 (&fextendedae:entro_dust&7)."
+			],
+			x: 12.0, y: 20.0,
+			dependencies: ["ae2_069_extendedae_intro_entro_seed"],
+			tasks: [
+				{ type: "item", item: "extendedae:entro_crystal", count: 16 },
+				{ type: "item", item: "extendedae:entro_dust", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:entro_crystal", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_071_entro_ingots_blocks",
+			title: "&a71. Forging Entro Ingots & Entro Blocks",
+			description: [
+				"&7Combine &aEntro Dust&7, &6Gold/Iron&7, and &3Lapis/Ender Dust&7 (in water or inside the Crystal Assembler) to forge &aEntro Ingots&7 (&fextendedae:entro_ingot&7) and compress 9 of them into an &aEntro Block&7!"
+			],
+			x: 15.0, y: 20.0,
+			dependencies: ["ae2_070_entro_crystals_dust"],
+			tasks: [
+				{ type: "item", item: "extendedae:entro_ingot", count: 16 },
+				{ type: "item", item: "extendedae:entro_block", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:entro_ingot", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_072_concurrent_processor",
+			title: "&d72. ExtendedAE Chips: Concurrent Processors",
+			description: [
+				"&7Craft the &dConcurrent Processor Press&7 (&fextendedae:concurrent_processor_press&7), stamp &aEntro Crystals&7 into &dPrinted Concurrent Processors&7, and assemble them with Redstone and Printed Silicon into &dConcurrent Processors&7!",
+				"",
+				"&7Concurrent Processors power every ExtendedAE mega-machine!"
+			],
+			x: 18.0, y: 20.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["ae2_071_entro_ingots_blocks"],
+			tasks: [
+				{ type: "item", item: "extendedae:concurrent_processor_press", count: 1 },
+				{ type: "item", item: "extendedae:concurrent_processor_print", count: 8 },
+				{ type: "item", item: "extendedae:concurrent_processor", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:concurrent_processor", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_073_crystal_assembler",
+			title: "&b73. The Crystal Assembler (Goodbye Water Puddles!)",
+			description: [
+				"&7Craft the &bCrystal Assembler&7 (&fextendedae:crystal_assembler&7)!",
+				"",
+				"&6&lWhat the Crystal Assembler Does:",
+				"&8• &7Has a 9-slot crafting grid + an internal &9Fluid Tank&7 (pipe Water into it!).",
+				"&8• &7Automatically crafts &dFluix Crystals&7, &aEntro Ingots&7, &bProcessors&7, &bSmart Cables&7, and &dAssembler Matrix Cores&7 faster and cheaper than standard crafting tables or water puddles!"
+			],
+			x: 21.0, y: 20.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_072_concurrent_processor"],
+			tasks: [ { type: "item", item: "extendedae:crystal_assembler", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "ae2:speed_card", count: 4 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_074_circuit_slicer",
+			title: "&b74. Bulk Chip Cutting: The Circuit Slicer!",
+			description: [
+				"&7Tired of stamping 1 processor at a time? Craft the &bCircuit Slicer&7 (&fextendedae:circuit_cutter&7)!",
+				"",
+				"&a&lHow It Works:",
+				"&7Feed it whole &6Blocks of Gold&7, &bBlocks of Diamond&7, &bCut Quartz Blocks&7, &7Silicon Blocks&7, or &aEntro Blocks&7—in a single slicing operation, it outputs &a9x Printed Circuits at once&7 without needing any Inscriber Presses!"
+			],
+			x: 24.0, y: 20.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_073_crystal_assembler"],
+			tasks: [ { type: "item", item: "extendedae:circuit_cutter", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "minecraft:gold_block", count: 4 },
+				{ type: "item", item: "minecraft:diamond_block", count: 2 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_075_extended_inscriber_charger",
+			title: "&b75. Extended Inscriber & Extended Charger (4x Jobs at Once!)",
+			description: [
+				"&7Pair your Circuit Slicer with the &bExtended Inscriber&7 (&fextendedae:ex_inscriber&7) and &bExtended Charger&7 (&fextendedae:ex_charger&7)!",
+				"",
+				"&8• &bExtended Inscriber: &7Runs &a4 separate inscription jobs in parallel&7 inside 1 block (click the left/right page arrows in its GUI to configure all 4 internal slots!).",
+				"&8• &bExtended Charger: &7Charges &a4x Certus Quartz Crystals simultaneously&7!"
+			],
+			x: 27.0, y: 20.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ae2_074_circuit_slicer"],
+			tasks: [
+				{ type: "item", item: "extendedae:ex_inscriber", count: 1 },
+				{ type: "item", item: "extendedae:ex_charger", count: 1 }
+			],
+			rewards: [
+				{ id: "6F536F4F13A1FD92", type: "item", item: "extendedae:ex_inscriber" },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_076_crystal_fixer",
+			title: "&a76. Immortal Geodes: The Crystal Fixer",
+			description: [
+				"&7Place a &aCrystal Fixer&7 (&fextendedae:crystal_fixer&7) pointing at any Budding Certus Quartz or Budding Entroized Fluix block and feed it Charged Certus Quartz / Entro Dust.",
+				"",
+				"&7It automatically repairs degraded budding blocks back to &bFlawless&7 condition so your crystal farm never runs dry!"
+			],
+			x: 12.0, y: 22.5,
+			dependencies: ["ae2_070_entro_crystals_dust"],
+			optional: true,
+			tasks: [ { type: "item", item: "extendedae:crystal_fixer", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ae2_077_infinity_water_cobble_cells",
+			title: "&b77. Lag-Free Forever: Infinity Water & Cobblestone Cells!",
+			description: [
+				"&7Want infinite Water (for Mekanism Fission Reactors, Ore Washers, and Brine Towers) and infinite Cobblestone inside your AE2 network with &azero server lag&7?",
+				"",
+				"&7Craft the &9ME Infinity Water Cell&7 (&fextendedae:infinity_water_cell&7) and &7ME Infinity Cobblestone Cell&7 (&fextendedae:infinity_cobblestone_cell&7) and drop them into your ME Drive!"
+			],
+			x: 15.0, y: 22.5,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["ae2_071_entro_ingots_blocks"],
+			tasks: [
+				{ type: "item", item: "extendedae:infinity_water_cell", count: 1 },
+				{ type: "item", item: "extendedae:infinity_cobblestone_cell", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "ae2_078_in_world_upgrade_items_guide",
+			title: "&e&l78. How to Upgrade AE2 Blocks In-Place (Without Breaking Them!)",
+			description: [
+				"&6&lRead This Before Breaking Your Old AE2 Base!",
+				"&7What happens if you break a Pattern Provider full of 9 patterns or an ME Drive full of 10 Storage Cells just to craft the Extended version? Everything spills onto the floor!",
+				"",
+				"&a&lThe ExtendedAE In-World Upgrade Solution:",
+				"&7ExtendedAE provides &eUpgrade Kits&7! Simply hold the Upgrade item in your hand and &aSneak + Right-Click&7 your placed standard AE2 block/bus—it transforms into the Extended version in-place while &akeeping all patterns, cells, filters, and settings intact&7!"
+			],
+			x: 27.0, y: 24.5,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["ae2_075_extended_inscriber_charger"],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [
+				{ type: "item", item: "extendedae:concurrent_processor", count: 4 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ae2_079_pattern_provider_upgrade",
+			title: "&e79. Pattern Provider Upgrade & Extended Pattern Provider (36 Slots!)",
+			description: [
+				"&7Craft a &ePattern Provider Upgrade&7 (&fextendedae:pattern_provider_upgrade&7) or craft an &bME Extended Pattern Provider&7 (&fextendedae:ex_pattern_provider&7) directly!",
+				"",
+				"&7Each Extended Pattern Provider holds &a36 Patterns&7 (4x more than a standard 9-slot provider)!"
+			],
+			x: 24.0, y: 24.5,
+			dependencies: ["ae2_078_in_world_upgrade_items_guide"],
+			tasks: [
+				{ type: "item", item: "extendedae:pattern_provider_upgrade", count: 1 },
+				{ type: "item", item: "extendedae:ex_pattern_provider", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:pattern_provider_upgrade", count: 2 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_080_interface_upgrade",
+			title: "&e80. Interface Upgrade & Extended Interface (36 Slots!)",
+			description: [
+				"&7Craft an &eInterface Upgrade&7 (&fextendedae:interface_upgrade&7) or an &bME Extended Interface&7 (&fextendedae:ex_interface&7).",
+				"",
+				"&7It expands your stock-keeping filter capacity from 9 slots to &a36 slots&7 in a single block!"
+			],
+			x: 21.0, y: 24.5,
+			dependencies: ["ae2_079_pattern_provider_upgrade"],
+			tasks: [
+				{ type: "item", item: "extendedae:interface_upgrade", count: 1 },
+				{ type: "item", item: "extendedae:ex_interface", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:interface_upgrade", count: 2 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_081_io_bus_upgrade",
+			title: "&e81. I/O Bus Upgrade & Extended Import/Export Buses (8x Speed!)",
+			description: [
+				"&7Craft &eI/O Bus Upgrades&7 (&fextendedae:io_bus_upgrade&7) to upgrade your standard Import and Export Buses into &bME Extended Import Buses&7 (&fextendedae:ex_import_bus_part&7) and &bME Extended Export Buses&7 (&fextendedae:ex_export_bus_part&7)!",
+				"",
+				"&7They transfer items, fluids, and Mekanism gases at &a8x the speed&7 of standard buses!"
+			],
+			x: 18.0, y: 24.5,
+			dependencies: ["ae2_080_interface_upgrade"],
+			tasks: [
+				{ type: "item", item: "extendedae:io_bus_upgrade", count: 2 },
+				{ type: "item", item: "extendedae:ex_import_bus_part", count: 2 },
+				{ type: "item", item: "extendedae:ex_export_bus_part", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:io_bus_upgrade", count: 4 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_082_drive_upgrade",
+			title: "&e82. Drive Upgrade & ME Extended Drive (20 Cells per Block!)",
+			description: [
+				"&7Craft a &eDrive Upgrade&7 (&fextendedae:drive_upgrade&7) or an &bME Extended Drive&7 (&fextendedae:ex_drive&7)!",
+				"",
+				"&7A single Extended Drive holds &a20 Storage Cells&7 while still consuming only &e1 Channel&7!"
+			],
+			x: 15.0, y: 24.5,
+			dependencies: ["ae2_081_io_bus_upgrade"],
+			tasks: [
+				{ type: "item", item: "extendedae:drive_upgrade", count: 1 },
+				{ type: "item", item: "extendedae:ex_drive", count: 1 }
+			],
+			rewards: [
+				{ id: "0DAA0496DBAC3A67", type: "item", item: "extendedae:drive_upgrade" },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_083_extended_io_port",
+			title: "&b83. ME Extended IO Port (Instant Cell Transfer!)",
+			description: [
+				"&7Need to empty or fill 256k Storage Cells in the blink of an eye? Craft the &bME Extended IO Port&7 (&fextendedae:ex_io_port&7)—it transfers items/fluids at 8x the speed of a normal IO Port!"
+			],
+			x: 15.0, y: 27.0,
+			dependencies: ["ae2_082_drive_upgrade"],
+			tasks: [ { type: "item", item: "extendedae:ex_io_port", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_084_pattern_access_terminal_upgrade",
+			title: "&e84.ME Extended Pattern Access Terminal (Search & Highlight!)",
+			description: [
+				"&7Craft a &ePattern Access Terminal Upgrade&7 (&fextendedae:pattern_terminal_upgrade&7) or an &bME Extended Pattern Access Terminal&7 (&fextendedae:ex_pattern_access_part&7)!",
+				"",
+				"&aBest Feature: &7Not only does it filter patterns by input/output name, it also has a &eHighlight in World&7 button that makes the exact Pattern Provider glow through walls so you can find it in your base!"
+			],
+			x: 12.0, y: 24.5,
+			dependencies: ["ae2_082_drive_upgrade"],
+			tasks: [ { type: "item", item: "extendedae:ex_pattern_access_part", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_085_pattern_modifier",
+			title: "&685. Multiply Patterns Instantly: The Pattern Modifier!",
+			description: [
+				"&7When upgrading to 11–17 slot &6Mekanism: Extras&7 factories, processing 1 item per pattern is too slow—you want your patterns to send 16x or 64x items at once!",
+				"",
+				"&7Craft the handheld &6Pattern Modifier&7 (&fextendedae:pattern_modifier&7)! Put your encoded Processing Patterns inside and click &a×2, ×3, ×8&7 (or ÷2) to multiply all inputs and outputs of the pattern in one click without re-encoding!"
+			],
+			x: 12.0, y: 27.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_084_pattern_access_terminal_upgrade"],
+			tasks: [ { type: "item", item: "extendedae:pattern_modifier", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_086_wireless_connectors_hub",
+			title: "&a86. Wireless Connectors & Wireless Hubs",
+			description: [
+				"&7Craft &aME Wireless Connectors&7 (&fextendedae:wireless_connect&7) or the multi-link &aME Wireless Hub&7 (&fextendedae:wireless_hub&7) along with an &aME Wireless Setup Kit&7 (&fextendedae:wireless_tool&7)!",
+				"",
+				"&7Right-click two Wireless Connectors with the Setup Kit to link them—transmitting 32 channels and AE power wirelessly across your base without laying a single cable!"
+			],
+			x: 9.0, y: 24.5,
+			dependencies: ["ae2_084_pattern_access_terminal_upgrade"],
+			tasks: [
+				{ type: "item", item: "extendedae:wireless_connect", count: 2 },
+				{ type: "item", item: "extendedae:wireless_tool", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "extendedae:wireless_connect", count: 2 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_087_ingredient_buffer_caner",
+			title: "&b87. ME Ingredient Buffer & ME Caner",
+			description: [
+				"&8• &bME Ingredient Buffer (&fextendedae:ingredient_buffer&7): &7A universal 36-slot staging buffer that accepts items, fluids, AND Mekanism chemicals simultaneously.",
+				"&8• &bME Caner (&fextendedae:caner&7): &7Automatically fills or empties buckets, bottles, fluid tanks, and chemical tanks for recipes that require bucketed items (like Rocket Fuel Buckets or Ether Gas Buckets)!"
+			],
+			x: 9.0, y: 27.0,
+			dependencies: ["ae2_086_wireless_connectors_hub"],
+			tasks: [
+				{ type: "item", item: "extendedae:ingredient_buffer", count: 1 },
+				{ type: "item", item: "extendedae:caner", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_088_tag_mod_precise_buses",
+			title: "&388. Smart Logistics: Tag, Mod & Precise Storage/Export Buses",
+			description: [
+				"&7ExtendedAE adds specialized buses for advanced sorting:",
+				"&8• &bME Tag Storage / Export Bus: &7Filter by item tags (e.g., `c:raw_materials/*` to automatically send all raw ores into your 5x Mekanism line!).",
+				"&8• &bME Mod Storage / Export Bus: &7Filter by mod ID (e.g., `apotheosis` or `relics`).",
+				"&8• &bME Precise Export / Storage Bus: &7Exports the exact stack count you specify without overfilling the target machine!"
+			],
+			x: 6.0, y: 24.5,
+			dependencies: ["ae2_086_wireless_connectors_hub"],
+			tasks: [
+				{ type: "item", item: "extendedae:tag_export_bus", count: 1 },
+				{ type: "item", item: "extendedae:mod_storage_bus", count: 1 },
+				{ type: "item", item: "extendedae:precise_export_bus", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_089_active_formation_plane_threshold_emitter",
+			title: "&389. Active Formation Plane & Threshold Level Emitter",
+			description: [
+				"&8• &bME Active Formation Plane (&fextendedae:active_formation_plane&7): &7Unlike a normal Formation Plane (which acts passively as storage), an Active Formation Plane actively pushes and places blocks from your network like an Export Bus!",
+				"&8• &cME Threshold Level Emitter (&fextendedae:threshold_level_emitter&7): &7Allows you to set BOTH an Upper Bound (turn OFF at 10,000) and a Lower Bound (turn ON below 2,000) in a single emitter so your reactors/generators never rapid-cycle!"
+			],
+			x: 6.0, y: 27.0,
+			dependencies: ["ae2_088_tag_mod_precise_buses"],
+			tasks: [
+				{ type: "item", item: "extendedae:active_formation_plane", count: 1 },
+				{ type: "item", item: "extendedae:threshold_level_emitter", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_090_oversize_interface",
+			title: "&690. Oversize Interface (Exceeding Stack Limits!)",
+			description: [
+				"&7Craft the &6ME Oversize Interface&7 (&fextendedae:oversize_interface&7)!",
+				"",
+				"&7While a normal Interface can only stock 64 of an item per slot, an Oversize Interface can stock up to &a1,024 items or 1,000+ Buckets per slot&7 for high-speed endgame processing!"
+			],
+			x: 3.0, y: 27.0,
+			dependencies: ["ae2_089_active_formation_plane_threshold_emitter"],
+			tasks: [ { type: "item", item: "extendedae:oversize_interface", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_091_ex_molecular_assembler",
+			title: "&d&l91. Extended Molecular Assembler (Phase 6 – 8x Parallel!)",
+			description: [
+				"&7In Phase 6, craft the &dExtended Molecular Assembler&7 (&fextendedae:ex_molecular_assembler&7)!",
+				"",
+				"&a&lWhy It Is 16x Better Than a Normal Molecular Assembler:",
+				"&7A single Extended Molecular Assembler executes &a8 separate crafting jobs in parallel&7, and each job runs at &a2x the speed&7 of a normal assembler!"
+			],
+			x: 3.0, y: 24.5,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["ae2_088_tag_mod_precise_buses", "p6_unobtainium_fusion"],
+			tasks: [ { type: "item", item: "extendedae:ex_molecular_assembler", count: 4 } ],
+			rewards: [
+				{ type: "item", item: "extendedae:ex_molecular_assembler", count: 2 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "ae2_092_ex_wireless_pattern_terminal",
+			title: "&592. Wireless Extended Pattern Access Terminal",
+			description: [
+				"&7Craft the &5Wireless Extended Pattern Access Terminal&7 (&fextendedae:wireless_ex_pat&7) so you can search, manage, and highlight all your Pattern Providers wirelessly from anywhere!"
+			],
+			x: 0.0, y: 24.5,
+			dependencies: ["ae2_091_ex_molecular_assembler"],
+			tasks: [ { type: "item", item: "extendedae:wireless_ex_pat", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "ae2_093_matrix_intro",
+			title: "&d&l93. The Ultimate Multiblock: ME Assembler Matrix Intro",
+			description: [
+				"&7Why build dozens of Pattern Providers and Molecular Assemblers when you can replace them all with a single, god-tier multiblock?",
+				"",
+				"&6&lHow the ME Assembler Matrix Works (Phase 6):",
+				"&8• &7Can be built as any rectangular cuboid from &e3x3x3 up to 7x7x7&7.",
+				"&8• &7All &eedges&7 must be &dAssembler Matrix Frames&7.",
+				"&8• &7All &efaces&7 must be &dAssembler Matrix Walls&7 or &bAssembler Matrix Glass&7.",
+				"&8• &7The &einterior&7 is filled completely with any combination of &bPattern Cores&7, &cCraft Cores&7, and &eSpeed Cores&7!",
+				"&8• &7The entire multiblock connects to your AE2 cable and uses only &a1 Channel&7!"
+			],
+			x: 0.0, y: 30.0,
+			size: 1.65,
+			shape: "gear",
+			dependencies: ["ae2_091_ex_molecular_assembler"],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [
+				{ type: "item", item: "extendedae:concurrent_processor", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ae2_094_matrix_frames",
+			title: "&d94. Matrix Step 1: Assembler Matrix Frames",
+			description: [
+				"&7Craft &dAssembler Matrix Frames&7 (&fextendedae:assembler_matrix_frame&7) to construct the 12 outer edges and 8 corners of your multiblock cube.",
+				"",
+				"&eMath Tip: &7A starter 3x3x3 Matrix needs 20 Frames; a massive 7x7x7 Matrix needs 68 Frames!"
+			],
+			x: 3.0, y: 30.0,
+			dependencies: ["ae2_093_matrix_intro"],
+			tasks: [ { type: "item", item: "extendedae:assembler_matrix_frame", count: 20 } ],
+			rewards: [
+				{ type: "item", item: "extendedae:assembler_matrix_frame", count: 8 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_095_matrix_walls",
+			title: "&d95. Matrix Step 2: Assembler Matrix Walls",
+			description: [
+				"&7Craft &dAssembler Matrix Walls&7 (&fextendedae:assembler_matrix_wall&7) to enclose the 6 faces of your Matrix (and connect your AE2 cable to any Wall or Frame block)."
+			],
+			x: 6.0, y: 30.0,
+			dependencies: ["ae2_094_matrix_frames"],
+			tasks: [ { type: "item", item: "extendedae:assembler_matrix_wall", count: 6 } ],
+			rewards: [
+				{ type: "item", item: "extendedae:assembler_matrix_wall", count: 8 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_096_matrix_glass",
+			title: "&b96. Matrix Step 3: Assembler Matrix Glass",
+			description: [
+				"&7Replace the outer face walls with &bAssembler Matrix Glass&7 (&fextendedae:assembler_matrix_glass&7) so you can admire the glowing Pattern, Craft, and Speed Cores humming inside your multiblock!"
+			],
+			x: 9.0, y: 30.0,
+			dependencies: ["ae2_095_matrix_walls"],
+			tasks: [ { type: "item", item: "extendedae:assembler_matrix_glass", count: 6 } ],
+			rewards: [
+				{ type: "item", item: "extendedae:assembler_matrix_glass", count: 12 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ae2_097_matrix_pattern_core",
+			title: "&b97. Matrix Step 4: Assembler Matrix Pattern Cores",
+			description: [
+				"&7Craft &bAssembler Matrix Pattern Cores&7 (&fextendedae:assembler_matrix_pattern&7) and place them inside the interior of your Matrix!",
+				"",
+				"&7Each single Pattern Core holds &a36 Crafting, Smithing, or Stonecutting Patterns&7!"
+			],
+			x: 12.0, y: 30.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_096_matrix_glass"],
+			tasks: [ { type: "item", item: "extendedae:assembler_matrix_pattern", count: 2 } ],
+			rewards: [
+				{ id: "A6A6F86372C1F700", type: "item", item: "extendedae:assembler_matrix_pattern" },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "ae2_098_matrix_crafter_core",
+			title: "&c98. Matrix Step 5: Assembler Matrix Craft Cores",
+			description: [
+				"&7Craft &cAssembler Matrix Craft Cores&7 (&fextendedae:assembler_matrix_crafter&7) and place them inside the interior of your Matrix!",
+				"",
+				"&7Each single Craft Core adds &a8 parallel crafting operations&7 that can run simultaneously inside the Matrix!"
+			],
+			x: 15.0, y: 30.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_097_matrix_pattern_core"],
+			tasks: [ { type: "item", item: "extendedae:assembler_matrix_crafter", count: 2 } ],
+			rewards: [
+				{ id: "1601A48F2C8D9EE1", type: "item", item: "extendedae:assembler_matrix_crafter" },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "ae2_099_matrix_speed_core_1",
+			title: "&e99. Matrix Step 6: Assembler Matrix Speed Core",
+			description: [
+				"&7Craft an &eAssembler Matrix Speed Core&7 (&fextendedae:assembler_matrix_speed&7) and place it inside the interior of your Matrix to boost the speed of every Craft Core in the multiblock!"
+			],
+			x: 18.0, y: 30.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ae2_098_matrix_crafter_core"],
+			tasks: [ { type: "item", item: "extendedae:assembler_matrix_speed", count: 1 } ],
+			rewards: [
+				{ id: "F8E4F2672DBC31FA", type: "item", item: "extendedae:assembler_matrix_speed" },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "ae2_100_matrix_5_speed_cap",
+			title: "&e100. Maxing Matrix Velocity: All 5 Speed Cores!",
+			description: [
+				"&7An Assembler Matrix reaches its &amaximum possible speed multiplier with 5x Assembler Matrix Speed Cores&7 installed inside! (Adding a 6th Speed Core gives no extra speed—fill the rest of the interior with Pattern Cores and Craft Cores!)."
+			],
+			x: 21.0, y: 30.0,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["ae2_099_matrix_speed_core_1"],
+			tasks: [ { type: "item", item: "extendedae:assembler_matrix_speed", count: 5 } ],
+			rewards: [
+				{ type: "item", item: "extendedae:assembler_matrix_crafter", count: 2 },
+				{ type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "ae2_101_quartz_cutting_knife",
+			title: "&f101. Labeling Patterns & Terminals: Quartz Cutting Knife",
+			description: [
+				"&7With hundreds of Pattern Providers and P2P Tunnels, organization is everything! Craft a &fQuartz Cutting Knife&7—right-click it to open a naming GUI and stamp custom names onto &fInscriber Name Presses&7, or rename Pattern Providers directly so they appear organized inside your Extended Pattern Access Terminal!"
+			],
+			x: 18.0, y: 27.0,
+			dependencies: ["ae2_085_pattern_modifier"],
+			tasks: [ { type: "item", item: "ae2:certus_quartz_cutting_knife", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ae2_102_color_applicator",
+			title: "&d102. The Color Applicator (Master Electrician)",
+			description: [
+				"&7Craft a &dColor Applicator&7, charge it, and load it with Dyes or Snowballs (to wash color off)—paint entire lines of Dense Cables in a single click!"
+			],
+			x: 21.0, y: 27.0,
+			dependencies: ["ae2_101_quartz_cutting_knife"],
+			optional: true,
+			tasks: [ { type: "item", item: "ae2:color_applicator", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ae2_103_charged_staff_entropy",
+			title: "&b103. Entropy Manipulator & Matter Cannon",
+			description: [
+				"&7Explore AE2's utility gadgets:",
+				"&8• &6Entropy Manipulator: &7Smelts blocks in-world on right-click or freezes water into ice on Shift+Right-Click.",
+				"&8• &8Matter Cannon: &7Loads Matter Balls or Metal Nuggets into a storage cell and fires them like a railgun (great for breaking fragile blocks or clearing foliage)!"
+			],
+			x: 24.0, y: 27.0,
+			dependencies: ["ae2_102_color_applicator"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "ae2:entropy_manipulator", count: 1 },
+				{ type: "item", item: "ae2:matter_cannon", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ae2_104_grand_master_finale",
+			title: "&d&l★ 104. GRAND ARCHITECT OF AE2 & EXTENDEDAE! ★",
+			description: [
+				"&d&lCongratulations, Digital Architect!",
+				"&7You have completed all &a104 quests&7 of the AE2 & ExtendedAE Chapter!",
+				"",
+				"&7From your very first Sky Stone meteorite and 8-channel Phase 0 Ad-Hoc Network, to P2P channel compression, Mekanism Chemical Cells, Applied Delight automated kitchens, cross-dimensional Quantum Bridges, in-place ExtendedAE upgrades, and the 7x7x7 &dME Assembler Matrix&7—your factory's digital nervous system is now truly omnipotent!"
+			],
+			x: 25.0, y: 30.0,
+			size: 2.0,
+			shape: "octagon",
+			dependencies: [
+				"ae2_100_matrix_5_speed_cap",
+				"ae2_067_quantum_bridge_card",
+				"ae2_077_infinity_water_cobble_cells",
+				"ae2_082_drive_upgrade"
+			],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [
+				{ type: "toast", title: "104 AE2 Quests Mastered!", description: "You are a true Grand Architect of AE2 & ExtendedAE!" },
+				{ type: "xp_levels", xp_levels: 25 }
+			]
+		}
+	]
+}

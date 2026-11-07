@@ -1,0 +1,35 @@
+{
+  "heartEntries": {
+    "red": {
+      "hostile": 0.10,
+      "twilightforest:naga": 1.0,
+      "twilightforest:lich": 1.0,
+      "twilightforest:minoshroom": 1.0,
+      "twilightforest:knight_phantom": 0.5
+    },
+    "yellow": {
+      "boss": 1.0,
+      "minecraft:wither": 1.0,
+      "minecraft:warden": 1.0,
+      "twilightforest:hydra": 1.0,
+      "twilightforest:ur_ghast": 1.0,
+      "twilightforest:alpha_yeti": 1.0,
+      "twilightforest:snow_queen": 1.0
+    },
+    "green": {
+      "dragon": 1.0,
+      "iceandfire:fire_dragon": 1.0,
+      "iceandfire:lightning_dragon": 1.0,
+      "iceandfire:ice_dragon": 1.0
+    },
+    "blue": {
+      "cataclysm:ancient_remnant": 1.0,
+      "cataclysm:ignis": 1.0,
+      "cataclysm:netherite_monstrosity": 1.0,
+      "cataclysm:the_leviathan": 1.0,
+      "cataclysm:maledictus": 1.0,
+      "cataclysm:ender_guardian": 1.0,
+      "cataclysm:the_harbinger": 1.0
+    }
+  }
+}

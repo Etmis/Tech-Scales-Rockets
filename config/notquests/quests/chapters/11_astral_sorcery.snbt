@@ -1,0 +1,1187 @@
+{
+	id: "astral_sorcery_mastery",
+	title: "&bAstral Sorcery",
+	icon: "astralsorcery:celestial_crystal",
+	group: "group_systems",
+	order_index: 14,
+	quests: [
+		{
+			id: "ast_01_welcome",
+			title: "&b&l1. Welcome to Astral Sorcery",
+			description: [
+				"&7Welcome to the complete 60-quest guide to &9Astral Sorcery 2.0&7 for NeoForge 1.21.1!",
+				"",
+				"&6&lWhat Changed from Old 1.12 / 1.16 Astral Sorcery:",
+				"&8• &cRemoved: &7Collector Crystals, Spectral Relays, Ritual Pedestals, Grindstones, Telescopes, and Mantles of the Stars.",
+				"&8• &aAdded in 2.0: &7Natural &eFocal Points&7 in the Overworld, the &eAstrolabe&7, the &9Starmetal Chisel&7, &bFocus Relays&7 (auto-linking!), &dLumen & Lumen Alchemy Arrays&7, &dGear Lumen Binding&7, and &6Shooting Star Artifacts&7!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.75,
+			shape: "pentagon",
+			dependencies: ["p1a_welcome_twilight"],
+			tasks: [ { id: "7201FE5F699991E5", type: "checkmark" } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:aquamarine", count: 8 },
+				{ type: "xp", xp: 50 }
+			]
+		},
+		{
+			id: "ast_02_aquamarine_shale",
+			title: "&b2. Harvesting Aquamarine Shale",
+			description: [
+				"&7Search shallow riverbeds, beaches, and lakes for pale blocks of &bAquamarine Shale&7. It breaks like Sand with a shovel and drops multiple &bAquamarine&7 gems.",
+				"",
+				"&7Gather plenty—Aquamarine is used for your Tome, Astrolabe, Glass Lenses, and as your primary early fuel in the &bLightwell&7!"
+			],
+			x: 2.5, y: 0.0,
+			dependencies: ["ast_01_welcome"],
+			tasks: [ { type: "item", item: "astralsorcery:aquamarine", count: 16 } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "ast_03_marble_and_sooty_marble",
+			title: "&f3. Mining Raw Marble & Sooty Marble",
+			description: [
+				"&7Mine large veins of &fRaw Marble&7 underground (found anywhere between Y 0 and Y 100) and surround Coal with 8x Marble to craft dark &8Sooty Marble&7.",
+				"",
+				"&7You will shape Raw Marble into &fMarble Bricks, Pillars, Chiseled Marble, Arch, Engraved, and Runed Marble&7—later altar structures require exact shapes in exact spots, so mine several stacks!"
+			],
+			x: 5.0, y: 0.0,
+			dependencies: ["ast_02_aquamarine_shale"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:marble_raw", count: 64 },
+				{ type: "item", item: "astralsorcery:sooty_marble_raw", count: 16 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:marble_raw", count: 64 },
+				{ type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "ast_04_astral_tome",
+			title: "&94. The Astral Tome",
+			description: [
+				"&7Combine &f1x Book&7 + &b1x Aquamarine&7 in a Crafting Table to create the mod's in-game guide: the &9Astral Tome&7!",
+				"",
+				"&7The Tome only reveals chapters you are ready for—unlocking new pages automatically every time you upgrade your crafting altar to the next tier."
+			],
+			x: 5.0, y: -2.5,
+			dependencies: ["ast_02_aquamarine_shale"],
+			tasks: [ { type: "item", item: "astralsorcery:tome", count: 1 } ],
+			rewards: [ { type: "xp", xp: 75 } ]
+		},
+		{
+			id: "ast_05_constellation_papers",
+			title: "&f5. Finding Constellation Papers",
+			description: [
+				"&7Loot chests in Dungeons, Mineshafts, Strongholds, Desert Pyramids, Jungle Temples, Shipwrecks, or Astral Ruins/Dig Sites (roughly a 1-in-3 chance per chest) to find &fConstellation Papers&7!",
+				"",
+				"&eHow to Read a Constellation Paper:",
+				"&7Once picked up, a blank paper draws a constellation you haven't discovered yet. Right-click it to see its star pattern and &ewhich 5 moon phases (out of the 8-night lunar cycle)&7 that constellation appears in the sky!"
+			],
+			x: 7.5, y: 0.0,
+			dependencies: ["ast_03_marble_and_sooty_marble"],
+			tasks: [ { type: "item", item: "astralsorcery:constellation_paper", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:aquamarine", count: 12 },
+				{ type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "ast_06_the_astrolabe",
+			title: "&e6. Crafting & Tracing with the Astrolabe",
+			description: [
+				"&7In 1.21.1, the old Looking Glass and Telescope are replaced by the &eAstrolabe&7!",
+				"",
+				"&6&lRecipe: &76x Gold Ingots + 1x Glass Pane + 1x Aquamarine + 1x Spyglass.",
+				"",
+				"&a&lHow to Trace a Constellation at Night:",
+				"&81. &7Wait for a night whose moon phase matches your Constellation Paper.",
+				"&82. &7Look up at the night sky through the &eAstrolabe&7.",
+				"&83. &7Hold &eSneak (Shift)&7 to lock your view, then click and drag lines between the glowing stars to match your paper! (If you make a mistake, just release Sneak and try again)."
+			],
+			x: 10.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ast_05_constellation_papers"],
+			tasks: [
+				{ type: "item", item: "minecraft:spyglass", count: 1 },
+				{ type: "item", item: "astralsorcery:astrolabe", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "minecraft:gold_ingot", count: 6 },
+				{ type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "ast_07_finding_a_focal_point",
+			title: "&e7. Discovering a Natural Focal Point",
+			description: [
+				"&7In Astral Sorcery 2.0, starlight reaches the ground at natural &eFocal Points&7 (about 1 in every 10x10 chunk area in the Overworld).",
+				"",
+				"&6&lHow to Spot a Focal Point:",
+				"&8• &aBy Day: &7Look for a noticeable circular bare patch of grass where all flowers and tall grass are naturally cleared away.",
+				"&8• &9By Night (With Astrolabe): &7Look through your Astrolabe and scroll your &eMouse Wheel&7 to adjust the angle marker—when close to a discovered constellation's angle, the Astrolabe reveals a &fglowing vertical pillar of starlight&7 rising from the exact center of the Focal Point!",
+				"",
+				"&7Prepare the ingredients for your first Focal Point transformation: &f1x Crafting Table, 6x Raw Marble, 2x Aquamarine, and 1x Ender Pearl&7!"
+			],
+			x: 12.5, y: 0.0,
+			size: 1.4,
+			shape: "pentagon",
+			dependencies: ["ast_06_the_astrolabe"],
+			tasks: [
+				{ type: "item", item: "minecraft:crafting_table", count: 1 },
+				{ type: "item", item: "astralsorcery:marble_raw", count: 6 },
+				{ type: "item", item: "astralsorcery:aquamarine", count: 2 },
+				{ type: "item", item: "minecraft:ender_pearl", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "minecraft:ender_pearl", count: 4 },
+				{ type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "ast_08_illuminated_crafting_table",
+			title: "&b8. Altar Tier 1: The Illuminated Crafting Table",
+			description: [
+				"&7Stand at the exact center of a &eFocal Point&7 at night and throw onto the ground in a single pile:",
+				"&8• &f1x Crafting Table &7+ &f4x Raw Marble",
+				"",
+				"&7White starlight sparks will gather around the pile and transform it into your first altar: the &bIlluminated Crafting Table&7!",
+				"",
+				"&cWarning: &7Do NOT walk over and pick up the items while the sparks are gathering, or the craft will cancel! If dawn breaks mid-craft, it will pause until the next night."
+			],
+			x: 15.0, y: 0.0,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["ast_07_finding_a_focal_point"],
+			tasks: [ { type: "item", item: "astralsorcery:altar_illumination", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ast_09_resonating_wand",
+			title: "&99. Forging the Resonating Wand",
+			description: [
+				"&7Throw a second pile of items into the exact center of your &eFocal Point&7 at night:",
+				"&8• &f2x Raw Marble &7+ &b2x Aquamarine &7+ &31x Ender Pearl",
+				"",
+				"&7They fuse into the &9Resonating Wand&7!",
+				"",
+				"&6&lThree Uses of the Resonating Wand:",
+				"&81. &bAltar Crafting: &7Place ingredients inside any Astral Altar at night and &aRight-Click the altar with the Resonating Wand&7 to start crafting!",
+				"&82. &eStructure Preview: &7Right-clicking an incomplete Altar or Attunement Altar shows ghost blocks of what is missing!",
+				"&83. &fFinding Rock Crystal Ore: &7Holding the wand near Bedrock makes Rock Crystal Ore sparkle through solid stone!"
+			],
+			x: 17.5, y: 0.0,
+			size: 1.4,
+			shape: "pentagon",
+			dependencies: ["ast_08_illuminated_crafting_table"],
+			tasks: [ { type: "item", item: "astralsorcery:wand", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_10_mining_rock_crystal",
+			title: "&f10. Mining Rock Crystals Near Bedrock (Y -60 to -57)",
+			description: [
+				"&7Descend to the bottom of the Overworld (&eY -60 to Y -57&7, just above Bedrock) while holding your &9Resonating Wand&7.",
+				"",
+				"&7About 1 in 28 chunks contains &fRock Crystal Ore&7, which sends white sparkles up through solid Deepslate when you hold the wand!",
+				"",
+				"&c&lCritical Mining Rule:",
+				"&7Mine it with an Iron+ Pickaxe while &estanding right next to the ore&7! If a Rock Crystal Ore block is broken by a quarry or from far away with no player nearby, the crystal shatters and is lost!"
+			],
+			x: 20.0, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["ast_09_resonating_wand"],
+			tasks: [ { type: "item", item: "astralsorcery:rock_crystal", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "minecraft:diamond", count: 6 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ast_11_focal_point_starmetal",
+			title: "&911. Focal Point Transmutation: Starmetal Ore & Ingots!",
+			description: [
+				"&7In 1.21.1, you don't link a Collector Crystal to Iron Ore—instead, you transmute Iron directly at the center of a &eFocal Point&7 at night!",
+				"",
+				"&6&lFast vs. Slow Method:",
+				"&8• &aPlaced Iron Ore (20 Seconds – 6x Faster!): &7Mine Iron Ore (or Deepslate Iron Ore) with &bSilk Touch&7 (or your Digital Miner in Silk Touch mode!) and &eplace the ore block&7 at the center of a Focal Point at night. It turns into &9Starmetal Ore&7 in ~20 seconds!",
+				"&8• &eDropped Raw Iron (2 Minutes): &7Dropping Raw Iron at the center of a Focal Point turns it into &9Raw Starmetal&7, but takes ~2 minutes.",
+				"",
+				"&7Smelt it in a regular Furnace to get &9Starmetal Ingots&7 (required for the Phase 2 &6Teleport Pad&7, &dAE2 Quantum Rings&7, and Phase 7 &6Cosmic Alloy Template&7)!"
+			],
+			x: 20.0, y: 3.5,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["ast_10_mining_rock_crystal"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:starmetal_ore", count: 2 },
+				{ type: "item", item: "astralsorcery:starmetal_ingot", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:starmetal_ingot", count: 8 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ast_12_starmetal_chisel_stardust",
+			title: "&b12. The Starmetal Chisel & Stardust!",
+			description: [
+				"&7How do you get &bStardust&7 in 1.21.1 now that the Grindstone is gone? Craft the &9Starmetal Chisel&7 on your altar!",
+				"",
+				"&6&lHow to Chisel Stardust, Crystals & Artifacts:",
+				"&81. &bEnchant Your Chisel First: &7The Starmetal Chisel accepts &bFortune III&7 and &bUnbreaking III&7! Always put Fortune on it—it drastically increases Stardust yield per ingot!",
+				"&82. &9Making Stardust: &7Drop &9Starmetal Ingots&7 on the ground, hold the Starmetal Chisel, and &eLeft-Click (attack) the dropped ingot&7 until it shatters into &bStardust&7!",
+				"&83. &fSplitting Crystals & Artifacts: &7Left-clicking a dropped Crystal splits it into two crystals (sharing stats), and left-clicking a dropped Shooting Star Artifact shatters it into &dArtifact Shards&7!"
+			],
+			x: 17.5, y: 3.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ast_11_focal_point_starmetal"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:chisel", count: 1 },
+				{ type: "item", item: "astralsorcery:stardust", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:stardust", count: 8 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ast_13_other_focal_point_transforms",
+			title: "&e13. Other Focal Point Block Transformations",
+			description: [
+				"&7Placing other blocks in the center of a Focal Point at night transforms them too:",
+				"&8• &eGlowstone &7-> &bSea Lantern &7(works on any Focal Point).",
+				"&8• &aAny Small Flower &7-> &dConstellation Flower &7(&aHyacinth, Orchid, Thistle, Protea, or Iris&7 matching that Focal Point's constellation—essential for &dLumen&7!).",
+				"&8• &bWith a Starlight Focus Crystal placed on the Focal Point: &7Sand -> Clay, Sandstone -> End Stone, Diamond Ore -> Emerald Ore, Pumpkin -> Cake!"
+			],
+			x: 17.5, y: 6.0,
+			dependencies: ["ast_11_focal_point_starmetal"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "minecraft:glowstone", count: 4 },
+				{ type: "item", item: "minecraft:sea_lantern", count: 4 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_14_the_lightwell",
+			title: "&b14. The Lightwell & Liquid Starlight (Cryo Fuel Feedstock!)",
+			description: [
+				"&7Craft a &bLightwell&7 on your Illuminated Crafting Table to produce &bLiquid Starlight&7!",
+				"",
+				"&6&lLightwell Rules & Catalyst Production Rates:",
+				"&8• &cKeep the Air Above Clear: &7Never place a block directly above the Lightwell basin, or it will instantly shatter the catalyst inside! Pipe Liquid Starlight out from &aunderneath&7.",
+				"&8• &bAquamarine: &a0.35 rate &7(Best early-game catalyst!).",
+				"&8• &9Resonating Gem: &a0.50 rate &7(Highest production rate and lasts the longest!).",
+				"&8• &bPhase 4 Cryo Fuel Role: &7In Phase 4, you will pipe &bLiquid Starlight&7 directly into your &bIF Dissolution Chamber&7 with Ice Shards and Ostrum Dust to synthesize bucket-free &bAd Astra Cryo Fuel&7!"
+			],
+			x: 15.0, y: 3.5,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ast_10_mining_rock_crystal"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:lightwell", count: 1 },
+				{ type: "item", item: "astralsorcery:liquid_starlight_bucket", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:aquamarine", count: 24 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ast_15_liquid_starlight_reactions",
+			title: "&b15. Liquid Starlight Pools: Infused Wood & Aquamarine Farming",
+			description: [
+				"&7Place a bucket of &bLiquid Starlight&7 on the ground:",
+				"&8• &6Infused Wood: &7Throw any Wood Logs into the pool—they transform into &6Infused Wood&7 without consuming the Liquid Starlight!",
+				"&8• &bInfinite Aquamarine Shale Generator: &7When flowing &bLiquid Starlight&7 touches flowing &6Lava&7, it creates Sand with an &bAquamarine Shale&7 block every so often! (Touching Water freezes starlight into Packed Ice)."
+			],
+			x: 15.0, y: 6.0,
+			dependencies: ["ast_14_the_lightwell"],
+			tasks: [ { type: "item", item: "astralsorcery:infused_wood", count: 16 } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:infused_wood", count: 16 },
+				{ type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "ast_16_resonating_gems_powders",
+			title: "&916. Illumination Powder, Nocturnal Powder & Resonating Gems",
+			description: [
+				"&7On your altar, craft:",
+				"&8• &eIllumination Powder: &7Required for the &dAE2 ME Controller&7 (Phase 1B), places floating light sources, and grows &6Dynamism Gems&7.",
+				"&8• &8Nocturnal Powder: &7Spawns dark fog that spawns hostile mobs (and catalyzes &8Nullae Lumen&7).",
+				"&8• &9Resonating Gems: &7Made by infusing Aquamarine with Liquid Starlight—used for Tier 3 Altars, high-output Lightwells, and &dAion Lumen&7!"
+			],
+			x: 12.5, y: 3.5,
+			dependencies: ["ast_14_the_lightwell"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:illumination_powder", count: 8 },
+				{ type: "item", item: "astralsorcery:nocturnal_powder", count: 4 },
+				{ type: "item", item: "astralsorcery:resonating_gem", count: 4 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:resonating_gem", count: 4 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ast_17_glass_lens_optics",
+			title: "&f17. Precision Optics: Glass Lenses!",
+			description: [
+				"&7Craft &fGlass Lenses&7 (&fastralsorcery:glass_lens&7) using Aquamarine, Glass, and crystal power!",
+				"",
+				"&6&lWhy Glass Lenses Are Crucial in Tech, Scales & Rockets:",
+				"&8• &9Mekanism Advanced Solar Generators &7(Phase 1A)",
+				"&8• &bIndustrial Foregoing Fluid Laser Base &7(Phase 4 Wither Milking for Ether Gas!)",
+				"&8• &7Ad Astra Tier 1 Rocket &7(Optical navigation sensor!)",
+				"&8• &eMekanism Solar Neutron Activators &7(Phase 4 Orbital Polonium production!)",
+				"&8• &dAltar Tier 4 (Iridescent Crafting Altar) &7& Phase 7 &6Ore Laser Base&7!"
+			],
+			x: 10.0, y: 3.5,
+			size: 1.45,
+			shape: "hexagon",
+			dependencies: ["ast_16_resonating_gems_powders"],
+			tasks: [ { type: "item", item: "astralsorcery:glass_lens", count: 4 } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:glass_lens", count: 4 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ast_18_celestial_crystal_clusters",
+			title: "&b18. Growing Celestial Crystal Clusters (On Starmetal Ore!)",
+			description: [
+				"&7While a Rock Crystal starts with 4 stat points and caps at 9 points, a &bCelestial Crystal&7 starts with &a6 points and caps at 14 total points&7!",
+				"",
+				"&6&lHow to Grow a Celestial Crystal Cluster:",
+				"&81. &7Place a Silk-Touched &9Starmetal Ore&7 block under an open sky and put a 1-block pool of &bLiquid Starlight&7 directly on top of it.",
+				"&82. &7Throw &b1x Stardust + 1x Rock Crystal&7 into the Liquid Starlight pool—it consumes the pool and forms a &bCelestial Crystal Cluster&7 (sitting on Starmetal Ore makes it grow much faster at night!).",
+				"&83. &cWait Until Stage 4 (Shimmering): &7ONLY break it with a pickaxe once it is 100% grown and emitting white sparkles—breaking it early only gives Stardust!"
+			],
+			x: 7.5, y: 3.5,
+			size: 1.45,
+			shape: "hexagon",
+			dependencies: ["ast_12_starmetal_chisel_stardust", "ast_14_the_lightwell"],
+			tasks: [ { type: "item", item: "astralsorcery:celestial_crystal", count: 2 } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 2 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ast_19_crystal_stats_size_purity_cut",
+			title: "&b19. Mastering Crystal Stats: Size (8), Purity (4) & Cut (4)",
+			description: [
+				"&7Every Rock or Celestial Crystal has three stats that determine the power of tools, lenses, and focuses made from it:",
+				"&8• &eSize (Max 8): &7Raised by throwing a &esingle crystal&7 into a pool of Liquid Starlight (drains the pool; 100% chance up to its starting cap, 40% chance after).",
+				"&8• &bPurity (Max 4) & &dCut (Max 4): &7Can ONLY be raised by &emerging two crystals&7!",
+				"",
+				"&6&lHow to Merge Crystals for Perfect 14-Point Celestial Crystals:",
+				"&7Throw &etwo crystals together&7 into a pool of Liquid Starlight! The crystal with more total points keeps its own stats and randomly inherits points from the second crystal (up to the 9-point Rock cap or 14-point Celestial cap)!"
+			],
+			x: 7.5, y: 6.0,
+			dependencies: ["ast_18_celestial_crystal_clusters"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 4 },
+				{ type: "item", item: "astralsorcery:liquid_starlight_bucket", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:stardust", count: 8 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ast_20_starlight_focus_crystal",
+			title: "&e20. Starlight Focus Crystals (Focal Point Boosters)",
+			description: [
+				"&7Craft a &eStarlight Focus Crystal&7 attuned to the same major constellation as your natural Focal Point, and place it inside the column of light above that Focal Point!",
+				"",
+				"&7It unlocks advanced Focal Point block transformations (like &bDiamond Ore -> Emerald Ore&7 and &eSandstone -> End Stone&7) and amplifies focal starlight."
+			],
+			x: 10.0, y: 6.0,
+			dependencies: ["ast_17_glass_lens_optics"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "minecraft:end_stone", count: 16 },
+				{ type: "item", item: "minecraft:emerald_ore", count: 2 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_21_focus_relays_and_chalice",
+			title: "&b21. Focus Relays & The Containment Chalice",
+			description: [
+				"&7Before upgrading to Altar Tier 2, craft the Marble blocks, &bFocus Relays&7, and &eContainment Chalice&7:",
+				"&8• &bFocus Relays: &7Small marble pedestals placed in a ring around your altar. Each Relay holds 1 extra ingredient for complex recipes. &aYou do NOT need a linking tool&7—the altar detects them automatically as long as they sit on the exact structure spots and have clear air above them!",
+				"&8• &eContainment Chalice: &7Place a Containment Chalice near your Altar and Lightwells. With clear line-of-sight, the Chalice &aautomatically pulls Liquid Starlight out of nearby Lightwells&7 and feeds it wirelessly to your Altar during crafts!"
+			],
+			x: 5.0, y: 3.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["ast_14_the_lightwell"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:marble_pillar", count: 8 },
+				{ type: "item", item: "astralsorcery:marble_runed", count: 16 },
+				{ type: "item", item: "astralsorcery:chalice", count: 1 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:marble_raw", count: 64 },
+				{ type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "ast_22_altar_tier2_resonating_table",
+			title: "&922. Altar Tier 2: The Starlight / Resonating Crafting Table",
+			description: [
+				"&7Craft the &9Resonating Crafting Table&7 directly on top of your Illuminated Crafting Table (using 4x Marble Pillars, 1x Crystal, 2x Runed Marble, and 1x Bucket of Liquid Starlight)!",
+				"",
+				"&eStructure Tip (Build the Big Ring Early!):",
+				"&7Right-click the Resonating Crafting Table with your &9Resonating Wand&7 to see ghost blocks of the Sooty Marble floor, Runed Marble border, and ring of &bFocus Relays&7. Build the &asecond, raised outer ring of relays&7 right away—most Tier 2 recipes (including the &6Teleport Pad&7) and all Tier 3 recipes require it!"
+			],
+			x: 2.5, y: 3.5,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["ast_21_focus_relays_and_chalice"],
+			tasks: [ { type: "item", item: "astralsorcery:altar_resonance", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_23_ground_items_in_altar_crafts",
+			title: "&b23. How Ground-Dropped Altar Ingredients Work",
+			description: [
+				"&7From the Resonating Crafting Table onward, many recipes in your Tome show items that must be &ethrown on the ground right next to the altar&7 (in addition to items inside the altar grid and on the Focus Relays)!",
+				"",
+				"&7Prepare &b3x Stardust&7, &9Resonating Gems&7, and &b3x Liquid Starlight Buckets&7 (in your Chalice) to upgrade to Tier 3!"
+			],
+			x: 2.5, y: 6.0,
+			dependencies: ["ast_22_altar_tier2_resonating_table"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:stardust", count: 3 },
+				{ type: "item", item: "astralsorcery:resonating_gem", count: 2 },
+				{ type: "item", item: "astralsorcery:marble_runed", count: 8 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_24_altar_tier3_luminous_altar",
+			title: "&e24. Altar Tier 3: The Celestial / Luminous Crafting Altar",
+			description: [
+				"&7Upgrade your Resonating Crafting Table in-place into the &eLuminous Crafting Altar&7!",
+				"",
+				"&6&lUpgrade Recipe:",
+				"&8• &7Inside Altar: &9Resonating Gem&7, &6Gold / Allthemodium&7, and &fRuned Marble&7.",
+				"&8• &7Thrown on Ground: &b3x Stardust&7.",
+				"&8• &7From Containment Chalices: &b3 Buckets of Liquid Starlight&7.",
+				"&8• &7Structure: Requires the larger structure with the second raised ring of Focus Relays.",
+				"",
+				"&aNew Feature: &7Unlocks the &bConstellation Focus Slot&7 for Attuned Crystals!"
+			],
+			x: 0.0, y: 3.5,
+			size: 1.5,
+			shape: "pentagon",
+			dependencies: ["ast_22_altar_tier2_resonating_table", "ast_23_ground_items_in_altar_crafts"],
+			tasks: [ { type: "item", item: "astralsorcery:altar_luminance", count: 1 } ],
+			rewards: [
+				{ type: "item", item: "astralsorcery:starmetal_ingot", count: 8 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ast_25_altar_tier4_iridescent_altar",
+			title: "&d&l25. Altar Tier 4: The Iridescent Crafting Altar!",
+			description: [
+				"&7The ultimate altar of Astral Sorcery 2.0 (best built on your &bOrbital Space Station&7 in Phase 4 where the stars never set)!",
+				"",
+				"&6&lUpgrade Recipe & Structure:",
+				"&8• &7Build the widest Marble ring with four tall corner pillars around your Luminous Crafting Altar.",
+				"&8• &7Ingredients: &bCelestial Crystal&7, &fGlass Lens&7, and &9Starmetal&7.",
+				"&8• &7Lumen Requirement: &d200 of each of the 5 basic Lumens &7(&aAevitas, Armara, Discidia, Evorsio, Vicio&7) beamed from nearby &dLumen Arrays&7!",
+				"&8• &7Focus Requirement: &bArmara Starlight&7 + an &bArmara Attuned Crystal&7 in the focus slot!",
+				"",
+				"&6&lKey Pack Unlocks on the Iridescent Altar:",
+				"&8• &dUnobtainium Upgrade Smithing Template &7(Phase 6)",
+				"&8• &6Cosmic Alloy Smithing Template &7(Phase 7 Divine Smithing Fusion!)"
+			],
+			x: 0.0, y: 6.0,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["ast_24_altar_tier3_luminous_altar", "ast_43_lumen_arrays_filaments"],
+			tasks: [ { type: "item", item: "astralsorcery:altar_radiance", count: 1 } ],
+			rewards: [
+				{
+					type: "toast",
+					title: "Iridescent Altar Unlocked!",
+					description: "You have built the Tier 4 Iridescent Crafting Altar!"
+				},
+				{ type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "ast_26_attunement_altar",
+			title: "&926. The Attunement Altar & Attuned Crystals",
+			description: [
+				"&7Craft the &9Attunement Altar&7 on your Tier 2/3 Altar and place it in the center of a wide &8Sooty Marble&7 floor under an open sky.",
+				"",
+				"&6&lHow to Attune Yourself (Or a Crystal):",
+				"&81. &7Hold one of the &e5 Major Constellation Papers&7 near the Attunement Altar at night—glowing blue markers will show you where to place &bFocus Relays&7 on the Sooty Marble floor!",
+				"&82. &7When that constellation is in the night sky, the relays will ignite with starlight.",
+				"&83. &aPlayer Attunement: &7Stand on the Attunement Altar (without sneaking) to attune yourself and unlock the &630-Level Perk Tree&7 in your Tome!",
+				"&84. &bCrystal Attunement: &7Drop a &fRock Crystal&7 or &bCelestial Crystal&7 onto the altar to turn it into an &bAttuned Crystal&7!"
+			],
+			x: 0.0, y: 9.5,
+			size: 1.5,
+			shape: "pentagon",
+			dependencies: ["ast_22_altar_tier2_resonating_table"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:attunement_altar", count: 1 },
+				{ type: "item", item: "astralsorcery:sooty_marble_raw", count: 64 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_27_major_1_aevitas",
+			title: "&a27. Major Constellation #1: Aevitas (Creation & Life)",
+			description: [
+				"&a&lAevitas – The Constellation of Creation:",
+				"&8• &eHow You Gain Perk XP: &7Placing blocks!",
+				"&8• &aFocal Point Flower: &2Hyacinth",
+				"&8• &aLumen Crystal Catalyst: &aTree Saplings",
+				"&8• &bIridescent Tool Upgraded: &bIridescent Crystal Pickaxe",
+				"&8• &6Notable Perks: &aVivid Growth &7(crops and trees grow rapidly around you), &aMending &7(passively repairs your gear), and &aCleansing&7!"
+			],
+			x: 3.0, y: 9.5,
+			dependencies: ["ast_26_attunement_altar"],
+			tasks: [
+				{ type: "item", item_tag: "minecraft:saplings", count: 16 },
+				{ type: "item", item: "astralsorcery:rock_crystal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_28_major_2_armara",
+			title: "&b28. Major Constellation #2: Armara (Defense & Protection)",
+			description: [
+				"&b&lArmara – The Constellation of Defense:",
+				"&8• &eHow You Gain Perk XP: &7Taking or blocking damage!",
+				"&8• &aFocal Point Flower: &bOrchid",
+				"&8• &bLumen Crystal Catalyst: &fIron / Metal Ingots",
+				"&8• &bAltar Focus Role: &7Required as the focus crystal to upgrade to the &dTier 4 Iridescent Crafting Altar&7!",
+				"&8• &6Notable Perks: &6Phoenix Blessing &7(cheats death and revives you on a cooldown!), &bBody Blocking&7, &bUnwavering&7 (knockback immunity), and massive Armor Toughness / Resistance!"
+			],
+			x: 6.0, y: 9.5,
+			dependencies: ["ast_26_attunement_altar"],
+			tasks: [
+				{ type: "item", item: "minecraft:shield", count: 1 },
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_29_major_3_discidia",
+			title: "&c29. Major Constellation #3: Discidia (Offense & Slaying)",
+			description: [
+				"&c&lDiscidia – The Constellation of Offense:",
+				"&8• &eHow You Gain Perk XP: &7Dealing melee or ranged damage to mobs and bosses!",
+				"&8• &aFocal Point Flower: &cThistle",
+				"&8• &cLumen Crystal Catalyst: &cArrows",
+				"&8• &bIridescent Tool Upgraded: &cIridescent Crystal Sword",
+				"&8• &6Notable Perks: &4Culling Strike &7(instantly executes enemies below 15% HP!), &cRampage&7, &cLong Shot&7, &cBlunt Bolts&7, and &5Cursed Touch&7!"
+			],
+			x: 9.0, y: 9.5,
+			dependencies: ["ast_26_attunement_altar"],
+			tasks: [
+				{ type: "item", item: "minecraft:arrow", count: 32 },
+				{ type: "item", item: "astralsorcery:rock_crystal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_30_major_4_evorsio",
+			title: "&630. Major Constellation #4: Evorsio (Destruction & Mining)",
+			description: [
+				"&6&lEvorsio – The Constellation of Destruction:",
+				"&8• &eHow You Gain Perk XP: &7Breaking blocks and mining ores!",
+				"&8• &aFocal Point Flower: &6Protea",
+				"&8• &6Lumen Crystal Catalyst: &7Stone",
+				"&8• &bIridescent Tool Upgraded: &6Iridescent Crystal Axe",
+				"&8• &6Notable Perks: &eDifferent Angles &7(your Pickaxe works as a universal multi-tool on wood and dirt!), &6Breaking Aim&7, &6Last Breath&7, and &aConsistent Luck&7!"
+			],
+			x: 12.0, y: 9.5,
+			dependencies: ["ast_26_attunement_altar"],
+			tasks: [
+				{ type: "item", item: "minecraft:stone", count: 64 },
+				{ type: "item", item: "astralsorcery:rock_crystal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_31_major_5_vicio",
+			title: "&f31. Major Constellation #5: Vicio (Velocity & Travel)",
+			description: [
+				"&f&lVicio – The Constellation of Travel:",
+				"&8• &eHow You Gain Perk XP: &7Moving, sprinting, flying, and swimming!",
+				"&8• &aFocal Point Flower: &dIris",
+				"&8• &fLumen Crystal Catalyst: &fFeathers",
+				"&8• &bIridescent Tool Upgraded: &fIridescent Crystal Shovel",
+				"&8• &6Notable Perks: &bSpatial Manipulation &7(block and mob drops teleport straight into your inventory!), &eBigger Stomach&7, and huge movement/flight speed bonuses!"
+			],
+			x: 15.0, y: 9.5,
+			dependencies: ["ast_26_attunement_altar"],
+			tasks: [
+				{ type: "item", item: "minecraft:feather", count: 16 },
+				{ type: "item", item: "astralsorcery:rock_crystal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_32_seven_minor_constellations",
+			title: "&932. The 7 Minor Constellations & Solar Eclipse Horologium",
+			description: [
+				"&7Once you build the &9Resonating Crafting Table (Tier 2)&7, collect 7 more Constellation Papers to trace the &b7 Minor Constellations&7 with your Astrolabe:",
+				"&8• &eLucerna &7(Light – required to attune a crystal for the Illumination Wand)",
+				"&8• &6Mineralis &7(Ores) &8| &2Octans &7(Water/Fishing) &8| &aBootes &7(Animals)",
+				"&8• &cFornax &7(Melting/Heat) &8| &dPelotrio &7(Regeneration/Life)",
+				"&8• &bHorologium (Time – Special Rule!): &7Horologium does NOT follow the 8-night moon cycle—it ONLY appears in the sky on the night of a &6Solar Eclipse&7 (every 36 in-game days)!"
+			],
+			x: 18.0, y: 9.5,
+			dependencies: ["ast_22_altar_tier2_resonating_table"],
+			tasks: [ { type: "item", item: "astralsorcery:constellation_paper", count: 5 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_33_dynamism_gems_intro",
+			title: "&633. Perk Tree Sockets: Growing Dynamism Gems",
+			description: [
+				"&7Look closely at your 30-level Perk Tree—there are &e6 Gem Socket nodes&7 that accept &6Dynamism Gems&7!",
+				"",
+				"&6&lHow to Grow a Dynamism Gem Cluster:",
+				"&7Throw &e1x Illumination Powder + 1x Crystal&7 into a pool of &bLiquid Starlight&7 under an open sky. A gem cluster will form and grow over time.",
+				"",
+				"&cImportant: &7Harvest the cluster with a pickaxe as soon as it finishes growing, or it will shrink back down! Prepare 6x Illumination Powder and 6x Crystals for your 6 Perk Tree sockets!"
+			],
+			x: 3.0, y: 12.5,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["ast_26_attunement_altar"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:illumination_powder", count: 6 },
+				{ type: "item", item: "astralsorcery:rock_crystal", count: 6 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_34_ilium_fengarum_ourium_gems",
+			title: "&e34. Ilium (Day), Fengarum (Night) & Ourium (Dawn/Dusk) Gems",
+			description: [
+				"&6&lThe Three Types of Dynamism Gems:",
+				"&8• &eIlium Dynamism Gem (Finishes Growing During Day): &7Rolls &amore stat modifiers&7, but with slightly lower individual percentages.",
+				"&8• &9Fengarum Dynamism Gem (Finishes Growing at Night): &7Rolls &afewer modifiers, but with much stronger values&7!",
+				"&8• &6Ourium Dynamism Gem (Finishes Growing at Dawn or Dusk): &7A balanced middle ground between Ilium and Fengarum!",
+				"",
+				"&7Reach &a30 XP Levels&7 and socket your grown Dynamism Gems into your Perk Tree!"
+			],
+			x: 6.0, y: 12.5,
+			dependencies: ["ast_33_dynamism_gems_intro"],
+			tasks: [ { type: "xp", value: 10 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 12 } ]
+		},
+		{
+			id: "ast_35_resetting_perks_shifting_stars",
+			title: "&d35. Perk Seals, Nullifiers & Iridescent Shifting Stars",
+			description: [
+				"&7Want to customize or respec your Perk Tree?",
+				"&8• &7Perk Seal (&fastralsorcery:perk_seal&7): &7Drag onto a perk in the GUI to temporarily toggle its effect OFF without losing the node.",
+				"&8• &eShifting Star (&fastralsorcery:shifting_star&7): &7Hold right-click to completely wipe your constellation attunement and Perk XP.",
+				"&8• &dIridescent Shifting Star: &7Switches your attunement to a new major constellation while &akeeping 100% of your Perk Level and XP&7!"
+			],
+			x: 9.0, y: 12.5,
+			dependencies: ["ast_34_ilium_fengarum_ourium_gems"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:perk_seal", count: 2 },
+				{ type: "item", item: "astralsorcery:shifting_star", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_36_lumen_intro_flowers",
+			title: "&d&l36. Lumen Step 1: Transforming the 5 Constellation Flowers",
+			description: [
+				"&7In Astral Sorcery 2.0, &dLumen&7 is aspected starlight used to unlock the Tier 4 Iridescent Altar, bind permanent buffs to your Sacred Armor, and empower Shooting Star Artifacts!",
+				"",
+				"&6&lHow to Obtain Constellation Flowers:",
+				"&7Plant or drop small vanilla flowers (Poppies, Dandelions, etc.) in the exact center of each &eFocal Point&7 at night (planted flowers transform faster than dropped ones!). They transform into:",
+				"&8• &aAevitas -> Hyacinth &8| &bArmara -> Orchid &8| &cDiscidia -> Thistle",
+				"&8• &6Evorsio -> Protea &8| &fVicio -> Iris"
+			],
+			x: 0.0, y: 16.0,
+			size: 1.5,
+			shape: "pentagon",
+			dependencies: ["ast_24_altar_tier3_luminous_altar"],
+			tasks: [
+				{ type: "item", item_tag: "minecraft:small_flowers", count: 16 },
+				{ type: "item", item: "astralsorcery:liquid_starlight_bucket", count: 5 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "ast_37_lumen_arrays_filaments",
+			title: "&d37. Lumen Step 2: Lumen Arrays & Lumen Filaments",
+			description: [
+				"&7Craft 5 separate &dLumen Arrays&7 (one for each of the 5 major constellations)!",
+				"",
+				"&6&lHow Lumen Arrays Work:",
+				"&8• &7Feed a &dLumen Array&7 with a &bBucket of Liquid Starlight&7 + 1x &aConstellation Flower&7 (Hyacinth, Orchid, Thistle, Protea, or Iris).",
+				"&8• &7Lumen does NOT travel through pipes! Instead, devices pass Lumen to each other &athrough the air via line-of-sight&7 (and you can extend their range over longer distances using &bLumen Filaments&7).",
+				"&8• &ePro Tip: &7Lumen Arrays produce fastest when they are about &a50% full&7, and can be paused with a Redstone signal!"
+			],
+			x: 3.5, y: 16.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ast_36_lumen_intro_flowers"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:starmetal_ingot", count: 10 },
+				{ type: "item", item: "astralsorcery:glass_lens", count: 5 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_38_lumen_alchemy_tier1",
+			title: "&d38. Lumen Alchemy Tier 1: Virel, Solyn, Caldor & Nullae",
+			description: [
+				"&7To create mixed types of Lumen, craft a &dLumen Alchemy Array&7! (&cNote: Lumen Filaments do NOT work for feeding a Lumen Alchemy Array—the input arrays must be placed close enough to see the Alchemy Array directly!&7)",
+				"",
+				"&6&lTier 1 Mixed Lumens (Gather the 4 Catalyst Items!):",
+				"&8• &aVirel Lumen: &7Aevitas + Vicio &8(Catalyst: &aVivid / Illumination Powder&8)",
+				"&8• &eSolyn Lumen: &7Aevitas + Armara &8(Catalyst: &eIllumination Powder&8)",
+				"&8• &cCaldor Lumen: &7Armara + Discidia + Evorsio &8(Catalyst: &fNether Quartz&8)",
+				"&8• &8Nullae Lumen: &7Evorsio + Vicio &8(Catalyst: &8Nocturnal Powder&8)"
+			],
+			x: 7.0, y: 16.0,
+			dependencies: ["ast_37_lumen_arrays_filaments"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:illumination_powder", count: 8 },
+				{ type: "item", item: "astralsorcery:nocturnal_powder", count: 8 },
+				{ type: "item", item: "minecraft:quartz", count: 16 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_39_lumen_alchemy_tier2",
+			title: "&539. Lumen Alchemy Tier 2: Hyle, Dynamis, Aion & Akasha",
+			description: [
+				"&7Combine your Tier 1 mixed Lumens inside secondary &dLumen Alchemy Arrays&7 using these 4 exact catalysts:",
+				"",
+				"&8• &3Hyle Lumen: &7Armara + Solyn + Virel &8(Catalyst: &3Echo Shard&8)",
+				"&8• &dDynamis Lumen: &7Solyn + Vicio + Virel &8(Catalyst: &dAmethyst Shard&8)",
+				"&8• &9Aion Lumen: &7Caldor + Discidia + Nullae &8(Catalyst: &9Resonating Gem&8)",
+				"&8• &bAkasha Lumen: &7Caldor + Evorsio + Nullae &8(Catalyst: &bStardust&8)"
+			],
+			x: 10.5, y: 16.0,
+			dependencies: ["ast_38_lumen_alchemy_tier1"],
+			tasks: [
+				{ type: "item", item: "minecraft:echo_shard", count: 4 },
+				{ type: "item", item: "minecraft:amethyst_shard", count: 8 },
+				{ type: "item", item: "astralsorcery:resonating_gem", count: 8 },
+				{ type: "item", item: "astralsorcery:stardust", count: 8 }
+			],
+			rewards: [
+				{ type: "item", item: "minecraft:echo_shard", count: 2 },
+				{ type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "ast_40_prismatic_lumen",
+			title: "&6&l40. Lumen Alchemy Tier 3: Prismatic Lumen!",
+			description: [
+				"&7The pinnacle of Lumen Alchemy! Surround a central &dLumen Alchemy Array&7 with arrays supplying &3Hyle + Dynamis + Aion + Akasha&7 and feed it &dArtifact Shards&7 (made by striking a dropped Shooting Star Artifact with your &9Starmetal Chisel&7)!",
+				"",
+				"&7This produces &6Prismatic Lumen&7—required (600 Prismatic Lumen per craft) on the Iridescent Crafting Altar to enhance your Sacred Armor and Weapons with settled Artifacts!"
+			],
+			x: 14.0, y: 16.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["ast_39_lumen_alchemy_tier2"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:chisel", count: 1 },
+				{ type: "item", item: "astralsorcery:stardust", count: 16 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 6 } ]
+		},
+		{
+			id: "ast_41_lumen_crystallizer",
+			title: "&b41. Growing Lumen Crystals: The Lumen Crystallizer",
+			description: [
+				"&7Craft a &bLumen Crystallizer&7 and supply it with &bLiquid Starlight&7 + &dLumen&7 + the 5 Catalyst Items:",
+				"&8• &aAevitas Lumen Crystal: &7Catalyst = &aTree Sapling",
+				"&8• &bArmara Lumen Crystal: &7Catalyst = &fIron Ingot",
+				"&8• &cDiscidia Lumen Crystal: &7Catalyst = &cArrow",
+				"&8• &6Evorsio Lumen Crystal: &7Catalyst = &7Stone",
+				"&8• &fVicio Lumen Crystal: &7Catalyst = &fFeather",
+				"",
+				"&ePro Tip: &7Break the grown cluster &aby hand&7 to harvest a &dLumen Crystal&7 while only shrinking the cluster by 1 stage! Once you have 1 Lumen Crystal, use THAT Lumen Crystal as the catalyst inside the Crystallizer—it will NEVER shatter!"
+			],
+			x: 3.5, y: 19.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["ast_37_lumen_arrays_filaments"],
+			tasks: [
+				{ type: "item", item_tag: "minecraft:saplings", count: 1 },
+				{ type: "item", item: "minecraft:iron_ingot", count: 1 },
+				{ type: "item", item: "minecraft:arrow", count: 1 },
+				{ type: "item", item: "minecraft:stone", count: 1 },
+				{ type: "item", item: "minecraft:feather", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_42_binding_lumen_to_gear",
+			title: "&a42. Binding Lumen to Your Sacred Armor, Weapons & Flask!",
+			description: [
+				"&7Throw &d1x Lumen Crystal + 1x Stardust + Your Sacred Armor/Weapon/Tool&7 together into a pool of &bLiquid Starlight&7 to bind that Lumen aspect to your gear!",
+				"",
+				"&6&lAll 5 Bound Lumen Effects:",
+				"&8• &aAevitas Binding: &7Grants extra max health (charged by taking damage).",
+				"&8• &bArmara Binding: &7Hardens armor to deflect incoming blows (charged by taking damage).",
+				"&8• &cDiscidia Binding: &7Empowers weapon strikes for heavier damage (charged by hitting enemies).",
+				"&8• &6Evorsio Binding: &7Grants armor-piercing on weapons or faster block breaking on tools.",
+				"&8• &fVicio Binding: &7Grants faster movement speed or higher arrow velocity!"
+			],
+			x: 7.0, y: 19.0,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["ast_41_lumen_crystallizer"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:stardust", count: 5 },
+				{ type: "item", item: "astralsorcery:liquid_starlight_bucket", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "ast_43_lumen_arrays_filaments",
+			title: "&b43. Feeding 200×5 Lumen to the Iridescent Altar",
+			description: [
+				"&7Arrange 5 Lumen Arrays (&aAevitas, Armara, Discidia, Evorsio, Vicio&7) with line-of-sight (or &bLumen Filaments&7) around your Luminous Crafting Altar so each holds at least &d200 Lumen&7, and prepare a &bCelestial Crystal&7, &fGlass Lens&7, and &9Starmetal Ingots&7 to upgrade to the &dTier 4 Iridescent Crafting Altar&7!"
+			],
+			x: 0.0, y: 12.5,
+			dependencies: ["ast_37_lumen_arrays_filaments"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 1 },
+				{ type: "item", item: "astralsorcery:glass_lens", count: 1 },
+				{ type: "item", item: "astralsorcery:starmetal_ingot", count: 4 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_44_shooting_stars",
+			title: "&644. Midnight Shooting Stars!",
+			description: [
+				"&7Once you have crafted your first Illuminated Crafting Table, watch the sky around &eMidnight&7 (in any world with an open sky)!",
+				"",
+				"&7At most once per night, a &6Shooting Star&7 will streak across the heavens and crash nearby! Run to the impact site &cbefore dawn&7 (it despawns at sunrise!) to collect a &fRock Crystal&7, Diamonds/Emeralds/Aquamarine, and an ancient &dArtifact&7!"
+			],
+			x: 14.0, y: 19.0,
+			size: 1.4,
+			shape: "pentagon",
+			dependencies: ["ast_08_illuminated_crafting_table"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:rock_crystal", count: 1 },
+				{ type: "item", item: "minecraft:diamond", count: 2 },
+				{ type: "item", item: "minecraft:emerald", count: 2 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_45_awakening_and_settling_artifacts",
+			title: "&d45. Solving Artifact Riddles (Settling an Artifact)",
+			description: [
+				"&7An &dArtifact&7 is inert inside your inventory, but &edropping it on the ground wakes it up&7 and binds it to you!",
+				"",
+				"&6&lHow to Settle an Awakened Artifact:",
+				"&81. &7Once dropped, the Artifact glows and chimes with a &eriddle&7—asking for a specific item/mob to be brought close, or to be carried inside a specific structure (like a &cNether Fortress&7, &8Stronghold&7, or &6Mineshaft&7).",
+				"&82. &cBe Careful: &7Failing a riddle unsettles the Artifact (spawning mobs or teleporting it), and failing too many times destroys it!",
+				"&83. &aSettled State: &7Solve enough riddles and the Artifact will &asettle&7, allowing you to pick it up safely for Tier 4 Iridescent Altar enhancements!"
+			],
+			x: 17.5, y: 19.0,
+			dependencies: ["ast_44_shooting_stars"],
+			tasks: [ { type: "checkmark" } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_46_artifact_gear_enhancement",
+			title: "&6&l46. Artifact Enhancement: Raising All Enchants +1 Above Cap!",
+			description: [
+				"&7Take a &aSettled Artifact&7 to your &dTier 4 Iridescent Crafting Altar&7 along with &6600 Prismatic Lumen&7 and &bLiquid Starlight&7!",
+				"",
+				"&a&lWhat Artifact Enhancement Does:",
+				"&8• &bOn Sacred Armor, Weapons, or Tools: &7Raises &aEVERY SINGLE ENCHANTMENT on the item by +1 level&7 (even pushing past Level 100 Apothic caps!), gives the item a custom rarity and title, and permanently seals it!",
+				"&8• &dOn a Resplendent Prism or Dynamism Gem: &7Adds an extra high-tier bonus modifier!"
+			],
+			x: 21.0, y: 19.0,
+			size: 1.55,
+			shape: "octagon",
+			dependencies: [
+				"ast_45_awakening_and_settling_artifacts",
+				"ast_40_prismatic_lumen",
+				"ast_25_altar_tier4_iridescent_altar"
+			],
+			tasks: [
+				{ type: "item", item: "astralsorcery:liquid_starlight_bucket", count: 2 },
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 1 }
+			],
+			rewards: [
+				{ type: "toast", title: "Artifact Enhancement Mastered!", description: "Your Sacred Gear transcends mortal limits!" },
+				{ type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "ast_47_crystal_tools_base",
+			title: "&b47. Forging Crystal Tools (Pickaxe, Axe, Shovel, Sword)",
+			description: [
+				"&7Craft Crystal Tools on your altar using &fInfused Wood&7 and &fRock / Celestial Crystals&7!",
+				"",
+				"&7The tool inherits the exact &eSize (durability)&7, &bPurity (efficiency)&7, and &dCut (speed/damage)&7 of the crystals used to craft it—and serves as the base for the 4 &dIridescent Crystal Tools&7!"
+			],
+			x: 0.0, y: 22.0,
+			dependencies: ["ast_19_crystal_stats_size_purity_cut"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:crystal_pickaxe", count: 1 },
+				{ type: "item", item: "astralsorcery:crystal_sword", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_48_iridescent_crystal_pickaxe",
+			title: "&a48. Iridescent Crystal Pickaxe (Aevitas Focus)",
+			description: [
+				"&7Upgrade a Crystal Pickaxe on the &eLuminous Crafting Altar&7 with an &aAevitas Attuned Crystal&7 in the focus slot!",
+				"",
+				"&aAbilities: &7Mines a wide 3x3 face of stone at once, and &eRight-Clicking&7 sends out a pulse that highlights nearby ores through walls!"
+			],
+			x: 3.0, y: 22.0,
+			dependencies: ["ast_47_crystal_tools_base", "ast_24_altar_tier3_luminous_altar"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "astralsorcery:crystal_pickaxe", count: 1 },
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_49_iridescent_crystal_axe",
+			title: "&649. Iridescent Crystal Axe (Evorsio Focus)",
+			description: [
+				"&7Upgrade a Crystal Axe on the &eLuminous Crafting Altar&7 with an &6Evorsio Attuned Crystal&7 in the focus slot!",
+				"",
+				"&6Abilities: &7Fells an entire tree in a single swing (hold Sneak to break only 1 log)!"
+			],
+			x: 6.0, y: 22.0,
+			dependencies: ["ast_48_iridescent_crystal_pickaxe"],
+			optional: true,
+			tasks: [ { type: "item", item: "astralsorcery:crystal_axe", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_50_iridescent_crystal_shovel",
+			title: "&f50. Iridescent Crystal Shovel (Vicio Focus)",
+			description: [
+				"&7Upgrade a Crystal Shovel on the &eLuminous Crafting Altar&7 with a &fVicio Attuned Crystal&7 in the focus slot!",
+				"",
+				"&fAbilities: &7Digs a wide area and automatically vein-mines connected blocks of Sand, Gravel, Clay, or Aquamarine Shale!"
+			],
+			x: 9.0, y: 22.0,
+			dependencies: ["ast_49_iridescent_crystal_axe"],
+			optional: true,
+			tasks: [ { type: "item", item: "astralsorcery:crystal_shovel", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_51_iridescent_crystal_sword",
+			title: "&c51. Iridescent Crystal Sword (Discidia Focus)",
+			description: [
+				"&7Upgrade a Crystal Sword on the &eLuminous Crafting Altar&7 with a &cDiscidia Attuned Crystal&7 in the focus slot!",
+				"",
+				"&c&lCelestial Strike (Changes Based on Your Attunement!):",
+				"&7Hold attack to unleash a crescent wave; a full charge calls down a &6Celestial Strike&7 from the heavens (cooldowns are halved at night!):",
+				"&8• &cDiscidia: &7Massive bonus strike damage.",
+				"&8• &aAevitas: &7Heals you and all nearby co-op allies!",
+				"&8• &bArmara: &7Grants a protective absorption shield.",
+				"&8• &fVicio: &7Teleports you directly to where the strike lands.",
+				"&8• &6Evorsio: &7Blasts all enemies away with a shockwave!"
+			],
+			x: 12.0, y: 22.0,
+			dependencies: ["ast_50_iridescent_crystal_shovel"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "astralsorcery:crystal_sword", count: 1 },
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "ast_52_formation_and_conversion_wands",
+			title: "&e52. Builder's Best Friends: Formation & Conversion Wands",
+			description: [
+				"&7Crafted right on the Tier 1 &bIlluminated Crafting Table&7:",
+				"&8• &eFormation Wand (&fastralsorcery:architect_wand&7): &7Builds long lines, walls, floors, and spheres out of blocks from your inventory!",
+				"&8• &bConversion Wand (&fastralsorcery:exchange_wand&7): &7Swaps connected blocks in the world of one type for another in a single click!"
+			],
+			x: 0.0, y: 25.0,
+			dependencies: ["ast_08_illuminated_crafting_table"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "astralsorcery:architect_wand", count: 1 },
+				{ type: "item", item: "astralsorcery:exchange_wand", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 2 } ]
+		},
+		{
+			id: "ast_53_traversal_and_impulsion_wands",
+			title: "&b53. Mobility Wands: Traversal & Impulsion Wands",
+			description: [
+				"&7Crafted on the Tier 2 &9Resonating Crafting Table&7:",
+				"&8• &fTraversal Wand (&fastralsorcery:blink_wand&7): &7Launches you through the air or carries you toward where you are looking!",
+				"&8• &3Impulsion Wand (&fastralsorcery:grappling_wand&7): &7Works like a starlight grappling hook that pulls you to blocks—or yanks mobs toward you!"
+			],
+			x: 3.0, y: 25.0,
+			dependencies: ["ast_22_altar_tier2_resonating_table"],
+			optional: true,
+			tasks: [
+				{ type: "item", item: "astralsorcery:blink_wand", count: 1 },
+				{ type: "item", item: "astralsorcery:grappling_wand", count: 1 }
+			],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_54_cave_illuminator",
+			title: "&e54. Automatic Underground Lighting: The Cave Illuminator",
+			description: [
+				"&7Craft a &eCave Illuminator&7 (&fastralsorcery:cave_illuminator&7) on your Illuminated Crafting Table and place it at the surface above your base!",
+				"",
+				"&7It automatically places invisible yellow starlight flares throughout every dark cave system beneath it in a wide radius—preventing underground mob spawns and lighting up caves for you!"
+			],
+			x: 6.0, y: 25.0,
+			dependencies: ["ast_08_illuminated_crafting_table"],
+			tasks: [ { type: "item", item: "astralsorcery:cave_illuminator", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_55_tree_beacon",
+			title: "&255. Phantom Forestry: The Tree Beacon",
+			description: [
+				"&7Craft a &2Tree Beacon&7 (&fastralsorcery:tree_beacon&7) on your Resonating Crafting Table! Plant trees around it—it turns them into ghostly green shadow-trees and continuously harvests their wood and leaves without breaking the actual trees!"
+			],
+			x: 9.0, y: 25.0,
+			dependencies: ["ast_22_altar_tier2_resonating_table"],
+			optional: true,
+			tasks: [ { type: "item", item: "astralsorcery:tree_beacon", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_56_celestial_gateway",
+			title: "&956. Starlight Teleportation: The Celestial Gateway",
+			description: [
+				"&7Craft &9Celestial Gateways&7 (&fastralsorcery:celestial_gateway&7) on your Resonating Crafting Table and place them on multi-block Sooty Marble platforms under open sky across different bases or dimensions!",
+				"",
+				"&7Standing on a Celestial Gateway displays glowing stars in the dome around you corresponding to every other Gateway you have built—look at a star and sneak to teleport there!"
+			],
+			x: 12.0, y: 25.0,
+			dependencies: ["ast_22_altar_tier2_resonating_table"],
+			optional: true,
+			tasks: [ { type: "item", item: "astralsorcery:celestial_gateway", count: 2 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
+		},
+		{
+			id: "ast_57_resplendent_prism",
+			title: "&d57. Curios Enchantment Booster: The Resplendent Prism!",
+			description: [
+				"&7Craft the &dResplendent Prism&7 (&fastralsorcery:enchantment_amulet&7) on your &eLuminous Crafting Altar (Tier 3)&7 and equip it in your Curios Necklace/Charm slot!",
+				"",
+				"&6&lWhy Every Player Should Wear a Resplendent Prism:",
+				"&7It rolls random &a+1 to +2 bonus levels to existing enchantments&7 across all of your equipped armor and weapons (and can even be enhanced further on the Tier 4 Iridescent Altar with a Settled Artifact)!"
+			],
+			x: 15.0, y: 25.0,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["ast_24_altar_tier3_luminous_altar"],
+			tasks: [ { type: "item", item: "astralsorcery:enchantment_amulet", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "ast_58_illumination_wand",
+			title: "&e58. Colored Starlight: The Illumination Wand",
+			description: [
+				"&7Attune a crystal to the minor constellation &eLucerna&7 and craft an &eIllumination Wand&7 (&fastralsorcery:illumination_wand&7)—it places permanent, non-solid colored starlight lights anywhere and can make blocks blast-resistant!"
+			],
+			x: 18.0, y: 22.0,
+			dependencies: ["ast_32_seven_minor_constellations"],
+			optional: true,
+			tasks: [ { type: "item", item: "astralsorcery:illumination_wand", count: 1 } ],
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "ast_59_astral_progression_integrations",
+			title: "&659. Astral Sorcery's Role in Tech, Scales & Rockets",
+			description: [
+				"&7Verify that you have crafted all key Astral Sorcery ingredients required across the Main Storyline:",
+				"&8• &bAquamarine & Illumination Powder: &7Phase 1A Seashelves & Phase 1B ME Controller.",
+				"&8• &9Starmetal Ingots: &7Phase 2 Teleport Pad, AE2 Quantum Rings, Phase 5 Necklace of the Desert & Phase 7 Cosmic Alloy Smithing Template.",
+				"&8• &fGlass Lenses: &7Phase 1A Advanced Solar Gen, Phase 4 Fluid Laser Base, Tier 1 Rocket, Solar Neutron Activators & Phase 7 Ore Laser Base.",
+				"&8• &bLiquid Starlight: &7Phase 4 bucket-free Cryo Fuel synthesis in the IF Dissolution Chamber.",
+				"&8• &bCelestial Crystals: &7Phase 5 Void Eye (Ender Guardian), Phase 6 Unobtainium Template & Phase 7 Angel Ring!"
+			],
+			x: 21.0, y: 22.0,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["ast_11_focal_point_starmetal", "ast_17_glass_lens_optics", "ast_18_celestial_crystal_clusters"],
+			tasks: [
+				{ type: "item", item: "astralsorcery:aquamarine", count: 8 },
+				{ type: "item", item: "astralsorcery:starmetal_ingot", count: 4 },
+				{ type: "item", item: "astralsorcery:glass_lens", count: 4 },
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 2 }
+			],
+			rewards: [
+				{ type: "item", item: "astralsorcery:celestial_crystal", count: 2 },
+				{ type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "ast_60_grand_master_of_the_stars",
+			title: "&b&l★ 60. GRAND ARCHMAGE OF THE CONSTELLATIONS! ★",
+			description: [
+				"&b&lCongratulations, Starborn Archmage!",
+				"&7You have mastered all &a60 quests&7 of the Astral Sorcery 2.0 (1.21.1) Guide!",
+				"",
+				"&7From tracing your first constellation through the Astrolabe and transforming Iron Ore at a Focal Point, to building the Tier 4 Iridescent Crafting Altar in space, binding Lumen to your Sacred Armor, socketing Dynamism Gems into your Level 30 Perk Tree, and forging the Cosmic Alloy Smithing Template—the cosmos itself bows to your command!"
+			],
+			x: 21.0, y: 25.0,
+			size: 2.0,
+			shape: "octagon",
+			dependencies: [
+				"ast_25_altar_tier4_iridescent_altar",
+				"ast_42_binding_lumen_to_gear",
+				"ast_46_artifact_gear_enhancement",
+				"ast_57_resplendent_prism",
+				"ast_59_astral_progression_integrations"
+			],
+			tasks: [ { type: "item", item: "astralsorcery:celestial_crystal", count: 4 } ],
+			rewards: [
+				{ type: "toast", title: "60 Astral Quests Mastered!", description: "You are the Grand Archmage of Astral Sorcery 2.0!" },
+				{ type: "xp_levels", xp_levels: 20 }
+			]
+		}
+	]
+}

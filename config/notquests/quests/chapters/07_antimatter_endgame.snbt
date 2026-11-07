@@ -1,0 +1,501 @@
+{
+	id: "4875ACFEE33E3062",
+	title: "&4P7: Absolute Power",
+	icon: "mekanism:pellet_antimatter",
+	group: "group_main",
+	order_index: 8,
+	quests: [
+		{
+			id: "p7_intro",
+			title: "&4The Final Frontier: Antimatter & Omnipotence",
+			description: [
+				"&7Your 15-slot Cosmic Factories roar in unison, your Fusion Reactor outputs tens of millions of FE/t, and your Orbital Station beams endless Polonium down from the stars.",
+				"",
+				"&7Yet one final mechanical titan slumbers beneath the earth, and the divine artifacts of absolute power await their master.",
+				"",
+				"&6&lYour Final Objectives:",
+				"&81. &7Build the &3Supercritical Phase Shifter (SPS)&7 and crystallize &dPellets of Antimatter&7.",
+				"&82. &7Awaken &4The Harbinger&7 with a Pellet of Antimatter to claim &4Witherite Ingots&7.",
+				"&83. &7Forge the &6Cosmic Alloy Smithing Template&7 & &dTri-Realm Alloy Singularity&7 to upgrade your Unobtainium tools into &6ATM Alloy Weapons & Tools&7!",
+				"&84. &7Cook &6The Allthemodium Apple&7 (5-minute God-Mode) and claim the &d17-Slot Infinite Tier Installer&7, &6Ore Laser Base&7, &eAngel Ring&7, and &dBackpack Infinity Upgrade&7!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p6_phase_6_complete", "p6_cosmic_tier_installer", "p6_unobtainium_armor"],
+			tasks: [ { id: "E0A1B2C3D4E5F603", type: "item", item: "mekanism_extras:cosmic_tier_installer", count: 1 } ],
+			rewards: [
+				{ id: "E0A1B2C3D4E5F601", type: "item", item: "minecraft:enchanted_golden_apple", count: 2 },
+				{ id: "E0A1B2C3D4E5F602", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P7Q0000000000001",
+			title: "&bHDPE Sheets & Polonium Supply",
+			description: [
+				"&7To feed the SPS Reactor, you need a massive stream of &bPolonium Gas&7 from your Orbital Station and &fHDPE Sheets&7 (&fmekanism:hdpe_sheet&7)!",
+				"",
+				"&7Infuse Substrate with Liquid Ethylene and Oxygen inside a PRC to produce &fHDPE Pellets&7, then enrich them into &fHDPE Sheets&7."
+			],
+			x: 0.0, y: 2.5,
+			dependencies: ["p7_intro"],
+			tasks: [
+				{ id: "P7T0000000000001", type: "item", item: "mekanism:hdpe_sheet", count: 16 },
+				{ id: "P7T0000000000002", type: "item", item: "mekanism:pellet_polonium", count: 8 }
+			],
+			rewards: [
+				{ id: "P7R0000000000001", type: "item", item: "mekanism:hdpe_sheet", count: 16 },
+				{ id: "P7R0000000000002", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "B88CB20A2435CAA9",
+			title: "&3Constructing the SPS Reactor",
+			description: [
+				"&7Finish fabricating all &360x SPS Casings&7 (cooled with Glacio's Calorite, Ice Shards, and Ice Dragonsteel), &33x SPS Ports&7, and &bSupercharged Coils&7!",
+				"",
+				"&eMultiblock Setup:",
+				"&8• &7Build the hollow 7x7x7 rounded cube frame (you can replace inner face casings with Structural Glass).",
+				"&8• &7Place 1 SPS Port for &bPolonium Gas&7 input, 1 SPS Port with a &bSupercharged Coil&7 inside pointing inward for massive FE input from your Fusion Reactor, and 1 SPS Port for &dAntimatter Gas&7 output!"
+			],
+			x: 3.5, y: 0.0,
+			size: 1.45,
+			shape: "rsquare",
+			dependencies: ["p7_intro"],
+			tasks: [
+				{ id: "C9994255962C8454", type: "item", item: "mekanism:sps_casing", count: 60 },
+				{ id: "C271063862A468A0", type: "item", item: "mekanism:sps_port", count: 3 },
+				{ id: "3D0457A7DE775162", type: "item", item: "mekanism:supercharged_coil", count: 1 }
+			],
+			rewards: [
+				{ id: "FC36902679D5D1F1", type: "item", item: "mekanism:supercharged_coil" },
+				{ id: "1E24D7DACEEC396E", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "P7Q0000000000002",
+			title: "&dThe Antimatter Crystallizer",
+			description: [
+				"&7Place a dedicated &eChemical Crystallizer&7 directly connected to your SPS Reactor's output port so every millibucket of &dAntimatter Gas&7 is solidified into &dPellets of Antimatter&7!"
+			],
+			x: 3.5, y: 2.5,
+			dependencies: ["B88CB20A2435CAA9"],
+			tasks: [ { id: "P7T0000000000003", type: "item", item: "mekanism:chemical_crystallizer", count: 1 } ],
+			rewards: [
+				{ id: "P7R0000000000003", type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "P7R0000000000004", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "2A953CFC07777816",
+			title: "&d&lSynthesizing Pellets of Antimatter!",
+			description: [
+				"&7Pump &bPolonium Gas&7 and hundreds of millions of FE from your Fusion Reactor into your SPS Reactor to produce &dAntimatter Gas&7, then pipe it into a &eChemical Crystallizer&7 to solidify it into &dPellets of Antimatter&7 (&fmekanism:pellet_antimatter&7)!",
+				"",
+				"&eNote: &7Your very first Pellet of Antimatter won't go into a machine—it is the ignition key for the final boss of the modpack!"
+			],
+			x: 7.5, y: 0.0,
+			size: 1.65,
+			shape: "hexagon",
+			dependencies: ["B88CB20A2435CAA9"],
+			tasks: [ { id: "F8E87DBB313391BE", type: "item", item: "mekanism:pellet_antimatter", count: 2 } ],
+			rewards: [
+				{ id: "1A3324DD36F0A41D", type: "item", item: "mekanism:pellet_antimatter" },
+				{
+					id: "6EA24D10BD5E1A1A",
+					type: "toast",
+					title: "Antimatter Synthesized!",
+					description: "You hold the power to awaken The Harbinger!"
+				},
+				{ id: "FB557ACC54513CA8", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "P7Q0000000000003",
+			title: "&dAntiprotonic Nucleosynthesizer",
+			description: [
+				"&7Want to transmute items using Antimatter? Build the &dAntiprotonic Nucleosynthesizer&7 (&fmekanism:antiprotonic_nucleosynthesizer&7)!"
+			],
+			x: 7.5, y: 2.5,
+			dependencies: ["2A953CFC07777816"],
+			optional: true,
+			tasks: [ { id: "P7T0000000000004", type: "item", item: "mekanism:antiprotonic_nucleosynthesizer", count: 1 } ],
+			rewards: [
+				{ id: "P7R0000000000005", type: "item", item: "mekanism:pellet_antimatter" },
+				{ id: "P7R0000000000006", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "FFAC614590C83293",
+			title: "&8Locating the Ancient Factory",
+			description: [
+				"&7Use your &2Explorer's Compass&7 in the Overworld to locate the subterranean &8Ancient Factory&7 where the mechanical war machine slumbers.",
+				"",
+				"&c&lImportant KubeJS Lock:",
+				"&7Standard activation using a Nether Star is &c&lCOMPLETELY BLOCKED&7! Only the annihilation energy of a &dPellet of Antimatter&7 can jump-start its core!"
+			],
+			x: 11.0, y: 0.0,
+			dependencies: ["2A953CFC07777816"],
+			tasks: [ { id: "7F152D7F1E6A5A7D", type: "structure", structure: "cataclysm:ancient_factory" } ],
+			rewards: [
+				{ id: "E74E456ACA147BA4", type: "item", item: "minecraft:enchanted_golden_apple", count: 2 },
+				{ id: "EDE2DC7FB3F434D0", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "B858B85E371FDBC4",
+			title: "&4&lFinal Boss: The Harbinger!",
+			description: [
+				"&e&lHow to Awaken:",
+				"&7Hold a &dPellet of Antimatter&7 (&fmekanism:pellet_antimatter&7) in your main hand and &6Right-Click the dormant Harbinger&7!",
+				"",
+				"&7Survive its devastating laser barrages, missile salvos, and enraged overdrive phase, and shatter the machine to claim its &4Witherite Ingots&7 (&fcataclysm:witherite_ingot&7)!"
+			],
+			x: 14.5, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["FFAC614590C83293"],
+			tasks: [
+				{ id: "6B62D7E5454216E2", type: "kill", entity: "cataclysm:the_harbinger", value: 1 },
+				{ id: "BF957D16F0719EC7", type: "item", item: "cataclysm:witherite_ingot", count: 2 }
+			],
+			rewards: [
+				{ id: "1017599E2731CF56", type: "item", item: "cataclysm:witherite_ingot", count: 2 },
+				{ id: "1A77DEB8BA6F6303", type: "toast", title: "The Harbinger Destroyed!", description: "The final boss has fallen!" },
+				{ id: "172C63C5AFB38DF8", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "P7Q0000000000005",
+			title: "&6Gathering the Cosmic & Draconic Metals",
+			description: [
+				"&7Prepare all three Dragonsteel Ingots (&cFire&7, &9Lightning&7, &bIce&7) and all three Planetary Ingots (&6Desh&7, &5Ostrum&7, &4Calorite&7) along with &9Starmetal&7 for the Iridescent Altar!"
+			],
+			x: 12.5, y: 3.5,
+			dependencies: ["B858B85E371FDBC4"],
+			tasks: [
+				{ id: "P7T0000000000006", type: "item", item: "iceandfire:dragonsteel_fire_ingot", count: 1 },
+				{ id: "P7T0000000000007", type: "item", item: "iceandfire:dragonsteel_lightning_ingot", count: 1 },
+				{ id: "P7T0000000000008", type: "item", item: "iceandfire:dragonsteel_ice_ingot", count: 1 },
+				{ id: "P7T0000000000009", type: "item", item: "ad_astra:calorite_ingot", count: 1 }
+			],
+			rewards: [
+				{ id: "P7R0000000000009", type: "item", item: "allthemodium:unobtainium_upgrade_smithing_template" },
+				{ id: "P7R0000000000010", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p7_cosmic_alloy_template",
+			title: "&6Divine Smithing 1: Cosmic Alloy Template",
+			description: [
+				"&7Your Unobtainium weapons and tools await one final, supra-divine evolution in the Smithing Table with 100% preservation of all enchantments, gems, and affixes! (&cNote: The Alloy Paxel is removed due to enchantment technical limits&7).",
+				"",
+				"&6&lStep 1 – Cosmic Alloy Smithing Template (On the Iridescent Altar):",
+				"&8• &dUnobtainium Upgrade Smithing Template",
+				"&8• &9Starmetal Ingot &7(Astral Sorcery)",
+				"&8• &cAll 3 Dragonsteels: &cFire&7, &9Lightning &7& &bIce Dragonsteel Ingots",
+				"&8• &6All 3 Planetary Metals: &6Desh&7, &5Ostrum &7& &4Calorite Ingots",
+				"&8• &4Witherite Ingot &7(The Harbinger)"
+			],
+			x: 14.5, y: 3.5,
+			size: 1.45,
+			shape: "pentagon",
+			dependencies: ["B858B85E371FDBC4", "P7Q0000000000005"],
+			tasks: [ { id: "E0A1B2C3D4E5F612", type: "item", item: "kubejs:cosmic_alloy_smithing_template", count: 1 } ],
+			rewards: [
+				{ id: "E0A1B2C3D4E5F610", type: "item", item: "kubejs:cosmic_alloy_smithing_template", count: 3 },
+				{ id: "E0A1B2C3D4E5F611", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "p7_tri_realm_singularity",
+			title: "&dDivine Smithing 2: Tri-Realm Alloy Singularity",
+			description: [
+				"&6&lStep 2 – Tri-Realm Alloy Singularity (IF Dissolution Chamber):",
+				"&81. &7First, fuse all three dual alloys inside your &eMekanism Combiner&7: &6Allthemodium-Vibranium Ingot&7, &aVibranium-Unobtainium Ingot&7, and &dUnobtainium-Allthemodium Ingot&7.",
+				"&82. &7Inside the &bIndustrial Foregoing Dissolution Chamber&7, flood them with &32,000 mB of Ether Gas&7 and combine them with:",
+				"   &8• &dPellet of Antimatter &7(Mekanism)",
+				"   &8• &aEntro Ingot &7(ExtendedAE)",
+				"   &8• &6The Allthemodium Carrot &7(Delight)",
+				"   &8• &4Witherite Ingot &7(Harbinger) & &dCataclysmic Flux&7!"
+			],
+			x: 16.5, y: 3.5,
+			size: 1.45,
+			shape: "hexagon",
+			dependencies: ["p7_cosmic_alloy_template"],
+			tasks: [
+				{ id: "E0A1B2C3D4E5F615", type: "item", item: "allthemodium:unobtainium_allthemodium_alloy_ingot", count: 1 },
+				{ id: "E0A1B2C3D4E5F616", type: "item", item: "allthemodium:unobtainium_vibranium_alloy_ingot", count: 1 },
+				{ id: "E0A1B2C3D4E5F617", type: "item", item: "allthemodium:vibranium_allthemodium_alloy_ingot", count: 1 },
+				{ id: "E0A1B2C3D4E5F618", type: "item", item: "kubejs:tri_realm_alloy_singularity", count: 1 }
+			],
+			rewards: [
+				{ id: "E0A1B2C3D4E5F613", type: "item", item: "kubejs:tri_realm_alloy_singularity" },
+				{ id: "E0A1B2C3D4E5F614", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "p7_atm_alloy_weapons_tools",
+			title: "&6&lDivine Smithing Finale: ATM Alloy Arsenal!",
+			description: [
+				"&6&lStep 3 – The Final Smithing Evolution:",
+				"&7Inside a &fSmithing Table&7, combine your &dUnobtainium Sword, Pickaxe, Axe, and Shovel&7 with the &6Cosmic Alloy Smithing Template&7 and &dTri-Realm Alloy Singularity&7!",
+				"",
+				"&aYou have forged the ultimate ATM Alloy Weapons & Tools with 100% of your lifelong Enchantments, Apotheosis Gems, and Affixes preserved!"
+			],
+			x: 18.5, y: 3.5,
+			size: 1.65,
+			shape: "octagon",
+			dependencies: ["p7_tri_realm_singularity"],
+			tasks: [
+				{ id: "E0A1B2C3D4E5F621", type: "item", item: "allthemodium:alloy_sword", count: 1 },
+				{ id: "E0A1B2C3D4E5F622", type: "item", item: "allthemodium:alloy_pick", count: 1 },
+				{ id: "E0A1B2C3D4E5F623", type: "item", item: "allthemodium:alloy_axe", count: 1 },
+				{ id: "E0A1B2C3D4E5F624", type: "item", item: "allthemodium:alloy_shovel", count: 1 }
+			],
+			rewards: [
+				{
+					id: "E0A1B2C3D4E5F619",
+					type: "toast",
+					title: "Divine Smithing Complete!",
+					description: "You forged the divine ATM Alloy Weapons & Tools!"
+				},
+				{ id: "E0A1B2C3D4E5F620", type: "xp_levels", xp_levels: 15 }
+			]
+		},
+		{
+			id: "9E270D863A97E432",
+			title: "&6The Masterchef Feast Preparation",
+			description: [
+				"&7To cook the legendary &6Allthemodium Apple&7, you must prepare &6The Allthemodium Carrot&7 (from Phase 3) along with the 4 pinnacle dishes from across your dimensional journey:",
+				"",
+				"&8• &bBase Container: &6The Allthemodium Carrot &7(&fallthemodium:allthemodium_carrot&7)",
+				"&81. &6Meef Stroganoff &7(&ftwilightforest:meef_stroganoff&7 – Twilight Forest)",
+				"&82. &cStriderloaf &7(&fmynethersdelight:striderloaf&7 – My Nether's Delight)",
+				"&83. &eFiery Fondue Pot &7(&fbrewinandchewin:fiery_fondue_pot&7 – Brewin' And Chewin')",
+				"&84. &5Dragon Leg with Sauce &7(&fends_delight:dragon_leg_with_sauce&7 – End's Delight)"
+			],
+			x: 14.5, y: -5.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["p7_intro"],
+			tasks: [
+				{ id: "FEAB9387FEB1394C", type: "item", item: "allthemodium:allthemodium_carrot", count: 1 },
+				{ id: "FEAB9387FEB1394D", type: "item", item: "twilightforest:meef_stroganoff", count: 1 },
+				{ id: "EE91A7F3031E4D4E", type: "item", item: "mynethersdelight:striderloaf", count: 1 },
+				{ id: "069AC203D3D49DEC", type: "item", item: "brewinandchewin:fiery_fondue_pot", count: 1 },
+				{ id: "7A33AC235CD9740B", type: "item", item: "ends_delight:dragon_leg_with_sauce", count: 1 }
+			],
+			rewards: [
+				{ id: "F30DE663625C5451", type: "item", item: "allthemodium:allthemodium_carrot" },
+				{ id: "624CA59E048CE08F", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P7Q0000000000009",
+			title: "&6Applied Delight: Automating God-Food",
+			description: [
+				"&7Encode the recipe for &6The Allthemodium Apple&7 into an AE2 Pattern and place it inside the Pattern Provider attached to your &6Farmer's Delight Cooking Pot (Applied Delight)&7!",
+				"",
+				"&7Because you will need multiple Allthemodium Apples for the 17-Slot Infinite Installer, Angel Ring, and Backpack Infinity Upgrade, automating your Cooking Pot is the ultimate Masterchef flex!"
+			],
+			x: 14.5, y: -2.5,
+			dependencies: ["9E270D863A97E432", "B858B85E371FDBC4"],
+			tasks: [
+				{ id: "P7T0000000000015", type: "item", item: "farmersdelight:cooking_pot", count: 1 },
+				{ id: "P7T0000000000016", type: "item", item: "allthemodium:unobtainium_block", count: 1 }
+			],
+			rewards: [
+				{ id: "P7R0000000000015", type: "item", item: "allthemodium:unobtainium_block" },
+				{ id: "P7R0000000000016", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p7_allthemodium_apple",
+			title: "&6&lMasterchef Finale: The Allthemodium Apple!",
+			description: [
+				"&7Place a &dFarmer's Delight Cooking Pot&7 over heat (or automate it via &eApplied Delight&7!).",
+				"",
+				"&6&lCustom KubeJS Cooking Pot Recipe:",
+				"&8• &bBottom Container Slot: &61x The Allthemodium Carrot &7(&fallthemodium:allthemodium_carrot&7)",
+				"&8• &eSlot 1: &dUnobtainium Block &7(&fallthemodium:unobtainium_block&7)",
+				"&8• &eSlot 2: &4Witherite Ingot &7(&fcataclysm:witherite_ingot&7)",
+				"&8• &eSlot 3: &6Meef Stroganoff &7(&ftwilightforest:meef_stroganoff&7)",
+				"&8• &eSlot 4: &cStriderloaf &7(&fmynethersdelight:striderloaf&7)",
+				"&8• &eSlot 5: &eFiery Fondue Pot &7(&fbrewinandchewin:fiery_fondue_pot&7)",
+				"&8• &eSlot 6: &5Dragon Leg with Sauce &7(&fends_delight:dragon_leg_with_sauce&7)",
+				"",
+				"&a&l5-Minute God-Mode Buffs Upon Eating:",
+				"&7Grants &bResistance IV, Strength V, Absorption X (20 Golden Hearts), Speed III, Haste IV, Regeneration IV & Fire/Cryo Immunity&7 for 5 full minutes!"
+			],
+			x: 18.5, y: 0.0,
+			size: 1.75,
+			shape: "heart",
+			dependencies: ["B858B85E371FDBC4", "9E270D863A97E432"],
+			tasks: [ { id: "29A69C2CD279C1B9", type: "item", item: "allthemodium:allthemodium_apple", count: 1 } ],
+			rewards: [
+				{ id: "B7E45661957ADE45", type: "item", item: "allthemodium:allthemodium_apple" },
+				{
+					id: "62BCD62745BB9F1A",
+					type: "toast",
+					title: "Masterchef Supreme!",
+					description: "You cooked The Allthemodium Apple!"
+				},
+				{ id: "0A7482D7B6807645", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "P7Q0000000000010",
+			title: "&dSpectrum Alloys & Infinite Circuits",
+			description: [
+				"&7Synthesize &dSpectrum Alloys&7 (&fmekanism_extras:alloy_spectrum&7) and &dInfinite Control Circuits&7 (&fmekanism_extras:infinite_control_circuit&7) to unlock the final 17-slot tier of Mekanism: Extras!"
+			],
+			x: 20.75, y: -4.5,
+			dependencies: ["p7_allthemodium_apple"],
+			tasks: [
+				{ id: "P7T0000000000017", type: "item", item: "mekanism_extras:alloy_spectrum", count: 2 },
+				{ id: "P7T0000000000018", type: "item", item: "mekanism_extras:infinite_control_circuit", count: 1 }
+			],
+			rewards: [
+				{ id: "P7R0000000000017", type: "item", item: "mekanism_extras:alloy_spectrum", count: 2 },
+				{ id: "P7R0000000000018", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "F3CDBC23E6CBB121",
+			title: "&d&l1. Mekanism: Extras – Infinite Tier (17 Slots!)",
+			description: [
+				"&7The absolute pinnacle of industrial engineering! Combine:",
+				"&8• &dCosmic Tier Installer",
+				"&8• &dPellet of Antimatter &7(&fmekanism:pellet_antimatter&7)",
+				"&8• &4Witherite Ingot &7(&fcataclysm:witherite_ingot&7)",
+				"&8• &6The Allthemodium Apple &7(&fallthemodium:allthemodium_apple&7)",
+				"",
+				"&7Upgrade your 15-slot Cosmic Factories into &d17-Slot Infinite Factories&7 and build the &dInfinite Induction Matrix&7!"
+			],
+			x: 23.0, y: -4.5,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["p7_allthemodium_apple", "P7Q0000000000010"],
+			tasks: [ { id: "CEAC7E130789BD1E", type: "item", item: "mekanism_extras:infinite_tier_installer", count: 1 } ],
+			rewards: [
+				{ id: "5D568827EC3B6033", type: "item", item: "mekanism_extras:infinite_tier_installer", count: 3 },
+				{ id: "131F201CA639AB0B", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "P7Q0000000000011",
+			title: "&dThe Infinite Induction Matrix",
+			description: [
+				"&7Install an &dInfinite Induction Cell&7 and &dInfinite Induction Provider&7 into your Mekanism Induction Matrix for virtually boundless energy storage!"
+			],
+			x: 25.0, y: -4.5,
+			dependencies: ["F3CDBC23E6CBB121"],
+			optional: true,
+			tasks: [
+				{ id: "P7T0000000000019", type: "item", item: "mekanism_extras:infinite_induction_cell", count: 1 },
+				{ id: "P7T0000000000020", type: "item", item: "mekanism_extras:infinite_induction_provider", count: 1 }
+			],
+			rewards: [
+				{ id: "P7R0000000000019", type: "item", item: "mekanism_extras:infinite_tier_installer" },
+				{ id: "P7R0000000000020", type: "xp_levels", xp_levels: 8 }
+			]
+		},
+		{
+			id: "9C0EAA7EE54A1404",
+			title: "&6&l2. Infinite Ores from Void: Ore Laser Base!",
+			description: [
+				"&7Retire your old Digital Miner by fusing it with a &6Supreme Machine Frame&7, &fAstral Sorcery Glass Lenses&7 (&fastralsorcery:glass_lens&7), &dUnobtainium&7, &4Witherite Ingot&7, and &dAntimatter&7 to construct the &6Industrial Foregoing Ore Laser Base&7!",
+				"",
+				"&7Surround it with Laser Drills to generate every Overworld, Nether, Space (&6Desh, Ostrum, Calorite&7), and Divine (&6Allthemodium, Vibranium, Unobtainium&7) ore directly out of thin air!"
+			],
+			x: 23.0, y: -1.5,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["p7_allthemodium_apple"],
+			tasks: [ { id: "2E270AC1938CFBD8", type: "item", item: "industrialforegoing:ore_laser_base", count: 1 } ],
+			rewards: [
+				{ id: "D3663DF62E42E87C", type: "item", item: "industrialforegoing:laser_drill", count: 8 },
+				{ id: "C455F97B70840339", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "AC94E0223094726B",
+			title: "&e&l3. Creative Flight: The Angel Ring!",
+			description: [
+				"&7Unite &dPellet of Antimatter&7, &6The Allthemodium Apple&7, &dUnobtainium&7, your faithful &bMekanism Jetpack&7, &4Witherite Ingot&7, and a &bCelestial Crystal&7 (Astral Sorcery) to forge the &eAngel Ring&7 (&fangelring:angel_ring&7)!",
+				"",
+				"&7Equip it in your Curios Ring slot—gravity no longer applies to you!"
+			],
+			x: 23.0, y: 1.5,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["p7_allthemodium_apple"],
+			tasks: [ { id: "9C20E3EC01CBC256", type: "item", item: "angelring:angel_ring", count: 1 } ],
+			rewards: [
+				{
+					id: "6B6AAC9BFA185670",
+					type: "toast",
+					title: "Gravity Conquered!",
+					description: "You unlocked Creative Flight with the Angel Ring!"
+				},
+				{ id: "4450925D9EFC17BC", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "B1BA73B8B5EE3289",
+			title: "&d&l4. Creative Storage: Backpack Infinity Upgrade!",
+			description: [
+				"&7From a humble leather pouch in Phase 0 to the vessel of a god! Combine &dPellet of Antimatter&7, &6The Allthemodium Apple&7, &dUnobtainium Block&7, &4Witherite Ingot&7, and &dStack Upgrade Tier 4&7 to craft the &dInfinity Upgrade&7 (&fsophisticatedbackpacks:infinity_upgrade&7)!",
+				"",
+				"&7Insert it into your faithful &8Netherite Backpack&7—every item stack inside becomes &dtruly infinite&7!"
+			],
+			x: 23.0, y: 4.5,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["p7_allthemodium_apple"],
+			tasks: [ { id: "7E29CEA277740786", type: "item", item: "sophisticatedbackpacks:infinity_upgrade", count: 1 } ],
+			rewards: [
+				{
+					id: "2BD468150177C69E",
+					type: "toast",
+					title: "Infinite Resources!",
+					description: "Your backpack now holds infinite items!"
+				},
+				{ id: "3E76FC0FB27A2FDF", type: "xp_levels", xp_levels: 10 }
+			]
+		},
+		{
+			id: "BCB1DDEEA9A54409",
+			title: "&6&l★ TECH, SCALES & ROCKETS: MASTERED! ★",
+			description: [
+				"&6&lCongratulations!",
+				"&7You have conquered &6Tech, Scales & Rockets&7 from beginning to end!",
+				"",
+				"&7From extracting your first drops of Latex in Phase 0, to slaying the guardians of the Twilight Forest, performing Nether culinary rituals, braving the Deep Dark, forging Dragonsteel in the breath of Fire, Lightning, and Ice Dragons, colonizing the solar system and Glacio, defeating all 6 Cataclysmic Titans + The Harbinger, forging the divine ATM Alloy Arsenal, and cooking The Allthemodium Apple—&ayou have rewritten reality itself&7!",
+				"",
+				"&eThank you for playing!"
+			],
+			x: 27.5, y: 0.0,
+			size: 2.25,
+			shape: "octagon",
+			dependencies: [
+				"F3CDBC23E6CBB121",
+				"9C0EAA7EE54A1404",
+				"AC94E0223094726B",
+				"B1BA73B8B5EE3289",
+				"p7_atm_alloy_weapons_tools"
+			],
+			tasks: [ { id: "623162B093006496", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "8562B5E0A03A8E09",
+					type: "toast",
+					title: "MODPACK COMPLETED!",
+					description: "You are the true master of Tech, Scales & Rockets!"
+				},
+				{ id: "73988E9E9CE0D6ED", type: "xp_levels", xp_levels: 50 }
+			]
+		}
+	]
+}

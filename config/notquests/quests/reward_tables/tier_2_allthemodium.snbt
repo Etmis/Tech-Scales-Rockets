@@ -1,0 +1,14 @@
+{
+	id: "tier_2_allthemodium",
+	title: "&5Phase 2: Deep Dark & Starlight Trove",
+	icon: "allthemodium:allthemodium_ingot",
+	rewards: [
+		{ item: "allthemodium:allthemodium_nugget", count: 6, weight: 10 },
+		{ item: "astralsorcery:starmetal_ingot", count: 4, weight: 8 },
+		{ item: "minecraft:echo_shard", count: 3, weight: 7 },
+		{ item: "mekanism:elite_control_circuit", count: 3, weight: 6 },
+		{ item: "minecraft:netherite_scrap", count: 4, weight: 5 },
+		{ item: "ae2:engineering_processor", count: 8, weight: 8 },
+		{ item: "minecraft:nether_star", count: 1, weight: 3 }
+	]
+}

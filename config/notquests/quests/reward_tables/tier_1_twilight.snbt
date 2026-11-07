@@ -1,0 +1,16 @@
+{
+	id: "tier_1_twilight",
+	title: "&2Phase 1: Twilight & Automation Cache",
+	icon: "twilightforest:naga_scale",
+	rewards: [
+		{ item: "twilightforest:naga_scale", count: 4, weight: 10 },
+		{ item: "twilightforest:carminite", count: 8, weight: 10 },
+		{ item: "twilightforest:knightmetal_ingot", count: 6, weight: 8 },
+		{ item: "astralsorcery:aquamarine", count: 12, weight: 10 },
+		{ item: "mekanism:advanced_control_circuit", count: 3, weight: 6 },
+		{ item: "ae2:fluix_glass_cable", count: 16, weight: 8 },
+		{ item: "industrialforegoing:plastic", count: 16, weight: 8 },
+		{ item: "fluxnetworks:flux_dust", count: 16, weight: 7 },
+		{ item: "twilightforest:fiery_blood", count: 4, weight: 4 }
+	]
+}

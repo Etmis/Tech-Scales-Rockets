@@ -1,0 +1,13 @@
+{
+	id: "tier_4_cosmic",
+	title: "&bPhase 4-6: Intergalactic Supply Drop",
+	icon: "ad_astra:calorite_ingot",
+	rewards: [
+		{ item: "ad_astra:desh_ingot", count: 8, weight: 10 },
+		{ item: "ad_astra:ostrum_ingot", count: 6, weight: 8 },
+		{ item: "ad_astra:ice_shard", count: 12, weight: 10 },
+		{ item: "ad_astra:calorite_ingot", count: 4, weight: 5 },
+		{ item: "iceandfire:ice_dragon_blood", count: 4, weight: 6 },
+		{ item: "astralsorcery:celestial_crystal", count: 2, weight: 4 }
+	]
+}

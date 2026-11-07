@@ -1,0 +1,873 @@
+{
+	id: "535D9F3574709CCE",
+	title: "&bP4: Space Odyssey & Glacio",
+	icon: "ad_astra:calorite_engine",
+	group: "group_main",
+	order_index: 5,
+	quests: [
+		{
+			id: "p4_enter_the_end",
+			title: "&5Gateway to the Void: The End",
+			description: [
+				"&7Use your &2Explorer's Compass&7 to locate a Stronghold, place Eyes of Ender into the portal frame, and step into &5The End&7!",
+				"",
+				"&7The guardian of the void stands between you and the stars."
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p3_phase_3_complete", "p3_fire_dragonforge", "p3_lightning_dragonforge", "p3_stasis_chamber"],
+			tasks: [ { id: "B0A1B2C3D4E5F603", type: "dimension", dimension: "minecraft:the_end" } ],
+			rewards: [
+				{ id: "B0A1B2C3D4E5F601", type: "item", item: "minecraft:glass_bottle", count: 16 },
+				{ id: "B0A1B2C3D4E5F602", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P4Q0000000000001",
+			title: "&5Preparing Bottles & End's Delight Knife",
+			description: [
+				"&7Before slaying the Ender Dragon, craft at least &f32 Empty Glass Bottles&7 and an &5End Stone Knife&7 (from &eEnd's Delight&7)!",
+				"",
+				"&7You must scoop up plenty of &dDragon's Breath&7 during the fight, and having a Knife from End's Delight lets you harvest extra Dragon Meat, Legs, and Scales!"
+			],
+			x: 1.75, y: -2.0,
+			dependencies: ["p4_enter_the_end"],
+			tasks: [
+				{ id: "P4T0000000000001", type: "item", item: "minecraft:glass_bottle", count: 16 },
+				{ id: "P4T0000000000002", type: "item", item: "ends_delight:end_stone_knife", count: 1 }
+			],
+			rewards: [
+				{ id: "P4R0000000000001", type: "item", item: "minecraft:glass_bottle", count: 16 },
+				{ id: "P4R0000000000002", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "A99918A0F280C840",
+			title: "&d&lSlaying the Ender Dragon & Dragon's Breath",
+			description: [
+				"&7Slay the &dEnder Dragon&7! Before dealing the final blow, make sure to scoop up plenty of &dDragon's Breath&7 using Empty Glass Bottles!",
+				"",
+				"&6&lWhy Dragon's Breath is Mandatory:",
+				"&8• &7Natural Oil generation, the Fuel Refinery, and the Cryo Freezer from Ad Astra are &c&lcompletely disabled/removed&7!",
+				"&8• &7Rocket Fuel is synthesized as a pure liquid inside your &bIF Dissolution Chamber&7 using piped &9Liquid Ethylene&7 + &dDragon's Breath&7 + &cDragon Blood&7!",
+				"&8• &7Dragon's Breath is also required to forge your &7Tier 1 Rocket&7!"
+			],
+			x: 3.5, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["p4_enter_the_end"],
+			tasks: [
+				{ id: "D04B363030026792", type: "item", item: "minecraft:dragon_breath", count: 8 },
+				{ id: "8359F494D67EE7AF", type: "item", item: "minecraft:dragon_egg", count: 1 }
+			],
+			rewards: [
+				{ id: "31723E1B64EFF2E9", type: "item", item: "minecraft:dragon_breath", count: 16 },
+				{ id: "49894ED9EDAEA00E", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "97F7FCBCD53AA55E",
+			title: "&5End's Delight: Butcher of the Void",
+			description: [
+				"&7Craft a &5Dragon Tooth Knife&7 or End Stone Knife from &eEnd's Delight&7 to harvest Raw Dragon Meat and Dragon Legs when slaying the Ender Dragon!",
+				"",
+				"&7Cook &6Dragon Leg with Sauce&7 (&fends_delight:dragon_leg_with_sauce&7)—you need it right now for &aGreen Heart Canisters&7 and later in Phase 7 for &6The Allthemodium Apple&7!"
+			],
+			x: 3.5, y: -3.0,
+			dependencies: ["A99918A0F280C840"],
+			tasks: [ { id: "A7DE1757BE351B6D", type: "item", item: "ends_delight:dragon_leg_with_sauce", count: 1 } ],
+			rewards: [
+				{ id: "AF2E3854EF5AD2F6", type: "item", item: "ends_delight:dragon_leg_with_sauce" },
+				{ id: "D277231E110BE1F6", type: "random", table_id: "delight_feast" },
+				{ id: "BC1B10AEB85D9C00", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P4Q0000000000002",
+			title: "&aSpoils of the End: Green Hearts",
+			description: [
+				"&7Notice the &aGreen Hearts&7 dropped by the Ender Dragon? Keep them safe—as soon as you return from the Moon and Mars with &6Desh&7 and &5Ostrum&7, you will combine them with Dragon Leg with Sauce to forge your &a4th Row of Health (Green Heart Canisters)&7!"
+			],
+			x: 3.5, y: -5.0,
+			dependencies: ["97F7FCBCD53AA55E"],
+			optional: true,
+			tasks: [ { id: "P4T0000000000003", type: "item", item: "bhc:green_heart", count: 1 } ],
+			rewards: [
+				{ id: "P4R0000000000003", type: "item", item: "bhc:green_heart", count: 2 },
+				{ id: "P4R0000000000004", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "0B44C6137536A5D2",
+			title: "&dThe Unmeltable Ore: Raw Unobtainium",
+			description: [
+				"&7Explore the outer &5End Highlands&7 and use your &aVibranium Pickaxe&7 to mine &dUnobtainium Ore&7!",
+				"",
+				"&c&lWait—Why Won't It Smelt?!",
+				"&7All Furnaces, Blast Furnaces, Mekanism 2x–5x lines, Auto-Smelt, and Backpack Smelting Upgrades are &c&lcompletely blocked&7 for Raw Unobtainium!",
+				"",
+				"&7No mortal flame can melt it. Keep your &dRaw Unobtainium&7 safe—in Phase 5 & 6, you will slay the 6 Cataclysm Titans to craft &dCataclysmic Flux&7 and fuse it inside the Combiner!"
+			],
+			x: 7.0, y: -3.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["A99918A0F280C840"],
+			tasks: [ { id: "1C88F49BF675BF85", type: "item", item: "allthemodium:raw_unobtainium", count: 6 } ],
+			rewards: [
+				{ id: "A09B533CCB348A1D", type: "item", item: "allthemodium:raw_unobtainium", count: 3 },
+				{ id: "A8D3A183B2D10166", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "9EC4BFE3EC80BADE",
+			title: "&b100% Bucket-Free Fuel: Dissolution Synthesis",
+			description: [
+				"&7In &6Tech, Scales & Rockets&7, Ad Astra's Oil, Fuel Refinery, and Cryo Freezer are completely removed. All rocket propellants are synthesized &a100% bucket-free&7 inside the &bIndustrial Foregoing Dissolution Chamber&7 and piped directly out!",
+				"",
+				"&6&lPipe-Fed Rocket Fuel Recipe (IF Dissolution Chamber):",
+				"&81. &7Condense gaseous Ethylene into &9Liquid Ethylene&7 inside a &bMekanism Rotary Condensentrator&7 and pipe it into the Dissolution Chamber.",
+				"&82. &7Add &dDragon's Breath&7 and &cFire / Lightning Dragon Blood&7.",
+				"&83. &7Pure liquid &6Rocket Fuel&7 (&fad_astra:fuel&7) flows directly out into your pipes/tanks!"
+			],
+			x: 7.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["A99918A0F280C840"],
+			tasks: [
+				{ id: "9B0FFF11A3385D68", type: "item", item: "mekanism:rotary_condensentrator", count: 1 },
+				{ id: "3BD2849BFFFBAC98", type: "item", item: "industrialforegoing:dissolution_chamber", count: 1 }
+			],
+			rewards: [
+				{ id: "D5DAEA2B3C17AC32", type: "item", item: "minecraft:dragon_breath", count: 8 },
+				{ id: "A9F175B48D5BB31A", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P4Q0000000000003",
+			title: "&7Aerospace Components: Nose Cone & Fins",
+			description: [
+				"&7Craft an &eAd Astra Compressor&7 (or use your Mekanism machinery) to press Steel Ingots into &7Steel Plates&7, and assemble &7Rocket Fins&7, a &7Rocket Nose Cone&7, and &7Steel Tanks&7!"
+			],
+			x: 7.0, y: 2.25,
+			dependencies: ["9EC4BFE3EC80BADE"],
+			tasks: [
+				{ id: "P4T0000000000004", type: "item", item: "ad_astra:rocket_nose_cone", count: 1 },
+				{ id: "P4T0000000000005", type: "item", item: "ad_astra:rocket_fin", count: 4 },
+				{ id: "P4T0000000000006", type: "item", item: "ad_astra:steel_tank", count: 2 }
+			],
+			rewards: [
+				{ id: "P4R0000000000005", type: "item", item: "ad_astra:steel_plate", count: 8 },
+				{ id: "P4R0000000000006", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "765E9198DEA62531",
+			title: "&fNASA Workbench & Hermetic Vibranium Enchants",
+			description: [
+				"&7Construct the &fNASA Workbench&7, an &bOxygen Loader&7, and your first &fSpace Suit&7!",
+				"",
+				"&6&lHermetic Vibranium Armor (Ad Astra: Giselle Addon):",
+				"&7You cannot fight 2x-boosted Ice Dragons on Glacio wearing a fragile Space Suit! In this pack, you craft each tier of Space Suit (&fSpace Suit ➔ Netherite Space Suit ➔ Jet Suit&7) once as a technological intermediate, then break it down in the &bDissolution Chamber / Altar&7 into &bSpace Enchanted Books&7 (&9Space Breathing, Acid Rain Resistance, Thermal/Cryo Protection, Gravity Normalizing&7) and apply them directly onto your &aSacred Vibranium Armor&7!"
+			],
+			x: 10.5, y: 0.0,
+			dependencies: ["9EC4BFE3EC80BADE"],
+			tasks: [
+				{ id: "6AF206D283525C81", type: "item", item: "ad_astra:nasa_workbench", count: 1 },
+				{ id: "A1C51ACAC9F7ED1F", type: "item", item: "ad_astra:oxygen_loader", count: 1 },
+				{ id: "42ACC30AF30A78FE", type: "item", item: "ad_astra:space_helmet", count: 1 },
+				{ id: "9D678E6C5B5916C2", type: "item", item: "ad_astra:space_suit", count: 1 },
+				{ id: "40E0EE1EB2DF7D61", type: "item", item: "ad_astra:space_pants", count: 1 },
+				{ id: "80A8A103EFB86BC9", type: "item", item: "ad_astra:space_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "0DE21EFC8C955B82", type: "item", item: "ad_astra:gas_tank" },
+				{ id: "0B777284F7172876", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P4Q0000000000004",
+			title: "&bHermetic Seal Step 1: Space Breathing",
+			description: [
+				"&7Decompose your crafted &fSpace Suit&7 in the Dissolution Chamber / Altar to obtain the &bSpace Breathing&7 and &bGravity Normalizing&7 Enchanted Books, and apply them to your &aVibranium Helmet & Boots&7 on an Anvil!",
+				"",
+				"&7Don't forget to carry filled &bOxygen Tanks&7 in your inventory so your Space Breathing enchantment has Oxygen to consume!"
+			],
+			x: 10.5, y: -2.5,
+			dependencies: ["765E9198DEA62531"],
+			tasks: [ { id: "P4T0000000000007", type: "item", item: "ad_astra:gas_tank", count: 2 } ],
+			rewards: [
+				{ id: "P4R0000000000007", type: "item", item: "ad_astra:gas_tank" },
+				{ id: "P4R0000000000008", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "E09FA89ABE6BE95B",
+			title: "&7Tier 1: Steel Engine & Moon Launch",
+			description: [
+				"&7Forge the &7Steel Engine&7 and &7Tier 1 Rocket&7 using a &aVibranium&7 hull, &fAstral Sorcery Glass Lenses&7 (&fastralsorcery:glass_lens&7 as the optical navigation sensor), and &dDragon's Breath&7!",
+				"",
+				"&7Place it on a &7Launch Pad&7, fuel it with your Dissolution Chamber Rocket Fuel, and blast off to &fThe Moon&7 & &bEarth Orbit&7!",
+				"",
+				"&cDon't Forget: &7Bring a Teleport Pad, Waystone, or Quantum Entangloporter / Ring so you can easily return and build your &bOrbital Space Station&7!"
+			],
+			x: 14.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["765E9198DEA62531"],
+			tasks: [
+				{ id: "F34A760F54953BE9", type: "item", item: "ad_astra:steel_engine", count: 1 },
+				{ id: "1BD94006304C3EB8", type: "item", item: "ad_astra:launch_pad", count: 1 }
+			],
+			rewards: [
+				{ id: "1306A293E92EB423", type: "item", item: "astralsorcery:glass_lens", count: 2 },
+				{ id: "C8C01E3C87E02A8A", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p4_moon_desh",
+			title: "&6Lunar Mining: Desh & Ice Shards",
+			description: [
+				"&7Touch down on the craters of &fThe Moon&7 and mine &6Desh Ore&7 and &bIce Shard Ore&7!",
+				"",
+				"&aMekanism: Ad Astra Ores: &7Unlike Unobtainium, all planetary ores (&6Desh, Ostrum, Calorite&7) can be multiplied through your full &b2x–5x Mekanism chemical processing line&7!",
+				"",
+				"&7Compress Desh Ingots into &6Desh Plates&7."
+			],
+			x: 17.0, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["E09FA89ABE6BE95B"],
+			tasks: [
+				{ id: "328AC32A2EA7E96F", type: "item", item: "ad_astra:desh_ingot", count: 16 },
+				{ id: "E00767544E56EB31", type: "item", item: "ad_astra:desh_plate", count: 8 },
+				{ id: "C71A08D4D99FD8EE", type: "item", item: "ad_astra:ice_shard", count: 16 }
+			],
+			rewards: [
+				{ id: "64CB6F5A7D72A1E7", type: "random", table_id: "tier_4_cosmic" },
+				{ id: "43176ADC527C2D2E", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P4Q0000000000005",
+			title: "&eLunar Delicacy: Moon Cheese",
+			description: [
+				"&7While on the Moon, don't forget to mine &eMoon Cheese Ore&7! Moon Cheese is a great culinary ingredient and a classic space-program trophy."
+			],
+			x: 17.0, y: -2.5,
+			dependencies: ["p4_moon_desh"],
+			optional: true,
+			tasks: [ { id: "P4T0000000000008", type: "item", item: "ad_astra:cheese", count: 8 } ],
+			rewards: [
+				{ id: "P4R0000000000009", type: "item", item: "ad_astra:cheese", count: 8 },
+				{ id: "P4R0000000000010", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "P4Q0000000000006",
+			title: "&d5x Planetary Ore Slurry Line",
+			description: [
+				"&7Want to maximize your yield of &6Desh&7, &5Ostrum&7, and &4Calorite&7? Build the full &d5x Mekanism Ore Processing Line&7 (&eChemical Dissolution Chamber -> Chemical Washer -> Chemical Crystallizer&7 fed with Sulfuric Acid)!",
+				"",
+				"&7Thanks to &eMekanism: Ad Astra Ores&7, every single Raw Planetary Ore can be multiplied up to 5x!"
+			],
+			x: 14.5, y: -2.5,
+			dependencies: ["p4_moon_desh"],
+			optional: true,
+			tasks: [
+				{ id: "P4T0000000000009", type: "item", item: "mekanism:chemical_dissolution_chamber", count: 1 },
+				{ id: "P4T0000000000010", type: "item", item: "mekanism:chemical_washer", count: 1 },
+				{ id: "P4T0000000000011", type: "item", item: "mekanism:chemical_crystallizer", count: 1 }
+			],
+			rewards: [
+				{ id: "P4R0000000000011", type: "item", item: "ad_astra:raw_desh", count: 8 },
+				{ id: "P4R0000000000012", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "FE74F6E6701617D2",
+			title: "&3Milking the Wither: Fluid Laser Base & Ether Gas!",
+			description: [
+				"&7Craft a &bFluid Laser Base&7 (using &aVibranium&7 and &fAstral Sorcery Glass Lenses&7), several &bLaser Drills&7, and a &5Purple Laser Lens&7!",
+				"",
+				"&6&lHow to Milk the Wither for Ether Gas:",
+				"&81. &7Power your &bStasis Chamber&7 (from Phase 3) to create a stasis field above it.",
+				"&82. &7Summon &8The Wither&7 directly on top of the Stasis Chamber—once it finishes charging, it will be frozen in place forever!",
+				"&83. &7Place the &bFluid Laser Base&7 (with a Purple Lens inside) directly above the frozen Wither and surround it with powered &bLaser Drills&7 to extract liquid &3Ether Gas&7 directly into your pipes/tanks!"
+			],
+			x: 20.0, y: -3.5,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p4_moon_desh"],
+			tasks: [
+				{ id: "B85C588941E4DABC", type: "item", item: "industrialforegoing:fluid_laser_base", count: 1 },
+				{ id: "AA485A568091393B", type: "item", item: "industrialforegoing:laser_drill", count: 4 },
+				{ id: "0936FD5AF2C4DCBB", type: "item", item: "industrialforegoing:purple_laser_lens", count: 1 }
+			],
+			rewards: [
+				{ id: "4F6BBE077D409113", type: "item", item: "industrialforegoing:laser_drill", count: 4 },
+				{ id: "0BB57160EFDEF641", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "859C36AF019CB77D",
+			title: "&6Industrial Foregoing Tier 4: Supreme Frame!",
+			description: [
+				"&7Pipe liquid &3Ether Gas&7 into your &bDissolution Chamber&7 along with &dAdvanced Machine Frames&7, &aVibranium&7, and lunar &6Desh Plates&7 to forge the final Tier 4 frame: the &6Supreme Machine Frame&7!",
+				"",
+				"&7You need Supreme Machine Frames right now for the &4Tier 4 Rocket Engine&7 and later in Phase 7 for the &6Ore Laser Base&7!"
+			],
+			x: 23.0, y: -3.5,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["FE74F6E6701617D2"],
+			tasks: [ { id: "D54B3A587830B7CC", type: "item", item: "industrialforegoing:machine_frame_supreme", count: 2 } ],
+			rewards: [
+				{ id: "77784E13C21A2F08", type: "item", item: "industrialforegoing:machine_frame_supreme" },
+				{ id: "FDFE9ABB20B1C407", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P4Q0000000000007",
+			title: "&bTier 2 IF Machine Addons",
+			description: [
+				"&7Use your new &3Ether Gas&7 and &6Supreme Machine Frame&7 to craft &bTier 2 Speed, Efficiency, and Processing Addons&7 for your Laser Drills and Dissolution Chamber!"
+			],
+			x: 23.0, y: -6.0,
+			dependencies: ["859C36AF019CB77D"],
+			optional: true,
+			tasks: [
+				{
+					id: "P4T0000000000012",
+					type: "item",
+					item: { id: "industrialforegoing:speed_addon_tier_2", count: 1, components: { "titanium:augments": { Speed: 3.0f } } },
+					count: 1
+				},
+				{
+					id: "P4T0000000000013",
+					type: "item",
+					item: {
+						id: "industrialforegoing:processing_addon_tier_2",
+						count: 1,
+						components: { "titanium:augments": { Processing: 3.0f } }
+					},
+					count: 1
+				}
+			],
+			rewards: [
+				{
+					id: "P4R0000000000013",
+					type: "item",
+					item: { id: "industrialforegoing:speed_addon_tier_2", count: 1, components: { "titanium:augments": { Speed: 3.0f } } }
+				},
+				{ id: "P4R0000000000014", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "1D0331A61DCDC720",
+			title: "&b&lMekanism Elite Tier (7 Slots!)",
+			description: [
+				"&7Combine &aVibranium Ingots&7, lunar &6Desh Ingots&7, and &3Ether Gas&7 to craft &bElite Tier Installers&7!",
+				"",
+				"&7Upgrade your 5-slot Advanced Factories into &b7-Slot Elite Factories&7!"
+			],
+			x: 17.0, y: 3.0,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["p4_moon_desh", "FE74F6E6701617D2"],
+			tasks: [ { id: "F5C620E00D5CC361", type: "item", item: "mekanism:elite_tier_installer", count: 2 } ],
+			rewards: [
+				{ id: "575B573A7C643442", type: "item", item: "mekanism:elite_tier_installer", count: 2 },
+				{ id: "82992931FC0C5404", type: "item", item: "mekanism:alloy_reinforced", count: 16 },
+				{ id: "8555850006F8E1CD", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P4Q0000000000008",
+			title: "&b7-Slot Elite Factory Array",
+			description: ["&7Upgrade your Smelting, Enriching, Crushing, and Infusing Factories to the &b7-Slot Elite Tier&7!"],
+			x: 17.0, y: 5.0,
+			dependencies: ["1D0331A61DCDC720"],
+			optional: true,
+			tasks: [
+				{ id: "P4T0000000000014", type: "item", item: "mekanism:elite_smelting_factory", count: 1 },
+				{ id: "P4T0000000000015", type: "item", item: "mekanism:elite_enriching_factory", count: 1 }
+			],
+			rewards: [
+				{ id: "P4R0000000000015", type: "item", item: "mekanism:elite_tier_installer" },
+				{ id: "P4R0000000000016", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "4E397818465815E8",
+			title: "&6Tier 2: Desh Engine & Mars Launch",
+			description: [
+				"&7Combine lunar &6Desh Plates&7, &bIce Shards&7, and &9Lightning Dragonsteel Ingots&7 (electromagnetic shielding from Phase 3) to forge the &6Desh Engine&7!",
+				"",
+				"&7Assemble your &6Tier 2 Rocket&7 in the NASA Workbench and launch to the rusty plains of &cMars&7!"
+			],
+			x: 20.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p4_moon_desh"],
+			tasks: [ { id: "C7777318B6B9C856", type: "item", item: "ad_astra:desh_engine", count: 1 } ],
+			rewards: [
+				{ id: "62D64BCC0684DAE5", type: "item", item: "ad_astra:desh_plate", count: 8 },
+				{ id: "ED229814CA92AC44", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "E5CEF073E0A3D7E8",
+			title: "&cMartian Extraction: Ostrum",
+			description: [
+				"&7Mine deep beneath the surface of &cMars&7 to harvest &5Ostrum Ore&7!",
+				"",
+				"&7Process it through your 5x Mekanism line into &5Ostrum Ingots&7, &5Ostrum Dust&7, &5Ostrum Plates&7, and &5Ostrum Blocks&7. Ostrum is required for Fission Reactors, Cryo Fuel, Tier 3 & 4 Rockets, Pearlescent Shelves, and waking the Netherite Monstrosity in Phase 5!"
+			],
+			x: 23.0, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["4E397818465815E8"],
+			tasks: [
+				{ id: "C42F928E36DBEE70", type: "item", item: "ad_astra:ostrum_ingot", count: 16 },
+				{ id: "FB868A0050730ACA", type: "item", item: "ad_astra:ostrum_plate", count: 8 }
+			],
+			rewards: [
+				{ id: "3BC79FBAB87BEA9F", type: "random", table_id: "tier_4_cosmic" },
+				{ id: "3345C92A27C95AEB", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P4Q0000000000009",
+			title: "&2Nuclear Chemistry: Fissile Fuel Line",
+			description: [
+				"&7Before activating your Fission Reactor, build the chemical chain for &2Fissile Fuel&7:",
+				"&81. &7Create &eSulfuric Acid&7 (from Sulfur Dust + Oxygen + Water Vapor) and combine it with &bFluorite&7 in a Chemical Dissolution Chamber to make &bHydrofluoric Acid&7.",
+				"&82. &7Enrich Uranium Ingots into &eYellow Cake Uranium&7 and oxidize it into &eUranium Oxide&7.",
+				"&83. &7Combine Uranium Oxide + Hydrofluoric Acid into &aUranium Hexafluoride&7, then spin it inside an &3Isotopic Centrifuge&7 to produce &2Fissile Fuel&7!"
+			],
+			x: 20.0, y: 5.0,
+			dependencies: ["p4_moon_desh", "E5CEF073E0A3D7E8"],
+			tasks: [
+				{ id: "P4T0000000000016", type: "item", item: "mekanism:chemical_oxidizer", count: 1 },
+				{ id: "P4T0000000000017", type: "item", item: "mekanism:isotopic_centrifuge", count: 1 },
+				{ id: "P4T0000000000018", type: "item", item: "mekanism:yellow_cake_uranium", count: 16 }
+			],
+			rewards: [
+				{ id: "P4R0000000000017", type: "item", item: "mekanism:fluorite_gem", count: 16 },
+				{ id: "P4R0000000000018", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p4_fission_and_turbine",
+			title: "&2Fission Reactor & Industrial Turbine!",
+			description: [
+				"&7With &6Desh&7 and &5Ostrum&7 brought back from the Moon and Mars, construct your &2Mekanism Fission Reactor&7 and &bIndustrial Turbine&7!",
+				"",
+				"&8• &7Burn &2Fissile Fuel&7 inside the Fission Reactor to boil coolant into Steam, spinning your Industrial Turbine for millions of FE/t (stored in your &aInduction Matrix&7!).",
+				"&8• &7Send the resulting &2Nuclear Waste&7 via &3Quantum Entangloporter&7 or &dAE2 Quantum Ring (Applied Mekanistics)&7 up to your &bOrbital Space Station&7!"
+			],
+			x: 20.0, y: 3.0,
+			size: 1.45,
+			shape: "gear",
+			dependencies: ["p4_moon_desh", "E5CEF073E0A3D7E8"],
+			tasks: [
+				{ id: "B0A1B2C3D4E5F612", type: "item", item: "mekanismgenerators:fission_fuel_assembly", count: 1 },
+				{ id: "B0A1B2C3D4E5F613", type: "item", item: "mekanismgenerators:control_rod_assembly", count: 1 },
+				{ id: "B0A1B2C3D4E5F614", type: "item", item: "mekanismgenerators:rotational_complex", count: 1 }
+			],
+			rewards: [
+				{ id: "B0A1B2C3D4E5F610", type: "item", item: "mekanism:radioactive_waste_barrel", count: 8 },
+				{ id: "B0A1B2C3D4E5F611", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "4D1F6004C8F00893",
+			title: "&eOrbital Station: 24/7 Solar Neutron Activators",
+			description: [
+				"&7In &bEarth Orbit&7, the sun never sets and there is no atmosphere or rain!",
+				"",
+				"&7Craft &eSolar Neutron Activators&7 (using &fAstral Sorcery Glass Lenses&7 and &6Desh Plates&7) and place them on your &bOrbital Space Station&7!",
+				"",
+				"&ePro Tip: &7Feed them Nuclear Waste from your Fission Reactor to produce &bPolonium&7 at 100% efficiency 24/7!"
+			],
+			x: 14.0, y: 6.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["E09FA89ABE6BE95B", "p4_fission_and_turbine"],
+			tasks: [ { id: "ADBDDF492D36EBF7", type: "item", item: "mekanism:solar_neutron_activator", count: 2 } ],
+			rewards: [
+				{ id: "9E7BC881FDD2E77B", type: "item", item: "mekanism:solar_neutron_activator" },
+				{ id: "A4D2484D0D4CC53A", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P4Q0000000000010",
+			title: "&bPolonium & Plutonium Pellets",
+			description: [
+				"&7Pipe &bPolonium Gas&7 (from your Orbital Solar Neutron Activators) and &2Plutonium Gas&7 (from an Isotopic Centrifuge) into a &ePressurized Reaction Chamber&7 with Fluorite Dust and Water to crystallize &bPolonium Pellets&7 and &2Plutonium Pellets&7!",
+				"",
+				"&7You will need Polonium Pellets for &3SPS Casings&7 and Phase 6 &6Fusion Reactor&7 components!"
+			],
+			x: 14.0, y: 9.0,
+			dependencies: ["4D1F6004C8F00893"],
+			tasks: [
+				{ id: "P4T0000000000019", type: "item", item: "mekanism:pellet_polonium", count: 4 },
+				{ id: "P4T0000000000020", type: "item", item: "mekanism:pellet_plutonium", count: 2 }
+			],
+			rewards: [
+				{ id: "P4R0000000000019", type: "item", item: "mekanism:pellet_polonium", count: 2 },
+				{ id: "P4R0000000000020", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "27C2398092E4D7B8",
+			title: "&dAstral Tier 4: Orbital Iridescent Altar",
+			description: [
+				"&7Construct the pinnacle of &9Astral Sorcery 2.0 (1.21.1)&7 under the eternal stars of your Orbital Station: the &dIridescent Crafting Altar (Tier 4)&7!",
+				"",
+				"&b&lHow to Upgrade to Tier 4:",
+				"&8• &7Build the widest Marble ring with four corner pillars around your Tier 3 Altar.",
+				"&8• &7Supply a &bCelestial Crystal&7, &fGlass Lens&7, &9Starmetal&7, &e200 of each basic Lumen&7 (from Lumen Arrays), and an &bArmara Attuned Crystal&7 in the focus slot!",
+				"",
+				"&d&lWhat Tier 4 Unlocks:",
+				"&8• &7Forging the &dUnobtainium Upgrade Smithing Template&7 in Phase 6!",
+				"&8• &7Forging the &6Cosmic Alloy Smithing Template&7 in Phase 7!"
+			],
+			x: 11.5, y: 6.5,
+			size: 1.4,
+			shape: "pentagon",
+			dependencies: ["4D1F6004C8F00893"],
+			tasks: [ { id: "6B3E1057ECA4D6AD", type: "item", item: "astralsorcery:altar_radiance", count: 1 } ],
+			rewards: [
+				{ id: "C5257BAD738DC6EC", type: "item", item: "astralsorcery:celestial_crystal", count: 2 },
+				{ id: "86FEEFADA2731545", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "1ECEA0808837C7E4",
+			title: "&a&l4th Row of Health: Green Heart Canisters",
+			description: [
+				"&7Boost your max health to 40 Hearts! Combine:",
+				"&8• &6Desh Ingot &7(Moon) & &5Ostrum Ingot &7(Mars)",
+				"&8• &6Dragon Leg with Sauce &7(End's Delight)",
+				"&8• &aGreen Heart &7(dropped by the Ender Dragon) & Yellow Heart Canister!",
+				"",
+				"&7Craft up to 10 &aGreen Heart Canisters&7 to survive the coming Cataclysmic war!"
+			],
+			x: 23.0, y: 3.0,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["E5CEF073E0A3D7E8", "97F7FCBCD53AA55E"],
+			tasks: [ { id: "38AA67144620A715", type: "item", item: "bhc:green_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "88F426BB55ECEE86", type: "item", item: "bhc:green_heart", count: 4 },
+				{ id: "A8DB7C3EE0A3D1FA", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P4Q0000000000011",
+			title: "&aFull 40 Hearts: 10x Green Canisters",
+			description: ["&7Complete all &a10x Green Heart Canisters&7 to reach &a40 Full Hearts (80 HP)&7!"],
+			x: 23.0, y: 5.0,
+			dependencies: ["1ECEA0808837C7E4"],
+			optional: true,
+			tasks: [ { id: "P4T0000000000021", type: "item", item: "bhc:green_heart_canister", count: 10 } ],
+			rewards: [
+				{ id: "P4R0000000000021", type: "item", item: "bhc:green_heart_canister", count: 2 },
+				{ id: "P4R0000000000022", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "02F981F2BBB7BB52",
+			title: "&dApothic Enchanting: Pearlescent Endshelves",
+			description: [
+				"&7Combine lunar &6Desh Plates&7 and Martian &5Ostrum Plates&7 to upgrade your Endshelves into &dPearlescent Endshelves&7!",
+				"",
+				"&7Your Enchanting Table is now operating at near-divine cosmic resonance."
+			],
+			x: 26.0, y: 3.0,
+			dependencies: ["E5CEF073E0A3D7E8"],
+			tasks: [ { id: "356DB650BBB155D1", type: "item", item: "apothic_enchanting:pearl_endshelf", count: 2 } ],
+			rewards: [
+				{ id: "892AB5696D53D322", type: "item", item: "apothic_enchanting:pearl_endshelf" },
+				{ id: "003CDD660A3AFBCD", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "F8BB6EE9EB71D928",
+			title: "&cTier 3: Ostrum Engine & Venus Launch",
+			description: [
+				"&7To survive the crushing atmospheric pressure, acid rain, and hellish heat of &6Venus&7, your rocket hull and engine must be shielded with pure dragonfire!",
+				"",
+				"&7Combine &5Ostrum Plates&7 and pure &cFire Dragonsteel Ingots&7 to forge the &5Ostrum Engine&7 (Tier 3), and craft/decompose the &8Netherite Space Suit&7 & &dJet Suit&7 to imbue your Vibranium Armor with Thermal & Acid Rain Immunity!"
+			],
+			x: 26.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["E5CEF073E0A3D7E8"],
+			tasks: [
+				{ id: "BE32BF2AA6F23E84", type: "item", item: "ad_astra:ostrum_engine", count: 1 },
+				{ id: "13CB45D1123FCD08", type: "item", item: "ad_astra:netherite_space_suit", count: 1 }
+			],
+			rewards: [
+				{ id: "85865B7B9AAA325E", type: "item", item: "ad_astra:ostrum_plate", count: 8 },
+				{ id: "02B5FE24756E1140", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P4Q0000000000012",
+			title: "&6Hermetic Seal Step 2: Thermal & Acid Immunity",
+			description: [
+				"&7Complete your full &8Netherite Space Suit&7 (&8Helmet, Suit, Pants, Boots&7) and decompose it in the Dissolution Chamber / Altar to extract &6Thermal Protection&7 & &aAcid Rain Resistance&7 Enchanted Books for your &aSacred Vibranium Armor&7!"
+			],
+			x: 26.0, y: -2.5,
+			dependencies: ["F8BB6EE9EB71D928"],
+			tasks: [
+				{ id: "P4T0000000000022", type: "item", item: "ad_astra:netherite_space_helmet", count: 1 },
+				{ id: "P4T0000000000023", type: "item", item: "ad_astra:netherite_space_pants", count: 1 },
+				{ id: "P4T0000000000024", type: "item", item: "ad_astra:netherite_space_boots", count: 1 }
+			],
+			rewards: [
+				{ id: "P4R0000000000023", type: "item", item: "ad_astra:ostrum_ingot", count: 4 },
+				{ id: "P4R0000000000024", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "1256289C5FC09884",
+			title: "&bBucket-Free Cryo Fuel: Starlight Synthesis",
+			description: [
+				"&7Standard Rocket Fuel is too weak to reach another star system (&bGlacio&7), and Ad Astra's Cryo Freezer is removed!",
+				"",
+				"&6&lPipe-Fed Cryo Fuel Recipe (IF Dissolution Chamber):",
+				"&81. &7Pipe &bLiquid Starlight&7 (&fastralsorcery:liquid_starlight&7) directly into your &bDissolution Chamber&7.",
+				"&82. &7Add lunar &bIce Shards&7 and Martian &5Ostrum Dust&7.",
+				"&83. &7Pure liquid &bCryo Fuel&7 (&fad_astra:cryo_fuel&7) flows directly out into your pipes with zero buckets!"
+			],
+			x: 29.0, y: 0.0,
+			shape: "rsquare",
+			dependencies: ["F8BB6EE9EB71D928"],
+			tasks: [
+				{ id: "A9411732456AB4A3", type: "item", item: "ad_astra:ice_shard", count: 16 },
+				{ id: "A9411732456AB4A4", type: "item", item: "industrialforegoing:dissolution_chamber", count: 1 }
+			],
+			rewards: [
+				{ id: "B32DF3CF93867870", type: "item", item: "ad_astra:ice_shard", count: 16 },
+				{ id: "7E9873C5EF140BB2", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "C578790FA13463F1",
+			title: "&4&lTier 4: Dissolution Engine & Glacio Launch!",
+			description: [
+				"&7The &4Tier 4 Calorite Engine&7 is NOT crafted in a Crafting Table with buckets! Instead, it is synthesized directly inside your &bIF Dissolution Chamber&7!",
+				"",
+				"&6&lBucket-Free Tier 4 Engine Recipe (IF Dissolution Chamber):",
+				"&8• &5Ostrum Plates &7(Mars)",
+				"&8• &cFire Dragonsteel &7& &9Lightning Dragonsteel Ingots",
+				"&8• &bIce Shards &7(Moon)",
+				"&8• &6Supreme Machine Frame &7(IF Tier 4)",
+				"&8• &3Direct Liquid Input: &7Pipe in &32,000 mB of Ether Gas&7 (or &bCryo Fuel&7)!",
+				"",
+				"&7Assemble your &4Tier 4 Rocket&7 and launch beyond our solar system to &bGlacio&7!"
+			],
+			x: 32.0, y: 0.0,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["1256289C5FC09884", "859C36AF019CB77D"],
+			tasks: [ { id: "3CD62A18DA064BE7", type: "item", item: "ad_astra:calorite_engine", count: 1 } ],
+			rewards: [
+				{
+					id: "32679B1DFDB6DE8E",
+					type: "toast",
+					title: "Interstellar Travel!",
+					description: "You have unlocked Tier 4 Rockets & Glacio!"
+				},
+				{ id: "603E64A198C0D5E1", type: "random", table_id: "tier_4_cosmic" },
+				{ id: "A41F736CEFCE1A05", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "4A32628C6A8ECFA7",
+			title: "&4Mining Glacio: Calorite!",
+			description: [
+				"&7Welcome to &bGlacio&7! Descend beneath the permafrost to mine the highest tier of planetary metal: &4Calorite Ore&7!",
+				"",
+				"&7Multiply it through your 5x Mekanism line into &4Calorite Ingots&7 and &4Calorite Plates&7."
+			],
+			x: 35.0, y: 0.0,
+			size: 1.4,
+			shape: "hexagon",
+			dependencies: ["C578790FA13463F1"],
+			tasks: [
+				{ id: "DFFCDA8512B5DF81", type: "item", item: "ad_astra:calorite_ingot", count: 16 },
+				{ id: "018BE887252E343E", type: "item", item: "ad_astra:calorite_plate", count: 8 }
+			],
+			rewards: [
+				{ id: "2BFFE8778E25D33D", type: "item", item: "ad_astra:calorite_ingot", count: 8 },
+				{ id: "E69EF8C58FAB4AE1", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P4Q0000000000013",
+			title: "&4Hermetic Seal Step 3: Jet Suit Decomposition",
+			description: [
+				"&7Craft the &4Jet Suit&7 using Calorite and decompose it to extract the final &bCryo / Extreme Environment Protection&7 Enchanted Books for your &aSacred Vibranium Armor&7!",
+				"",
+				"&7Your Vibranium Armor is now 100% hermetically sealed against vacuum, acid rain, Venusian heat, and Glacio's sub-zero frost!"
+			],
+			x: 35.0, y: -2.5,
+			dependencies: ["4A32628C6A8ECFA7", "P4Q0000000000012"],
+			tasks: [ { id: "P4T0000000000025", type: "item", item: "ad_astra:jet_suit", count: 1 } ],
+			rewards: [
+				{ id: "P4R0000000000025", type: "item", item: "ad_astra:calorite_plate", count: 4 },
+				{ id: "P4R0000000000026", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "59E3307491EF64B8",
+			title: "&b&lHunting Glacio's Apex: Ice Dragons!",
+			description: [
+				"&7Glacio is not uninhabited! Roaming its icy wastes and subterranean caverns are deadly 2x-boosted &bIce Dragons&7!",
+				"",
+				"&7Slay them in your Hermetic Vibranium Armor to harvest &bIce Dragon Hearts&7, &bIce Dragon Blood&7, and &bIce Dragon Eggs&7 (to hatch a tamed Ice Dragon)."
+			],
+			x: 38.0, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["4A32628C6A8ECFA7"],
+			tasks: [
+				{ id: "7CD36BDA771A23B8", type: "item", item: "iceandfire:ice_dragon_heart", count: 1 },
+				{ id: "EE91945E4D7D2A8E", type: "item", item: "iceandfire:ice_dragon_blood", count: 4 }
+			],
+			rewards: [
+				{ id: "6BED992842DF261A", type: "item", item: "iceandfire:ice_dragon_blood", count: 6 },
+				{ id: "ECF0305699F038F6", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P4Q0000000000014",
+			title: "&bBuilding the Ice Dragonforge",
+			description: [
+				"&7To hatch an &bIce Dragon Egg&7, place it in a 1-block pool of Water—it will freeze the water into Ice and hatch after a few minutes!",
+				"",
+				"&7Feed your baby Ice Dragon &6Dragon Meal&7 until it reaches Stage 3+ and assemble the &bIce Dragonforge Bricks, Aperture, and Core&7."
+			],
+			x: 38.0, y: 2.5,
+			dependencies: ["59E3307491EF64B8"],
+			tasks: [
+				{ id: "P4T0000000000026", type: "item", item: "iceandfire:dragonforge_ice_core_disabled", count: 1 },
+				{ id: "P4T0000000000027", type: "item", item: "iceandfire:dragonforge_ice_input", count: 1 }
+			],
+			rewards: [
+				{ id: "P4R0000000000027", type: "item", item: "iceandfire:dragon_meal", count: 16 },
+				{ id: "P4R0000000000028", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p4_ice_dragonforge",
+			title: "&b&lThe Ice Dragonforge & Ice Dragonsteel!",
+			description: [
+				"&7Construct the third and final 3x3x3 Dragonforge: the &bIce Dragonforge&7!",
+				"",
+				"&7Have your tamed Ice Dragon breathe into the Aperture to forge &bIce Dragonsteel Ingots&7!",
+				"",
+				"&6&lWhy Ice Dragonsteel is Essential:",
+				"&8• &dMekanism Ultimate Tier Installers (9 Slots!)",
+				"&8• &3SPS Reactor Casings &7(cryogenic antimatter containment)",
+				"&8• &bAwakening Maledictus &7at the Frosted Prison in Phase 5B",
+				"&8• &6Cosmic Alloy Smithing Template &7in Phase 7!"
+			],
+			x: 41.0, y: 0.0,
+			size: 1.6,
+			shape: "gear",
+			dependencies: ["59E3307491EF64B8", "P4Q0000000000014"],
+			tasks: [ { id: "50353701FFDB028E", type: "item", item: "iceandfire:dragonsteel_ice_ingot", count: 4 } ],
+			rewards: [
+				{ id: "6992B01B6C4053B8", type: "item", item: "iceandfire:dragonsteel_ice_ingot", count: 4 },
+				{ id: "42A6F0371FB75025", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "CAC01135E9AE4A9B",
+			title: "&3Preparing for Antimatter: SPS Casings",
+			description: [
+				"&7With &4Calorite Plates&7, &bIce Shards&7, &bIce Dragonsteel Ingots&7, and &bPolonium Pellets&7 (from your Orbital Solar Neutron Activators), you can begin fabricating &3SPS Casings&7 (&fSupercritical Phase Shifter&7)!",
+				"",
+				"&7You will need 60 SPS Casings in Phase 7 to synthesize &dAntimatter&7 and awaken &4The Harbinger&7!"
+			],
+			x: 41.0, y: 5.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["p4_ice_dragonforge", "4D1F6004C8F00893", "P4Q0000000000010"],
+			tasks: [ { id: "52591D459D47DB9D", type: "item", item: "mekanism:sps_casing", count: 4 } ],
+			rewards: [
+				{ id: "8903D88AC5ED6B17", type: "item", item: "mekanism:sps_casing", count: 4 },
+				{ id: "0C55BAFBF6852513", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "p4_ultimate_tier_installer",
+			title: "&d&lMekanism Ultimate Tier (9 Slots!)",
+			description: [
+				"&7By uniting &4Calorite Ingots&7 and &bIce Dragonsteel Ingots&7 from Glacio, you unlock the highest base Mekanism tier: &dUltimate Tier Installers&7!",
+				"",
+				"&7Upgrade your 7-slot Elite Factories into &d9-Slot Ultimate Factories&7!"
+			],
+			x: 41.0, y: -3.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p4_ice_dragonforge"],
+			tasks: [ { id: "75A1BE17A0DE6CC6", type: "item", item: "mekanism:ultimate_tier_installer", count: 2 } ],
+			rewards: [
+				{ id: "C0CA631F12078363", type: "item", item: "mekanism:ultimate_tier_installer", count: 2 },
+				{ id: "A2FBE66E78EE38E7", type: "item", item: "mekanism:alloy_atomic", count: 16 },
+				{ id: "F20325FB6E339D13", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P4Q0000000000015",
+			title: "&d9-Slot Ultimate Factory Line",
+			description: [
+				"&7Upgrade your core Smelting, Enriching, Crushing, and Infusing Factories to the &d9-Slot Ultimate Tier&7, and install &dUltimate Induction Cells & Providers&7 inside your Induction Matrix!"
+			],
+			x: 41.0, y: -5.5,
+			dependencies: ["p4_ultimate_tier_installer"],
+			optional: true,
+			tasks: [
+				{ id: "P4T0000000000028", type: "item", item: "mekanism:ultimate_smelting_factory", count: 1 },
+				{ id: "P4T0000000000029", type: "item", item: "mekanism:ultimate_enriching_factory", count: 1 }
+			],
+			rewards: [
+				{ id: "P4R0000000000029", type: "item", item: "mekanism:ultimate_tier_installer" },
+				{ id: "P4R0000000000030", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p4_phase_4_complete",
+			title: "&b&lPhase 4 Complete: Conqueror of the Cosmos!",
+			description: [
+				"&7You have walked on the Moon, Mars, Venus, and Glacio. You have forged &bIce Dragonsteel&7, upgraded to &d9-Slot Ultimate Factories&7, and gathered the alien metals of four worlds.",
+				"",
+				"&c&lNext Up in Phase 5 (Awakening of Evil):",
+				"&8• &7Conquer Wave 5A (&eAncient Remnant & Netherite Monstrosity&7) to immediately unlock &a11-Slot Absolute Factories (Mekanism: Extras)&7 in the middle of Phase 5!",
+				"&8• &7Conquer Wave 5B (&6Ignis, The Leviathan, Maledictus & Ender Guardian&7) to complete the ingredients for &dCataclysmic Flux&7!"
+			],
+			x: 44.5, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["p4_ice_dragonforge", "p4_ultimate_tier_installer"],
+			tasks: [ { id: "B94F4A1B90A07B72", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "59E3D4C8F4B6CD50",
+					type: "toast",
+					title: "Phase 4 Complete!",
+					description: "Proceed to Phase 5: Awakening of Evil (Cataclysm)!"
+				},
+				{ id: "CC62541C7F5B8F06", type: "random", table_id: "tier_4_cosmic" },
+				{ id: "5A2A1D063F13595F", type: "xp_levels", xp_levels: 5 }
+			]
+		}
+	]
+}

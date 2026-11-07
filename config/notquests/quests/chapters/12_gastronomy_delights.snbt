@@ -1,0 +1,793 @@
+{
+	id: "gastronomy_delights",
+	title: "&6Masterchef: The 12 Delights",
+	icon: "allthemodium:allthemodium_apple",
+	group: "group_systems",
+	order_index: 15,
+	quests: [
+		{
+			id: "gas_welcome",
+			title: "&6&lGastronomic Alchemy: The 12 Delights",
+			description: [
+				"&7In &6Tech, Scales & Rockets&7, food is a core pillar of progression!",
+				"",
+				"&c&lWhy the Industrial Foregoing Meat Feeder is Removed:",
+				"&7Liquid Meat syringes have been banished from this pack. Instead, you have &e12 specialized Delight mods&7 whose dishes serve as biological catalysts for:",
+				"&8• &cAll 4 Tiers of Baubley Heart Canisters &7(Red, Orange/Yellow, Green, Blue)",
+				"&8• &bMekanism Teleportation Cores &7(Meef Stroganoff)",
+				"&8• &8The Culinary Wither Skull Ritual &7(My Nether's Delight spicy dishes)",
+				"&8• &6The Allthemodium Carrot &7(Phase 3 – 5-minute Saturation & Phase 7 catalyst)",
+				"&8• &3Awakening The Leviathan &7(Ocean's Delight & Roll Delight seafood feast)",
+				"&8• &6The Allthemodium Apple &7(The Phase 7 Masterchef Finale – 5-minute God-Mode)!",
+				"",
+				"&7Start by setting up your &eFarmer's Delight&7 kitchen!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.65,
+			shape: "gear",
+			tasks: [
+				{ id: "GAST000000000001", type: "item", item: "farmersdelight:cooking_pot", count: 1 },
+				{ id: "GAST000000000002", type: "item", item: "farmersdelight:cutting_board", count: 1 },
+				{ id: "GAST000000000003", type: "item", item: "farmersdelight:skillet", count: 1 },
+				{ id: "GAST000000000004", type: "item", item: "farmersdelight:stove", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000001", type: "item", item: "farmersdelight:golden_knife" },
+				{ id: "GASR000000000002", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000003", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_knives_and_straw",
+			title: "&fThe Butcher's Edge: Knives & Straw",
+			description: [
+				"&7Craft an &fIron Knife&7 or &bDiamond Knife&7! Using a Knife on grass yields &eStraw&7 (for Rope, Canvas, and Organic Compost), and slaying animals or monsters with a Knife guarantees bonus secondary cuts of meat, fat, and hide!"
+			],
+			x: 0.0, y: -2.25,
+			dependencies: ["gas_welcome"],
+			tasks: [
+				{ id: "GAST000000000005", type: "item", item: "farmersdelight:iron_knife", count: 1 },
+				{ id: "GAST000000000006", type: "item", item: "farmersdelight:straw", count: 16 }
+			],
+			rewards: [
+				{ id: "GASR000000000004", type: "item", item: "farmersdelight:canvas", count: 16 },
+				{ id: "GASR000000000005", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "gas_wild_crops_overworld",
+			title: "&aFoundational Crops: Tomato, Onion, Cabbage & Rice",
+			description: [
+				"&7Explore plains, forests, beaches, and swamps to gather the four foundational wild crops of &eFarmer's Delight&7: &cTomatoes&7, &fOnions&7, &aCabbages&7, and &fRice&7!"
+			],
+			x: 0.0, y: 2.25,
+			dependencies: ["gas_welcome"],
+			tasks: [
+				{ id: "GAST000000000007", type: "item", item: "farmersdelight:tomato", count: 4 },
+				{ id: "GAST000000000008", type: "item", item: "farmersdelight:onion", count: 4 },
+				{ id: "GAST000000000009", type: "item", item: "farmersdelight:cabbage", count: 4 },
+				{ id: "GAST000000000010", type: "item", item: "farmersdelight:rice", count: 4 }
+			],
+			rewards: [
+				{ id: "GASR000000000006", type: "item", item: "minecraft:bone_meal", count: 16 },
+				{ id: "GASR000000000007", type: "xp", xp: 75 }
+			]
+		},
+		{
+			id: "gas_rich_soil",
+			title: "&2Rich Soil & Organic Compost",
+			description: [
+				"&7Craft &2Organic Compost&7 and let it decompose near water and sunlight into &6Rich Soil&7.",
+				"",
+				"&7Crops planted on Rich Soil Farmland never get trampled and grow significantly faster when tick-accelerated by bone meal or Aevitas starlight!"
+			],
+			x: 3.5, y: 0.0,
+			dependencies: ["gas_welcome"],
+			tasks: [
+				{ id: "GAST000000000011", type: "item", item: "farmersdelight:organic_compost", count: 4 },
+				{ id: "GAST000000000012", type: "item", item: "farmersdelight:rich_soil", count: 4 }
+			],
+			rewards: [
+				{ id: "GASR000000000008", type: "item", item: "farmersdelight:rich_soil", count: 8 },
+				{ id: "GASR000000000009", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_nourishment_meals",
+			title: "&6The Nourishment Effect: Hearty Meals",
+			description: [
+				"&7Cook hearty meals in your &eCooking Pot&7 (such as &6Beef Stew&7, &6Chicken Soup&7, or &6Steak and Potatoes&7)!",
+				"",
+				"&aThe Nourishment Buff: &7Meals cooked in a Cooking Pot grant the &6Nourishment&7 effect, preventing you from losing any hunger or saturation from sprinting, mining, or healing!"
+			],
+			x: 3.5, y: 2.0,
+			dependencies: ["gas_rich_soil", "gas_wild_crops_overworld"],
+			tasks: [
+				{ id: "GAST000000000013", type: "item", item: "farmersdelight:beef_stew", count: 1 },
+				{ id: "GAST000000000014", type: "item", item: "farmersdelight:steak_and_potatoes", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000010", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000011", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_farmers_feasts",
+			title: "&6Banquet Tables: Placed Feasts",
+			description: [
+				"&7Prepare a multi-serving &6Farmer's Delight Feast&7 (&6Roast Chicken&7, &6Stuffed Pumpkin&7, &6Honey Glazed Ham&7, or &6Shepherd's Pie&7)!",
+				"",
+				"&7Feasts can be placed on tables in your base and scooped up with Bowls—and are great catalysts for &6The Allthemodium Carrot&7 in Phase 3!"
+			],
+			x: 5.25, y: 2.0,
+			dependencies: ["gas_nourishment_meals"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000015", type: "item", item: "farmersdelight:roast_chicken_block", count: 1 },
+				{ id: "GAST000000000016", type: "item", item: "farmersdelight:honey_glazed_ham_block", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000012", type: "item", item: "farmersdelight:roast_chicken_block" },
+				{ id: "GASR000000000013", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_sunflower_corn",
+			title: "&eSunflower & Corn Delight",
+			description: [
+				"&7Harvest &eSunflowers&7 and &6Corn&7 across the Overworld!",
+				"",
+				"&8• &eSunflower Delight: &7Roast sunflower seeds or press them into Sunflower Oil—an awesome early feedstock for &2Mekanism Bio-Fuel&7 in your Phase 0 Bio-Generators!",
+				"&8• &6Corn Delight: &7Pop Popcorn, grill Corn on the Cob, or simmer Creamy Corn Drink for hearty saturation and crafting &6The Allthemodium Carrot&7."
+			],
+			x: 3.5, y: -3.0,
+			dependencies: ["gas_welcome"],
+			tasks: [
+				{ id: "GAST000000000017", type: "item", item: "minecraft:sunflower", count: 8 },
+				{ id: "GAST000000000018", type: "item", item: "corn_delight:corn", count: 8 }
+			],
+			rewards: [
+				{ id: "GASR000000000014", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000015", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_sunflower_biofuel",
+			title: "&eSunflower Oil & Mekanism Bio-Fuel",
+			description: [
+				"&7Process your Sunflowers from &eSunflower Delight&7 into seeds and press them into &eSunflower Oil&7—then crush excess seeds/oil inside your &6Mekanism Crusher&7 into high-yield &2Bio-Fuel&7!"
+			],
+			x: 1.75, y: -4.5,
+			dependencies: ["gas_sunflower_corn"],
+			tasks: [ { id: "GAST000000000019", type: "item", item: "mekanism:bio_fuel", count: 16 } ],
+			rewards: [
+				{ id: "GASR000000000016", type: "item", item: "mekanism:bio_fuel", count: 16 },
+				{ id: "GASR000000000017", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "gas_corn_delicacies",
+			title: "&6Corn Delight: Grilled Corn & Popcorn",
+			description: [
+				"&7Cook classic dishes from &6Corn Delight&7: &eGrilled Corn&7, &ePopcorn&7, &6Creamed Corn&7, or a &6Nacho Bowl&7!"
+			],
+			x: 1.75, y: -6.25,
+			dependencies: ["gas_sunflower_corn"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000020", type: "item", item: "corn_delight:grilled_corn", count: 4 },
+				{ id: "GAST000000000021", type: "item", item: "corn_delight:popcorn", count: 4 }
+			],
+			rewards: [
+				{ id: "GASR000000000018", type: "item", item: "corn_delight:grilled_corn", count: 8 },
+				{ id: "GASR000000000019", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_rustic_delight",
+			title: "&6Rustic Delight: Coffee & Bell Peppers",
+			description: [
+				"&7Explore villages and forests to gather wild crops from &6Rustic Delight&7 (&6Coffee Beans&7, &cBell Peppers&7, &fCotton&7).",
+				"",
+				"&7Brewing dark &6Coffee&7 grants a long-lasting Speed/Haste boost that makes early mining and exploring a breeze!"
+			],
+			x: 3.5, y: -5.5,
+			dependencies: ["gas_sunflower_corn"],
+			optional: true,
+			tasks: [ { id: "GAST000000000022", type: "item", item: "rusticdelight:coffee_beans", count: 4 } ],
+			rewards: [
+				{ id: "GASR000000000020", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000021", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_rustic_peppers_cotton",
+			title: "&cRustic Bell Peppers & Stuffed Dishes",
+			description: [
+				"&7Harvest red, yellow, and green &cBell Peppers&7 and &fCotton Boll&7 from &6Rustic Delight&7 to cook stuffed bell peppers and vegetable dishes!"
+			],
+			x: 3.5, y: -7.25,
+			dependencies: ["gas_rustic_delight"],
+			optional: true,
+			tasks: [ { id: "GAST000000000023", type: "item", item: "rusticdelight:bell_pepper_red", count: 4 } ],
+			rewards: [
+				{ id: "GASR000000000022", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000023", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_farmers_pizzeria",
+			title: "&cFarmer's Pizzeria: Dough & Tomato Sauce",
+			description: [
+				"&7Knead &fWheat Dough&7 and simmer &cTomato Sauce&7 in your Cooking Pot to prepare the base for &cFarmer's Pizzeria&7!"
+			],
+			x: 7.0, y: -3.0,
+			dependencies: ["gas_sunflower_corn"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000024", type: "item", item: "farmersdelight:tomato_sauce", count: 2 },
+				{ id: "GAST000000000025", type: "item", item: "farmersdelight:wheat_dough", count: 4 }
+			],
+			rewards: [
+				{ id: "GASR000000000024", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000025", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_pizzeria_baking",
+			title: "&cArtisan Pizza Baking (Phase 6 Catalyst)",
+			description: [
+				"&7Bake a fresh &cPizza&7 using &cFarmer's Pizzeria&7!",
+				"",
+				"&7Placed pizzas can be sliced with a Knife for your co-op partner and are used alongside Ocean's Delight & Roll Delight when crafting &9Blue Heart Canisters&7 in Phase 6!"
+			],
+			x: 7.0, y: -5.5,
+			dependencies: ["gas_farmers_pizzeria"],
+			optional: true,
+			tasks: [ { id: "GAST000000000026", type: "checkmark" } ],
+			rewards: [
+				{ id: "GASR000000000026", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000027", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_brewin_keg",
+			title: "&eBrewin' And Chewin': Fermentation Keg",
+			description: [
+				"&7Construct a &eKeg&7 from &6Brewin' And Chewin'&7!",
+				"",
+				"&7Fermenting drinks and cheeses inside the Keg is required for multiple progression milestones—manage its temperature by placing hot blocks (Magma/Campfire) or cold blocks (Ice/Blue Ice) adjacent to it!"
+			],
+			x: 7.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["gas_rich_soil"],
+			tasks: [
+				{ id: "GAST000000000027", type: "item", item: "brewinandchewin:keg", count: 1 },
+				{ id: "GAST000000000028", type: "item", item: "brewinandchewin:tankard", count: 4 }
+			],
+			rewards: [
+				{ id: "GASR000000000028", type: "item", item: "minecraft:honey_bottle", count: 8 },
+				{ id: "GASR000000000029", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_keg_temperature_control",
+			title: "&eMastering Keg Temperatures: Beer",
+			description: [
+				"&7Your &eKeg&7 has 5 temperature zones (&9Frigid, Cold, Normal, Warm, Hot&7) controlled by placing blocks directly adjacent to it:",
+				"&8• &cHeating Blocks: &7Campfires, Stoves, Magma Blocks, or Lava.",
+				"&8• &bCooling Blocks: &7Ice, Packed Ice, or Blue Ice.",
+				"",
+				"&7Brew a basic &eBeer&7 or &6Pale Jane&7 to test your Keg setup!"
+			],
+			x: 8.75, y: -1.75,
+			dependencies: ["gas_brewin_keg"],
+			optional: true,
+			tasks: [ { id: "GAST000000000029", type: "item", item: "brewinandchewin:beer", count: 1 } ],
+			rewards: [
+				{ id: "GASR000000000030", type: "item", item: "minecraft:blue_ice", count: 4 },
+				{ id: "GASR000000000031", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_cocktails_delight",
+			title: "&dCocktails Delight: Mixology & Buffs",
+			description: [
+				"&7Pair your Brewin' And Chewin' Keg with &dCocktails Delight&7 to mix refreshing fruit cocktails and combat elixirs (used in Phase 3 for &6Orange / Yellow Heart Canisters&7)!"
+			],
+			x: 10.5, y: -3.0,
+			dependencies: ["gas_brewin_keg"],
+			optional: true,
+			tasks: [ { id: "GAST000000000030", type: "checkmark" } ],
+			rewards: [
+				{ id: "GASR000000000032", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000033", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_cocktails_mixing",
+			title: "&dFruit Garnishes & Cocktail Shaker",
+			description: [
+				"&7Gather Sweet Berries, Glow Berries, Apples, and Melons with Glass Bottles and Ice to mix signature cocktails from &dCocktails Delight&7!"
+			],
+			x: 10.5, y: -5.5,
+			dependencies: ["gas_cocktails_delight"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000031", type: "item", item: "minecraft:sweet_berries", count: 8 },
+				{ id: "GAST000000000032", type: "item", item: "minecraft:glow_berries", count: 8 }
+			],
+			rewards: [
+				{ id: "GASR000000000034", type: "item", item: "minecraft:sweet_berries", count: 16 },
+				{ id: "GASR000000000035", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_mead_bloody_mary",
+			title: "&cVitality Elixirs: Mead & Bloody Mary",
+			description: [
+				"&7Brew the two essential alcoholic catalysts for your early Heart Canisters:",
+				"&8• &eMead (&fbrewinandchewin:mead&7): &7Required for &cRed Heart Canisters&7 (Phase 1B).",
+				"&8• &cBloody Mary (&fbrewinandchewin:bloody_mary&7): &7Required alongside Cocktails Delight for &6Orange / Yellow Heart Canisters&7 (Phase 3)."
+			],
+			x: 10.5, y: 0.0,
+			dependencies: ["gas_brewin_keg"],
+			tasks: [
+				{ id: "GAST000000000033", type: "item", item: "brewinandchewin:mead", count: 2 },
+				{ id: "GAST000000000034", type: "item", item: "brewinandchewin:bloody_mary", count: 2 }
+			],
+			rewards: [
+				{ id: "GASR000000000036", type: "item", item: "brewinandchewin:mead", count: 2 },
+				{ id: "GASR000000000037", type: "item", item: "brewinandchewin:bloody_mary", count: 2 },
+				{ id: "GASR000000000038", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_flaxen_scarlet_cheese",
+			title: "&eAging Cheese: Flaxen & Scarlet Cheese Wheels",
+			description: [
+				"&7Ferment Milk inside your Keg into &eUnripe Flaxen Cheese Wheels&7 and &cUnripe Scarlet Cheese Wheels&7 (using Crimson Fungus from the Nether), then place the wheels in the world to age and ripen!"
+			],
+			x: 12.25, y: -1.75,
+			dependencies: ["gas_mead_bloody_mary"],
+			tasks: [
+				{ id: "GAST000000000035", type: "item", item: "brewinandchewin:flaxen_cheese_wheel", count: 1 },
+				{ id: "GAST000000000036", type: "item", item: "brewinandchewin:scarlet_cheese_wheel", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000039", type: "item", item: "brewinandchewin:scarlet_cheese_wheel" },
+				{ id: "GASR000000000040", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_fiery_fondue",
+			title: "&6Masterchef Dish #1: Fiery Fondue Pot",
+			description: [
+				"&7Slice your aged &cScarlet Cheese Wheel&7 into wedges and cook a bubbling &6Fiery Fondue Pot&7 (&fbrewinandchewin:fiery_fondue_pot&7) in your Cooking Pot!",
+				"",
+				"&eSave at least one pot! &7It is one of the 4 dimensional feast dishes required to cook &6The Allthemodium Apple&7 in Phase 7!"
+			],
+			x: 14.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["gas_mead_bloody_mary", "gas_flaxen_scarlet_cheese"],
+			tasks: [ { id: "GAST000000000037", type: "item", item: "brewinandchewin:fiery_fondue_pot", count: 1 } ],
+			rewards: [
+				{ id: "GASR000000000041", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000042", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "gas_twilight_raw_ingredients",
+			title: "&2Twilight Flavors & Delight: Forest Game",
+			description: [
+				"&7Step into the Twilight Forest and hunt Wild Deer and Minotaurs to gather &aRaw Venison&7, &eRaw Meef&7, and &bTorchberries&7 for &dTwilight Flavors & Delight&7!"
+			],
+			x: 5.0, y: 3.5,
+			dependencies: ["gas_welcome", "p1a_slay_naga"],
+			tasks: [
+				{ id: "GAST000000000038", type: "item", item: "twilightforest:raw_venison", count: 4 },
+				{ id: "GAST000000000039", type: "item", item: "twilightforest:raw_meef", count: 4 }
+			],
+			rewards: [
+				{ id: "GASR000000000043", type: "item", item: "twilightforest:raw_meef", count: 4 },
+				{ id: "GASR000000000044", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "gas_twilight_meef_stroganoff",
+			title: "&2Masterchef Dish #2: Meef Stroganoff (Twilight)",
+			description: [
+				"&7Obtained by slaying &cThe Minoshroom&7 in the Twilight Forest Labyrinth (and complemented by &eTwilight Flavors & Delight&7 dishes)!",
+				"",
+				"&6&lWhy You Need Extra Bowls of Meef Stroganoff:",
+				"&81. &7Eating one unlocks the Fire Swamp.",
+				"&82. &7Crafting &bMekanism Teleportation Cores&7 (for the Digital Miner).",
+				"&83. &7Crafting &cRed Heart Canisters&7.",
+				"&84. &7Cooking &6The Allthemodium Apple&7 in Phase 7!"
+			],
+			x: 7.0, y: 3.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["gas_welcome", "gas_twilight_raw_ingredients", "8C952F870018A11E"],
+			tasks: [ { id: "GAST000000000040", type: "item", item: "twilightforest:meef_stroganoff", count: 2 } ],
+			rewards: [
+				{ id: "GASR000000000045", type: "item", item: "twilightforest:meef_stroganoff", count: 2 },
+				{ id: "GASR000000000046", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "gas_twilight_hydra_feast",
+			title: "&4Hydra Chops & Experiment 115",
+			description: [
+				"&7After slaying &4The Hydra&7 in the Fire Swamp, collect its &cHydra Chops&7 and &cFiery Blood&7 to prepare fiery Twilight banquets from &dTwilight Flavors & Delight&7!"
+			],
+			x: 7.0, y: 6.0,
+			dependencies: ["gas_twilight_meef_stroganoff"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000041", type: "item", item: "twilightforest:hydra_chop", count: 2 },
+				{ id: "GAST000000000042", type: "item", item: "twilightforest:experiment_115", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000047", type: "item", item: "twilightforest:hydra_chop", count: 2 },
+				{ id: "GASR000000000048", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_nether_raw_harvest",
+			title: "&cMy Nether's Delight: Bullet Peppers & Hoglin Loins",
+			description: [
+				"&7Venture into the Nether and harvest &cBullet Peppers&7 (from Powder Canes) and butcher Hoglins with a Knife for &6Hoglin Loins&7 and &6Hoglin Hides&7 (&cMy Nether's Delight&7)!"
+			],
+			x: 8.75, y: 3.5,
+			dependencies: ["gas_twilight_meef_stroganoff", "0C7C80BC93C9A6BE"],
+			tasks: [
+				{ id: "GAST000000000043", type: "item", item: "mynethersdelight:bullet_pepper", count: 4 },
+				{ id: "GAST000000000044", type: "item", item: "mynethersdelight:hoglin_loin", count: 4 }
+			],
+			rewards: [
+				{ id: "GASR000000000049", type: "item", item: "mynethersdelight:bullet_pepper", count: 8 },
+				{ id: "GASR000000000050", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_nether_spicy_ritual",
+			title: "&cMy Nether's Delight: Wither Skull Catalyst",
+			description: [
+				"&7Cook spicy delicacies from &cMy Nether's Delight&7 in your Cooking Pot!",
+				"",
+				"&6&lWither Skeleton Skull Ritual Recipe:",
+				"&7Combine &fBone Block + Coal Block + Fiery Blood + Carminite&7 with &6Spicy Hoglin Stew&7 (&fmynethersdelight:spicy_hoglin_stew&7), &6Spicy Skewer&7, &6Spicy Noodle Soup&7, or &6Chilidog&7 to transmute Wither Skulls!"
+			],
+			x: 10.5, y: 3.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["gas_twilight_meef_stroganoff", "gas_nether_raw_harvest"],
+			tasks: [ { id: "GAST000000000045", type: "item", item: "mynethersdelight:spicy_hoglin_stew", count: 1 } ],
+			rewards: [
+				{ id: "GASR000000000051", type: "item", item: "minecraft:wither_skeleton_skull", count: 2 },
+				{ id: "GASR000000000052", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "gas_nether_resurgent_soil",
+			title: "&4Resurgent Soil & Nether Farming",
+			description: [
+				"&7Craft &cResurgent Soil&7 and a &4Nether Stove&7 from &cMy Nether's Delight&7 to farm Nether fungi, Crimson/Warped crops, and Powder Canes at home!"
+			],
+			x: 8.75, y: 6.0,
+			dependencies: ["gas_nether_spicy_ritual"],
+			optional: true,
+			tasks: [ { id: "GAST000000000046", type: "item", item: "mynethersdelight:resurgent_soil", count: 4 } ],
+			rewards: [
+				{ id: "GASR000000000053", type: "item", item: "mynethersdelight:resurgent_soil", count: 4 },
+				{ id: "GASR000000000054", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_nether_striderloaf",
+			title: "&4Masterchef Dish #3: Striderloaf (Nether)",
+			description: [
+				"&7Hunt Striders over the Nether lava seas with your knife and cook a hearty &4Striderloaf&7 (&fmynethersdelight:striderloaf&7)!",
+				"",
+				"&eSave it! &7Striderloaf is one of the 4 dimensional feast dishes required for &6The Allthemodium Apple&7!"
+			],
+			x: 10.5, y: 6.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["gas_nether_spicy_ritual"],
+			tasks: [ { id: "GAST000000000047", type: "item", item: "mynethersdelight:striderloaf", count: 1 } ],
+			rewards: [
+				{ id: "GASR000000000055", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000056", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "gas_applied_delight",
+			title: "&dApplied Delight: AE2 Kitchen Automation! (Phase 2)",
+			description: [
+				"&7Once you unlock &eApplied Delight&7 in Phase 2, you never have to chop or cook by hand again!",
+				"",
+				"&7Place &bME Pattern Providers&7 directly against your &eCooking Pot&7, &fCutting Board&7, and &eKeg&7 to automate complex multi-step meals on demand!"
+			],
+			x: 17.5, y: 0.0,
+			size: 1.4,
+			shape: "gear",
+			dependencies: ["gas_fiery_fondue", "4AA122CCB9B25B98"],
+			tasks: [
+				{ id: "GAST000000000048", type: "item", item: "ae2:pattern_provider", count: 2 },
+				{ id: "GAST000000000049", type: "item", item: "farmersdelight:cooking_pot", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000057", type: "item", item: "ae2:blank_pattern", count: 16 },
+				{ id: "GASR000000000058", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "gas_applied_cutting_board",
+			title: "&bAutomated Slicing: Cutting Board Patterns",
+			description: [
+				"&7Connect an &bME Pattern Provider&7 to your &fCutting Board&7 (with a Knife inside) to automate slicing meats, cheeses, vegetables, and fish fillets on demand!"
+			],
+			x: 17.5, y: -2.25,
+			dependencies: ["gas_applied_delight"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000050", type: "item", item: "farmersdelight:cutting_board", count: 1 },
+				{ id: "GAST000000000051", type: "item", item: "ae2:pattern_provider", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000059", type: "item", item: "ae2:blank_pattern", count: 8 },
+				{ id: "GASR000000000060", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_hydroponic_kitchen_supply",
+			title: "&aInfinite Ingredients: Hydroponics & Marine Fisher",
+			description: [
+				"&7Supply your automated AE2 kitchen with endless fresh ingredients using &aIndustrial Foregoing Hydroponic Beds&7 (for crops) and a &9Marine Fisher&7 (for fish)!"
+			],
+			x: 17.5, y: -4.5,
+			dependencies: ["gas_applied_cutting_board", "CE3A14226101969A"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000052", type: "item", item: "industrialforegoing:hydroponic_bed", count: 2 },
+				{ id: "GAST000000000053", type: "item", item: "industrialforegoing:marine_fisher", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000061", type: "item", item: "industrialforegoing:hydroponic_bed", count: 2 },
+				{ id: "GASR000000000062", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "gas_roll_delight",
+			title: "&bRoll Delight: Master of Sushi",
+			description: [
+				"&7Harvest Kelp, Rice, Salmon, and Cod to roll fresh Maki and Nigiri with &bRoll Delight&7—a key part of the seafood feast for &3The Leviathan&7 and &9Blue Heart Canisters&7!"
+			],
+			x: 14.0, y: -5.5,
+			dependencies: ["gas_applied_delight"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000054", type: "item", item: "farmersdelight:rice", count: 16 },
+				{ id: "GAST000000000055", type: "item", item: "minecraft:dried_kelp", count: 16 }
+			],
+			rewards: [
+				{ id: "GASR000000000063", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000064", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_sushi_platters",
+			title: "&bNigiri & Maki Sushi Platters",
+			description: [
+				"&7Slice Raw Salmon and Raw Cod on your Cutting Board into fillets and roll &bSalmon Roll&7, &6Cod Roll&7, and &aKelp Roll&7 platters!"
+			],
+			x: 14.0, y: -7.25,
+			dependencies: ["gas_roll_delight"],
+			optional: true,
+			tasks: [
+				{ id: "GAST000000000056", type: "item", item: "farmersdelight:salmon_roll", count: 4 },
+				{ id: "GAST000000000057", type: "item", item: "farmersdelight:cod_roll", count: 4 },
+				{ id: "GAST000000000058", type: "item", item: "farmersdelight:kelp_roll", count: 2 }
+			],
+			rewards: [
+				{ id: "GASR000000000065", type: "item", item: "farmersdelight:salmon_roll", count: 4 },
+				{ id: "GASR000000000066", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_oceans_delight_butchery",
+			title: "&3Ocean's Delight: Guardian Tails & Tentacles",
+			description: [
+				"&7Raid an Ocean Monument and butcher Guardians, Elder Guardians, and Squids with a Farmer's Delight Knife to obtain &3Guardian Tails&7, &3Elder Guardian Slabs&7, and &9Tentacles&7 from &3Ocean's Delight&7!"
+			],
+			x: 12.25, y: -3.5,
+			dependencies: ["gas_applied_delight"],
+			tasks: [
+				{ id: "GAST000000000059", type: "item", item: "oceansdelight:guardian_tail", count: 2 },
+				{ id: "GAST000000000060", type: "item", item: "oceansdelight:tentacles", count: 2 }
+			],
+			rewards: [
+				{ id: "GASR000000000067", type: "item", item: "oceansdelight:guardian_tail", count: 2 },
+				{ id: "GASR000000000068", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_oceans_delight_guardian_soup",
+			title: "&3Ocean's Delight: Guardian Soup!",
+			description: [
+				"&6&lCrucial Progression Dish – Guardian Soup:",
+				"&7Cook &bGuardian Soup&7 (&foceansdelight:guardian_soup&7) in your Cooking Pot! You need it for:",
+				"&8• &3The Abyssal Sacrifice &7(to summon Cataclysm's &3The Leviathan&7 in Phase 5B!)",
+				"&8• &9Blue Heart Canisters &7(5th row of health in Phase 6!)"
+			],
+			x: 14.0, y: -3.0,
+			size: 1.4,
+			shape: "rsquare",
+			dependencies: ["gas_applied_delight", "gas_oceans_delight_butchery"],
+			tasks: [ { id: "GAST000000000061", type: "item", item: "oceansdelight:guardian_soup", count: 2 } ],
+			rewards: [
+				{ id: "GASR000000000069", type: "item", item: "oceansdelight:guardian_soup", count: 2 },
+				{ id: "GASR000000000070", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "gas_abyssal_sacrifice_feast",
+			title: "&3Baiting the Titan: The Abyssal Sacrifice",
+			description: [
+				"&7Combine your &bGuardian Soup&7, &bRoll Delight&7 sushi, &4Calorite Ingots&7, &bIce Shards&7, and &bHeart of the Sea&7 to craft the &3Abyssal Sacrifice&7 (&fcataclysm:abyssal_sacrifice&7) for The Leviathan!"
+			],
+			x: 15.75, y: -3.5,
+			dependencies: ["gas_oceans_delight_guardian_soup", "p5_absolute_tier_installer"],
+			tasks: [ { id: "GAST000000000062", type: "item", item: "cataclysm:abyssal_sacrifice", count: 1 } ],
+			rewards: [ { id: "GASR000000000071", type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "gas_ends_delight_knives_meat",
+			title: "&5End's Delight: Void Butchery",
+			description: [
+				"&7Craft an &5End Stone Knife&7 or &5Dragon Tooth Knife&7 from &eEnd's Delight&7 to harvest &dRaw Dragon Meat&7, &5Shulker Meat&7, and &dChorus Fruit&7 delicacies in The End!"
+			],
+			x: 12.25, y: 3.5,
+			dependencies: ["gas_nether_spicy_ritual", "A99918A0F280C840"],
+			tasks: [
+				{ id: "GAST000000000063", type: "item", item: "ends_delight:end_stone_knife", count: 1 },
+				{ id: "GAST000000000064", type: "item", item: "ends_delight:raw_dragon_meat", count: 2 }
+			],
+			rewards: [
+				{ id: "GASR000000000072", type: "item", item: "ends_delight:raw_dragon_meat", count: 4 },
+				{ id: "GASR000000000073", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_end_dragon_leg",
+			title: "&5Masterchef Dish #4: Dragon Leg with Sauce (End)",
+			description: [
+				"&7Butcher the &dEnder Dragon&7 using an &5End's Delight&7 knife and cook &5Dragon Leg with Sauce&7 (&fends_delight:dragon_leg_with_sauce&7)!",
+				"",
+				"&6&lUsed For:",
+				"&8• &aGreen Heart Canisters &7(4th row of health in Phase 4)",
+				"&8• &6The Allthemodium Apple &7(Phase 7 Masterchef Finale)!"
+			],
+			x: 14.0, y: 3.5,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: ["gas_nether_spicy_ritual", "gas_ends_delight_knives_meat"],
+			tasks: [ { id: "GAST000000000065", type: "item", item: "ends_delight:dragon_leg_with_sauce", count: 1 } ],
+			rewards: [
+				{ id: "GASR000000000074", type: "item", item: "ends_delight:dragon_leg_with_sauce" },
+				{ id: "GASR000000000075", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "gas_end_stew_shulker",
+			title: "&5End Stove & Shulker Delicacies",
+			description: [
+				"&7Explore more of &5End's Delight&7 by cooking &dGrilled Shulker&7, &5Dragon Meat Stew&7, or &dAssorted Salad&7 on an &5End Stove&7!"
+			],
+			x: 14.0, y: 6.0,
+			dependencies: ["gas_end_dragon_leg"],
+			optional: true,
+			tasks: [ { id: "GAST000000000066", type: "item", item: "ends_delight:end_stove", count: 1 } ],
+			rewards: [
+				{ id: "GASR000000000076", type: "random", table_id: "delight_feast" },
+				{ id: "GASR000000000077", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "gas_allthemodium_carrot",
+			title: "&6&lPhase 3 Milestone: The Allthemodium Carrot (5-Min Saturation!)",
+			description: [
+				"&7In Phase 3, unite &6Allthemodium Ingots&7, a &6Golden Carrot&7, and pinnacle dishes from the early and mid-game Delight mods (&eFarmer's, Corn, Sunflower, Rustic & My Nether's Delight&7) inside your Cooking Pot (or Dissolution Chamber) to craft &6The Allthemodium Carrot&7!",
+				"",
+				"&6&lThree Crucial Uses of The Allthemodium Carrot:",
+				"&81. &a5-Minute Saturation Buff: &7Eating it grants pure &eSaturation for 5 full minutes (6,000 ticks)&7—the ultimate combat food for 2x-boosted Dragons and Cataclysm Titans!",
+				"&82. &6Container for The Allthemodium Apple: &7Serves as the bottom container slot in the Cooking Pot when cooking &6The Allthemodium Apple&7 in Phase 7!",
+				"&83. &dTri-Realm Alloy Singularity: &7Required inside the Dissolution Chamber in Phase 7 to forge your divine &6ATM Alloy Weapons & Tools&7!"
+			],
+			x: 17.5, y: 3.5,
+			size: 1.5,
+			shape: "heart",
+			dependencies: ["gas_applied_delight", "gas_sunflower_corn", "gas_nether_spicy_ritual", "p3_mine_vibranium"],
+			tasks: [ { id: "GAST000000000067", type: "item", item: "allthemodium:allthemodium_carrot", count: 2 } ],
+			rewards: [
+				{ id: "GASR000000000078", type: "item", item: "allthemodium:allthemodium_carrot" },
+				{ id: "GASR000000000079", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "gas_masterchef_apple_prep",
+			title: "&dAssembling the 7 Divine Ingredients",
+			description: [
+				"&7Gather all 6 top-slot ingredients + 1 bottom container slot required to cook &6The Allthemodium Apple&7 in your Cooking Pot:",
+				"&8• &bBottom Container: &6The Allthemodium Carrot",
+				"&8• &dUnobtainium Block &7& &4Witherite Ingot &7(from The Harbinger)",
+				"&8• &6Meef Stroganoff&7, &cStriderloaf&7, &eFiery Fondue Pot &7& &5Dragon Leg with Sauce&7!"
+			],
+			x: 20.0, y: 0.0,
+			size: 1.35,
+			shape: "rsquare",
+			dependencies: [
+				"gas_allthemodium_carrot",
+				"gas_fiery_fondue",
+				"gas_twilight_meef_stroganoff",
+				"gas_nether_striderloaf",
+				"gas_end_dragon_leg",
+				"B858B85E371FDBC4"
+			],
+			tasks: [
+				{ id: "GAST000000000068", type: "item", item: "allthemodium:unobtainium_block", count: 1 },
+				{ id: "GAST000000000069", type: "item", item: "cataclysm:witherite_ingot", count: 1 }
+			],
+			rewards: [
+				{ id: "GASR000000000080", type: "item", item: "allthemodium:allthemodium_carrot" },
+				{ id: "GASR000000000081", type: "xp_levels", xp_levels: 6 }
+			]
+		},
+		{
+			id: "gas_allthemodium_apple_finale",
+			title: "&6&l★ THE MAGNUM OPUS: THE ALLTHEMODIUM APPLE! ★",
+			description: [
+				"&7The ultimate culinary achievement of &6Tech, Scales & Rockets&7!",
+				"",
+				"&6&lCooking Pot Recipe (Bottom Container: 1x The Allthemodium Carrot):",
+				"&8• &bBottom Container Slot: &6The Allthemodium Carrot &7(&fallthemodium:allthemodium_carrot&7)",
+				"&81. &dUnobtainium Block &7(&fallthemodium:unobtainium_block&7)",
+				"&82. &4Witherite Ingot &7(&fcataclysm:witherite_ingot&7 from The Harbinger)",
+				"&83. &6Meef Stroganoff &7(&ftwilightforest:meef_stroganoff&7)",
+				"&84. &cStriderloaf &7(&fmynethersdelight:striderloaf&7)",
+				"&85. &eFiery Fondue Pot &7(&fbrewinandchewin:fiery_fondue_pot&7)",
+				"&86. &5Dragon Leg with Sauce &7(&fends_delight:dragon_leg_with_sauce&7)",
+				"",
+				"&a&l5-Minute God-Mode Buffs:",
+				"&7Eating it grants &bResistance IV, Strength V, Absorption X (20 Golden Hearts), Speed III, Haste IV, Regeneration IV & Fire/Cryo Immunity&7 for 5 minutes—and unlocks the &d17-Slot Infinite Tier Installer&7, &eAngel Ring&7, and &dBackpack Infinity Upgrade&7!"
+			],
+			x: 23.0, y: 0.0,
+			size: 1.85,
+			shape: "heart",
+			dependencies: [
+				"gas_applied_delight",
+				"gas_allthemodium_carrot",
+				"gas_fiery_fondue",
+				"gas_twilight_meef_stroganoff",
+				"gas_nether_striderloaf",
+				"gas_end_dragon_leg",
+				"gas_masterchef_apple_prep"
+			],
+			tasks: [ { id: "GAST000000000070", type: "item", item: "allthemodium:allthemodium_apple", count: 1 } ],
+			rewards: [
+				{ id: "GASR000000000082", type: "item", item: "allthemodium:allthemodium_apple" },
+				{
+					id: "GASR000000000083",
+					type: "toast",
+					title: "Grand Masterchef!",
+					description: "You have mastered all 12 Delight mods!"
+				},
+				{ id: "GASR000000000084", type: "xp_levels", xp_levels: 15 }
+			]
+		}
+	]
+}

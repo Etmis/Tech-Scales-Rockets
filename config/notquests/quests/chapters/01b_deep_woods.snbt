@@ -1,0 +1,767 @@
+{
+	id: "37F7D043E5392961",
+	title: "&3P1B: Heart of the Forest",
+	icon: "ae2:controller",
+	group: "group_main",
+	order_index: 2,
+	quests: [
+		{
+			id: "p1b_intro",
+			title: "&3Into the Deep Woods",
+			description: [
+				"&7Equipped with your &bMekanism Jetpack&7 and &a3-Slot Basic Factories&7, you return to the Twilight Forest to conquer its five deepest strongholds.",
+				"",
+				"&6&lEvery Boss Holds an Exclusive Technological Key:",
+				"&81. &6Minoshroom: &7Unlocks the &bTeleportation Core&7 & &cRed Heart Canisters&7.",
+				"&82. &cHydra: &7Drops &cFiery Blood&7 for the &dME Controller&7, Phase 2 &3Gas-Burning Generator&7 & Wither Skull Rituals.",
+				"&83. &7Knight Phantoms & Ur-Ghast: &7Drop &7Knightmetal&7, &cCarminite&7 & &6Fiery Tears&7 for the &bSimple Machine Frame&7, &eDigital Miner&7, &aApplied Experienced&7 & &cFlux Cores&7.",
+				"&84. &bAlpha Yeti & Snow Queen: &7Drop &fAlpha Yeti Fur&7 & &bIce Bombs&7—the thermal insulation and cooling core required to build your &dAE2 ME Controller&7!"
+			],
+			x: 0.0, y: 0.0,
+			size: 1.5,
+			shape: "gear",
+			dependencies: ["p1a_phase_1a_complete", "p1a_jetpack"],
+			tasks: [ { id: "80A1B2C3D4E5F603", type: "item", item: "mekanism:jetpack", count: 1 } ],
+			rewards: [
+				{ id: "80A1B2C3D4E5F601", type: "random", table_id: "tier_1_twilight" },
+				{ id: "80A1B2C3D4E5F602", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "3F8C3DE8848E1A6F",
+			title: "&6Entering the Swamp Labyrinth",
+			description: [
+				"&7Fly to the &2Twilight Swamp&7 biome. With the Twilight Lich defeated, the mosquito swarm curse is lifted!",
+				"",
+				"&7Find a grassy hill with an opening leading down into the underground &6Minotaur Labyrinth&7, and descend to its lower B2 level."
+			],
+			x: 2.5, y: 0.0,
+			dependencies: ["p1b_intro"],
+			tasks: [ { id: "4B4FB1FF2873593B", type: "item", item: "twilightforest:cooked_meef", count: 4 } ],
+			rewards: [
+				{ id: "4D882C05FC630489", type: "item", item: "minecraft:torch", count: 32 },
+				{ id: "D5ECE41F75C2ADC8", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "P1BQ000000000001",
+			title: "&eNavigating the Maze: Maze Map Focus",
+			description: [
+				"&7Keep an eye out for a &eMaze Map Focus&7 inside the Labyrinth's chests! Combining it with Paper creates a &6Maze Map&7 that reveals the exact layout of your current Labyrinth floor!",
+				"",
+				"&7If you find the secret vault on B2 (watch out for the TNT pressure plate trap!), you can even claim the legendary &bMazebreaker Pickaxe&7!"
+			],
+			x: 2.5, y: -2.25,
+			dependencies: ["3F8C3DE8848E1A6F"],
+			optional: true,
+			tasks: [ { id: "P1BT000000000001", type: "item", item: "twilightforest:maze_map_focus", count: 1 } ],
+			rewards: [
+				{ id: "P1BR000000000001", type: "item", item: "minecraft:golden_apple", count: 2 },
+				{ id: "P1BR000000000002", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "8C952F870018A11E",
+			title: "&c&lBoss 3: The Minoshroom",
+			description: [
+				"&7Break through the fenced chamber on the bottom floor of the Labyrinth and slay &cThe Minoshroom&7!",
+				"",
+				"&6&lCrucial Loot – Meef Stroganoff:",
+				"&7Do NOT eat all of your &6Meef Stroganoff&7 carelessly! While eating one bowl grants access to the Fire Swamp, you ALSO need bowls of &6Meef Stroganoff&7 to craft:",
+				"&8• &bMekanism Teleportation Cores &7(for the Digital Miner)",
+				"&8• &cRed Heart Canisters &7(2nd row of health)",
+				"&8• &6The Allthemodium Apple &7in Phase 7!"
+			],
+			x: 5.5, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["3F8C3DE8848E1A6F"],
+			tasks: [
+				{ id: "E373DE1F7F690AAC", type: "item", item: "twilightforest:minoshroom_trophy", count: 1 },
+				{ id: "053268913F5DFDC4", type: "item", item: "twilightforest:meef_stroganoff", count: 2 }
+			],
+			rewards: [
+				{ id: "B0843F629C5CCCF4", type: "item", item: "twilightforest:meef_stroganoff", count: 4 },
+				{ id: "A4FA617EE34DAFA2", type: "random", table_id: "tier_1_twilight" },
+				{ id: "A5ABDAEA17AC3D7D", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p1b_teleportation_core",
+			title: "&bArcane Quantum Entanglement: Teleportation Core",
+			description: [
+				"&7Using &6Meef Stroganoff&7 from the Minoshroom alongside Atomic Alloys and Diamonds, craft the &bMekanism Teleportation Core&7!",
+				"",
+				"&7This core is the heart of the &eDigital Miner&7."
+			],
+			x: 5.5, y: -2.5,
+			shape: "hexagon",
+			dependencies: ["8C952F870018A11E"],
+			tasks: [ { id: "2171DDA2ADBB2906", type: "item", item: "mekanism:teleportation_core", count: 2 } ],
+			rewards: [
+				{ id: "48C2A23299783CB3", type: "item", item: "mekanism:alloy_atomic", count: 4 },
+				{ id: "B667F232FE7701D9", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P1BQ000000000002",
+			title: "&dAtomic Alloys & Elite Circuits",
+			description: [
+				"&7Produce a batch of &dAtomic Alloys&7 (by infusing Reinforced Alloys with Refined Obsidian Dust) and &bElite Control Circuits&7!",
+				"",
+				"&7You will need these for your Robit, Digital Miner, and Teleportation Cores."
+			],
+			x: 5.5, y: -4.5,
+			dependencies: ["p1b_teleportation_core"],
+			tasks: [
+				{ id: "P1BT000000000002", type: "item", item: "mekanism:alloy_atomic", count: 4 },
+				{ id: "P1BT000000000003", type: "item", item: "mekanism:elite_control_circuit", count: 2 }
+			],
+			rewards: [
+				{ id: "P1BR000000000003", type: "item", item: "mekanism:alloy_atomic", count: 4 },
+				{ id: "P1BR000000000004", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P1BQ000000000003",
+			title: "&4Braving the Fire Swamp",
+			description: [
+				"&7With the Minoshroom's &6Meef Stroganoff&7 consumed, the heat barrier around the &4Fire Swamp&7 fades! Brew or bring a Potion of Fire Resistance before confronting the multi-headed beast."
+			],
+			x: 5.5, y: 2.5,
+			dependencies: ["8C952F870018A11E"],
+			tasks: [ { id: "P1BT000000000004", type: "item", item: "twilightforest:meef_stroganoff", count: 1 } ],
+			rewards: [
+				{ id: "P1BR000000000005", type: "item", item: "minecraft:fire_resistance" },
+				{ id: "P1BR000000000006", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "1BFA69A6FB5868C9",
+			title: "&4&lBoss 4: The Hydra",
+			description: [
+				"&7Eat a bowl of &6Meef Stroganoff&7 to survive the scorching heat of the &4Fire Swamp&7, locate the Hydra Lair in the center, and slay the multi-headed &4Hydra&7!",
+				"",
+				"&eCombat Tip: &7Attack its open mouths when it prepares to breathe fire or launch mortar bombs, and deflect its mortars back into its chest!",
+				"",
+				"&cCollect plenty of Fiery Blood! &7You need it for the &dME Controller&7, Phase 2 &3Gas-Burning Generator&7, Wither Skeleton Skull rituals, Teleport Pads, and Cataclysmic Ignis."
+			],
+			x: 9.0, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["8C952F870018A11E"],
+			tasks: [
+				{ id: "961CDF057FFB196F", type: "item", item: "twilightforest:hydra_trophy", count: 1 },
+				{ id: "0BFB34B0A9186280", type: "item", item: "twilightforest:fiery_blood", count: 8 }
+			],
+			rewards: [
+				{ id: "D8E21D416E7390E9", type: "item", item: "twilightforest:fiery_blood", count: 8 },
+				{ id: "0550EA102395040E", type: "item", item: "twilightforest:hydra_chop", count: 4 },
+				{ id: "6378F2B10CCA1BFB", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "P1BQ000000000004",
+			title: "&6Fiery Ingots & Hydra Chops",
+			description: [
+				"&7Combine Iron Ingots with &cFiery Blood&7 (or Fiery Tears) to forge &6Fiery Ingots&7, and savour the Hydra's nutrient-packed &cHydra Chops&7!"
+			],
+			x: 9.0, y: -2.5,
+			dependencies: ["1BFA69A6FB5868C9"],
+			tasks: [
+				{ id: "P1BT000000000005", type: "item", item: "twilightforest:fiery_ingot", count: 4 },
+				{ id: "P1BT000000000006", type: "item", item: "twilightforest:hydra_chop", count: 2 }
+			],
+			rewards: [
+				{ id: "P1BR000000000007", type: "item", item: "twilightforest:fiery_ingot", count: 4 },
+				{ id: "P1BR000000000008", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "2D170F9E0367BC54",
+			title: "&8Unlocking the Goblin Stronghold",
+			description: [
+				"&7Head to the &8Dark Forest&7 (covered by a thick roof of leaves). Find the stone Trophy Pedestal sitting above the underground &7Knight Stronghold&7.",
+				"",
+				"&7Place any Boss Trophy (Naga, Lich, Minoshroom, or Hydra) onto the pedestal to shatter the protective shield, then pick your trophy back up!"
+			],
+			x: 12.0, y: 0.0,
+			dependencies: ["1BFA69A6FB5868C9"],
+			tasks: [ { id: "4D474D25FDA29D21", type: "item", item: "twilightforest:armor_shard_cluster", count: 1 } ],
+			rewards: [
+				{ id: "8B98E4BD855AE633", type: "item", item: "twilightforest:knightmetal_ingot", count: 4 },
+				{ id: "406D3947795FAE61", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "0E72B6514751BF63",
+			title: "&7&lBoss 5: The Knight Phantoms",
+			description: [
+				"&7Explore the Stronghold crypts and defeat the six spectral &7Knight Phantoms&7!",
+				"",
+				"&7Loot the chest and smelt Armor Shard Clusters into &7Knightmetal Ingots&7. Knightmetal forms the heavy-duty armor plating required to construct the &eDigital Miner&7!"
+			],
+			x: 15.0, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["2D170F9E0367BC54"],
+			tasks: [
+				{ id: "FFBFE21FD3C297F5", type: "item", item: "twilightforest:knight_phantom_trophy", count: 1 },
+				{ id: "98D29783C99B4A30", type: "item", item: "twilightforest:knightmetal_ingot", count: 8 }
+			],
+			rewards: [
+				{ id: "AF28FB52A1BEA985", type: "item", item: "twilightforest:knightmetal_ingot", count: 8 },
+				{ id: "1AA1F258C9D6DAF5", type: "random", table_id: "tier_1_twilight" },
+				{ id: "22E092B0206C6686", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "0798F3359E054CDD",
+			title: "&eYour Little Buddy: Robit",
+			description: [
+				"&7Every &eDigital Miner&7 requires a faithful mechanical brain—craft a &eRobit&7 using Refined Obsidian, Energy Tablets, and Atomic Alloys."
+			],
+			x: 15.0, y: -2.5,
+			dependencies: ["p1b_teleportation_core", "0E72B6514751BF63", "P1BQ000000000002"],
+			tasks: [ { id: "712D59E8F9341227", type: "item", item: "mekanism:robit", count: 1 } ],
+			rewards: [
+				{ id: "B838DD5D3AF710C8", type: "item", item: "mekanism:ingot_refined_obsidian", count: 8 },
+				{ id: "931F14A63D4800C3", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "p1b_carminite",
+			title: "&cThe Crimson Catalyst: Carminite",
+			description: [
+				"&7In the exact center of the Dark Forest stands the colossal &4Dark Tower&7.",
+				"",
+				"&7Ascend the tower and defeat Tower Ghasts and Carminite Golems to craft &cCarminite&7.",
+				"",
+				"&c&lWhy Carminite is Essential:",
+				"&8• &bSimple Machine Frame &7(Industrial Foregoing Tier 2)",
+				"&8• &eMekanism Digital Miner",
+				"&8• &aApplied Experienced &7(Digital XP Storage)",
+				"&8• &cFlux Cores &7(Wireless Power)",
+				"&8• &cHeart Canisters &7& Phase 2 Wither Skull Rituals!"
+			],
+			x: 18.0, y: 0.0,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["0E72B6514751BF63"],
+			tasks: [ { id: "BCE039FF067F9A55", type: "item", item: "twilightforest:carminite", count: 8 } ],
+			rewards: [
+				{ id: "585444B0C212B7B8", type: "item", item: "twilightforest:carminite", count: 8 },
+				{ id: "00888D646065E5A0", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "FC8FF24D64764179",
+			title: "&7Heart Canister Shell",
+			description: [
+				"&7With &cCarminite&7 unlocked, you can now forge empty &fCanisters&7 from &eBaubley Heart Canisters&7 (using Osmium, Iron, and Carminite).",
+				"",
+				"&7You can equip up to &c10 Heart Canisters of each color&7 in your Curios Heart Amulet / slots to permanently gain extra rows of health!"
+			],
+			x: 15.0, y: 2.5,
+			dependencies: ["p1b_carminite"],
+			tasks: [ { id: "258778EF631CB642", type: "item", item: "bhc:canister", count: 4 } ],
+			rewards: [
+				{ id: "49A4BE854CB0143F", type: "item", item: "bhc:canister", count: 2 },
+				{ id: "7CCBF7B38463B3F5", type: "xp", xp: 100 }
+			]
+		},
+		{
+			id: "282B50B9C69CEED8",
+			title: "&c&l2nd Row of Health: Red Heart Canisters",
+			description: [
+				"&7Bio-alchemy in action! Combine an empty Canister with:",
+				"&8• &6Meef Stroganoff &7/ &eTwilight Flavors & Delight &7feast",
+				"&8• &cCarminite &7& undead essence (Twilight Lich / Dark Tower)",
+				"&8• &eMead &7(fermented in a Brewin' And Chewin' Keg)",
+				"&8• &cRed Heart &7(dropped by standard mobs)",
+				"",
+				"&7Craft up to 10 &cRed Heart Canisters&7 for a full extra row of 10 hearts!"
+			],
+			x: 15.0, y: 4.5,
+			size: 1.35,
+			shape: "heart",
+			dependencies: ["FC8FF24D64764179", "8C952F870018A11E"],
+			tasks: [ { id: "9B9CCF163C955EBA", type: "item", item: "bhc:red_heart_canister", count: 1 } ],
+			rewards: [
+				{ id: "8FC5DD95BE7816F1", type: "item", item: "bhc:red_heart", count: 4 },
+				{ id: "93635453B2B256B0", type: "item", item: "brewinandchewin:mead", count: 2 },
+				{ id: "0E16E53E2A71DFD0", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P1BQ000000000005",
+			title: "&cFull 20 Hearts: 10x Red Canisters",
+			description: [
+				"&7Craft a &cHeart Amulet&7 (or Soul Heart Amulet) to neatly hold all your Heart Canisters in a single Curios slot, and push all the way to &c10x Red Heart Canisters (20 Total Hearts)&7!"
+			],
+			x: 15.0, y: 6.5,
+			dependencies: ["282B50B9C69CEED8"],
+			optional: true,
+			tasks: [ { id: "P1BT000000000007", type: "item", item: "bhc:red_heart_canister", count: 10 } ],
+			rewards: [
+				{ id: "P1BR000000000009", type: "item", item: "bhc:red_heart_canister", count: 2 },
+				{ id: "P1BR000000000010", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "93F84309457042E2",
+			title: "&bIndustrial Foregoing Tier 2: Simple Frame",
+			description: [
+				"&7Infuse your &aPity Machine Frame&7 with &fPlastic&7, &aNaga Scales&7, and &cCarminite&7 to construct the &bSimple Machine Frame&7!",
+				"",
+				"&7This unlocks the &eDissolution Chamber&7, automated crop farming, Pink Slime production, and the &eDigital Miner&7!"
+			],
+			x: 18.0, y: 2.5,
+			size: 1.35,
+			shape: "hexagon",
+			dependencies: ["p1b_carminite"],
+			tasks: [ { id: "21C5EA8113BBFC36", type: "item", item: "industrialforegoing:machine_frame_simple", count: 2 } ],
+			rewards: [
+				{ id: "6C909035495ED99B", type: "item", item: "industrialforegoing:plastic", count: 16 },
+				{ id: "37186B392AD452BE", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "92B64C1B85FB6CDD",
+			title: "&bThe Dissolution Chamber",
+			description: [
+				"&7The &bDissolution Chamber&7 combines up to 8 solid items with a liquid reagent to craft advanced components, Range Addons, Rocket Fuels (in Phase 4), and future Machine Frames.",
+				"",
+				"&7Build it right away—it is one of the most important machines in the entire pack!"
+			],
+			x: 18.0, y: 4.5,
+			dependencies: ["93F84309457042E2"],
+			tasks: [ { id: "A027F91E03465F29", type: "item", item: "industrialforegoing:dissolution_chamber", count: 1 } ],
+			rewards: [
+				{ id: "A6E407709D7B9F51", type: "random", table_id: "tier_1_twilight" },
+				{ id: "247ACE301AB08CE5", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P1BQ000000000006",
+			title: "&bIF Machine Addons",
+			description: [
+				"&7Inside your Dissolution Chamber, use Liquid Latex to craft &bSpeed&7, &eEfficiency&7, &aProcessing&7, and &9Range Addons&7 for all your Industrial Foregoing machines!"
+			],
+			x: 16.5, y: 5.5,
+			dependencies: ["92B64C1B85FB6CDD"],
+			optional: true,
+			tasks: [
+				{
+					id: "P1BT000000000008",
+					type: "item",
+					item: { id: "industrialforegoing:speed_addon_tier_1", count: 1, components: { "titanium:augments": { Speed: 2.0f } } },
+					count: 1
+				},
+				{
+					id: "P1BT000000000009",
+					type: "item",
+					item: {
+						id: "industrialforegoing:efficiency_addon_tier_1",
+						count: 1,
+						components: { "titanium:augments": { Efficiency: 0.9f } }
+					},
+					count: 1
+				}
+			],
+			rewards: [
+				{ id: "P1BR000000000011", type: "item", item: "industrialforegoing:plastic", count: 8 },
+				{ id: "P1BR000000000012", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "47E34F9A7530C8C2",
+			title: "&aAutomated Gastronomy Farms",
+			description: [
+				"&7With the &bSimple Machine Frame&7 and &bDissolution Chamber&7 unlocked, you can build a &aPlant Sower&7 and &aPlant Gatherer&7 (plus Range Addons)!",
+				"",
+				"&7Automate your Delight crops so your kitchen and Bio-Fuel lines never run dry."
+			],
+			x: 20.5, y: 4.5,
+			dependencies: ["92B64C1B85FB6CDD"],
+			optional: true,
+			tasks: [
+				{ id: "3870DDE77ADE3D59", type: "item", item: "industrialforegoing:plant_sower", count: 1 },
+				{ id: "27A513E0A52DCD8B", type: "item", item: "industrialforegoing:plant_gatherer", count: 1 }
+			],
+			rewards: [
+				{ id: "C24E112CAB222FAB", type: "item", item: "minecraft:bone_meal", count: 64 },
+				{ id: "72209A48038E043B", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "C54B9497B0B0D9DC",
+			title: "&dLiquid Meat & Pink Slime Prep",
+			description: [
+				"&7Build a &dMob Slaughter Factory&7! When it slaughters passive animals or hostile mobs, it produces &6Liquid Meat&7 and liquid &dPink Slime&7.",
+				"",
+				"&eImportant: &7Start stockpiling liquid &dPink Slime&7 in tanks now! You will need it inside the Dissolution Chamber in Phase 3 to craft the &dAdvanced Machine Frame&7."
+			],
+			x: 18.0, y: 6.5,
+			dependencies: ["92B64C1B85FB6CDD"],
+			tasks: [ { id: "35CCF95C3355ED30", type: "item", item: "industrialforegoing:mob_slaughter_factory", count: 1 } ],
+			rewards: [
+				{ id: "B91FDDDD5E63A8E4", type: "item", item: "mekanism:basic_fluid_tank", count: 2 },
+				{ id: "ECC81829D5891F97", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P1BQ000000000007",
+			title: "&bMob Imprisonment Tool",
+			description: [
+				"&7Craft a &bMob Imprisonment Tool&7 to easily transport passive animals to your ranch or Mob Slaughter Factory!",
+				"",
+				"&cImportant Blacklist Rule: &7All bosses and minibosses from Twilight Forest, Ice and Fire, and Cataclysm are strictly blacklisted from both the Mob Imprisonment Tool and Apothic Spawners!"
+			],
+			x: 20.5, y: 6.5,
+			dependencies: ["C54B9497B0B0D9DC"],
+			optional: true,
+			tasks: [ { id: "P1BT000000000010", type: "item", item: "industrialforegoing:mob_imprisonment_tool", count: 1 } ],
+			rewards: [
+				{ id: "P1BR000000000013", type: "item", item: "minecraft:ghast_tear", count: 4 },
+				{ id: "P1BR000000000014", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "p1b_slay_ur_ghast",
+			title: "&4&lBoss 6: The Ur-Ghast",
+			description: [
+				"&7Reach the roof of the Dark Tower and slay the colossal &4Ur-Ghast&7!",
+				"",
+				"&eCombat Tip: &7Lure mini-ghasts near the Ghast Traps on the roof. Once a trap is charged by killing mini-ghasts, step on the redstone plate when the Ur-Ghast flies overhead to pull it down and deal massive damage!",
+				"",
+				"&7Claim its &6Fiery Tears&7—the final optical component for your &eDigital Miner&7!"
+			],
+			x: 21.0, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["p1b_carminite"],
+			tasks: [
+				{ id: "6B5984083829ED7C", type: "item", item: "twilightforest:ur_ghast_trophy", count: 1 },
+				{ id: "A31C0C845878B134", type: "item", item: "twilightforest:fiery_tears", count: 4 }
+			],
+			rewards: [
+				{ id: "3F5BF873E075F616", type: "item", item: "twilightforest:fiery_tears", count: 6 },
+				{ id: "F1114E48EB362E7B", type: "random", table_id: "tier_1_twilight" },
+				{ id: "D63BC2D14017DB0E", type: "xp_levels", xp_levels: 4 }
+			]
+		},
+		{
+			id: "p1b_digital_miner",
+			title: "&e&lAutomated Mining: The Digital Miner!",
+			description: [
+				"&7Combine all the spoils of the Deep Woods to assemble the ultimate Overworld mining rig: the &eMekanism Digital Miner&7!",
+				"",
+				"&6&lRecipe Components:",
+				"&8• &7Knightmetal Ingots (Knight Phantoms)",
+				"&8• &cCarminite &6& Fiery Tears &7(Dark Tower & Ur-Ghast)",
+				"&8• &bTeleportation Cores &7(Minoshroom)",
+				"&8• &eRobit &7& &bSimple Machine Frame &7(Industrial Foregoing)",
+				"",
+				"&eTip: &7Configure Tag filters (like &fc:ores/*&7) inside the Digital Miner and install Anchor, Speed, and Energy Upgrades!"
+			],
+			x: 21.0, y: -3.5,
+			size: 1.65,
+			shape: "gear",
+			dependencies: ["0798F3359E054CDD", "p1b_slay_ur_ghast", "93F84309457042E2"],
+			tasks: [ { id: "785C24196A9DFD76", type: "item", item: "mekanism:digital_miner", count: 1 } ],
+			rewards: [
+				{ id: "8F85F50C06150A8B", type: "item", item: "mekanism:upgrade_anchor" },
+				{ id: "3FD229E15AE303C7", type: "item", item: "mekanism:upgrade_speed", count: 8 },
+				{ id: "F9D5EB691A6A08D3", type: "item", item: "mekanism:upgrade_energy", count: 8 },
+				{
+					id: "FFB7CB56DD611A63",
+					type: "toast",
+					title: "Digital Miner Unlocked!",
+					description: "Manual mining in the Overworld is history!"
+				},
+				{ id: "444710F9289383CC", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P1BQ000000000008",
+			title: "&aDigital Miner Anchor & Optimization",
+			description: [
+				"&7Keep your Digital Miner running at peak performance by installing 8x &bSpeed Upgrades&7, 8x &eEnergy Upgrades&7, and an &aAnchor Upgrade&7!",
+				"",
+				"&eNote: &7Keep your Digital Miner safe even in the endgame—in Phase 7, you will fuse your Digital Miner into the &6Industrial Foregoing Ore Laser Base&7!"
+			],
+			x: 21.0, y: -5.5,
+			dependencies: ["p1b_digital_miner"],
+			optional: true,
+			tasks: [ { id: "P1BT000000000011", type: "item", item: "mekanism:upgrade_anchor", count: 1 } ],
+			rewards: [
+				{ id: "P1BR000000000015", type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "P1BR000000000016", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "631AD17584431227",
+			title: "&cWireless Power Prep: Flux Cores",
+			description: [
+				"&7Throw Redstone onto Bedrock and left-click an Obsidian block above it to crush it into &8Flux Dust&7.",
+				"",
+				"&7Combine Flux Dust with &cCarminite&7 to craft &cFlux Cores&7! Once you obtain a Nether Star and Allthemodium in Phase 2, these cores will unlock limitless cross-dimensional wireless power (&cFlux Plugs & Points&7—note that Flux Storage batteries are removed in favor of Mekanism Induction Matrix!)."
+			],
+			x: 21.0, y: 2.5,
+			dependencies: ["p1b_carminite"],
+			tasks: [
+				{ id: "9792793008A7FFFF", type: "item", item: "fluxnetworks:flux_dust", count: 16 },
+				{ id: "BFC054F3E5D328EB", type: "item", item: "fluxnetworks:flux_core", count: 4 }
+			],
+			rewards: [
+				{ id: "59A1324319B9EDD6", type: "item", item: "fluxnetworks:flux_core", count: 4 },
+				{ id: "2FB109359B457711", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "839F46544BE474CF",
+			title: "&f&lBoss 7: The Alpha Yeti",
+			description: [
+				"&7Now head to the frozen &fSnowy Forest&7! Enter the icy Yeti Lair cave and defeat the &fAlpha Yeti&7.",
+				"",
+				"&7Its thick &fAlpha Yeti Fur&7 clears the blizzard over the Glacier and serves as thermal insulation for the &dAE2 ME Controller&7 and Phase 2 &6Teleport Pad&7."
+			],
+			x: 24.0, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["p1b_slay_ur_ghast"],
+			tasks: [
+				{ id: "9524AAB16BB7E2BC", type: "item", item: "twilightforest:alpha_yeti_trophy", count: 1 },
+				{ id: "5721699A442949DA", type: "item", item: "twilightforest:alpha_yeti_fur", count: 6 }
+			],
+			rewards: [
+				{ id: "BFB89971066C18D0", type: "item", item: "twilightforest:alpha_yeti_fur", count: 6 },
+				{ id: "2CE9BD3821C9EDC9", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p1b_applied_experienced",
+			title: "&aDigital XP: Applied Experienced",
+			description: [
+				"&7By uniting &cCarminite&7, &bOsmium&7, a &cHellshelf&7, and a &bSeashelf&7, you unlock &aApplied Experienced&7 (&fappex:experience_cell_housing&7)!",
+				"",
+				"&7Store your player XP digitally inside your AE2 Drives so you never lose levels in boss fights and always have XP ready for Apothic Enchanting!"
+			],
+			x: 24.0, y: 2.5,
+			shape: "rsquare",
+			dependencies: ["p1b_carminite"],
+			tasks: [ { id: "80A1B2C3D4E5F611", type: "item", item: "appex:experience_cell_housing", count: 1 } ],
+			rewards: [ { id: "80A1B2C3D4E5F610", type: "xp_levels", xp_levels: 5 } ]
+		},
+		{
+			id: "P1BQ000000000009",
+			title: "&a1k Experience Storage Cell",
+			description: [
+				"&7Combine your Experience Cell Housing with a 1k or 4k Cell Component to craft an &aME Experience Storage Cell&7 and place it inside your ME Drive!"
+			],
+			x: 24.0, y: 4.5,
+			dependencies: ["p1b_applied_experienced"],
+			optional: true,
+			tasks: [ { id: "P1BT000000000012", type: "item", item: "appex:experience_storage_cell_1k", count: 1 } ],
+			rewards: [ { id: "P1BR000000000017", type: "xp_levels", xp_levels: 3 } ]
+		},
+		{
+			id: "P1BQ000000000010",
+			title: "&bScaling the Aurora Palace",
+			description: ["&7Climb onto the top of the Glacier and locate the shimmering, rainbow-hued &bAurora Palace&7!"],
+			x: 24.0, y: -2.5,
+			dependencies: ["839F46544BE474CF"],
+			tasks: [ { id: "P1BT000000000013", type: "item", item: "twilightforest:aurora_block", count: 4 } ],
+			rewards: [
+				{ id: "P1BR000000000018", type: "item", item: "twilightforest:aurora_block", count: 16 },
+				{ id: "P1BR000000000019", type: "xp", xp: 125 }
+			]
+		},
+		{
+			id: "p1b_slay_snow_queen",
+			title: "&b&lBoss 8: The Snow Queen",
+			description: [
+				"&7Climb the shimmering &bAurora Palace&7 atop the Glacier and defeat the final boss of Phase 1B: &bThe Snow Queen&7!",
+				"",
+				"&eCombat Tip: &7Her ice chariot from below is immune to damage—attack her head and upper body when she swoops down or hovers to fire ice beams!",
+				"",
+				"&bCollect her Ice Bombs! &7They act as the sub-zero cooling core for the &dAE2 ME Controller&7."
+			],
+			x: 27.0, y: 0.0,
+			size: 1.5,
+			shape: "octagon",
+			dependencies: ["839F46544BE474CF"],
+			tasks: [
+				{ id: "3A05FFCC92658FB5", type: "item", item: "twilightforest:snow_queen_trophy", count: 1 },
+				{ id: "13843CC7048DF5E6", type: "item", item: "twilightforest:ice_bomb", count: 4 }
+			],
+			rewards: [
+				{ id: "63C7934C15CCE1CB", type: "item", item: "twilightforest:ice_bomb", count: 6 },
+				{ id: "D85E7BA174168623", type: "random", table_id: "tier_1_twilight" },
+				{ id: "7772CB32C3E04CBF", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P1BQ000000000011",
+			title: "&bSpoils of the Glacier",
+			description: [
+				"&7The Snow Queen drops either the &bTriple Bow&7 (fires 3 arrows at once) or the &9Seeker Bow&7 (arrows home in on targets)!",
+				"",
+				"&7With her defeat, the acid rain over the &2Twilight Highlands&7 also clears—allowing you to explore the Troll Caves and Cloud Cottage if you wish!"
+			],
+			x: 27.0, y: 2.5,
+			dependencies: ["p1b_slay_snow_queen"],
+			optional: true,
+			tasks: [ { id: "P1BT000000000014", type: "item", item: "twilightforest:ice_bomb", count: 2 } ],
+			rewards: [
+				{ id: "P1BR000000000020", type: "item", item: "minecraft:arrow", count: 32 },
+				{ id: "P1BR000000000021", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "p1b_ae2_controller",
+			title: "&d&lShattering the 8-Channel Limit: ME Controller!",
+			description: [
+				"&7At last! Combine the thermal power of &cFiery Blood&7 (Hydra), the insulation of &fAlpha Yeti Fur&7, the sub-zero cooling core of &bIce Bombs&7 (Snow Queen), &9Aquamarine&7, and &eIllumination Powder&7 (&fastralsorcery:illumination_powder&7) to construct the &dAE2 ME Controller&7!",
+				"",
+				"&a&lNo More 8-Channel Limit!",
+				"&7Each face of an ME Controller outputs up to &e32 channels&7 via Dense Cables, and you can build multiblock Controller frames up to 7x7x7. Full base automation begins now!"
+			],
+			x: 30.5, y: 0.0,
+			size: 1.75,
+			shape: "gear",
+			dependencies: ["p1b_slay_snow_queen"],
+			tasks: [ { id: "975C4C6918C046CB", type: "item", item: "ae2:controller", count: 1 } ],
+			rewards: [
+				{ id: "945128C6FB3CE9FE", type: "item", item: "ae2:controller" },
+				{ id: "304E4A8B77F003CA", type: "item", item: "ae2:fluix_smart_dense_cable", count: 16 },
+				{
+					id: "BCDC173CA3002A8A",
+					type: "toast",
+					title: "ME Controller Online!",
+					description: "You have unlocked full AE2 automation!"
+				},
+				{ id: "99E10376832DD04E", type: "xp_levels", xp_levels: 5 }
+			]
+		},
+		{
+			id: "P1BQ000000000012",
+			title: "&d32-Channel Dense & Smart Cables",
+			description: [
+				"&7Craft &dME Fluix Smart Dense Cables&7 (which carry &e32 channels&7 per Controller face) and &dME Smart Cables&7 (which display active channels as glowing lines on the cable)!"
+			],
+			x: 30.5, y: 2.5,
+			dependencies: ["p1b_ae2_controller"],
+			tasks: [
+				{ id: "P1BT000000000015", type: "item", item: "ae2:fluix_smart_dense_cable", count: 8 },
+				{ id: "P1BT000000000016", type: "item", item: "ae2:fluix_smart_cable", count: 8 }
+			],
+			rewards: [
+				{ id: "P1BR000000000022", type: "item", item: "ae2:fluix_smart_cable", count: 16 },
+				{ id: "P1BR000000000023", type: "xp", xp: 150 }
+			]
+		},
+		{
+			id: "P1BQ000000000013",
+			title: "&b16k Item & Fluid Storage Cells",
+			description: [
+				"&7Expand your digital storage capacity with &b16k ME Item Storage Cells&7 and &9ME Fluid Storage Cells&7!"
+			],
+			x: 30.5, y: 4.5,
+			dependencies: ["P1BQ000000000012"],
+			optional: true,
+			tasks: [ { id: "P1BT000000000017", type: "item", item: "ae2:item_storage_cell_16k", count: 1 } ],
+			rewards: [
+				{ id: "P1BR000000000024", type: "item", item: "ae2:fluid_storage_cell_4k" },
+				{ id: "P1BR000000000025", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "35C769A5F3437C0F",
+			title: "&bAE2 Autocrafting: Pattern Providers",
+			description: [
+				"&7Now that your &dME Controller&7 is online, set up your first &bCrafting CPUs&7 (1k/4k Crafting Storage + Co-Processing Units) and &bME Pattern Providers&7 paired with &bMolecular Assemblers&7!",
+				"",
+				"&7Never craft circuits, alloys, or machine frames by hand again!"
+			],
+			x: 30.5, y: -2.5,
+			dependencies: ["p1b_ae2_controller"],
+			tasks: [
+				{ id: "FE39701A57189E27", type: "item", item: "ae2:pattern_provider", count: 2 },
+				{ id: "06B207F2BEB3023A", type: "item", item: "ae2:molecular_assembler", count: 2 },
+				{ id: "3AA847AB6C718CD5", type: "item", item: "ae2:1k_crafting_storage", count: 1 },
+				{ id: "4D42C597470CF490", type: "item", item: "ae2:blank_pattern", count: 8 }
+			],
+			rewards: [
+				{ id: "F2FA88C31F455B1F", type: "item", item: "ae2:blank_pattern", count: 16 },
+				{ id: "F38427903769A320", type: "item", item: "ae2:molecular_assembler", count: 2 },
+				{ id: "A3FFD5F062580839", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "P1BQ000000000014",
+			title: "&dEncoding Terminal & Co-Processors",
+			description: [
+				"&7Attach an &bME Pattern Encoding Terminal&7 and an &bME Pattern Access Terminal&7 to your network, and add &dCrafting Co-Processing Units&7 to your Crafting CPU multiblock so your Molecular Assemblers craft multiple steps in parallel!"
+			],
+			x: 30.5, y: -4.5,
+			dependencies: ["35C769A5F3437C0F"],
+			tasks: [
+				{ id: "P1BT000000000018", type: "item", item: "ae2:pattern_encoding_terminal", count: 1 },
+				{ id: "P1BT000000000019", type: "item", item: "ae2:crafting_accelerator", count: 1 }
+			],
+			rewards: [
+				{ id: "P1BR000000000026", type: "item", item: "ae2:crafting_accelerator" },
+				{ id: "P1BR000000000027", type: "xp_levels", xp_levels: 2 }
+			]
+		},
+		{
+			id: "P1BQ000000000015",
+			title: "&aAutomating Mekanism & IF with AE2",
+			description: [
+				"&7Place &bME Pattern Providers&7 directly against your 3-slot &aBasic Mekanism Factories&7 and &bIF Dissolution Chamber&7!",
+				"",
+				"&ePro Tip: &7In your Mekanism Factory's Side Config, enable &aAuto-Eject&7 and set the face touching the Pattern Provider to &dInput/Output&7—your factory will automatically push finished Alloys, Circuits, and Machine Frames right back into the Pattern Provider!"
+			],
+			x: 30.5, y: -6.5,
+			dependencies: ["P1BQ000000000014"],
+			tasks: [
+				{ id: "P1BT000000000020", type: "item", item: "ae2:interface", count: 1 },
+				{ id: "P1BT000000000021", type: "item", item: "ae2:import_bus", count: 2 },
+				{ id: "P1BT000000000022", type: "item", item: "ae2:export_bus", count: 2 }
+			],
+			rewards: [
+				{ id: "P1BR000000000028", type: "item", item: "ae2:speed_card", count: 4 },
+				{ id: "P1BR000000000029", type: "xp_levels", xp_levels: 3 }
+			]
+		},
+		{
+			id: "p1b_phase_1b_complete",
+			title: "&3&lPhase 1 Complete: Master of the Twilight!",
+			description: [
+				"&7Every guardian of the Twilight Forest has fallen before you. Your &eDigital Miner&7 is stripping the Overworld bare, and your &dME Controller&7 is orchestrating your entire factory.",
+				"",
+				"&5&lNext Up in Phase 2 (Darkness, Stars & Allthemodium):",
+				"&8• &7Perform the &cCulinary Wither Skull Ritual&7 using My Nether's Delight & slay the Wither.",
+				"&8• &7Brave the &8Ancient City&7 & defeat the Warden for &3Echo Shards&7 & &6Allthemodium Nuggets&7.",
+				"&8• &7Upgrade to the &bStarlight Crafting Altar&7 to forge &9Starmetal&7 & the &6Allthemodium Teleport Pad&7!"
+			],
+			x: 34.0, y: 0.0,
+			size: 1.75,
+			shape: "octagon",
+			dependencies: ["p1b_ae2_controller", "p1b_digital_miner"],
+			tasks: [ { id: "6EC23DB0F1E86786", type: "checkmark" } ],
+			rewards: [
+				{
+					id: "2C353BFEE3B6F9DA",
+					type: "toast",
+					title: "Phase 1 Complete!",
+					description: "Proceed to Phase 2: Darkness, Stars & Allthemodium."
+				},
+				{ id: "1918B71A12FF0904", type: "random", table_id: "tier_1_twilight" },
+				{ id: "BDF90D8E3485CF0A", type: "xp_levels", xp_levels: 5 }
+			]
+		}
+	]
+}

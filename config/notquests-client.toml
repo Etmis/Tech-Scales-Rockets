@@ -1,0 +1,13 @@
+#Show a quest book button on the left side of the inventory screen
+inventoryButton = true
+#Show pinned quests on the screen
+showPinnedQuests = true
+#Where pinned quests are drawn
+#Allowed Values: TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT
+pinnedQuestsPosition = "TOP_LEFT"
+#Scale of the pinned quest list
+# Default: 1.0
+# Range: 0.5 ~ 2.0
+pinnedQuestsScale = 1.0
+#Play a sound when a quest or chapter is completed
+completionSounds = true
