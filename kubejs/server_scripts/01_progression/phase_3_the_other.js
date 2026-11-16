@@ -160,19 +160,6 @@ ServerEvents.recipes(event => {
     // ========================================================================
     // 5. SOPHISTICATED BACKPACKS (Max Tier Batoh & Stack Upgrade T4)
     // ========================================================================
-    event.remove({ output: 'sophisticatedbackpacks:netherite_backpack' })
-    event.shaped('sophisticatedbackpacks:netherite_backpack', [
-        'VBV',
-        'SDS',
-        'VNV'
-    ], {
-        V: 'allthemodium:vibranium_ingot',
-        B: Ingredient.of(dragonBloods),
-        S: Ingredient.of(otherDragonScales),
-        D: 'sophisticatedbackpacks:diamond_backpack',
-        N: 'minecraft:netherite_ingot'
-    })
-
     event.remove({ output: 'sophisticatedbackpacks:stack_upgrade_tier_4' })
     event.shaped('sophisticatedbackpacks:stack_upgrade_tier_4', [
         'VVV',

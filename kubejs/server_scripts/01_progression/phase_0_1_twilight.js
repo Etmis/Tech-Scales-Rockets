@@ -232,3 +232,14 @@ ServerEvents.recipes(event => {
         I: 'mekanism:ingot_osmium'
     })
 })
+
+// ============================================================================
+// OPRAVA DROPŮ PRO MEEF STROGANOFF
+// ============================================================================
+EntityEvents.death('twilightforest:minotaur', event => {
+    let killer = event.source.player
+    let hasKnife = killer && killer.mainHandItem.hasTag('c:tools/knives')
+    if (hasKnife || Math.random() < 0.4) {
+        event.entity.block.popItem('twilightdelight:raw_tomahawk_smeak')
+    }
+})

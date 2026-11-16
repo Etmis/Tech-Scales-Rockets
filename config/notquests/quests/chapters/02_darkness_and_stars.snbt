@@ -211,7 +211,7 @@
 			x: 4.5, y: -1.5,
 			dependencies: ["ADB4DC2AE752752D"],
 			tasks: [
-				{ id: "P2T0000000000008", type: "item", item: "astralsorcery:sooty_marble_raw", count: 21 },
+				{ id: "P2T0000000000008", type: "item", item: "astralsorcery:sooty_marble_raw", count: 25 },
 				{ id: "P2T0000000000009", type: "item", item: "astralsorcery:marble_pillar", count: 8 }
 			],
 			rewards: [
@@ -408,14 +408,14 @@
 			dependencies: ["6CB413E894934DD9", "BD02867A0B1AE7FE", "731ED6939FBA42FA"],
 			tasks: [ { id: "6C923E4524566707", type: "item", item: "allthemodium:teleport_pad", count: 1 } ],
 			rewards: [
-				{ id: "DD973CE765D85434", type: "item", item: "allthemodium:teleport_pad" },
 				{
 					id: "F8A6B16C91720006",
 					type: "toast",
 					title: "Mining Dimension Unlocked!",
 					description: "Infinite ores and Allthemodium await!"
 				},
-				{ id: "61AC5315E8EE6C48", type: "xp_levels", xp_levels: 5 }
+				{ id: "61AC5315E8EE6C48", type: "xp_levels", xp_levels: 5 },
+				{ id: "C3765B68227D8961", type: "random", table_id: "tier_2_allthemodium" }
 			]
 		},
 		{
@@ -426,7 +426,7 @@
 				"",
 				"&7Deploy your &eDigital Miner&7 here to strip-mine thousands of Iron, Osmium, Gold, Redstone, Diamond, Emerald, and Quartz ores without ever scarring the Overworld!"
 			],
-			x: 12.5, y: -2.5,
+			x: 12.5, y: -2.0,
 			dependencies: ["2A1CCE4C4A3DD93E"],
 			tasks: [
 				{ id: "P2T0000000000016", type: "dimension", icon: "minecraft:diamond_pickaxe", dimension: "allthemodium:mining" }
@@ -579,9 +579,9 @@
 			size: 1.5,
 			shape: "gear",
 			dependencies: ["p2_mine_allthemodium"],
-			tasks: [ { id: "C55F4AFC0D19C039", type: "item", item: "mekanism:advanced_tier_installer", count: 2 } ],
+			tasks: [ { id: "C55F4AFC0D19C039", type: "item", item: "mekanism:advanced_tier_installer", count: 1 } ],
 			rewards: [
-				{ id: "93388FA349C0FAE5", type: "item", item: "mekanism:advanced_tier_installer", count: 2 },
+				{ id: "93388FA349C0FAE5", type: "item", item: "mekanism:advanced_tier_installer" },
 				{ id: "4B6F9FD7ECD387B6", type: "item", item: "mekanism:alloy_infused", count: 16 },
 				{ id: "B0468C5098D55AC9", type: "xp_levels", xp_levels: 4 }
 			]

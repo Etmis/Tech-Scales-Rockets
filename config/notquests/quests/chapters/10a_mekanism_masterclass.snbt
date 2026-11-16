@@ -87,7 +87,7 @@
 				{ type: "item", item: "mekanism:steel_casing", count: 4 }
 			],
 			rewards: [
-				{ type: "item", item: "mekanism:steel_casing", count: 4 },
+				{ id: "BC3FA9FCBC078581", type: "item", item: "mekanism:steel_casing", count: 2 },
 				{ type: "xp", xp: 100 }
 			]
 		},
@@ -153,7 +153,7 @@
 				{ type: "item", item: "mekanism:advanced_control_circuit", count: 8 }
 			],
 			rewards: [
-				{ type: "item", item: "mekanism:alloy_reinforced", count: 8 },
+				{ id: "1F8A4E26FBA29FCE", type: "item", item: "mekanism:alloy_reinforced", count: 4 },
 				{ type: "xp", xp: 150 }
 			]
 		},
@@ -175,8 +175,8 @@
 				{ type: "item", item: "mekanism:ingot_refined_glowstone", count: 8 }
 			],
 			rewards: [
-				{ type: "item", item: "mekanism:ingot_refined_obsidian", count: 8 },
-				{ type: "item", item: "mekanism:ingot_refined_glowstone", count: 8 },
+				{ id: "49A192D00CF6C9C7", type: "item", item: "mekanism:ingot_refined_obsidian", count: 4 },
+				{ id: "E0CCD59A124E3604", type: "item", item: "mekanism:ingot_refined_glowstone", count: 4 },
 				{ type: "xp", xp: 150 }
 			]
 		},
@@ -698,10 +698,7 @@
 				{ type: "item", item: "mekanism:elite_chemical_tank", count: 1 },
 				{ type: "item", item: "mekanism:ultimate_chemical_tank", count: 1 }
 			],
-			rewards: [
-				{ type: "item", item: "mekanism:ultimate_chemical_tank", count: 2 },
-				{ type: "xp_levels", xp_levels: 4 }
-			]
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
 		},
 		{
 			id: "mek_034_bins",
@@ -716,10 +713,7 @@
 				{ type: "item", item: "mekanism:basic_bin", count: 1 },
 				{ type: "item", item: "mekanism:ultimate_bin", count: 1 }
 			],
-			rewards: [
-				{ id: "408B57238642B63F", type: "item", item: "mekanism:ultimate_bin" },
-				{ type: "xp_levels", xp_levels: 3 }
-			]
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
 		},
 		{
 			id: "mek_035_multiblock_1_dynamic_tank",
@@ -814,7 +808,7 @@
 			dependencies: ["mek_038_ore_2x_line"],
 			tasks: [ { type: "item", item: "mekanism:electric_pump", count: 1 } ],
 			rewards: [
-				{ type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "5B510B3AA32D2494", type: "item", item: "mekanism:upgrade_speed", count: 2 },
 				{ type: "xp", xp: 125 }
 			]
 		},
@@ -834,7 +828,7 @@
 			dependencies: ["mek_038_ore_2x_line", "mek_039_electric_pump_water"],
 			tasks: [ { type: "item", item: "mekanism:electrolytic_separator", count: 1 } ],
 			rewards: [
-				{ id: "1F494457DC6A5949", type: "item", item: "mekanism:upgrade_chemical", count: 8 },
+				{ id: "1F494457DC6A5949", type: "item", item: "mekanism:upgrade_chemical", count: 2 },
 				{ type: "xp_levels", xp_levels: 3 }
 			]
 		},
@@ -850,7 +844,7 @@
 				"",
 				"&aLine all 4 machines up in a row from left to right with Auto-Eject enabled!"
 			],
-			x: 6.0, y: 9.5,
+			x: 6.0, y: 12.0,
 			size: 1.45,
 			shape: "rsquare",
 			dependencies: ["mek_040_electrolytic_separator_oxygen"],
@@ -858,10 +852,7 @@
 				{ type: "item", item: "mekanism:purification_chamber", count: 1 },
 				{ type: "item", item: "mekanism:crusher", count: 1 }
 			],
-			rewards: [
-				{ type: "item", item: "mekanism:basic_tier_installer", count: 2 },
-				{ type: "xp_levels", xp_levels: 3 }
-			]
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
 		},
 		{
 			id: "mek_042_multiblock_2_thermal_evaporation",
@@ -885,10 +876,7 @@
 				{ type: "item", item: "mekanism:thermal_evaporation_valve", count: 3 },
 				{ type: "item", item: "mekanism:thermal_evaporation_block", count: 36 }
 			],
-			rewards: [
-				{ type: "item", item: "mekanism:thermal_evaporation_block", count: 32 },
-				{ type: "xp_levels", xp_levels: 4 }
-			]
+			rewards: [ { id: "E6598C32B2FC3DB9", type: "xp_levels", xp_levels: 5 } ]
 		},
 		{
 			id: "mek_043_brine_to_chlorine",
@@ -917,7 +905,7 @@
 			dependencies: ["mek_043_brine_to_chlorine", "mek_040_electrolytic_separator_oxygen"],
 			tasks: [ { type: "item", item: "mekanism:chemical_infuser", count: 1 } ],
 			rewards: [
-				{ type: "item", item: "mekanism:upgrade_speed", count: 4 },
+				{ id: "4C4014170F03667D", type: "item", item: "mekanism:upgrade_speed", count: 2 },
 				{ type: "xp_levels", xp_levels: 3 }
 			]
 		},
@@ -938,10 +926,7 @@
 			shape: "rsquare",
 			dependencies: ["mek_041_purification_crusher_3x", "mek_044_chemical_infuser_hcl"],
 			tasks: [ { type: "item", item: "mekanism:chemical_injection_chamber", count: 1 } ],
-			rewards: [
-				{ id: "D4C75C327FB71C82", type: "item", item: "mekanism:advanced_tier_installer" },
-				{ type: "xp_levels", xp_levels: 4 }
-			]
+			rewards: [ { type: "xp_levels", xp_levels: 4 } ]
 		},
 		{
 			id: "mek_046_infinite_sulfur_gunpowder",
@@ -958,7 +943,7 @@
 			dependencies: ["mek_045_chemical_injection_4x"],
 			tasks: [ { type: "item", item: "mekanism:dust_sulfur", count: 32 } ],
 			rewards: [
-				{ type: "item", item: "mekanism:dust_sulfur", count: 64 },
+				{ id: "CD35E30F181FBB3A", type: "item", item: "mekanism:dust_sulfur", count: 16 },
 				{ type: "xp_levels", xp_levels: 3 }
 			]
 		},
@@ -1013,7 +998,7 @@
 			dependencies: ["mek_048_sulfur_trioxide_so3", "mek_049_rotary_condensentrator_vapor"],
 			tasks: [ { type: "item", item: "mekanism:chemical_infuser", count: 1 } ],
 			rewards: [
-				{ id: "6EEF395AC6C19A74", type: "item", item: "mekanism:ultimate_chemical_tank" },
+				{ id: "6EEF395AC6C19A74", type: "item", item: "mekanism:advanced_chemical_tank" },
 				{ type: "xp_levels", xp_levels: 4 }
 			]
 		},
@@ -1030,7 +1015,7 @@
 			dependencies: ["mek_045_chemical_injection_4x", "mek_050_sulfuric_acid_complete"],
 			tasks: [ { type: "item", item: "mekanism:chemical_dissolution_chamber", count: 1 } ],
 			rewards: [
-				{ id: "7DE6E4F479058B44", type: "item", item: "mekanism:upgrade_chemical", count: 8 },
+				{ id: "7DE6E4F479058B44", type: "item", item: "mekanism:upgrade_chemical", count: 4 },
 				{ type: "xp_levels", xp_levels: 4 }
 			]
 		},
@@ -1076,7 +1061,7 @@
 				"",
 				"&7Send your &6Raw Desh&7 (Moon), &5Raw Ostrum&7 (Mars), and &4Raw Calorite&7 (Glacio) straight through your 5x line!"
 			],
-			x: 30.0, y: 12.0,
+			x: 27.0, y: 12.0,
 			dependencies: ["mek_053_chemical_crystallizer_5x_complete"],
 			tasks: [
 				{ type: "item", item: "ad_astra:raw_desh", count: 3 },
@@ -1098,7 +1083,7 @@
 				"&aHow to Process Unobtainium (Phase 6):",
 				"&7Fuse &d3x Raw Unobtainium + 1x Cataclysmic Flux&7 inside a &eMekanism Combiner&7 to obtain &d3x Unobtainium Ingots&7!"
 			],
-			x: 30.0, y: 14.5,
+			x: 30.0, y: 12.0,
 			shape: "rsquare",
 			dependencies: ["mek_053_chemical_crystallizer_5x_complete"],
 			tasks: [ { type: "item", item: "mekanism:combiner", count: 1 } ],
@@ -1440,10 +1425,7 @@
 			x: 3.0, y: 26.0,
 			dependencies: ["mek_072_early_generators_trio", "mek_058_prc_ethylene_substrate"],
 			tasks: [ { type: "item", item: "mekanismgenerators:gas_burning_generator", count: 1 } ],
-			rewards: [
-				{ id: "C19AF307ADFDF8BF", type: "item", item: "mekanismgenerators:gas_burning_generator" },
-				{ type: "xp_levels", xp_levels: 3 }
-			]
+			rewards: [ { type: "xp_levels", xp_levels: 3 } ]
 		},
 		{
 			id: "mek_074_fissile_step1_hydrofluoric_acid",

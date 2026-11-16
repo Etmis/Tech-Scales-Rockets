@@ -166,12 +166,17 @@
 			x: 5.0, y: -2.5,
 			dependencies: ["7FECFBFD96A32D24", "p0_iron_age"],
 			tasks: [
-				{ id: "B39DBF333F8AD7ED", type: "item", item: "storagedrawers:oak_full_drawers_1", count: 4 },
+				{
+					id: "B39DBF333F8AD7ED",
+					type: "item",
+					item: "storagedrawers:oak_full_drawers_1",
+					item_tag: "storagedrawers:full_drawers",
+					count: 4
+				},
 				{ id: "EC5518BA802CE7BA", type: "item", item: "storagedrawers:controller", count: 1 }
 			],
 			rewards: [
 				{ id: "C5CE29FAB8D6F186", type: "item", item: "storagedrawers:obsidian_storage_upgrade", count: 2 },
-				{ id: "FBA4A6227390F785", type: "item", item: "storagedrawers:quantify_key" },
 				{ id: "2292549ACB4BCD5D", type: "xp", xp: 75 }
 			]
 		},
@@ -199,7 +204,7 @@
 				"&7Craft your first &eSophisticated Backpack&7!",
 				"",
 				"&6&lThe Sacred Backpack Rule:",
-				"&7Industrial Foregoing's Infinity Backpack is removed. You will upgrade, dye, and cherish this single backpack all the way from Leather to &8Netherite&7 and eventually install the &dCreative Infinity Upgrade&7 in Phase 7!"
+				"&7Industrial Foregoing's Infinity Backpack is removed. You will upgrade, dye, and cherish this single backpack all the way from Leather to &8Netherite&7!"
 			],
 			x: 7.5, y: -2.5,
 			shape: "rsquare",
@@ -209,40 +214,6 @@
 				{ id: "26EE9B4A9D1EAAA1", type: "item", item: "minecraft:leather", count: 8 },
 				{ id: "BF5FD39939540E5B", type: "item", item: "sophisticatedbackpacks:upgrade_base", count: 2 },
 				{ id: "B705BCA0053E5A26", type: "xp", xp: 50 }
-			]
-		},
-		{
-			id: "P0Q0000000000007",
-			title: "&6Iron & Gold Backpack Tiers",
-			description: [
-				"&7Surround your Leather Backpack with Iron Ingots, then Gold Ingots in a Crafting Table to expand its storage capacity and upgrade slots!"
-			],
-			x: 7.5, y: -4.25,
-			dependencies: ["65EC9D0B0763CADC"],
-			tasks: [
-				{ id: "P0T0000000000008", type: "item", item: "sophisticatedbackpacks:iron_backpack", count: 1 },
-				{ id: "P0T0000000000009", type: "item", item: "sophisticatedbackpacks:gold_backpack", count: 1 }
-			],
-			rewards: [
-				{ id: "P0R0000000000013", type: "item", item: "minecraft:gold_ingot", count: 8 },
-				{ id: "P0R0000000000014", type: "xp", xp: 75 }
-			]
-		},
-		{
-			id: "CD1DDDF7F3A33844",
-			title: "&bDiamond Backpack & Modules",
-			description: [
-				"&7Upgrade your Gold Backpack to &bDiamond&7! Install utility upgrades like the &aPickup Upgrade&7, &eMagnet Upgrade&7, or &6Feeding Upgrade&7.",
-				"",
-				"&cNote: &7Remember that Raw Unobtainium in Phase 4+ is blacklisted from the Backpack Smelting Upgrade!"
-			],
-			x: 7.5, y: -6.0,
-			dependencies: ["P0Q0000000000007"],
-			tasks: [ { id: "62D20280A0AC2A8D", type: "item", item: "sophisticatedbackpacks:diamond_backpack", count: 1 } ],
-			rewards: [
-				{ id: "AE460023DE8292B6", type: "item", item: "sophisticatedbackpacks:pickup_upgrade" },
-				{ id: "4A0E58335A2FB692", type: "item", item: "sophisticatedbackpacks:stack_upgrade_tier_1" },
-				{ id: "0A8A515F1AB11213", type: "xp", xp: 125 }
 			]
 		},
 		{
@@ -439,7 +410,15 @@
 			dependencies: ["P0Q0000000000011"],
 			tasks: [ { id: "334F8510CD981091", type: "dimension", dimension: "minecraft:the_nether" } ],
 			rewards: [
-				{ id: "6176D8ABBA932B2D", type: "item", item: "minecraft:fire_resistance" },
+				{
+					id: "6176D8ABBA932B2D",
+					type: "item",
+					item: {
+						id: "minecraft:potion",
+						count: 1,
+						components: { "minecraft:potion_contents": { potion: "minecraft:long_fire_resistance" } }
+					}
+				},
 				{ id: "30FF00CE6A228707", type: "xp", xp: 100 }
 			]
 		},
@@ -633,10 +612,7 @@
 			],
 			x: 15.0, y: 2.5,
 			dependencies: ["1B7AB2731B0D0254", "870B5098AB5D9998"],
-			tasks: [
-				{ id: "E381C828443FFF24", type: "item", item: "mekanism:basic_universal_cable", count: 8 },
-				{ id: "6653B1FDB93C6D18", type: "item", item: "mekanism:basic_mechanical_pipe", count: 8 }
-			],
+			tasks: [ { id: "E381C828443FFF24", type: "item", item: "mekanism:basic_universal_cable", count: 8 } ],
 			rewards: [
 				{ id: "E2C42990B9096D57", type: "item", item: "mekanism:basic_universal_cable", count: 8 },
 				{ id: "CC04EB121E6F2752", type: "xp", xp: 75 }
@@ -650,12 +626,14 @@
 			],
 			x: 15.0, y: 4.5,
 			dependencies: ["3870A3E75D3D387B"],
+			optional: true,
 			tasks: [
 				{ id: "P0T0000000000025", type: "item", item: "mekanism:basic_logistical_transporter", count: 8 },
-				{ id: "P0T0000000000026", type: "item", item: "mekanism:basic_pressurized_tube", count: 8 }
+				{ id: "P0T0000000000026", type: "item", item: "mekanism:basic_pressurized_tube", count: 8 },
+				{ id: "639AED7A1CF57FA6", type: "item", item: "mekanism:basic_mechanical_pipe", count: 8 }
 			],
 			rewards: [
-				{ id: "P0R0000000000031", type: "item", item: "mekanism:basic_logistical_transporter", count: 8 },
+				{ id: "P0R0000000000031", type: "item", item: "mekanism:ingot_steel", count: 8 },
 				{ id: "P0R0000000000032", type: "xp", xp: 75 }
 			]
 		},
@@ -703,11 +681,7 @@
 			x: 17.5, y: 2.5,
 			dependencies: ["p0_steel_casing"],
 			tasks: [ { id: "13F448761AAE68D7", type: "item", item: "mekanism:enrichment_chamber", count: 1 } ],
-			rewards: [
-				{ id: "9FA7AA461092F186", type: "item", item: "mekanism:enriched_redstone", count: 8 },
-				{ id: "4C488C52478624EA", type: "item", item: "mekanism:enriched_carbon", count: 8 },
-				{ id: "D7C4AEDF34A5EA07", type: "xp", xp: 100 }
-			]
+			rewards: [ { id: "D7C4AEDF34A5EA07", type: "xp", xp: 100 } ]
 		},
 		{
 			id: "P0Q0000000000018",
@@ -723,10 +697,7 @@
 				{ id: "P0T0000000000029", type: "item", item: "mekanism:enriched_carbon", count: 8 },
 				{ id: "P0T0000000000030", type: "item", item: "mekanism:enriched_redstone", count: 8 }
 			],
-			rewards: [
-				{ id: "P0R0000000000035", type: "item", item: "mekanism:enriched_redstone", count: 8 },
-				{ id: "P0R0000000000036", type: "xp", xp: 100 }
-			]
+			rewards: [ { id: "P0R0000000000036", type: "xp", xp: 100 } ]
 		},
 		{
 			id: "1B5C724E4DCE6A36",
@@ -743,11 +714,7 @@
 				{ id: "ADE6D3ED39388674", type: "item", item: "mekanism:energized_smelter", count: 1 },
 				{ id: "1EBBCDFBE3EC53AA", type: "item", item: "mekanism:crusher", count: 1 }
 			],
-			rewards: [
-				{ id: "6410A6E85D133ACA", type: "item", item: "mekanism:upgrade_speed", count: 4 },
-				{ id: "38BE6B45118D904A", type: "item", item: "mekanism:upgrade_energy", count: 4 },
-				{ id: "8C24DAD47F754D8C", type: "xp", xp: 125 }
-			]
+			rewards: [ { id: "8C24DAD47F754D8C", type: "xp", xp: 125 } ]
 		},
 		{
 			id: "P0Q0000000000019",
@@ -763,10 +730,7 @@
 				{ id: "P0T0000000000031", type: "item", item: "mekanism:upgrade_speed", count: 4 },
 				{ id: "P0T0000000000032", type: "item", item: "mekanism:upgrade_energy", count: 4 }
 			],
-			rewards: [
-				{ id: "P0R0000000000037", type: "item", item: "mekanism:upgrade_energy", count: 4 },
-				{ id: "P0R0000000000038", type: "xp", xp: 100 }
-			]
+			rewards: [ { id: "P0R0000000000038", type: "xp", xp: 100 } ]
 		},
 		{
 			id: "20E9A28F7E7F3DA7",
@@ -863,7 +827,7 @@
 			description: [
 				"&7Pipe or bucket the liquid &fLatex&7 from your Fluid Extractor into the &eLatex Processing Unit&7, along with &9Water&7 and &cPower (FE)&7.",
 				"",
-				"&7It will coagulate the Latex into &fTiny Dry Rubber&7, which you combine into &fDry Rubber&7."
+				"&7It will coagulate the Latex into &fDry Rubber&7."
 			],
 			x: 25.0, y: 0.0,
 			dependencies: ["11A5AAC96B6AB41E"],
@@ -893,30 +857,11 @@
 			size: 1.5,
 			shape: "gear",
 			dependencies: ["1096299898A3CADF"],
-			tasks: [ { id: "445B39DFEE1E00BB", type: "item", item: "industrialforegoing:plastic", count: 16 } ],
+			tasks: [ { id: "445B39DFEE1E00BB", type: "item", item: "industrialforegoing:plastic", count: 4 } ],
 			rewards: [
-				{ id: "058C6A1092AEC934", type: "item", item: "industrialforegoing:plastic", count: 16 },
+				{ id: "058C6A1092AEC934", type: "item", item: "industrialforegoing:plastic", count: 4 },
 				{ id: "1B421687F5595B1E", type: "random", table_id: "tier_0_starter" },
 				{ id: "14416BFD8AAD594B", type: "xp_levels", xp_levels: 3 }
-			]
-		},
-		{
-			id: "P0Q0000000000022",
-			title: "&bReinforced Alloys & Advanced Circuits",
-			description: [
-				"&7Enriching Diamonds in your Enrichment Chamber yields &bCompressed Diamond&7.",
-				"",
-				"&7Infuse &cInfused Alloys&7 with Compressed Diamond inside your Metallurgic Infuser to create &bReinforced Alloys&7, and combine them with Basic Circuits to craft &cAdvanced Control Circuits&7!"
-			],
-			x: 27.5, y: 2.5,
-			dependencies: ["p0_plastic"],
-			tasks: [
-				{ id: "P0T0000000000036", type: "item", item: "mekanism:alloy_reinforced", count: 4 },
-				{ id: "P0T0000000000037", type: "item", item: "mekanism:advanced_control_circuit", count: 2 }
-			],
-			rewards: [
-				{ id: "P0R0000000000043", type: "item", item: "mekanism:alloy_reinforced", count: 4 },
-				{ id: "P0R0000000000044", type: "xp", xp: 150 }
 			]
 		},
 		{
@@ -967,9 +912,9 @@
 			dependencies: ["8947B1A8307C977D", "P0Q0000000000023"],
 			tasks: [
 				{ id: "D67A9FDBD0ACF447", type: "item", item: "ae2:inscriber", count: 1 },
-				{ id: "877094F0064FC146", type: "item", item: "ae2:logic_processor", count: 4 },
-				{ id: "9805B27043026FC8", type: "item", item: "ae2:calculation_processor", count: 4 },
-				{ id: "443C4F573D6C2409", type: "item", item: "ae2:engineering_processor", count: 4 }
+				{ id: "877094F0064FC146", type: "item", item: "ae2:logic_processor", count: 1 },
+				{ id: "9805B27043026FC8", type: "item", item: "ae2:calculation_processor", count: 1 },
+				{ id: "443C4F573D6C2409", type: "item", item: "ae2:engineering_processor", count: 1 }
 			],
 			rewards: [
 				{ id: "5388C909E4B049EB", type: "item", item: "ae2:silicon", count: 16 },
@@ -999,13 +944,13 @@
 			id: "P0Q0000000000024",
 			title: "&bDigital Disks: 1k Storage Cells",
 			description: [
-				"&7Craft &b1k&7 or &b4k ME Item Storage Cells&7 to insert into your ME Drive!",
+				"&7Craft &b1k ME Item Storage Cell&7 to insert into your ME Drive!",
 				"",
 				"&eTip: &7Each Storage Cell holds up to 63 item types. Keep stackable bulk resources in your Storage Drawers (connected via Storage Bus) and use ME Cells for tools, components, and general items!"
 			],
 			x: 27.5, y: -4.5,
 			dependencies: ["CC3303D499223F4D"],
-			tasks: [ { id: "P0T0000000000040", type: "item", item: "ae2:item_storage_cell_1k", count: 2 } ],
+			tasks: [ { id: "P0T0000000000040", type: "item", item: "ae2:item_storage_cell_1k", count: 1 } ],
 			rewards: [
 				{ id: "P0R0000000000047", type: "item", item: "ae2:item_cell_housing" },
 				{ id: "P0R0000000000048", type: "xp", xp: 125 }
@@ -1038,7 +983,7 @@
 				{ id: "B4EB5CCA4CCA43F3", type: "item", item: "ae2:storage_bus", count: 1 }
 			],
 			rewards: [
-				{ id: "A7563F03D2D346F5", type: "item", item: "ae2:item_storage_cell_4k", count: 2 },
+				{ id: "A7563F03D2D346F5", type: "item", item: "ae2:item_storage_cell_1k", count: 2 },
 				{ id: "33FBA94E913EA6D5", type: "xp_levels", xp_levels: 3 }
 			]
 		},
@@ -1059,8 +1004,6 @@
 			shape: "octagon",
 			dependencies: ["9EC251E529E2C854"],
 			tasks: [
-				{ id: "29A6A8361D539B90", type: "item", item: "minecraft:diamond", count: 1 },
-				{ id: "F87E4134490A77F3", type: "item", item_tag: "minecraft:flowers", count: 8 },
 				{
 					id: "D3CE232FBA59A0E8",
 					type: "dimension",

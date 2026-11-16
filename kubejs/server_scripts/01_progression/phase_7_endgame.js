@@ -200,20 +200,4 @@ ServerEvents.recipes(event => {
         C: 'astralsorcery:celestial_crystal',
         W: 'cataclysm:witherite_ingot'
     })
-
-    // ========================================================================
-    // 5. CREATIVE / INFINITY UPGRADE (Sophisticated Backpacks)
-    // ========================================================================
-    event.remove({ output: 'sophisticatedbackpacks:infinity_upgrade' })
-    event.shaped('sophisticatedbackpacks:infinity_upgrade', [
-        'PAP',
-        'ABA',
-        'UWU'
-    ], {
-        P: 'mekanism:pellet_antimatter',
-        A: 'allthemodium:allthemodium_apple',
-        B: 'sophisticatedbackpacks:stack_upgrade_tier_4',
-        U: 'allthemodium:unobtainium_block',
-        W: 'cataclysm:witherite_ingot'
-    })
 })

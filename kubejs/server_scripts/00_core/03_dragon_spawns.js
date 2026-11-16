@@ -101,7 +101,7 @@ ServerEvents.generateData('after_mods', event => {
 // ============================================================================
 // 3. 100% POJISTKA PROTI ŽIVÝM DRAKŮM MIMO JEJICH DIMENZE
 // ============================================================================
-EntityEvents.spawned(event => {
+/*EntityEvents.spawned(event => {
     const { entity, level } = event
     const type = entity.type
     const dim = level.dimension.toString()
@@ -121,4 +121,4 @@ EntityEvents.spawned(event => {
             event.cancel()
         }
     }
-})
+})*/

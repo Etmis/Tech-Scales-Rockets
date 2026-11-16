@@ -82,7 +82,7 @@
 			dependencies: ["p1a_welcome_twilight"],
 			tasks: [
 				{ id: "14D59BC98E51F614", type: "item", item: "twilightforest:raven_feather", count: 1 },
-				{ id: "358CB0B21619F649", type: "item", item: "twilightforest:torchberries", count: 4 }
+				{ id: "358CB0B21619F649", type: "item", item: "twilightforest:torchberries", count: 1 }
 			],
 			rewards: [
 				{ id: "7C991F51F2254807", type: "item", item: "minecraft:glowstone_dust", count: 8 },
@@ -95,7 +95,7 @@
 			description: [
 				"&7Notice those massive dome-shaped hills dotting the forest? Those are &6Hollow Hills&7!",
 				"",
-				"&7Inside, ratusan of stalactites hang from the ceiling made of Iron, Gold, Redstone, Diamond, and Emerald ores—along with chests containing &aLive Roots&7 for &2Ironwood&7!"
+				"&7Inside, ratusan of stalactites hang from the ceiling made of Iron, Gold, Redstone, Diamond and Emerald ores—along with chests containing &aLive Roots&7 for &2Ironwood&7!"
 			],
 			x: 2.5, y: -2.0,
 			dependencies: ["B6D835A0B7D747DF"],
@@ -140,7 +140,7 @@
 			dependencies: ["C0D3D8B59216EF1D"],
 			tasks: [
 				{ id: "6CE2408D5929E777", type: "item", item: "twilightforest:naga_trophy", count: 1 },
-				{ id: "BC45C57E42B8395B", type: "item", item: "twilightforest:naga_scale", count: 8 }
+				{ id: "BC45C57E42B8395B", type: "item", item: "twilightforest:naga_scale", count: 1 }
 			],
 			rewards: [
 				{ id: "DB542A35B9994236", type: "item", item: "twilightforest:naga_scale", count: 6 },
@@ -181,7 +181,7 @@
 			dependencies: ["p1a_slay_naga"],
 			tasks: [ { id: "C293ACBF6EEEF943", type: "item", item: "naturescompass:naturescompass", count: 1 } ],
 			rewards: [
-				{ id: "857A96A7E4FD069D", type: "item", item: "twilightforest:naga_scale", count: 4 },
+				{ id: "857A96A7E4FD069D", type: "item", item: "twilightforest:naga_scale", count: 2 },
 				{ id: "A61610DA87EE60FA", type: "xp", xp: 125 }
 			]
 		},
@@ -252,9 +252,9 @@
 			size: 1.4,
 			shape: "gear",
 			dependencies: ["p1a_slay_naga"],
-			tasks: [ { id: "568585828668FBA6", type: "item", item: "mekanism:basic_tier_installer", count: 2 } ],
+			tasks: [ { id: "568585828668FBA6", type: "item", item: "mekanism:basic_tier_installer", count: 1 } ],
 			rewards: [
-				{ id: "783B20B07B0C1F30", type: "item", item: "mekanism:basic_tier_installer", count: 2 },
+				{ id: "783B20B07B0C1F30", type: "item", item: "mekanism:basic_tier_installer" },
 				{ id: "C14CD9EE12CD2190", type: "item", item: "mekanism:upgrade_speed", count: 4 },
 				{ id: "C550D13B4BD2B3D1", type: "xp_levels", xp_levels: 3 }
 			]
@@ -369,7 +369,7 @@
 			dependencies: ["p1a_welcome_twilight"],
 			tasks: [ { id: "2EB97B68CE5CCE31", type: "item", item: "astralsorcery:aquamarine", count: 16 } ],
 			rewards: [
-				{ id: "E5EA705F4ECBD228", type: "item", item: "astralsorcery:aquamarine", count: 12 },
+				{ id: "E5EA705F4ECBD228", type: "item", item: "astralsorcery:aquamarine", count: 4 },
 				{ id: "08D176CAAC7425BE", type: "xp", xp: 100 }
 			]
 		},
@@ -384,10 +384,7 @@
 			x: 0.0, y: 4.0,
 			dependencies: ["073FFF5F68D7572A"],
 			tasks: [ { id: "P1AT000000000015", type: "item", item: "astralsorcery:marble_raw", count: 32 } ],
-			rewards: [
-				{ id: "P1AR000000000019", type: "item", item: "astralsorcery:marble_raw", count: 32 },
-				{ id: "P1AR000000000020", type: "xp", xp: 75 }
-			]
+			rewards: [ { id: "P1AR000000000020", type: "xp", xp: 75 } ]
 		},
 		{
 			id: "6B50BA9C4AC68857",
@@ -428,11 +425,10 @@
 			dependencies: ["6B50BA9C4AC68857"],
 			tasks: [
 				{ id: "E837CE2AC414D1A7", type: "item", item: "astralsorcery:altar_illumination", count: 1 },
-				{ id: "E837CE2AC414D1A8", type: "item", item: "astralsorcery:wand", count: 1 },
-				{ id: "E837CE2AC414D1A9", type: "item", item: "astralsorcery:illumination_powder", count: 4 }
+				{ id: "E837CE2AC414D1A8", type: "item", item: "astralsorcery:wand", count: 1 }
 			],
 			rewards: [
-				{ id: "52E74B8092D9C630", type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ id: "52E74B8092D9C630", type: "item", item: "astralsorcery:aquamarine", count: 4 },
 				{ id: "BF76E5B219B684BC", type: "xp_levels", xp_levels: 3 }
 			]
 		},
@@ -445,11 +441,8 @@
 			x: 5.0, y: 6.0,
 			dependencies: ["C58EB1EB877F9490"],
 			optional: true,
-			tasks: [ { id: "P1AT000000000016", type: "item", item: "astralsorcery:illumination_powder", count: 8 } ],
-			rewards: [
-				{ id: "P1AR000000000021", type: "item", item: "astralsorcery:illumination_powder", count: 8 },
-				{ id: "P1AR000000000022", type: "xp", xp: 100 }
-			]
+			tasks: [ { id: "P1AT000000000016", type: "item", item: "astralsorcery:illumination_powder", count: 4 } ],
+			rewards: [ { id: "P1AR000000000022", type: "xp", xp: 100 } ]
 		},
 		{
 			id: "9EC4475F9EC9F97D",
@@ -538,7 +531,7 @@
 			dependencies: ["23A3351B690B4B9E"],
 			tasks: [ { id: "FBA5115EEDE6B6F6", type: "item", item: "apothic_enchanting:seashelf", count: 2 } ],
 			rewards: [
-				{ id: "32837A780BE00C66", type: "item", item: "apothic_enchanting:seashelf" },
+				{ id: "32837A780BE00C66", type: "item", item: "minecraft:lapis_lazuli", count: 32 },
 				{ id: "7E72B47D78D6F04F", type: "xp_levels", xp_levels: 3 }
 			]
 		},

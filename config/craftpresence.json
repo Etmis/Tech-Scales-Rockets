@@ -11,7 +11,7 @@
     "detectBiomeData": true,
     "detectDimensionData": true,
     "detectWorldData": true,
-    "clientId": "450485984333660181",
+    "clientId": "1571932308318195842",
     "defaultIcon": "grass",
     "enableJoinRequests": false,
     "preferredClientLevel": 3,
@@ -23,75 +23,60 @@
     "biomeData": {
       "default": {
         "textOverride": "Exploring {biome.name}"
-      },
-      "deep_dark": {
-        "textOverride": "Sneaking in the Deep Dark"
       }
     }
   },
   "dimensionSettings": {
     "fallbackDimensionIcon": "unknown",
     "dimensionData": {
-      "default": {
-        "textOverride": "In the {dimension.name}"
-      },
-      "overworld": {
-        "textOverride": "Automating in the Overworld",
-        "iconOverride": "grass"
-      },
-      "the_nether": {
-        "textOverride": "Braving the Nether",
-        "iconOverride": "nether"
-      },
-      "the_end": {
-        "textOverride": "Seeking Unobtainium in The End",
-        "iconOverride": "end"
-      },
-      "twilightforest:twilight_forest": {
-        "textOverride": "Awakening Magic in the Twilight Forest"
-      },
-      "allthemodium:mining": {
-        "textOverride": "Strip-Mining in the Mining Dimension"
-      },
-      "allthemodium:the_other": {
-        "textOverride": "Hunting Dragons in The Other"
-      },
-      "ad_astra:earth_orbit": {
-        "textOverride": "Synthesizing Polonium in Earth Orbit"
-      },
-      "ad_astra:moon": {
-        "textOverride": "Mining Desh on the Moon"
-      },
-      "ad_astra:moon_orbit": {
-        "textOverride": "Orbiting the Moon"
-      },
-      "ad_astra:mars": {
-        "textOverride": "Extracting Ostrum on Mars"
-      },
-      "ad_astra:mars_orbit": {
-        "textOverride": "Orbiting Mars"
-      },
-      "ad_astra:venus": {
-        "textOverride": "Surviving the Heat of Venus"
-      },
-      "ad_astra:venus_orbit": {
-        "textOverride": "Orbiting Venus"
+      "minecraft:overworld": {
+        "textOverride": "Industrial frontier | {biome.name}"
       },
       "ad_astra:glacio": {
-        "textOverride": "Braving Ice Dragons & Calorite on Glacio"
+        "textOverride": "Glacio expedition | {biome.name}"
       },
-      "ad_astra:glacio_orbit": {
-        "textOverride": "Orbiting Glacio"
+      "allthemodium:the_beyond": {
+        "textOverride": "The Beyond | {biome.name}"
+      },
+      "ad_astra:mars": {
+        "textOverride": "Mars mission | {biome.name}"
+      },
+      "allthemodium:mining": {
+        "textOverride": "Mining Dimension | {biome.name}"
+      },
+      "minecraft:the_nether": {
+        "textOverride": "Nether expedition | {biome.name}"
+      },
+      "minecraft:the_end": {
+        "textOverride": "Endgame frontier | {biome.name}"
+      },
+      "ad_astra:venus": {
+        "textOverride": "Venus mission | {biome.name}"
+      },
+      "default": {
+        "textOverride": "Exploring {dimension.name}"
+      },
+      "ad_astra:moon": {
+        "textOverride": "Moon mission | {biome.name}"
+      },
+      "ad_astra:mercury": {
+        "textOverride": "Mercury mission | {biome.name}"
+      },
+      "twilightforest:twilight_forest": {
+        "textOverride": "Twilight Forest | {biome.name}"
+      },
+      "allthemodium:the_other": {
+        "textOverride": "The Other | {biome.name}"
       }
     }
   },
   "serverSettings": {
     "fallbackServerIcon": "default",
-    "fallbackServerName": "Tech, Scales & Rockets Server",
-    "fallbackServerMotd": "Tech, Scales & Rockets",
+    "fallbackServerName": "Minecraft Server",
+    "fallbackServerMotd": "A Minecraft Server",
     "serverData": {
       "default": {
-        "textOverride": "Multiplayer ({server.players.current}/{server.players.max})"
+        "textOverride": "Expedition on {server.motd.raw}"
       }
     },
     "pingRateInterval": 5,
@@ -99,24 +84,78 @@
   },
   "statusMessages": {
     "mainMenuData": {
-      "textOverride": "In the Main Menu"
+      "textOverride": "In the Main Menu",
+      "data": {
+        "enabled": true,
+        "useAsMain": false,
+        "isInstance": false,
+        "activityType": 0,
+        "statusDisplayType": 0,
+        "partyPrivacy": 1,
+        "details": "In the Main Menu",
+        "detailsUrl": "",
+        "gameState": "Ready to explore, automate and conquer",
+        "gameStateUrl": "",
+        "appName": "Tech, Scales & Rockets",
+        "largeImageKey": "logo",
+        "largeImageText": "Tech, Scales & Rockets",
+        "largeImageUrl": "",
+        "smallImageKey": "logo",
+        "smallImageText": "At the main menu",
+        "smallImageUrl": "",
+        "startTimestamp": "",
+        "endTimestamp": "",
+        "buttons": {
+          "button_0": {
+            "label": "CurseForge Modpack",
+            "url": "https://www.curseforge.com/minecraft/modpacks/tech-scales-rockets"
+          }
+        }
+      }
     },
     "loadingData": {
-      "textOverride": "Initializing Tech, Scales & Rockets..."
+      "textOverride": "Preparing the launch...",
+      "data": {
+        "enabled": true,
+        "useAsMain": false,
+        "isInstance": false,
+        "activityType": 0,
+        "statusDisplayType": 0,
+        "partyPrivacy": 1,
+        "details": "Preparing the launch...",
+        "detailsUrl": "",
+        "gameState": "Calibrating the expedition",
+        "gameStateUrl": "",
+        "appName": "Tech, Scales & Rockets",
+        "largeImageKey": "logo",
+        "largeImageText": "Tech, Scales & Rockets",
+        "largeImageUrl": "",
+        "smallImageKey": "logo",
+        "smallImageText": "Launching",
+        "smallImageUrl": "",
+        "startTimestamp": "",
+        "endTimestamp": "",
+        "buttons": {
+          "button_0": {
+            "label": "CurseForge Modpack",
+            "url": "https://www.curseforge.com/minecraft/modpacks/tech-scales-rockets"
+          }
+        }
+      }
     },
     "lanData": {
-      "textOverride": "Co-op on LAN"
+      "textOverride": "Co-op expedition on LAN"
     },
     "singleplayerData": {
-      "textOverride": "Singleplayer World"
+      "textOverride": "Solo expedition in {world.name}"
     },
     "realmData": {
-      "textOverride": "Playing on a Realm"
+      "textOverride": "Expedition on Realm: {server.motd.raw}"
     }
   },
   "advancedSettings": {
-    "enablePerGui": false,
-    "enablePerItem": false,
+    "enablePerGui": true,
+    "enablePerItem": true,
     "enablePerEntity": true,
     "formatWords": true,
     "debugMode": false,
@@ -127,7 +166,7 @@
       "fallbackGuiIcon": "unknown",
       "guiData": {
         "default": {
-          "textOverride": "In {screen.name}"
+          "textOverride": "Browsing {screen.name}"
         }
       }
     },
@@ -138,81 +177,12 @@
       "fallbackEntityIcon": "unknown",
       "targetData": {
         "default": {
-          "textOverride": "Targeting {entity.target.name}"
-        },
-        "twilightforest:naga": {
-          "textOverride": "⚔️ Fighting the Naga!"
-        },
-        "twilightforest:lich": {
-          "textOverride": "⚔️ Fighting the Twilight Lich!"
-        },
-        "twilightforest:hydra": {
-          "textOverride": "⚔️ Fighting the Hydra!"
-        },
-        "twilightforest:ur_ghast": {
-          "textOverride": "⚔️ Fighting the Ur-Ghast!"
-        },
-        "twilightforest:alpha_yeti": {
-          "textOverride": "⚔️ Fighting the Alpha Yeti!"
-        },
-        "twilightforest:snow_queen": {
-          "textOverride": "⚔️ Fighting the Snow Queen!"
-        },
-        "minecraft:wither": {
-          "textOverride": "⚔️ Fighting the Wither!"
-        },
-        "minecraft:warden": {
-          "textOverride": "🔊 Facing the Warden in the Deep Dark!"
-        },
-        "minecraft:ender_dragon": {
-          "textOverride": "🐉 Slaying the Ender Dragon!"
-        },
-        "iceandfire:fire_dragon": {
-          "textOverride": "🐉 Battling a Fire Dragon!"
-        },
-        "iceandfire:ice_dragon": {
-          "textOverride": "❄️ Battling an Ice Dragon!"
-        },
-        "iceandfire:lightning_dragon": {
-          "textOverride": "⚡ Battling a Lightning Dragon!"
-        },
-        "cataclysm:ancient_remnant": {
-          "textOverride": "💀 Awakening the Ancient Remnant!"
-        },
-        "cataclysm:ignis": {
-          "textOverride": "🔥 Clashing with Ignis!"
-        },
-        "cataclysm:netherite_monstrosity": {
-          "textOverride": "🌋 Fighting the Netherite Monstrosity!"
-        },
-        "cataclysm:the_leviathan": {
-          "textOverride": "🌊 Facing The Leviathan in the Abyss!"
-        },
-        "cataclysm:maledictus": {
-          "textOverride": "👻 Fighting Maledictus!"
-        },
-        "cataclysm:ender_guardian": {
-          "textOverride": "🟣 Fighting the Ender Guardian!"
-        },
-        "cataclysm:the_harbinger": {
-          "textOverride": "☢️ FINAL BOSS: Fighting The Harbinger!"
+          "textOverride": "Fighting {entity.target.name}"
         }
       },
       "ridingData": {
         "default": {
           "textOverride": "Riding {entity.riding.name}"
-        },
-        "ad_astra:tier_1_rocket": {
-          "textOverride": "🚀 Launching to the Moon (Tier 1 Rocket)"
-        },
-        "ad_astra:tier_2_rocket": {
-          "textOverride": "🚀 Launching to Mars (Tier 2 Rocket)"
-        },
-        "ad_astra:tier_3_rocket": {
-          "textOverride": "🚀 Launching to Venus (Tier 3 Rocket)"
-        },
-        "ad_astra:tier_4_rocket": {
-          "textOverride": "🚀 Launching to Glacio (Tier 4 Rocket)"
         }
       }
     },
@@ -238,33 +208,38 @@
       "activityType": 0,
       "statusDisplayType": 0,
       "partyPrivacy": 1,
-      "details": "{getFirst(menu.message, entity.target.message, entity.riding.message, dimension.message)}",
+      "details": "{getFirst(menu.message, dimension.message)}",
       "detailsUrl": "",
-      "gameState": "Tech, Scales & Rockets | {getOrDefault(server.message, 'Singleplayer')}",
+      "gameState": "Tech, Scales & Rockets | {custom.player_health} HP",
       "gameStateUrl": "",
-      "appName": "",
-      "largeImageKey": "{getFirst(menu.icon, dimension.icon)}",
-      "largeImageText": "{getFirst(menu.message, biome.message, dimension.message)} ({custom.player_info_health})",
+      "appName": "Tech, Scales & Rockets",
+      "largeImageKey": "logo",
+      "largeImageText": "Tech, Scales & Rockets",
       "largeImageUrl": "",
-      "smallImageKey": "{getFirst(player.icon, server.icon, pack.icon)}",
-      "smallImageText": "{custom.player_info_out} | Pack by EtmisTheFox ({custom.mods})",
+      "smallImageKey": "{player.icon}",
+      "smallImageText": "Playing as {player.name}",
       "smallImageUrl": "",
       "startTimestamp": "{data.general.time}",
       "endTimestamp": "",
-      "buttons": {}
+      "buttons": {
+        "button_0": {
+          "label": "CurseForge Modpack",
+          "url": "https://www.curseforge.com/minecraft/modpacks/tech-scales-rockets"
+        }
+      }
     },
     "dynamicIcons": {
       "EtmisTheFox": "https://mc-heads.net/avatar/490d66be08f544eabb4cf4ca11f6e7f0"
     },
     "dynamicVariables": {
-      "mods": "{general.mods} Mods",
-      "player_info_coordinate": "At {player.position.x}, {player.position.z}",
-      "players": "{server.players.current} / {server.players.max} Players",
+      "player_health": "{player.health.current}/{player.health.max}",
+      "player_info_coordinate": "Coordinates {player.position.x}, {player.position.y}, {player.position.z}",
+      "players": "{server.players.current} / {server.players.max} explorers",
       "player_info_in": "({custom.player_info.health})",
       "player_info_items": "Items: {item.main_hand.message}",
-      "player_info_out": "Playing as {player.name}",
-      "player_info_health": "HP: {player.health.current}/{player.health.max}",
-      "world_info": "On {world.name}",
+      "player_info_out": "As {player.name}",
+      "player_info_health": "Health: {player.health.current}/{player.health.max}",
+      "world_info": "World: {world.name}",
       "pack": "Tech, Scales & Rockets"
     }
   }

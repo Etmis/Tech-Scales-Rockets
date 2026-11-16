@@ -154,9 +154,7 @@
 			size: 1.35,
 			shape: "octagon",
 			dependencies: ["A73C98E8914F3FC9"],
-			tasks: [
-				{ id: "P3T0000000000025", type: "item", item: "allthemodium:piglich_heart", count: 2 }
-			],
+			tasks: [ { id: "P3T0000000000025", type: "item", item: "allthemodium:piglich_heart", count: 2 } ],
 			rewards: [
 				{ id: "P3R0000000000029", type: "item", item: "allthemodium:piglich_heart", count: 2 },
 				{ id: "P3R0000000000030", type: "xp_levels", xp_levels: 5 }
@@ -272,7 +270,15 @@
 			x: 5.5, y: -3.25,
 			dependencies: ["p3_slay_fire_dragon"],
 			optional: true,
-			tasks: [ { id: "P3T0000000000012", type: "item", item: "iceandfire:dragonscales_red", count: 8 } ],
+			tasks: [
+				{
+					id: "P3T0000000000012",
+					type: "item",
+					item: "iceandfire:dragonscales_red",
+					item_tag: "iceandfire:scales/dragon",
+					count: 8
+				}
+			],
 			rewards: [
 				{ id: "P3R0000000000013", type: "item", item: "iceandfire:dragonbone", count: 8 },
 				{ id: "P3R0000000000014", type: "xp", xp: 150 }
@@ -351,11 +357,11 @@
 			x: 9.0, y: 0.0,
 			dependencies: ["p3_slay_fire_dragon", "p3_slay_lightning_dragon"],
 			tasks: [
-				{ id: "P3T0000000000014", type: "item", item: "iceandfire:dragon_meal", count: 8 },
+				{ id: "P3T0000000000014", type: "item", item: "iceandfire:dragon_meal", count: 4 },
 				{ id: "P3T0000000000015", type: "item", item: "iceandfire:dragon_stick", count: 1 }
 			],
 			rewards: [
-				{ id: "P3R0000000000017", type: "item", item: "iceandfire:dragon_meal", count: 16 },
+				{ id: "P3R0000000000017", type: "item", item: "iceandfire:dragon_meal", count: 8 },
 				{ id: "P3R0000000000018", type: "xp_levels", xp_levels: 4 }
 			]
 		},

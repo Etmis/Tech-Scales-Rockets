@@ -26,8 +26,7 @@
 			shape: "gear",
 			tasks: [ { id: "APOT000000000001", type: "item", item: "minecraft:enchanting_table", count: 1 } ],
 			rewards: [
-				{ id: "APOR000000000001", type: "item", item: "minecraft:bookshelf", count: 15 },
-				{ id: "APOR000000000002", type: "item", item: "minecraft:lapis_lazuli", count: 32 },
+				{ id: "APOR000000000002", type: "item", item: "minecraft:lapis_lazuli", count: 16 },
 				{ id: "APOR000000000003", type: "xp_levels", xp_levels: 2 }
 			]
 		},
@@ -132,7 +131,7 @@
 				{ id: "APOT000000000010", type: "item", item: "apothic_enchanting:scrap_tome", count: 2 }
 			],
 			rewards: [
-				{ id: "APOR000000000014", type: "item", item: "apothic_enchanting:scrap_tome", count: 4 },
+				{ id: "APOR000000000014", type: "item", item: "apothic_enchanting:scrap_tome" },
 				{ id: "APOR000000000015", type: "xp_levels", xp_levels: 2 }
 			]
 		},
@@ -330,7 +329,7 @@
 				{ id: "APOT000000000027", type: "item", item: "apotheosis:gem_dust", count: 4 }
 			],
 			rewards: [
-				{ id: "APOR000000000033", type: "item", item: "apotheosis:gem_dust", count: 8 },
+				{ id: "APOR000000000033", type: "item", item: "apotheosis:gem_dust", count: 2 },
 				{ id: "APOR000000000034", type: "xp_levels", xp_levels: 3 }
 			]
 		},
@@ -381,7 +380,7 @@
 			dependencies: ["apo_salvaging_table"],
 			tasks: [ { id: "APOT000000000033", type: "item", item: "apotheosis:gem_cutting_table", count: 1 } ],
 			rewards: [
-				{ id: "APOR000000000039", type: "item", item: "apotheosis:gem_dust", count: 12 },
+				{ id: "APOR000000000039", type: "item", item: "apotheosis:gem_dust", count: 8 },
 				{ id: "APOR000000000040", type: "xp_levels", xp_levels: 3 }
 			]
 		},
@@ -399,10 +398,10 @@
 			dependencies: ["apo_gem_cutting_table"],
 			tasks: [
 				{ id: "APOT000000000034", type: "item", item: "apotheosis:reforging_table", count: 1 },
-				{ id: "APOT000000000035", type: "item", item: "apotheosis:sigil_of_rebirth", count: 4 }
+				{ id: "APOT000000000035", type: "item", item: "apotheosis:sigil_of_rebirth", count: 6 }
 			],
 			rewards: [
-				{ id: "APOR000000000041", type: "item", item: "apotheosis:sigil_of_rebirth", count: 8 },
+				{ id: "APOR000000000041", type: "item", item: "apotheosis:sigil_of_rebirth", count: 2 },
 				{ id: "APOR000000000042", type: "xp_levels", xp_levels: 5 }
 			]
 		},

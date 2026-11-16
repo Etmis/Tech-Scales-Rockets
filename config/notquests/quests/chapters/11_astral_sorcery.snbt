@@ -20,10 +20,7 @@
 			shape: "pentagon",
 			dependencies: ["p1a_welcome_twilight"],
 			tasks: [ { id: "7201FE5F699991E5", type: "checkmark" } ],
-			rewards: [
-				{ type: "item", item: "astralsorcery:aquamarine", count: 8 },
-				{ type: "xp", xp: 50 }
-			]
+			rewards: [ { type: "xp", xp: 50 } ]
 		},
 		{
 			id: "ast_02_aquamarine_shale",
@@ -37,7 +34,7 @@
 			dependencies: ["ast_01_welcome"],
 			tasks: [ { type: "item", item: "astralsorcery:aquamarine", count: 16 } ],
 			rewards: [
-				{ type: "item", item: "astralsorcery:aquamarine", count: 16 },
+				{ id: "4FF19978CA210672", type: "item", item: "astralsorcery:aquamarine", count: 8 },
 				{ type: "xp", xp: 75 }
 			]
 		},
@@ -68,7 +65,7 @@
 				"",
 				"&7The Tome only reveals chapters you are ready for—unlocking new pages automatically every time you upgrade your crafting altar to the next tier."
 			],
-			x: 5.0, y: -2.5,
+			x: 2.5, y: -2.5,
 			dependencies: ["ast_02_aquamarine_shale"],
 			tasks: [ { type: "item", item: "astralsorcery:tome", count: 1 } ],
 			rewards: [ { type: "xp", xp: 75 } ]

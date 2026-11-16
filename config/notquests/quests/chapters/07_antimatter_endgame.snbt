@@ -17,7 +17,7 @@
 				"&81. &7Build the &3Supercritical Phase Shifter (SPS)&7 and crystallize &dPellets of Antimatter&7.",
 				"&82. &7Awaken &4The Harbinger&7 with a Pellet of Antimatter to claim &4Witherite Ingots&7.",
 				"&83. &7Forge the &6Cosmic Alloy Smithing Template&7 & &dTri-Realm Alloy Singularity&7 to upgrade your Unobtainium tools into &6ATM Alloy Weapons & Tools&7!",
-				"&84. &7Cook &6The Allthemodium Apple&7 (5-minute God-Mode) and claim the &d17-Slot Infinite Tier Installer&7, &6Ore Laser Base&7, &eAngel Ring&7, and &dBackpack Infinity Upgrade&7!"
+				"&84. &7Cook &6The Allthemodium Apple&7 (5-minute God-Mode) and claim the &d17-Slot Infinite Tier Installer&7, &6Ore Laser Base&7 and &eAngel Ring&7!"
 			],
 			x: 0.0, y: 0.0,
 			size: 1.5,
@@ -171,7 +171,7 @@
 			description: [
 				"&7Prepare all three Dragonsteel Ingots (&cFire&7, &9Lightning&7, &bIce&7) and all three Planetary Ingots (&6Desh&7, &5Ostrum&7, &4Calorite&7) along with &9Starmetal&7 for the Iridescent Altar!"
 			],
-			x: 12.5, y: 3.5,
+			x: 14.5, y: 2.5,
 			dependencies: ["B858B85E371FDBC4"],
 			tasks: [
 				{ id: "P7T0000000000006", type: "item", item: "iceandfire:dragonsteel_fire_ingot", count: 1 },
@@ -197,7 +197,7 @@
 				"&8• &6All 3 Planetary Metals: &6Desh&7, &5Ostrum &7& &4Calorite Ingots",
 				"&8• &4Witherite Ingot &7(The Harbinger)"
 			],
-			x: 14.5, y: 3.5,
+			x: 18.5, y: 2.5,
 			size: 1.45,
 			shape: "pentagon",
 			dependencies: ["B858B85E371FDBC4", "P7Q0000000000005"],
@@ -219,7 +219,7 @@
 				"   &8• &6The Allthemodium Carrot &7(Delight)",
 				"   &8• &4Witherite Ingot &7(Harbinger) & &dCataclysmic Flux&7!"
 			],
-			x: 16.5, y: 3.5,
+			x: 20.5, y: 4.5,
 			size: 1.45,
 			shape: "hexagon",
 			dependencies: ["p7_cosmic_alloy_template"],
@@ -243,7 +243,7 @@
 				"",
 				"&aYou have forged the ultimate ATM Alloy Weapons & Tools with 100% of your lifelong Enchantments, Apotheosis Gems, and Affixes preserved!"
 			],
-			x: 18.5, y: 3.5,
+			x: 23.0, y: 4.5,
 			size: 1.65,
 			shape: "octagon",
 			dependencies: ["p7_tri_realm_singularity"],
@@ -350,7 +350,7 @@
 			description: [
 				"&7Synthesize &dSpectrum Alloys&7 (&fmekanism_extras:alloy_spectrum&7) and &dInfinite Control Circuits&7 (&fmekanism_extras:infinite_control_circuit&7) to unlock the final 17-slot tier of Mekanism: Extras!"
 			],
-			x: 20.75, y: -4.5,
+			x: 20.5, y: -4.5,
 			dependencies: ["p7_allthemodium_apple"],
 			tasks: [
 				{ id: "P7T0000000000017", type: "item", item: "mekanism_extras:alloy_spectrum", count: 2 },
@@ -440,29 +440,6 @@
 					description: "You unlocked Creative Flight with the Angel Ring!"
 				},
 				{ id: "4450925D9EFC17BC", type: "xp_levels", xp_levels: 10 }
-			]
-		},
-		{
-			id: "B1BA73B8B5EE3289",
-			title: "&d&l4. Creative Storage: Backpack Infinity Upgrade!",
-			description: [
-				"&7From a humble leather pouch in Phase 0 to the vessel of a god! Combine &dPellet of Antimatter&7, &6The Allthemodium Apple&7, &dUnobtainium Block&7, &4Witherite Ingot&7, and &dStack Upgrade Tier 4&7 to craft the &dInfinity Upgrade&7 (&fsophisticatedbackpacks:infinity_upgrade&7)!",
-				"",
-				"&7Insert it into your faithful &8Netherite Backpack&7—every item stack inside becomes &dtruly infinite&7!"
-			],
-			x: 23.0, y: 4.5,
-			size: 1.6,
-			shape: "gear",
-			dependencies: ["p7_allthemodium_apple"],
-			tasks: [ { id: "7E29CEA277740786", type: "item", item: "sophisticatedbackpacks:infinity_upgrade", count: 1 } ],
-			rewards: [
-				{
-					id: "2BD468150177C69E",
-					type: "toast",
-					title: "Infinite Resources!",
-					description: "Your backpack now holds infinite items!"
-				},
-				{ id: "3E76FC0FB27A2FDF", type: "xp_levels", xp_levels: 10 }
 			]
 		},
 		{

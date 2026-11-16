@@ -37,7 +37,7 @@
 			],
 			x: 2.5, y: 0.0,
 			dependencies: ["p1b_intro"],
-			tasks: [ { id: "4B4FB1FF2873593B", type: "item", item: "twilightforest:cooked_meef", count: 4 } ],
+			tasks: [ { id: "4B4FB1FF2873593B", type: "item", item: "twilightforest:raw_meef", count: 4 } ],
 			rewards: [
 				{ id: "4D882C05FC630489", type: "item", item: "minecraft:torch", count: 32 },
 				{ id: "D5ECE41F75C2ADC8", type: "xp", xp: 100 }
@@ -81,7 +81,6 @@
 				{ id: "053268913F5DFDC4", type: "item", item: "twilightforest:meef_stroganoff", count: 2 }
 			],
 			rewards: [
-				{ id: "B0843F629C5CCCF4", type: "item", item: "twilightforest:meef_stroganoff", count: 4 },
 				{ id: "A4FA617EE34DAFA2", type: "random", table_id: "tier_1_twilight" },
 				{ id: "A5ABDAEA17AC3D7D", type: "xp_levels", xp_levels: 3 }
 			]
@@ -104,25 +103,6 @@
 			]
 		},
 		{
-			id: "P1BQ000000000002",
-			title: "&dAtomic Alloys & Elite Circuits",
-			description: [
-				"&7Produce a batch of &dAtomic Alloys&7 (by infusing Reinforced Alloys with Refined Obsidian Dust) and &bElite Control Circuits&7!",
-				"",
-				"&7You will need these for your Robit, Digital Miner, and Teleportation Cores."
-			],
-			x: 5.5, y: -4.5,
-			dependencies: ["p1b_teleportation_core"],
-			tasks: [
-				{ id: "P1BT000000000002", type: "item", item: "mekanism:alloy_atomic", count: 4 },
-				{ id: "P1BT000000000003", type: "item", item: "mekanism:elite_control_circuit", count: 2 }
-			],
-			rewards: [
-				{ id: "P1BR000000000003", type: "item", item: "mekanism:alloy_atomic", count: 4 },
-				{ id: "P1BR000000000004", type: "xp", xp: 150 }
-			]
-		},
-		{
 			id: "P1BQ000000000003",
 			title: "&4Braving the Fire Swamp",
 			description: [
@@ -132,7 +112,15 @@
 			dependencies: ["8C952F870018A11E"],
 			tasks: [ { id: "P1BT000000000004", type: "item", item: "twilightforest:meef_stroganoff", count: 1 } ],
 			rewards: [
-				{ id: "P1BR000000000005", type: "item", item: "minecraft:fire_resistance" },
+				{
+					id: "P1BR000000000005",
+					type: "item",
+					item: {
+						id: "minecraft:potion",
+						count: 1,
+						components: { "minecraft:potion_contents": { potion: "minecraft:long_fire_resistance" } }
+					}
+				},
 				{ id: "P1BR000000000006", type: "xp", xp: 100 }
 			]
 		},
@@ -152,10 +140,10 @@
 			dependencies: ["8C952F870018A11E"],
 			tasks: [
 				{ id: "961CDF057FFB196F", type: "item", item: "twilightforest:hydra_trophy", count: 1 },
-				{ id: "0BFB34B0A9186280", type: "item", item: "twilightforest:fiery_blood", count: 8 }
+				{ id: "0BFB34B0A9186280", type: "item", item: "twilightforest:fiery_blood", count: 1 }
 			],
 			rewards: [
-				{ id: "D8E21D416E7390E9", type: "item", item: "twilightforest:fiery_blood", count: 8 },
+				{ id: "D8E21D416E7390E9", type: "item", item: "twilightforest:fiery_blood", count: 4 },
 				{ id: "0550EA102395040E", type: "item", item: "twilightforest:hydra_chop", count: 4 },
 				{ id: "6378F2B10CCA1BFB", type: "xp_levels", xp_levels: 4 }
 			]
@@ -166,8 +154,9 @@
 			description: [
 				"&7Combine Iron Ingots with &cFiery Blood&7 (or Fiery Tears) to forge &6Fiery Ingots&7, and savour the Hydra's nutrient-packed &cHydra Chops&7!"
 			],
-			x: 9.0, y: -2.5,
+			x: 9.0, y: 2.5,
 			dependencies: ["1BFA69A6FB5868C9"],
+			optional: true,
 			tasks: [
 				{ id: "P1BT000000000005", type: "item", item: "twilightforest:fiery_ingot", count: 4 },
 				{ id: "P1BT000000000006", type: "item", item: "twilightforest:hydra_chop", count: 2 }
@@ -189,7 +178,7 @@
 			dependencies: ["1BFA69A6FB5868C9"],
 			tasks: [ { id: "4D474D25FDA29D21", type: "item", item: "twilightforest:armor_shard_cluster", count: 1 } ],
 			rewards: [
-				{ id: "8B98E4BD855AE633", type: "item", item: "twilightforest:knightmetal_ingot", count: 4 },
+				{ id: "8B98E4BD855AE633", type: "item", item: "twilightforest:knightmetal_ingot", count: 2 },
 				{ id: "406D3947795FAE61", type: "xp", xp: 125 }
 			]
 		},
@@ -205,12 +194,9 @@
 			size: 1.5,
 			shape: "octagon",
 			dependencies: ["2D170F9E0367BC54"],
-			tasks: [
-				{ id: "FFBFE21FD3C297F5", type: "item", item: "twilightforest:knight_phantom_trophy", count: 1 },
-				{ id: "98D29783C99B4A30", type: "item", item: "twilightforest:knightmetal_ingot", count: 8 }
-			],
+			tasks: [ { id: "FFBFE21FD3C297F5", type: "item", item: "twilightforest:knight_phantom_trophy", count: 1 } ],
 			rewards: [
-				{ id: "AF28FB52A1BEA985", type: "item", item: "twilightforest:knightmetal_ingot", count: 8 },
+				{ id: "AF28FB52A1BEA985", type: "item", item: "twilightforest:knightmetal_ingot", count: 4 },
 				{ id: "1AA1F258C9D6DAF5", type: "random", table_id: "tier_1_twilight" },
 				{ id: "22E092B0206C6686", type: "xp_levels", xp_levels: 3 }
 			]
@@ -222,7 +208,7 @@
 				"&7Every &eDigital Miner&7 requires a faithful mechanical brain—craft a &eRobit&7 using Refined Obsidian, Energy Tablets, and Atomic Alloys."
 			],
 			x: 15.0, y: -2.5,
-			dependencies: ["p1b_teleportation_core", "0E72B6514751BF63", "P1BQ000000000002"],
+			dependencies: ["p1b_teleportation_core", "0E72B6514751BF63"],
 			tasks: [ { id: "712D59E8F9341227", type: "item", item: "mekanism:robit", count: 1 } ],
 			rewards: [
 				{ id: "B838DD5D3AF710C8", type: "item", item: "mekanism:ingot_refined_obsidian", count: 8 },
@@ -303,10 +289,7 @@
 			dependencies: ["282B50B9C69CEED8"],
 			optional: true,
 			tasks: [ { id: "P1BT000000000007", type: "item", item: "bhc:red_heart_canister", count: 10 } ],
-			rewards: [
-				{ id: "P1BR000000000009", type: "item", item: "bhc:red_heart_canister", count: 2 },
-				{ id: "P1BR000000000010", type: "xp_levels", xp_levels: 3 }
-			]
+			rewards: [ { id: "P1BR000000000010", type: "xp_levels", xp_levels: 3 } ]
 		},
 		{
 			id: "93F84309457042E2",
@@ -320,7 +303,7 @@
 			size: 1.35,
 			shape: "hexagon",
 			dependencies: ["p1b_carminite"],
-			tasks: [ { id: "21C5EA8113BBFC36", type: "item", item: "industrialforegoing:machine_frame_simple", count: 2 } ],
+			tasks: [ { id: "21C5EA8113BBFC36", type: "item", item: "industrialforegoing:machine_frame_simple", count: 1 } ],
 			rewards: [
 				{ id: "6C909035495ED99B", type: "item", item: "industrialforegoing:plastic", count: 16 },
 				{ id: "37186B392AD452BE", type: "xp", xp: 150 }

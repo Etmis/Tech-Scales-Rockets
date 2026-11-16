@@ -75,12 +75,7 @@ ServerEvents.recipes(event => {
                 ingredient: { item: 'astralsorcery:illumination_powder' }
             }
         ],
-        required_fluid: [
-            {
-                amount: 1000,
-                id: 'astralsorcery:liquid_starlight'
-            }
-        ],
+        required_fluid: [],
         required_lumen: [],
         required_starlight: [],
         required_type: 'resonance'
